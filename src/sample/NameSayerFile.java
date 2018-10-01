@@ -5,5 +5,5 @@ import java.util.ArrayList;
 
 public interface NameSayerFile {
 
-    public ArrayList<File> getFilesToPlay();
+    public ArrayList<File> filesToPlay();
 }

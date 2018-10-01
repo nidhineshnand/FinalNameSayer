@@ -14,11 +14,11 @@ public class PractiseFile implements NameSayerFile {
 
     //Gets the files that will be used to play audio
     @Override
-    public ArrayList<File> getFilesToPlay() {
+    public ArrayList<File> filesToPlay() {
         ArrayList<File> output = new ArrayList<>();
         //Going through all the database files
         for (DatabaseFile databaseFile : _filesToPlay){
-            output.add(databaseFile.getFilesToPlay().get(0));
+            output.add(databaseFile.filesToPlay().get(0));
         }
         return output;
     }

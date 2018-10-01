@@ -119,7 +119,7 @@ public class DatabaseFile implements NameSayerFile {
 
     @Override
     //Method returns the database file that will be used for playing
-    public ArrayList<File> getFilesToPlay() {
+    public ArrayList<File> filesToPlay() {
         ArrayList<File> databaseFile = new ArrayList<>();
         databaseFile.add(_databaseFile);
         return databaseFile;
