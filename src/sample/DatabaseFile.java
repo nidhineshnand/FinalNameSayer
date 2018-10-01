@@ -104,9 +104,6 @@ public class DatabaseFile implements NameSayerFile {
         }
     }
 
-
-
-
     /**This method checks if the given database file has a bad rating. It takes in the rating file location as the input.
      * it outputs a boolean which says if recording is bad
      */
@@ -115,7 +112,10 @@ public class DatabaseFile implements NameSayerFile {
     }
 
     @Override
+    //Method returns the database file that will be used for playing
     public ArrayList<File> getFilesToPlay() {
-        return null;
+        ArrayList<File> databaseFile = new ArrayList<>();
+        databaseFile.add(_databaseFile);
+        return databaseFile;
     }
 }
