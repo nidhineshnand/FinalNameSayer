@@ -59,6 +59,7 @@ public class DatabaseFile implements NameSayerFile {
         //Loading file
         File ratingFile = new File(path);
         boolean doesFileHaveRating = false;
+        boolean firstLine = true;
 
         //Reading file
         BufferedReader reader = null;
@@ -67,14 +68,15 @@ public class DatabaseFile implements NameSayerFile {
             //Filename and rating
             String line;
             while ((line = reader.readLine()) != null) {
+                firstLine = false;
                 //Splitting filename and rating
-                String[] filenameAndRating = line.split("-");
+                String[] filenameAndRating = line.split(",");
 
                 //Checking if line refers to this database file
-                if (filenameAndRating[1].equals(_savedName)) {
+                if (_savedName.equals(filenameAndRating[0])) {
                     doesFileHaveRating = true;
                     //Checking if the rating is bad
-                    if (filenameAndRating[2].equals("bad")) {
+                    if (filenameAndRating[1].equals("bad")) {
                         _badRating = true;
                     }
                 }
@@ -88,17 +90,21 @@ public class DatabaseFile implements NameSayerFile {
 
         //Adding rating if none exists
         if(!doesFileHaveRating){
-            setRating(path);
+            setRating(path, firstLine);
         }
 
     }
 
 
     //This method sets the rating for this file as good as a general rating
-    public void setRating(String path){
+    public void setRating(String path, boolean firstLine){
 
         try {
-            Files.write(Paths.get(path), (_savedName + "-good").getBytes(), StandardOpenOption.APPEND);
+            if (firstLine){
+                Files.write(Paths.get(path), (_savedName + ",good").getBytes(), StandardOpenOption.APPEND);
+            } else {
+                Files.write(Paths.get(path), ("\n" + _savedName + ",good").getBytes(), StandardOpenOption.APPEND);
+            }
         }catch (IOException e) {
             e.printStackTrace();
         }
