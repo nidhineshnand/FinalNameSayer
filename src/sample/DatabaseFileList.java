@@ -33,8 +33,6 @@ public class DatabaseFileList extends NameSayerFileList{
             _databaseFiles.add(databaseFile);
 
         }
-
-        System.out.print("Files done");
     }
 
 }
