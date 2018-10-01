@@ -90,7 +90,7 @@ public class DatabaseFile implements NameSayerFile {
     public void setRatingBad(String path){
 
         try {
-            Files.write(Paths.get(path), ("\n" + _savedName).getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(path), (_savedName + "\n").getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -109,5 +109,10 @@ public class DatabaseFile implements NameSayerFile {
         ArrayList<File> databaseFile = new ArrayList<>();
         databaseFile.add(_databaseFile);
         return databaseFile;
+    }
+
+
+    public String get_recordingName() {
+        return _recordingName;
     }
 }
