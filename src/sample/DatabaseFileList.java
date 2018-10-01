@@ -7,16 +7,19 @@ import java.util.ArrayList;
 public class DatabaseFileList extends NameSayerFileList{
 
     private final String _databasePath;
+    private final String _ratingFilePath;
     private ArrayList<DatabaseFile> _databaseFiles = new ArrayList<>();
 
-    public DatabaseFileList(String databasePath){
+    public DatabaseFileList(String databasePath, String ratingFilePath){
         _databasePath = databasePath;
+        _ratingFilePath = ratingFilePath;
+        readDatabaseFiles();
     }
 
 
 
-    /*This method reads the files from the database and stores it in the  Arraylist databaseFiles. This method needs
-    to be run at the start of the program.
+    /*This method reads the files from the database and stores it in the  Arraylist databaseFiles. This method is run at
+    at initialization of the DatabaseFileList object;
      */
     public void readDatabaseFiles() {
 
