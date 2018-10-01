@@ -9,7 +9,7 @@ public class DatabaseFileList extends NameSayerFileList{
     private final String _databasePath;
     private ArrayList<DatabaseFile> _databaseFiles = new ArrayList<>();
 
-    DatabaseFileList(String databasePath){
+    public DatabaseFileList(String databasePath){
         _databasePath = databasePath;
     }
 
@@ -31,6 +31,7 @@ public class DatabaseFileList extends NameSayerFileList{
 
         }
 
+        System.out.print("Files done");
     }
 
 }

@@ -7,7 +7,12 @@ import java.nio.file.Files;
 /**This class initializes the files that will be used by this program in the future*/
 public class InitializeFiles {
 
-    String _databaseFilePath;
+    private String _databaseFilePath;
+    private String _localResourcesPath = "./resources";
+    private String _localDatabasePath = "./resources/database";
+    private String _concatenationsPath = "./resources/concatenations";
+    private String _practiseDirPath = "./resources/practise.txt";
+    private String _ratingsFilePath = "./resources/ratings.txt";
 
     public InitializeFiles(String databaseFilePath){
         _databaseFilePath = databaseFilePath;
@@ -19,11 +24,11 @@ public class InitializeFiles {
     public void initialize(){
         //Creating directory if one does not already exist
         try {
-            new File("./resources").mkdir();
-            new File("./resources/database").mkdir();
-            new File ("./resources/concatenations").mkdir();
-            new File("./resources/practise.txt").createNewFile();
-            new File ("./resources/ratings.txt").createNewFile();
+            new File(_localResourcesPath).mkdir();
+            new File(_localDatabasePath).mkdir();
+            new File (_concatenationsPath).mkdir();
+            new File(_practiseDirPath).createNewFile();
+            new File (_ratingsFilePath).createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,4 +56,24 @@ public class InitializeFiles {
         }
     }
 
+
+    public String get_localResourcesPath() {
+        return _localResourcesPath;
+    }
+
+    public String get_localDatabasePath() {
+        return _localDatabasePath;
+    }
+
+    public String get_concatenationsPath() {
+        return _concatenationsPath;
+    }
+
+    public String get_practiseDirPath() {
+        return _practiseDirPath;
+    }
+
+    public String get_ratingsFilePath() {
+        return _ratingsFilePath;
+    }
 }
