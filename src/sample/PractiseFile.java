@@ -1,14 +1,21 @@
 package sample;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 public class PractiseFile implements NameSayerFile {
 
     private ArrayList<DatabaseFile> _filesToPlay;
+    private String _pathToWrite;
 
-    public PractiseFile(ArrayList<DatabaseFile> filesToPlay){
+    public PractiseFile(ArrayList<DatabaseFile> filesToPlay, String pathToWrite){
         _filesToPlay = filesToPlay;
+        _pathToWrite = pathToWrite;
+        writeToFile();
     }
 
 
@@ -22,4 +29,11 @@ public class PractiseFile implements NameSayerFile {
         }
         return output;
     }
+
+    //Writes to file so that it can be accessed when the app is closed
+    private void writeToFile(){
+    }
+
+
+
 }
