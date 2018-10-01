@@ -21,7 +21,7 @@ public class DatabaseFileList extends NameSayerFileList{
     /*This method reads the files from the database and stores it in the  Arraylist databaseFiles. This method is run at
     at initialization of the DatabaseFileList object;
      */
-    public void readDatabaseFiles() {
+    private void readDatabaseFiles() {
 
         //Reading file
         File database = new File(_databasePath);
