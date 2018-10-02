@@ -11,12 +11,12 @@ public class PractiseFile implements NameSayerFile {
 
     private ArrayList<DatabaseFile> _filesToPlay;
     private String _pathToWrite;
-    private String _name;
+    private String _displayName;
 
     public PractiseFile(ArrayList<DatabaseFile> filesToPlay, String pathToWrite, ArrayList<String> fileNames){
         _filesToPlay = filesToPlay;
         _pathToWrite = pathToWrite;
-        _name = String.join(" ", fileNames);
+        _displayName = String.join(" ", fileNames);
     }
 
 
@@ -48,7 +48,8 @@ public class PractiseFile implements NameSayerFile {
 
     }
 
-    public String get_name() {
-        return _name;
+    @Override
+    public String get_displayName() {
+        return _displayName;
     }
 }

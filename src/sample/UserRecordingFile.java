@@ -75,4 +75,9 @@ public class UserRecordingFile implements NameSayerFile {
         output.add(_file);
         return output;
     }
+
+    @Override
+    public String get_displayName() {
+        return _displayName;
+    }
 }

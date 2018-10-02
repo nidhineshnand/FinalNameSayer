@@ -112,7 +112,7 @@ public class DatabaseFile implements NameSayerFile {
     }
 
     @Override
-    public String toString() {
+    public String get_displayName(){
         return _recordingName;
     }
 
