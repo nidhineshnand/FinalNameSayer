@@ -55,9 +55,7 @@ public class PractiseFileList extends NameSayerFileList{
                             //Adding names that are found to the arraylist
                             associatedDatabaseFiles.add(associatedFile);
                         }
-
                     }
-
                 }
                 if (!associatedDatabaseFiles.isEmpty())
                 //Creating practisefile object and adding it to the list of practisefile objects
