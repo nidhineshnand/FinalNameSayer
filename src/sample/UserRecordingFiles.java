@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class UserRecordingFiles implements NameSayerFile {
     @Override
-    public ArrayList<File> getFilesToPlay() {
+    public ArrayList<File> filesToPlay() {
         return null;
     }
 }

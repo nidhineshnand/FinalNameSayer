@@ -31,7 +31,7 @@ public class PractiseFileList extends NameSayerFileList{
             reader = new BufferedReader(new FileReader(pathToList));
             //Filenames
             String line;
-            while ((line = reader.readLine()) != null || !line.isEmpty()) {
+            while ((line = reader.readLine()) != null) {
                 //Arraylist to save file names
                 ArrayList<DatabaseFile> associatedDatabaseFiles = new ArrayList<>();
 
@@ -41,7 +41,7 @@ public class PractiseFileList extends NameSayerFileList{
                 for (String names : namesHyphened){
 
                     //Splitting filenames by hyphens
-                    String[] singleNames = line.split("-");
+                    String[] singleNames = names.split("-");
 
                     for(String name : singleNames) {
 
@@ -49,7 +49,7 @@ public class PractiseFileList extends NameSayerFileList{
                         DatabaseFile associatedFile = databaseFileList.getDatabaseFileWithName(name);
 
                         //Checking if database file is null
-                        if (associatedFile.equals(null)){
+                        if (associatedFile == null){
                             namesNotFound.add(name);
                         } else {
                             //Adding names that are found to the arraylist
@@ -59,6 +59,7 @@ public class PractiseFileList extends NameSayerFileList{
                     }
 
                 }
+                if (!associatedDatabaseFiles.isEmpty())
                 //Creating practisefile object and adding it to the list of practisefile objects
                 addPractiseFileToList(new PractiseFile(associatedDatabaseFiles, _pathToWrite, line));
             }
@@ -84,6 +85,7 @@ public class PractiseFileList extends NameSayerFileList{
         }
         if(!doesFileAlreadyExist){
             _practiseFileList.add(practiseFile);
+            System.out.print(practiseFile.get_name() + "\n");
         }
     }
 
