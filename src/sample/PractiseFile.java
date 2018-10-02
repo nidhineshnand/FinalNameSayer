@@ -17,7 +17,6 @@ public class PractiseFile implements NameSayerFile {
         _filesToPlay = filesToPlay;
         _pathToWrite = pathToWrite;
         _name = String.join(" ", fileNames);
-        writeToFile();
     }
 
 
@@ -34,15 +33,15 @@ public class PractiseFile implements NameSayerFile {
 
     //Writes to file so that it can be accessed when the app is closed
     private void writeToFile(){
-        String fileNames = "";
+        ArrayList<String> fileNames = new ArrayList<>();
         //Getting the string to add to file
         for(DatabaseFile file: _filesToPlay){
-            fileNames = fileNames + file.get_recordingName() + " ";
+            fileNames.add(file.get_recordingName());
         }
 
         //Saving to file
         try {
-            Files.write(Paths.get(_pathToWrite), (fileNames + "\n").getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(_pathToWrite), (String.join(" ",fileNames) + "\n").getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             e.printStackTrace();
         }
