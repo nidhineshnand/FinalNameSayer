@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.scene.layout.Pane;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -18,6 +20,7 @@ public class DatabaseFile implements NameSayerFile {
     private LocalDateTime _dateAndTime;
     private boolean _badRating;
     private String _ratingFilePath;
+    private Pane _fileView;
 
 
     DatabaseFile(File databaseFile, String ratingFilePath) {
@@ -111,6 +114,12 @@ public class DatabaseFile implements NameSayerFile {
         ArrayList<File> databaseFile = new ArrayList<>();
         databaseFile.add(_databaseFile);
         return databaseFile;
+    }
+
+    //No specific implementation at the moment because database files do not need to be displayed
+    @Override
+    public Pane get_fileView() {
+        return _fileView;
     }
 
     @Override

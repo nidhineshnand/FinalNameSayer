@@ -1,5 +1,8 @@
 package sample;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.Pane;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -14,6 +17,7 @@ public class UserRecordingFile implements NameSayerFile {
     private File _file;
     private LocalDateTime _creationTime;
     private Process _process;
+    private Pane _fileView;
 
     public UserRecordingFile(String pathToSave, ArrayList<String> fileNames){
         _pathToSave = pathToSave;
@@ -68,6 +72,26 @@ public class UserRecordingFile implements NameSayerFile {
         _process.destroy();
     }
 
+
+    //Loads a FXML pane that will be used to display the file on the scene
+    private void loadView(){
+        try {
+            //Loading view
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/NameSayerFileElement.fxml"));
+            _fileView =  fxmlLoader.load();
+            //Setting up controller
+            NameSayerFileElementController controller = fxmlLoader.getController();
+            controller.setup(this, null);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public Pane get_fileView() {
+        return _fileView;
+    }
 
     @Override
     public ArrayList<File> filesToPlay() {

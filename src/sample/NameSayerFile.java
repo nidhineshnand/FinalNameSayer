@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.scene.layout.Pane;
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -14,4 +16,7 @@ public interface NameSayerFile {
      * on screen
      */
     public String get_displayName();
+
+    /**This method gets the view of the object being painted*/
+    public Pane get_fileView();
 }

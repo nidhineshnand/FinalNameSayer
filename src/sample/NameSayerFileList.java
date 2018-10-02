@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public abstract class NameSayerFileList {
 
 
+
     /**
      * This method takes in a list of files. Then is concatenates, equalizes and removes the silence in those files.
      * After that the final file to play is returned
