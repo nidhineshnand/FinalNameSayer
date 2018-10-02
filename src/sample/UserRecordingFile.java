@@ -9,15 +9,15 @@ import java.util.ArrayList;
 public class UserRecordingFile implements NameSayerFile {
 
     private String _pathToSave;
-    private String _name;
+    private String _displayName;
     private String _filename;
     private File _file;
     private LocalDateTime _creationTime;
     private Process _process;
 
-    public UserRecordingFile(String pathToSave, String name){
+    public UserRecordingFile(String pathToSave, String displayName){
         _pathToSave = pathToSave;
-        _name = name;
+        _displayName = displayName;
         _filename = setFileName();
         _creationTime = LocalDateTime.now();
     }
@@ -32,7 +32,7 @@ public class UserRecordingFile implements NameSayerFile {
     private String setFileName(){
         DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
         String timeStamp = _creationTime.format(dateAndTimeFormatter);
-        return "User_" + timeStamp + "_" + _name + ".wav";
+        return "User_" + timeStamp + "_" + _displayName.replace(" ", "-") + ".wav";
 
     }
 

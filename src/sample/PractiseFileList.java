@@ -34,7 +34,7 @@ public class PractiseFileList extends NameSayerFileList{
             while ((line = reader.readLine()) != null) {
                 //Arraylist to save file names
                 ArrayList<DatabaseFile> associatedDatabaseFiles = new ArrayList<>();
-
+                ArrayList<String> fileNames= new ArrayList<>();
                 //Splitting filenames by spaces
                 String[] namesHyphened = line.split("\\s+");
 
@@ -54,12 +54,13 @@ public class PractiseFileList extends NameSayerFileList{
                         } else {
                             //Adding names that are found to the arraylist
                             associatedDatabaseFiles.add(associatedFile);
+                            fileNames.add(name);
                         }
                     }
                 }
                 if (!associatedDatabaseFiles.isEmpty())
                 //Creating practisefile object and adding it to the list of practisefile objects
-                addPractiseFileToList(new PractiseFile(associatedDatabaseFiles, _pathToWrite, line));
+                addPractiseFileToList(new PractiseFile(associatedDatabaseFiles, _pathToWrite, fileNames));
             }
             //Handling exceptions
         } catch (FileNotFoundException e) {

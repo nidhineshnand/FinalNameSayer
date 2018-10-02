@@ -13,10 +13,10 @@ public class PractiseFile implements NameSayerFile {
     private String _pathToWrite;
     private String _name;
 
-    public PractiseFile(ArrayList<DatabaseFile> filesToPlay, String pathToWrite, String name){
+    public PractiseFile(ArrayList<DatabaseFile> filesToPlay, String pathToWrite, ArrayList<String> fileNames){
         _filesToPlay = filesToPlay;
         _pathToWrite = pathToWrite;
-        _name = name;
+        _name = String.join(" ", fileNames);
         writeToFile();
     }
 
