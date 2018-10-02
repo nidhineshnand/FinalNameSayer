@@ -68,17 +68,12 @@ public class DatabaseFile implements NameSayerFile {
             //Filename and rating
             String line;
             while ((line = reader.readLine()) != null) {
-                firstLine = false;
                 //Splitting filename and rating
                 String[] filenameAndRating = line.split(",");
 
                 //Checking if line refers to this database file
                 if (_savedName.equals(filenameAndRating[0])) {
-                    doesFileHaveRating = true;
-                    //Checking if the rating is bad
-                    if (filenameAndRating[1].equals("bad")) {
-                        _badRating = true;
-                    }
+                    _badRating = true;
                 }
             }
             //Handling exceptions
@@ -88,23 +83,14 @@ public class DatabaseFile implements NameSayerFile {
             ex.printStackTrace();
         }
 
-        //Adding rating if none exists
-        if(!doesFileHaveRating){
-            setRating(path, firstLine);
-        }
-
     }
 
 
     //This method sets the rating for this file as good as a general rating
-    public void setRating(String path, boolean firstLine){
+    public void setRatingBad(String path){
 
         try {
-            if (firstLine){
-                Files.write(Paths.get(path), (_savedName + ",good").getBytes(), StandardOpenOption.APPEND);
-            } else {
-                Files.write(Paths.get(path), ("\n" + _savedName + ",good").getBytes(), StandardOpenOption.APPEND);
-            }
+            Files.write(Paths.get(path), (_savedName + "\n").getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -119,9 +105,18 @@ public class DatabaseFile implements NameSayerFile {
 
     @Override
     //Method returns the database file that will be used for playing
-    public ArrayList<File> getFilesToPlay() {
+    public ArrayList<File> filesToPlay() {
         ArrayList<File> databaseFile = new ArrayList<>();
         databaseFile.add(_databaseFile);
         return databaseFile;
+    }
+
+
+    public String get_recordingName() {
+        return _recordingName;
+    }
+
+    public boolean is_badRating() {
+        return _badRating;
     }
 }
