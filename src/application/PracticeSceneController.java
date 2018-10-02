@@ -30,6 +30,7 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When _playAllButton is clicked
 	 */
+	@FXML
 	void playAllClicked() {
 		
 	}
@@ -37,6 +38,7 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When _volumnSlider is dragged
 	 */
+	@FXML
 	void volumnSliderDragged() {
 		
 	}
@@ -44,6 +46,7 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When _micSensitivitySlider is dragged
 	 */
+	@FXML
 	void micSensitivityDragged() {
 		
 	}
@@ -51,13 +54,15 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When _backButton is clicked
 	 */
+	@FXML
 	void backClicked() {
-		loadScene(_backButton, "SelectionScene");
+		//loadScene(_backButton, "SelectionScene");
 	}
 	
 	/**
 	 * When _recordButton is clicked
 	 */
+	@FXML
 	void recordClicked() {
 		
 	}
@@ -65,6 +70,7 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When _playRecordingButton is clicked
 	 */
+	@FXML
 	void playRecordingClicked() {
 		
 	}
@@ -72,6 +78,7 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When _saveButton is clicked
 	 */
+	@FXML
 	void saveClicked() {
 		
 	}

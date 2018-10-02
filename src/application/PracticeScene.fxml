@@ -24,7 +24,7 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXTreeTableView fx:id="_recordingList" layoutX="362.0" layoutY="102.0" prefHeight="218.0" prefWidth="168.0" />
+      <JFXTreeTableView fx:id="_recordinglist" layoutX="362.0" layoutY="102.0" prefHeight="218.0" prefWidth="168.0" />
       <JFXButton fx:id="_playRecordngButton" buttonType="RAISED" layoutX="362.0" layoutY="328.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="99.0" text="Play Recording" />
       <JFXButton fx:id="_saveButton" buttonType="RAISED" layoutX="461.0" layoutY="328.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="69.0" text="Save" />
       <JFXSlider fx:id="_volumnSlider" blockIncrement="1.0" layoutX="91.0" layoutY="174.0" onDragDetected="#volumnSliderDragged" prefHeight="14.0" prefWidth="168.0" value="30.0" />

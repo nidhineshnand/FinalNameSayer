@@ -22,6 +22,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * When _practiceAllButton is clicked
 	 */
+	@FXML
 	void practiceAllClicked() {
 		
 	}
@@ -29,6 +30,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * When _practiceSelectedButton is clicked
 	 */
+	@FXML
 	void practiceSelectedClicked() {
 		
 	}
@@ -36,6 +38,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * When _addToListButton is clicked
 	 */
+	@FXML
 	void addToListClicked() {
 		
 	}
@@ -43,6 +46,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * When _practiceButton is clicked
 	 */
+	@FXML
 	void practiceClicked() {
 		
 	}
@@ -50,6 +54,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * When _uploadButton is clicked
 	 */
+	@FXML
 	void uploadClicked() {
 		
 	}
