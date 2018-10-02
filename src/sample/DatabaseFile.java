@@ -115,4 +115,8 @@ public class DatabaseFile implements NameSayerFile {
     public String get_recordingName() {
         return _recordingName;
     }
+
+    public boolean is_badRating() {
+        return _badRating;
+    }
 }

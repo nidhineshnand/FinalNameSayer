@@ -1,5 +1,6 @@
 package sample;
 
+import javax.xml.crypto.Data;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -34,5 +35,31 @@ public class DatabaseFileList extends NameSayerFileList{
 
         }
     }
+
+    //This method takes input a database file name as a string and outputs the best file associated with that string name
+    //If no file is found with that name then a null value is returned
+    public DatabaseFile getDatabaseFileWithName(String fileName){
+        DatabaseFile cachedFile = null;
+
+        //Looping through all files
+        for(DatabaseFile file : _databaseFiles){
+
+            //Checking if files has the same name as the given
+            if (file.get_recordingName().equals(fileName)){
+
+                //Caching file so that if there are no files without a bad rating, the last file is given
+                cachedFile = file;
+
+                //Checking if file has bad rating
+                if(!file.is_badRating()){
+                    return file;
+                }
+            }
+        }
+
+        return cachedFile;
+    }
+
+
 
 }
