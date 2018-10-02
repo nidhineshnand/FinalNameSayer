@@ -88,6 +88,11 @@ public class PractiseFileList extends NameSayerFileList{
         }
     }
 
+    /**This method deletes a given practise file from the list*/
+    public void deletePractiseFile(ArrayList<PractiseFile> files){
+        _practiseFileList.removeAll(files);
+    }
+
 
 
 }
