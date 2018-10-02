@@ -15,9 +15,9 @@ public class UserRecordingFile implements NameSayerFile {
     private LocalDateTime _creationTime;
     private Process _process;
 
-    public UserRecordingFile(String pathToSave, String displayName){
+    public UserRecordingFile(String pathToSave, ArrayList<String> fileNames){
         _pathToSave = pathToSave;
-        _displayName = displayName;
+        _displayName = String.join(" ", fileNames);
         _filename = setFileName();
         _creationTime = LocalDateTime.now();
     }
