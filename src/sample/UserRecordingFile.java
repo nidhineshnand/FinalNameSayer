@@ -25,6 +25,7 @@ public class UserRecordingFile implements NameSayerFile {
     public UserRecordingFile(File file){
         _file = file;
         _filename = file.getName();
+        _displayName = extrapolateDisplayName();
         _creationTime = setDateTime();
     }
 
@@ -42,6 +43,11 @@ public class UserRecordingFile implements NameSayerFile {
         return LocalDateTime.parse(_file.getName().substring(5, 25), dateAndTimeFormatter);
     }
 
+    //This method gets the display name of a file when it is instantiated using a file
+    private String extrapolateDisplayName(){
+        String[] splitUserRecordingName = _filename.split("_");
+        return splitUserRecordingName[3].substring(0, splitUserRecordingName[3].length() - 4).replace("-", " ");
+    }
 
     /**Method that starts recording name when it is called*/
     public void startRecord(){
