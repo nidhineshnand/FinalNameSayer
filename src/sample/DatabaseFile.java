@@ -14,15 +14,17 @@ public class DatabaseFile implements NameSayerFile {
 
     private File _databaseFile;
     private String _savedName;
-    private String _recordingName;
+    private String _displayName;
     private LocalDateTime _dateAndTime;
     private boolean _badRating;
+    private String _ratingFilePath;
 
 
-    DatabaseFile(File databaseFile) {
+    DatabaseFile(File databaseFile, String ratingFilePath) {
         _databaseFile = databaseFile;
         setDateTimeAndName(_databaseFile);
-        getRating("./resources/ratings.txt");
+        _ratingFilePath = ratingFilePath;
+        getRating();
     }
 
 
@@ -37,7 +39,7 @@ public class DatabaseFile implements NameSayerFile {
         String[] splitDatabaseName = _savedName.split("_");
 
         //Getting fields from split name
-        _recordingName = splitDatabaseName[3].substring(0, splitDatabaseName[3].length() - 4);
+        _displayName = splitDatabaseName[3].substring(0, splitDatabaseName[3].length() - 4);
         _dateAndTime = getDateAndTime(splitDatabaseName[1], splitDatabaseName[2]);
     }
 
@@ -54,10 +56,10 @@ public class DatabaseFile implements NameSayerFile {
 
 
     //Checks if the file has been given a bad recording
-    private void getRating(String path) {
+    private void getRating() {
 
         //Loading file
-        File ratingFile = new File(path);
+        File ratingFile = new File(_ratingFilePath);
         boolean doesFileHaveRating = false;
         boolean firstLine = true;
 
@@ -87,10 +89,10 @@ public class DatabaseFile implements NameSayerFile {
 
 
     //This method sets the rating for this file as good as a general rating
-    public void setRatingBad(String path){
+    public void setRatingBad(){
 
         try {
-            Files.write(Paths.get(path), (_savedName + "\n").getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(_ratingFilePath), (_savedName + "\n").getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -113,11 +115,7 @@ public class DatabaseFile implements NameSayerFile {
 
     @Override
     public String get_displayName(){
-        return _recordingName;
-    }
-
-    public String get_recordingName() {
-        return _recordingName;
+        return _displayName;
     }
 
     public boolean is_badRating() {

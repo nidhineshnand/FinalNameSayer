@@ -77,14 +77,14 @@ public class PractiseFileList extends NameSayerFileList{
         boolean doesFileAlreadyExist = false;
         //Checking if a practise file with the same already exists
         for (PractiseFile file : _practiseFileList){
-            if (file.get_name().equals(practiseFile.get_name())){
+            if (file.get_displayName().equals(practiseFile.get_displayName())){
                 doesFileAlreadyExist = true;
             }
 
         }
         if(!doesFileAlreadyExist){
             _practiseFileList.add(practiseFile);
-            System.out.print(practiseFile.get_name() + "\n");
+            System.out.print(practiseFile.get_displayName() + "\n");
         }
     }
 

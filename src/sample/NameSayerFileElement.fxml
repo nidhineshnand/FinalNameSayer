@@ -7,14 +7,14 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane prefHeight="69.0" prefWidth="239.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NameSayerFileElementController">
+<AnchorPane prefHeight="69.0" prefWidth="239.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NameSayerFileElementController">
    <children>
-      <JFXCheckBox fx:id="_checkBox" checkedColor="#10439c" layoutX="20.0" layoutY="5.0" prefHeight="45.0" prefWidth="200.0" text="CheckBox">
+      <JFXCheckBox fx:id="_checkBox" checkedColor="#10439c" layoutX="20.0" layoutY="5.0" onAction="#isCheckboxTicked" prefHeight="45.0" prefWidth="200.0" text="CheckBox">
          <font>
             <Font size="15.0" />
          </font>
       </JFXCheckBox>
-      <CheckComboBox layoutX="150.0" layoutY="14.0" prefHeight="26.0" prefWidth="70.0" />
+      <CheckComboBox fx:id="_comboBox" layoutX="150.0" layoutY="14.0" prefHeight="26.0" prefWidth="70.0" />
       <Label fx:id="_badRatingText" layoutX="150.0" layoutY="45.0" prefHeight="20.0" prefWidth="76.0" text="Bad Quality" />
    </children>
    <cursor>

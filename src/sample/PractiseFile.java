@@ -36,7 +36,7 @@ public class PractiseFile implements NameSayerFile {
         ArrayList<String> fileNames = new ArrayList<>();
         //Getting the string to add to file
         for(DatabaseFile file: _filesToPlay){
-            fileNames.add(file.get_recordingName());
+            fileNames.add(file.get_displayName());
         }
 
         //Saving to file

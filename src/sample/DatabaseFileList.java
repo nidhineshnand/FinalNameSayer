@@ -29,7 +29,7 @@ public class DatabaseFileList extends NameSayerFileList{
 
         //Creating DatabaseFile objects
         for (File file : listOfFiles) {
-            DatabaseFile databaseFile = new DatabaseFile(file);
+            DatabaseFile databaseFile = new DatabaseFile(file, _ratingFilePath);
             _databaseFiles.add(databaseFile);
 
         }
@@ -44,7 +44,7 @@ public class DatabaseFileList extends NameSayerFileList{
         for(DatabaseFile file : _databaseFiles){
 
             //Checking if files has the same name as the given
-            if (file.get_recordingName().equalsIgnoreCase(fileName)){
+            if (file.get_displayName().equalsIgnoreCase(fileName)){
 
                 //Caching file so that if there are no files without a bad rating, the last file is given
                 cachedFile = file;
