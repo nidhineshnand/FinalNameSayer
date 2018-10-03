@@ -16,8 +16,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import sample.ControllerConnecter;
 
 public class SelectionSceneController extends Controller implements Initializable{
 	
@@ -38,6 +40,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	private ArrayList<String> _listOfNames;
 	private PracticeSceneController _practiceController;
 	private String _name;
+	private VBox _practiceFileList;
 	
 	// Methods
 	
@@ -45,6 +48,8 @@ public class SelectionSceneController extends Controller implements Initializabl
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		_listOfNames = new ArrayList<String>();
+		ControllerConnecter spine = new ControllerConnecter();
+		_practiceFileList = spine.populatePractiseFileForMainScene();
 	}
 	
 	/**

@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
@@ -69,12 +70,13 @@ public class PracticeSceneController extends Controller implements Initializable
 	private void populateTable() {
 		_recordingList = new TreeView();
 		TreeItem<String> item = new TreeItem<>("Names");
+		item.setExpanded(true);
 		_recordingList.setRoot(item);
 		for (String name:_listOfNames) {
 			TreeItem<String> nameOfItem = new TreeItem<>(name);
-			System.out.println(name);
 			item.getChildren().add(nameOfItem);
 		}
+		//_currentName.setText(_recordingList.select);
 	}
 	
 	/**
