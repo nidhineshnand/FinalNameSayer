@@ -28,6 +28,7 @@ public class UserRecordingFile implements NameSayerFile {
         _filename = setFileName();
         _creationTime = LocalDateTime.now();
         _displayName = setDisplayName();
+        _file = new File(_pathToSave + _filename);
         loadView();
     }
 
@@ -69,7 +70,7 @@ public class UserRecordingFile implements NameSayerFile {
     }
 
     /**Method that starts recording name when it is called*/
-    public void startRecord(){
+    public void startRecording(){
         try{
             ProcessBuilder builder = new ProcessBuilder("bash", "-c", "  ffmpeg -f alsa -ac 2 -i default -t 15 " + _pathToSave + _filename + " -loglevel quiet");
             _process = builder.start();

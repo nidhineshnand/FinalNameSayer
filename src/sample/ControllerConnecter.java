@@ -81,5 +81,28 @@ public class ControllerConnecter {
         practiseFileList.deletePractiseFile(practiseFileList.getSelectedPractiseFiles());
     }
 
-    /**This method deletes the selected UserRecordingFile recordings from the list
+    /**This method deletes the selected UserRecordingFile recordings from the user recordings list displayed in the main
+     * scene
+     */
+    public void deleteSelectedUserRecordingFiles(){
+        userRecordingFileList.deleteSelectedRecordings();
+    }
+
+    /**This method is called when the user presses the recording button. It takes the practise file associated with
+     * the recording as an input and a new UserRecordingFile object is outputted by this method.
+     * The method startRecording() should be invoked on the UserRecordingFile object to start recording. The method stopRecording()
+     * should be invoked on the object if the user wants to stop recording. If the user saves the file then the method
+     * saveUserRecordingFile(UserRecordingFile file) should be invoked from ControllerConnector. If the user chooses to delete the recording then
+     * the method deleteFile() should be invoked on the on the UserRecordingFile object.
+     */
+    public UserRecordingFile createNewUserRecordingFile(PractiseFile file){
+        return userRecordingFileList.createUserRecordingFile(file);
+    }
+
+    /**This method should be invoked when the user wants to save that particular recording. This method takes in a
+     * UserRecordingFile object as an input
+     */
+    public void addUserRecording(UserRecordingFile file){
+        userRecordingFileList.addUserRecordingToList(file);
+    }
 }

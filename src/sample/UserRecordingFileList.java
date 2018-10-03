@@ -66,7 +66,7 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
     //This method creates a UserRecording file and passes it to the front end for recording
-    public UserRecordingFile createPractiseFile(PractiseFile practiseFile){
+    public UserRecordingFile createUserRecordingFile(PractiseFile practiseFile){
         ArrayList<String> nameList = new ArrayList<>(Arrays.asList(practiseFile.get_displayName().split(" ")));
         return new UserRecordingFile(_pathToFiles, nameList);
     }
