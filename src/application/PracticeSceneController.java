@@ -27,7 +27,7 @@ import javafx.scene.text.TextAlignment;
 import java.applet.AudioClip;
 import sample.ControllerConnecter;
 
-public class PracticeSceneController extends Controller implements Initializable {
+public class PracticeSceneController extends Controller {
 	
 	// Fields
 	@FXML
@@ -53,17 +53,15 @@ public class PracticeSceneController extends Controller implements Initializable
 	@FXML
 	public Button _nextButton;
 	
-	private ArrayList<String> _listOfNames;
 	private int _counter = 0;
-	private ControllerConnecter _spine;
 	private double _currentVolume;
 	
 	// Methods
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		_spine = new ControllerConnecter();
+		super.initialize(location, resources);
 		_currentVolume = _volumeSlider.getValue();
 	}
 	
@@ -105,7 +103,6 @@ public class PracticeSceneController extends Controller implements Initializable
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("cannot play");
 		}
 	}
 	

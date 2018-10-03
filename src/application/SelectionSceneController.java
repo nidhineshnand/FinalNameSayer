@@ -39,20 +39,17 @@ public class SelectionSceneController extends Controller implements Initializabl
 	@FXML
 	public TextField _nameTextField;
 	
-	private ArrayList<String> _listOfNames;
 	private PracticeSceneController _practiceController;
 	private String _name;
 	private VBox _practiceFileList;
-	private ControllerConnecter _spine;
 	
 	// Methods
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		_listOfNames = new ArrayList<String>();
-		_spine = new ControllerConnecter();
-		_practiceFileList = _spine.populatePractiseFileForMainScene();
+		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
+		super.initialize(location, resources);
 	}
 	
 	/**
