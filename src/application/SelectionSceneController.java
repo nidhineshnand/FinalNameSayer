@@ -41,6 +41,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	private PracticeSceneController _practiceController;
 	private String _name;
 	private VBox _practiceFileList;
+	private ControllerConnecter _spine;
 	
 	// Methods
 	
@@ -48,8 +49,8 @@ public class SelectionSceneController extends Controller implements Initializabl
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		_listOfNames = new ArrayList<String>();
-		ControllerConnecter spine = new ControllerConnecter();
-		_practiceFileList = spine.populatePractiseFileForMainScene();
+		_spine = new ControllerConnecter();
+		_practiceFileList = _spine.populatePractiseFileForMainScene();
 	}
 	
 	/**
