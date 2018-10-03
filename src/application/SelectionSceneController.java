@@ -1,6 +1,7 @@
 package application;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
@@ -14,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -23,7 +25,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	@FXML
 	public Button _selectedButton;
 	@FXML
-	public Button _practiceAllButton;
+	public Button _practiceListButton;
 	@FXML
 	public Button _addToListButton;
 	@FXML
@@ -33,7 +35,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	@FXML
 	public TextField _nameTextField;
 	
-	private ObservableList<String> _listOfNames;
+	private ArrayList<String> _listOfNames;
 	private PracticeSceneController _practiceController;
 	private String _name;
 	
@@ -42,7 +44,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		_listOfNames = FXCollections.observableArrayList();
+		_listOfNames = new ArrayList<String>();
 	}
 	
 	/**
@@ -89,7 +91,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	 * When _practiceAllButton is clicked
 	 */
 	@FXML
-	void practiceAllClicked() {
+	void practiceListClicked() {
 		//openPracticeScene();
 	}
 	
@@ -128,7 +130,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	/**
 	 * Getters
 	 */
-	ObservableList<String> getListOfNames() {
+	ArrayList<String> getListOfNames() {
 		System.out.println(_listOfNames);
 		return _listOfNames;
 	}

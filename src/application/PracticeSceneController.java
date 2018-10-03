@@ -1,6 +1,7 @@
 package application;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -14,6 +15,8 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PracticeSceneController extends Controller implements Initializable {
@@ -32,7 +35,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	@FXML
 	public Button _recordButton;
 	@FXML
-	public TableView _recordingList;
+	public TreeView _recordingList;
 	@FXML
 	public Button _prevButton;
 	@FXML
@@ -42,7 +45,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	@FXML
 	public Button _nextButton;
 	
-	private ObservableList<String> _listOfNames;
+	private ArrayList<String> _listOfNames;
 	
 	// Methods
 	
@@ -54,7 +57,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	/**
 	 * To get names for the list
 	 */
-	void setNameList(ObservableList list) {
+	void setNameList(ArrayList<String> list) {
 		_listOfNames = list;
 		populateTable();
 	}
@@ -64,11 +67,14 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void populateTable() {
-		_recordingList = new TableView();
-		TableColumn col = new TableColumn("Practice List");
-		_recordingList.getColumns().add(col);
-		col.cellValueFactoryProperty();
-		_recordingList.refresh();
+		_recordingList = new TreeView();
+		TreeItem<String> item = new TreeItem<>("Names");
+		_recordingList.setRoot(item);
+		for (String name:_listOfNames) {
+			TreeItem<String> nameOfItem = new TreeItem<>(name);
+			System.out.println(name);
+			item.getChildren().add(nameOfItem);
+		}
 	}
 	
 	/**
