@@ -2,7 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import com.jfoenix.controls.JFXTreeView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -13,14 +13,14 @@
       <AnchorPane prefHeight="600.0" prefWidth="199.0" BorderPane.alignment="CENTER">
          <children>
             <JFXButton fx:id="_practiceListButton" buttonType="RAISED" layoutX="2.0" layoutY="556.0" onAction="#practiceListClicked" prefHeight="49.0" prefWidth="199.0" text="Practice All" />
-            <JFXTreeTableView layoutX="-1.0" layoutY="1.0" prefHeight="556.0" prefWidth="202.0" />
+            <JFXTreeView fx:id="_practiceList" layoutX="1.0" prefHeight="555.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
    </left>
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="735.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTextField fx:id="_nameTextField" layoutX="126.0" layoutY="169.0" prefHeight="68.0" prefWidth="408.0" promptText="John Doe">
+            <JFXTextField fx:id="_nameTextField" layoutX="126.0" layoutY="169.0" onAction="#searching" prefHeight="68.0" prefWidth="408.0" promptText="John Doe">
                <font>
                   <Font size="24.0" />
                </font></JFXTextField>

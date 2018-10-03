@@ -16,16 +16,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.ControllerConnecter;
+import sample.PractiseFile;
 
 public class SelectionSceneController extends Controller implements Initializable{
 	
 	// Fields
 	@FXML
-	public Button _selectedButton;
+	public TreeView _practiceList;
 	@FXML
 	public Button _practiceListButton;
 	@FXML
@@ -125,6 +127,16 @@ public class SelectionSceneController extends Controller implements Initializabl
 	@FXML
 	void uploadClicked() {
 		
+	}
+	
+	/**
+	 * When the user is typing on _nameTextField
+	 */
+	@FXML
+	void searching() {
+		ArrayList<String> namesNotFound = new ArrayList<String>();
+		PractiseFile f = _spine.searchButtonPressed(_nameTextField.getText(), namesNotFound);
+		System.out.println(f);
 	}
 	
 	private void resetListOfNames() {
