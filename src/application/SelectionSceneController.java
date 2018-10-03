@@ -54,23 +54,23 @@ public class SelectionSceneController extends Controller implements Initializabl
 		} else {
 			_name = _nameTextField.getText();
 			_listOfNames.add(_name);
-			openPracticeScene(_listOfNames);
+			openPracticeScene();
 		}
 	}
 	
 	/**
 	 * opens PracticeScene
 	 */
-	private void openPracticeScene(ObservableList<String> listOfNames) {
+	private void openPracticeScene() {
 		try {
-			start(listOfNames);
+			start();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public void start(ObservableList<String> listOfNames) throws Exception {
+	public void start() throws Exception {
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(Main.primaryStage);

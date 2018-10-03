@@ -41,15 +41,16 @@ public class PracticeSceneController extends Controller implements Initializable
 	public Button _nextButton;
 	
 	private ObservableList<String> _listOfNames;
-	private Controller _selectionSceneController;
+	private SelectionSceneController _selectionSceneController;
 	
 	// Methods
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		FXMLLoader loader = new FXMLLoader();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("SelectionScene.fxml"));
 		_selectionSceneController = loader.getController();
+		_listOfNames = _selectionSceneController.getListOfNames();
 		populateTable();
 	}
 	
