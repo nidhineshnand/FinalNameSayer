@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -19,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import sample.ControllerConnecter;
 
 public class PracticeSceneController extends Controller implements Initializable {
 	
@@ -48,12 +50,14 @@ public class PracticeSceneController extends Controller implements Initializable
 	
 	private ArrayList<String> _listOfNames;
 	private int _counter = 0;
+	private ControllerConnecter _spine;
 	
 	// Methods
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		_spine = new ControllerConnecter();
 	}
 	
 	/**
@@ -78,6 +82,10 @@ public class PracticeSceneController extends Controller implements Initializable
 			item.getChildren().add(nameOfItem);
 		}
 		_currentName.setText(_listOfNames.get(_counter));
+		if (_listOfNames.size() <= 1) {
+			_nextButton.setVisible(false);
+			_prevButton.setVisible(false);
+		}
 	}
 	
 	/**
@@ -117,13 +125,9 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@FXML
 	void prevClicked() {
-		if (_listOfNames.size() <= 1) {
-			_nextButton.setVisible(false);
-		} else {
-			_counter--;
-			_counter = _counter % _listOfNames.size();
-			_currentName.setText(_listOfNames.get(_counter));
-		}
+		_counter--;
+		_counter = _counter % _listOfNames.size();
+		_currentName.setText(_listOfNames.get(_counter));
 	}
 	
 	/**
@@ -132,6 +136,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	@FXML
 	void playRecordingClicked() {
 		String name = _currentName.getText();
+		File file = new File(name);
 	}
 	
 	/**
@@ -147,13 +152,9 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@FXML
 	void nextClicked() {
-		if (_listOfNames.size() <= 1) {
-			_nextButton.setVisible(false);
-		} else {
-			_counter++;
-			_counter = _counter % _listOfNames.size();
-			_currentName.setText(_listOfNames.get(_counter));
-		}
+		_counter++;
+		_counter = _counter % _listOfNames.size();
+		_currentName.setText(_listOfNames.get(_counter));
 	}
 
 	
