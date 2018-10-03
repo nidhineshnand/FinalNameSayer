@@ -53,13 +53,26 @@ public class UserRecordingFileList extends NameSayerFileList {
     public void setUserRecordingsAssociatedWith(PractiseFile file){
         //Looping through all local files to find file that is associated with this practise file
         for(UserRecordingFile userFile : _userRecordingFilesList){
-           // if (file)
+           if (file.get_displayName().equalsIgnoreCase(userFile.get_identity())){
+               _associatedUserRecordingFiles.add(userFile);
+           }
         }
     }
 
 
-    /**This method returns the list of userRecordingFiles that are currently selected*/
+    /**This method returns the list of userRecordingFiles that are currently selected in the main scene. If no recordings
+     * are selected then an empty list is returned*/
+    public ArrayList<UserRecordingFile> getSelectedUserRecording(){
+        ArrayList<UserRecordingFile> list = new ArrayList<>();
 
+        //Loops through all user recordings to find the ones that have been selected
+        for(UserRecordingFile file : _userRecordingFilesList){
+            if (file.get_controller().get_isSelected()){
+                list.add(file);
+            }
+        }
+        return list;
+    }
 
 
 

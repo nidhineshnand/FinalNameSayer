@@ -14,9 +14,9 @@ public class NameSayerFileElementController {
     public Label _badRatingText;
     public CheckComboBox<DatabaseFile> _comboBox;
 
-    NameSayerFile _fileToDisplay;
-    ArrayList<DatabaseFile> _databaseFiles = new ArrayList<>();
-    Boolean _isSelected = false;
+    private NameSayerFile _fileToDisplay;
+    private ArrayList<DatabaseFile> _databaseFiles = new ArrayList<>();
+    private Boolean _isSelected = false;
 
     //This method takes objects from the parent class and sets it in the controller as fields
     public void setup(NameSayerFile fileToDisplay ,ArrayList<DatabaseFile> databaseFiles){
@@ -38,7 +38,7 @@ public class NameSayerFileElementController {
     }
 
     //This method gets called whenever the checkbox is ticked
-    public void isCheckboxTicked(){
+    private void isCheckboxTicked(){
         //If checkbox it ticked then the field _isSelected is set to true
             _isSelected = _checkBox.isSelected();
 
@@ -61,5 +61,7 @@ public class NameSayerFileElementController {
         });
     }
 
-
+    public Boolean get_isSelected() {
+        return _isSelected;
+    }
 }

@@ -1,5 +1,6 @@
 package sample;
 
+import application.Controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
@@ -19,6 +20,7 @@ public class UserRecordingFile implements NameSayerFile {
     private Process _process;
     private Pane _fileView;
     private String _identity;
+    private NameSayerFileElementController _controller;
 
     public UserRecordingFile(String pathToSave, ArrayList<String> fileNames){
         _pathToSave = pathToSave;
@@ -26,6 +28,7 @@ public class UserRecordingFile implements NameSayerFile {
         _filename = setFileName();
         _creationTime = LocalDateTime.now();
         _displayName = setDisplayName();
+        loadView();
     }
 
     public UserRecordingFile(File file){
@@ -34,6 +37,7 @@ public class UserRecordingFile implements NameSayerFile {
         _identity = extrapolateIdentity();
         _creationTime = setDateTime();
         _displayName = setDisplayName();
+        loadView();
     }
 
     //This method sets display name for UserRecordingFile
@@ -91,8 +95,8 @@ public class UserRecordingFile implements NameSayerFile {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/NameSayerFileElement.fxml"));
             _fileView =  fxmlLoader.load();
             //Setting up controller
-            NameSayerFileElementController controller = fxmlLoader.getController();
-            controller.setup(this, null);
+            _controller = fxmlLoader.getController();
+            _controller.setup(this, null);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -114,5 +118,14 @@ public class UserRecordingFile implements NameSayerFile {
     @Override
     public String get_displayName() {
         return _displayName;
+    }
+
+
+    public String get_identity() {
+        return _identity;
+    }
+
+    public NameSayerFileElementController get_controller() {
+        return _controller;
     }
 }

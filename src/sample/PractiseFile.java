@@ -16,6 +16,7 @@ public class PractiseFile implements NameSayerFile {
     private String _pathToWrite;
     private String _displayName;
     private Pane _fileView;
+    private NameSayerFileElementController _controller;
 
     public PractiseFile(ArrayList<DatabaseFile> filesToPlay, String pathToWrite, ArrayList<String> fileNames){
         _filesToPlay = filesToPlay;
@@ -59,8 +60,8 @@ public class PractiseFile implements NameSayerFile {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/NameSayerFileElement.fxml"));
             _fileView =  fxmlLoader.load();
             //Setting up controller
-            NameSayerFileElementController controller = fxmlLoader.getController();
-            controller.setup(this, _filesToPlay);
+            _controller = fxmlLoader.getController();
+            _controller.setup(this, _filesToPlay);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,5 +76,9 @@ public class PractiseFile implements NameSayerFile {
     @Override
     public String get_displayName() {
         return _displayName;
+    }
+
+    public NameSayerFileElementController get_controller() {
+        return _controller;
     }
 }
