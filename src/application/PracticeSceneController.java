@@ -1,6 +1,8 @@
 package application;
 
+import java.applet.Applet;
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -20,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import java.applet.AudioClip;
 import sample.ControllerConnecter;
 
 public class PracticeSceneController extends Controller implements Initializable {
@@ -30,7 +33,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	@FXML
 	public Button _playAllButton;
 	@FXML
-	public Slider _volumnSlider;
+	public Slider _volumeSlider;
 	@FXML
 	public Slider _micSensitivitySlider;
 	@FXML
@@ -51,6 +54,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	private ArrayList<String> _listOfNames;
 	private int _counter = 0;
 	private ControllerConnecter _spine;
+	private int _currentVolume;
 	
 	// Methods
 	
@@ -58,6 +62,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		_spine = new ControllerConnecter();
+		_currentVolume = (int) _volumeSlider.getValue();
 	}
 	
 	/**
@@ -93,15 +98,21 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@FXML
 	void playAllClicked() {
-		
+		try {
+			playItem(_listOfNames.get(_counter));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("cannot play");
+		}
 	}
 	
 	/**
 	 * When _volumnSlider is dragged
 	 */
 	@FXML
-	void volumnSliderDragged() {
-		
+	void volumeSliderDragged() {
+		_currentVolume = (int) _volumeSlider.getValue();
 	}
 	
 	/**
@@ -157,5 +168,19 @@ public class PracticeSceneController extends Controller implements Initializable
 		_currentName.setText(_listOfNames.get(_counter));
 	}
 
-	
+	/**
+	 * When there is a file that needs playing
+	 */
+	private void playItem(String name) throws InterruptedException {
+		File audioFile = new File(name);
+		URL url;
+		try {
+			url = audioFile.toURI().toURL();
+			AudioClip ac = Applet.newAudioClip(url);
+			ac.play();
+			Thread.sleep(3000);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
 }
