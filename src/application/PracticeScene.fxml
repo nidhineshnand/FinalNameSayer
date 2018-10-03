@@ -1,39 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
-      <Label layoutX="91.0" layoutY="34.0" prefHeight="85.0" prefWidth="218.0" text="Practice Names">
+      <Label fx:id="_currentName" layoutX="68.0" layoutY="72.0" prefHeight="112.0" prefWidth="334.0" text="Practice Names" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="_playAllButton" buttonType="RAISED" layoutX="107.0" layoutY="171.0" onAction="#playAllClicked" prefHeight="84.0" prefWidth="255.0" text="Play">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="_recordButton" buttonType="RAISED" layoutX="586.0" layoutY="72.0" onAction="#recordClicked" prefHeight="36.0" prefWidth="168.0" text="Record">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </JFXButton>
+      <JFXTreeTableView fx:id="_recordinglist" layoutX="535.0" layoutY="150.0" prefHeight="330.0" prefWidth="270.0" />
+      <JFXButton fx:id="_playRecordngButton" buttonType="RAISED" layoutX="536.0" layoutY="512.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play Recording">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="_saveButton" buttonType="RAISED" layoutX="684.0" layoutY="512.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="69.0" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+      <JFXSlider fx:id="_volumnSlider" blockIncrement="1.0" layoutX="151.0" layoutY="279.0" onDragDetected="#volumnSliderDragged" prefHeight="14.0" prefWidth="168.0" value="30.0" />
+      <JFXSlider fx:id="_micSensitivitySlider" layoutX="151.0" layoutY="448.0" onDragDetected="#micSensitivityDragged" prefHeight="14.0" prefWidth="168.0" value="40.0" />
+      <JFXButton fx:id="_prevButton" buttonType="RAISED" layoutX="415.0" layoutY="512.0" onAction="#prevClicked" prefHeight="36.0" prefWidth="85.0" text="Previous">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+      <Label layoutX="43.0" layoutY="388.0" prefHeight="36.0" prefWidth="382.0" text="Microphone Volume and sensitivity">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="_playAllButton" buttonType="RAISED" layoutX="93.0" layoutY="120.0" onAction="#playAllClicked" prefHeight="36.0" prefWidth="168.0" text="Play">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="_recordButton" buttonType="RAISED" layoutX="362.0" layoutY="59.0" onAction="#recordClicked" prefHeight="36.0" prefWidth="168.0" text="Record">
+      <JFXButton fx:id="_nextButton" buttonType="RAISED" layoutX="762.0" layoutY="506.0" onAction="#nextClicked" prefHeight="47.0" prefWidth="99.0" text="Next">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXTreeTableView fx:id="_recordinglist" layoutX="362.0" layoutY="102.0" prefHeight="218.0" prefWidth="168.0" />
-      <JFXButton fx:id="_playRecordngButton" buttonType="RAISED" layoutX="362.0" layoutY="328.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="99.0" text="Play Recording" />
-      <JFXButton fx:id="_saveButton" buttonType="RAISED" layoutX="461.0" layoutY="328.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="69.0" text="Save" />
-      <JFXSlider fx:id="_volumnSlider" blockIncrement="1.0" layoutX="91.0" layoutY="174.0" onDragDetected="#volumnSliderDragged" prefHeight="14.0" prefWidth="168.0" value="30.0" />
-      <JFXSlider fx:id="_micSensitivitySlider" layoutX="91.0" layoutY="282.0" onDragDetected="#micSensitivityDragged" prefHeight="14.0" prefWidth="168.0" value="40.0" />
-      <JFXButton fx:id="_backButton" buttonType="RAISED" layoutX="91.0" layoutY="346.0" onAction="#backClicked" prefHeight="36.0" prefWidth="85.0" text="Back" />
-      <Label layoutX="62.0" layoutY="235.0" prefHeight="36.0" prefWidth="226.0" text="Microphone Volume and sensitivity">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
+      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="134.0" layoutY="526.0" />
    </children>
 </AnchorPane>
