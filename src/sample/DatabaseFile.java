@@ -93,11 +93,15 @@ public class DatabaseFile implements NameSayerFile {
 
     //This method sets the rating for this file as good as a general rating
     public void setRatingBad(){
+        //Getting rating to see if it has already not been marked
+        getRating();
 
-        try {
-            Files.write(Paths.get(_ratingFilePath), (_savedName + "\n").getBytes(), StandardOpenOption.APPEND);
-        }catch (IOException e) {
-            e.printStackTrace();
+        if (!_badRating) {
+            try {
+                Files.write(Paths.get(_ratingFilePath), (_savedName + "\n").getBytes(), StandardOpenOption.APPEND);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
