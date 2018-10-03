@@ -75,6 +75,19 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
 
+    /**This method returns the list of userRecordingFiles that are currently selected in the practise scene. If no recordings
+     * are selected then an empty list is returned*/
+    public ArrayList<UserRecordingFile> getSelectedUserRecordingInPractiseScene(){
+        ArrayList<UserRecordingFile> list = new ArrayList<>();
+
+        //Loops through all user recordings to find the ones that have been selected
+        for(UserRecordingFile file : _associatedUserRecordingFiles){
+            if (file.get_controller().get_isSelected()){
+                list.add(file);
+            }
+        }
+        return list;
+    }
 
 
 }
