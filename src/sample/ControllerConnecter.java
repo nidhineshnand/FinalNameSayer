@@ -2,6 +2,7 @@ package sample;
 
 import javafx.scene.layout.VBox;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class ControllerConnecter {
@@ -70,6 +71,10 @@ public class ControllerConnecter {
         return userRecordingFileList.getSelectedUserRecordingInPractiseScene();
     }
 
+    /**This method takes in a NameSayerFile object and it outputs a file that can be used to play*/
+    public File getPlayableFileFor(NameSayerFile file){
+        return databaseFileList.getFileToPlay(file);
+    }
 
 
 }
