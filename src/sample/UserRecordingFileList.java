@@ -5,13 +5,18 @@ import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import static java.util.Arrays.asList;
 
 public class UserRecordingFileList extends NameSayerFileList {
 
     ObservableList<UserRecordingFile> _userRecordingFilesList = FXCollections.observableArrayList();
     ObservableList<UserRecordingFile> _associatedUserRecordingFiles = FXCollections.observableArrayList();
     String _pathToFiles;
+    VBox _userRecordingFileListVBox = new VBox();
 
     public UserRecordingFileList(String pathToFiles){
         _pathToFiles = pathToFiles;
@@ -38,9 +43,10 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
 
+
     //This method get files to paint for the scene
-    public VBox getFilesForMainScene(){
-        return getFilesForScene(_userRecordingFilesList);
+    private void getFilesForMainScene(){
+        _userRecordingFileListVBox = getFilesForScene(_userRecordingFilesList);
     }
 
     //This method get files to paint for the practise scene
@@ -49,6 +55,22 @@ public class UserRecordingFileList extends NameSayerFileList {
         return getFilesForScene(_associatedUserRecordingFiles);
     }
 
+    //This method deletes the selected recordings on the main page
+    public void deleteSelectedRecordings(){
+        _userRecordingFilesList.removeAll(getSelectedUserRecording());
+        getFilesForMainScene();
+    }
+
+    //This method creates a UserRecording file and passes it to the front end for recording
+    public UserRecordingFile createPractiseFile(PractiseFile practiseFile){
+        ArrayList<String> nameList = new ArrayList<>(Arrays.asList(practiseFile.get_displayName().split(" ")));
+        return new UserRecordingFile(_pathToFiles, nameList);
+    }
+
+    //Adds a user recording object to the list if a recording is created
+    public void addUserRecordingToList(UserRecordingFile file){
+        _userRecordingFilesList.add(file);
+    }
 
     //Method finds all the user recording files that are associated with a particular practise file
     public void setUserRecordingsAssociatedWith(PractiseFile file){
@@ -90,5 +112,8 @@ public class UserRecordingFileList extends NameSayerFileList {
         return list;
     }
 
-
+    public VBox get_userRecordingFileListVBox() {
+        getFilesForMainScene();
+        return _userRecordingFileListVBox;
+    }
 }
