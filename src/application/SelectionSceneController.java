@@ -34,7 +34,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	public TextField _nameTextField;
 	
 	private ObservableList<String> _listOfNames;
-	
+	private PracticeSceneController _practiceController;
 	private String _name;
 	
 	// Methods
@@ -49,7 +49,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	 * gets the current name inserted into 
 	 */
 	private void getName() {
-		if (_nameTextField.equals("")) {
+		if (_nameTextField.getText().equals("")) {
 			JOptionPane.showMessageDialog(null, "Please insert a Name");
 		} else {
 			_name = _nameTextField.getText();
@@ -71,10 +71,13 @@ public class SelectionSceneController extends Controller implements Initializabl
 	}
 	
 	public void start() throws Exception {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
+		Parent root = loader.load();
+		_practiceController = loader.getController();
+		_practiceController.setNameList(_listOfNames);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(Main.primaryStage);
-		Parent root = FXMLLoader.load(getClass().getResource("PracticeScene.fxml"));
         secondaryStage.setTitle("NameSayer");
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
@@ -126,6 +129,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 	 * Getters
 	 */
 	ObservableList<String> getListOfNames() {
+		System.out.println(_listOfNames);
 		return _listOfNames;
 	}
 }

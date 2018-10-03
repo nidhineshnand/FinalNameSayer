@@ -3,6 +3,7 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PracticeSceneController extends Controller implements Initializable {
 	
@@ -41,26 +43,32 @@ public class PracticeSceneController extends Controller implements Initializable
 	public Button _nextButton;
 	
 	private ObservableList<String> _listOfNames;
-	private SelectionSceneController _selectionSceneController;
 	
 	// Methods
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("SelectionScene.fxml"));
-		_selectionSceneController = loader.getController();
-		_listOfNames = _selectionSceneController.getListOfNames();
+	}
+	
+	/**
+	 * To get names for the list
+	 */
+	void setNameList(ObservableList list) {
+		_listOfNames = list;
 		populateTable();
 	}
 	
 	/**
 	 * populates the TableView _recordingList
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void populateTable() {
-		_recordingList.setEditable(false);
-		_recordingList.getColumns().add(new TableColumn());
+		_recordingList = new TableView();
+		TableColumn col = new TableColumn("Practice List");
+		_recordingList.getColumns().add(col);
+		col.cellValueFactoryProperty();
+		_recordingList.refresh();
 	}
 	
 	/**
