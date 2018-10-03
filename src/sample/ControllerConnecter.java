@@ -76,5 +76,10 @@ public class ControllerConnecter {
         return databaseFileList.getFileToPlay(file);
     }
 
+    /**This method deletes the selected PractiseFiles from the list*/
+    public void deleteSelectedPractiseFiles(){
+        practiseFileList.deletePractiseFile(practiseFileList.getSelectedPractiseFiles());
+    }
+
 
 }

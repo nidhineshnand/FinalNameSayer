@@ -87,6 +87,10 @@ public class UserRecordingFile implements NameSayerFile {
         _process.destroy();
     }
 
+    //Method deletes the UserRecordingFile from the folder
+    public void deleteFile(){
+        _file.delete();
+    }
 
     //Loads a FXML pane that will be used to display the file on the scene
     private void loadView(){
