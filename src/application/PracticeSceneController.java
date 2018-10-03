@@ -47,6 +47,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	public Button _nextButton;
 	
 	private ArrayList<String> _listOfNames;
+	private int _counter = 0;
 	
 	// Methods
 	
@@ -76,7 +77,7 @@ public class PracticeSceneController extends Controller implements Initializable
 			TreeItem<String> nameOfItem = new TreeItem<>(name);
 			item.getChildren().add(nameOfItem);
 		}
-		//_currentName.setText(_recordingList.select);
+		_currentName.setText(_listOfNames.get(_counter));
 	}
 	
 	/**
@@ -116,7 +117,13 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@FXML
 	void prevClicked() {
-		
+		if (_listOfNames.size() <= 1) {
+			_nextButton.setVisible(false);
+		} else {
+			_counter--;
+			_counter = _counter % _listOfNames.size();
+			_currentName.setText(_listOfNames.get(_counter));
+		}
 	}
 	
 	/**
@@ -124,7 +131,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@FXML
 	void playRecordingClicked() {
-		
+		String name = _currentName.getText();
 	}
 	
 	/**
@@ -140,7 +147,13 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@FXML
 	void nextClicked() {
-		
+		if (_listOfNames.size() <= 1) {
+			_nextButton.setVisible(false);
+		} else {
+			_counter++;
+			_counter = _counter % _listOfNames.size();
+			_currentName.setText(_listOfNames.get(_counter));
+		}
 	}
 
 	

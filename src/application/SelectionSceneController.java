@@ -101,14 +101,6 @@ public class SelectionSceneController extends Controller implements Initializabl
 	}
 	
 	/**
-	 * When _practiceSelectedButton is clicked
-	 */
-	@FXML
-	void practiceSelectedClicked() {
-		//openPracticeScene();
-	}
-	
-	/**
 	 * When _addToListButton is clicked
 	 */
 	@FXML
