@@ -81,5 +81,5 @@ public class ControllerConnecter {
         practiseFileList.deletePractiseFile(practiseFileList.getSelectedPractiseFiles());
     }
 
-
+    /**This method deletes the selected UserRecordingFile recordings from the list
 }

@@ -57,6 +57,10 @@ public class UserRecordingFileList extends NameSayerFileList {
 
     //This method deletes the selected recordings on the main page
     public void deleteSelectedRecordings(){
+        //Deleting files from system
+        for(UserRecordingFile recordingFile : getSelectedUserRecording()){
+            recordingFile.deleteFile();
+        }
         _userRecordingFilesList.removeAll(getSelectedUserRecording());
         getFilesForMainScene();
     }
@@ -70,6 +74,7 @@ public class UserRecordingFileList extends NameSayerFileList {
     //Adds a user recording object to the list if a recording is created
     public void addUserRecordingToList(UserRecordingFile file){
         _userRecordingFilesList.add(file);
+        getFilesForMainScene();
     }
 
     //Method finds all the user recording files that are associated with a particular practise file
