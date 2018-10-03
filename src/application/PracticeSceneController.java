@@ -22,6 +22,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.TextAlignment;
+
 import java.applet.AudioClip;
 import sample.ControllerConnecter;
 
@@ -54,7 +56,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	private ArrayList<String> _listOfNames;
 	private int _counter = 0;
 	private ControllerConnecter _spine;
-	private int _currentVolume;
+	private double _currentVolume;
 	
 	// Methods
 	
@@ -62,7 +64,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		_spine = new ControllerConnecter();
-		_currentVolume = (int) _volumeSlider.getValue();
+		_currentVolume = _volumeSlider.getValue();
 	}
 	
 	/**
@@ -86,7 +88,7 @@ public class PracticeSceneController extends Controller implements Initializable
 			TreeItem<String> nameOfItem = new TreeItem<>(name);
 			item.getChildren().add(nameOfItem);
 		}
-		_currentName.setText(_listOfNames.get(_counter));
+		updateCurrentName();
 		if (_listOfNames.size() <= 1) {
 			_nextButton.setVisible(false);
 			_prevButton.setVisible(false);
@@ -112,7 +114,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	 */
 	@FXML
 	void volumeSliderDragged() {
-		_currentVolume = (int) _volumeSlider.getValue();
+		_currentVolume = _volumeSlider.getValue();
 	}
 	
 	/**
@@ -138,7 +140,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	void prevClicked() {
 		_counter--;
 		_counter = _counter % _listOfNames.size();
-		_currentName.setText(_listOfNames.get(_counter));
+		updateCurrentName();
 	}
 	
 	/**
@@ -165,7 +167,15 @@ public class PracticeSceneController extends Controller implements Initializable
 	void nextClicked() {
 		_counter++;
 		_counter = _counter % _listOfNames.size();
+		updateCurrentName();
+	}
+	
+	/**
+	 * updating _currentName
+	 */
+	private void updateCurrentName() {
 		_currentName.setText(_listOfNames.get(_counter));
+		_currentName.setTextAlignment(TextAlignment.CENTER);
 	}
 
 	/**
