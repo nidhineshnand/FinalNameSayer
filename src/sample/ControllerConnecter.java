@@ -15,7 +15,7 @@ public class ControllerConnecter {
 
     /**This method outputs a VBox that contains the PractiseFile objects that are loaded by the user*/
     public VBox populatePractiseFileForMainScene(){
-        return practiseFileList.getFilesForMainScene();
+        return practiseFileList.get_practiseFileListVbox();
     }
 
     /**This method outputs a VBox that contains the LocalFile objects that are previously recorded by the user. This is

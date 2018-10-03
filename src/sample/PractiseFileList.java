@@ -14,6 +14,7 @@ public class PractiseFileList extends NameSayerFileList{
 
     String _pathToWrite;
     ObservableList<PractiseFile> _practiseFileList = FXCollections.observableArrayList();
+    VBox _practiseFileListVbox = new VBox();
 
     public PractiseFileList(String pathToWrite){
         _pathToWrite = pathToWrite;
@@ -154,16 +155,18 @@ public class PractiseFileList extends NameSayerFileList{
         if(!doesFileAlreadyExist){
             _practiseFileList.add(practiseFile);
         }
+        getFilesForMainScene();
     }
 
     /**This method deletes a given practise file from the list*/
     public void deletePractiseFile(ArrayList<PractiseFile> files){
         _practiseFileList.removeAll(files);
+        getFilesForMainScene();
     }
 
     //This method get files to paint for the scene
-    public VBox getFilesForMainScene(){
-        return getFilesForScene(_practiseFileList);
+    private void getFilesForMainScene(){
+        _practiseFileListVbox = getFilesForScene(_practiseFileList);
     }
 
     /**This method returns the list of practiseFiles that are currently selected in the main scene. If no recordings
@@ -180,5 +183,8 @@ public class PractiseFileList extends NameSayerFileList{
         return list;
     }
 
-
+    public VBox get_practiseFileListVbox() {
+        getFilesForMainScene();
+        return _practiseFileListVbox;
+    }
 }
