@@ -98,4 +98,19 @@ public class PractiseFileList extends NameSayerFileList{
         getFilesForScene(_practiseFileList);
     }
 
+    /**This method returns the list of practiseFiles that are currently selected in the main scene. If no recordings
+     * are selected then an empty list is returned*/
+    public ArrayList<PractiseFile> getSelectedPractiseFiles(){
+        ArrayList<PractiseFile> list = new ArrayList<>();
+
+        //Loops through all user recordings to find the ones that have been selected
+        for(PractiseFile file : _practiseFileList){
+            if (file.get_controller().get_isSelected()){
+                list.add(file);
+            }
+        }
+        return list;
+    }
+
+
 }
