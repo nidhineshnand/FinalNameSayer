@@ -50,7 +50,7 @@ public class PractiseFileList extends NameSayerFileList{
 
 
     /**Method takes input a string and DatabaseFileList and returns PractiseFile object if it can associate it to one.
-     * Otherwise a null is returned
+     * otherwise a null is returned
      */
     public PractiseFile searchGivenName(String line, DatabaseFileList databaseFileList, ArrayList<String> namesNotFound) {
 
@@ -153,7 +153,6 @@ public class PractiseFileList extends NameSayerFileList{
         }
         if(!doesFileAlreadyExist){
             _practiseFileList.add(practiseFile);
-            System.out.print(practiseFile.get_displayName() + "\n");
         }
     }
 
