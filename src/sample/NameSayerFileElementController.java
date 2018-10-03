@@ -2,6 +2,7 @@ package sample;
 
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.collections.ListChangeListener;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.controlsfx.control.CheckComboBox;
 
@@ -38,6 +39,7 @@ public class NameSayerFileElementController {
     }
 
     //This method gets called whenever the checkbox is ticked
+    @FXML
     private void isCheckboxTicked(){
         //If checkbox it ticked then the field _isSelected is set to true
             _isSelected = _checkBox.isSelected();

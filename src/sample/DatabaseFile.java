@@ -130,4 +130,10 @@ public class DatabaseFile implements NameSayerFile {
     public boolean is_badRating() {
         return _badRating;
     }
+
+    @Override
+    public String toString() {
+        return  _displayName ;
+
+    }
 }
