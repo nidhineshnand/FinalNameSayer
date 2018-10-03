@@ -45,10 +45,6 @@ public class SelectionSceneController extends Controller implements Initializabl
 		_listOfNames = FXCollections.observableArrayList();
 	}
 	
-	public ObservableList<String> getListOfNames() {
-		return _listOfNames;
-	}
-	
 	/**
 	 * gets the current name inserted into 
 	 */
@@ -78,7 +74,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(Main.primaryStage);
-		Parent root = FXMLLoader.load(getClass().getResource("application/PracticeScene.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("PracticeScene.fxml"));
         secondaryStage.setTitle("NameSayer");
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
@@ -126,5 +122,10 @@ public class SelectionSceneController extends Controller implements Initializabl
 		
 	}
 
-	
+	/**
+	 * Getters
+	 */
+	ObservableList<String> getListOfNames() {
+		return _listOfNames;
+	}
 }

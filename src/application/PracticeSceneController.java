@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -47,6 +48,7 @@ public class PracticeSceneController extends Controller implements Initializable
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader();
 		_selectionSceneController = loader.getController();
 		populateTable();
 	}
