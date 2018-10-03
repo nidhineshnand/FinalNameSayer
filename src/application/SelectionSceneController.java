@@ -90,6 +90,8 @@ public class SelectionSceneController extends Controller implements Initializabl
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
         secondaryStage.show();
+        
+        resetListOfNames();
 	}
 	
 	// Action listeners 
