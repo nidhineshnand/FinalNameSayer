@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.layout.VBox;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -38,14 +39,14 @@ public class UserRecordingFileList extends NameSayerFileList {
 
 
     //This method get files to paint for the scene
-    public void getFilesForMainScene(){
-        getFilesForScene(_userRecordingFilesList);
+    public VBox getFilesForMainScene(){
+        return getFilesForScene(_userRecordingFilesList);
     }
 
     //This method get files to paint for the practise scene
-    public void getFilesForPractiseScene(PractiseFile file){
+    public VBox getFilesForPractiseScene(PractiseFile file){
         setUserRecordingsAssociatedWith(file);
-        getFilesForScene(_associatedUserRecordingFiles);
+        return getFilesForScene(_associatedUserRecordingFiles);
     }
 
 

@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.layout.VBox;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -94,8 +95,8 @@ public class PractiseFileList extends NameSayerFileList{
     }
 
     //This method get files to paint for the scene
-    public void getFilesForMainScene(){
-        getFilesForScene(_practiseFileList);
+    public VBox getFilesForMainScene(){
+        return getFilesForScene(_practiseFileList);
     }
 
     /**This method returns the list of practiseFiles that are currently selected in the main scene. If no recordings
