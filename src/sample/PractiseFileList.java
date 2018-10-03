@@ -93,6 +93,9 @@ public class PractiseFileList extends NameSayerFileList{
         _practiseFileList.removeAll(files);
     }
 
-
+    //This method get files to paint for the scene
+    public void getFilesForScene(){
+        getFilesForScene(_practiseFileList);
+    }
 
 }

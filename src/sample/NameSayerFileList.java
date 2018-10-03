@@ -1,5 +1,8 @@
 package sample;
 
+import javafx.collections.ObservableList;
+import javafx.scene.layout.VBox;
+
 import javax.naming.Name;
 import java.io.File;
 import java.io.IOException;
@@ -115,4 +118,21 @@ public abstract class NameSayerFileList {
             e.printStackTrace();
         }
     }
+
+    /**This method takes in a list of NamesSayerFile objects and creates a vbox that holds the objects which will be used
+     * to paint the files onscreen*/
+    public VBox getFilesForScene(ObservableList<? extends NameSayerFile> files){
+        VBox container = new VBox();
+
+        //Looping through files to add them to vbox
+        for (NameSayerFile file : files){
+            container.getChildren().add(file.get_fileView());
+        }
+        return container;
+    }
+
+
+
+
+
 }
