@@ -124,12 +124,8 @@ public class SelectionSceneController extends Controller implements Initializabl
 	void uploadClicked() {
 		
 	}
-
-	/**
-	 * Getters
-	 */
-	ArrayList<String> getListOfNames() {
-		System.out.println(_listOfNames);
-		return _listOfNames;
+	
+	private void resetListOfNames() {
+		_listOfNames.clear();
 	}
 }
