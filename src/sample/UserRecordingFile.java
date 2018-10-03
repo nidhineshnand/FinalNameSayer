@@ -18,20 +18,31 @@ public class UserRecordingFile implements NameSayerFile {
     private LocalDateTime _creationTime;
     private Process _process;
     private Pane _fileView;
+    private String _identity;
 
     public UserRecordingFile(String pathToSave, ArrayList<String> fileNames){
         _pathToSave = pathToSave;
-        _displayName = String.join(" ", fileNames);
+        _identity = String.join(" ", fileNames);
         _filename = setFileName();
         _creationTime = LocalDateTime.now();
+        _displayName = setDisplayName();
     }
 
     public UserRecordingFile(File file){
         _file = file;
         _filename = file.getName();
-        _displayName = extrapolateDisplayName();
+        _identity = extrapolateIdentity();
         _creationTime = setDateTime();
+        _displayName = setDisplayName();
     }
+
+    //This method sets display name for UserRecordingFile
+    private String setDisplayName(){
+        DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern(" dd MMM yyyy_HH:mm:ss");
+        return  _identity + _creationTime.format(dateAndTimeFormatter);
+    }
+
+
 
     //Setting file name when a new file is created
     private String setFileName(){
@@ -48,7 +59,7 @@ public class UserRecordingFile implements NameSayerFile {
     }
 
     //This method gets the display name of a file when it is instantiated using a file
-    private String extrapolateDisplayName(){
+    private String extrapolateIdentity(){
         String[] splitUserRecordingName = _filename.split("_");
         return splitUserRecordingName[3].substring(0, splitUserRecordingName[3].length() - 4).replace("-", " ");
     }

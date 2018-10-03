@@ -1,11 +1,15 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.File;
 import java.util.ArrayList;
 
 public class UserRecordingFileList extends NameSayerFileList {
 
-    ArrayList<UserRecordingFile> _userRecordingFilesList = new ArrayList<>();
+    ObservableList<UserRecordingFile> _userRecordingFilesList = FXCollections.observableArrayList();
+    ObservableList<UserRecordingFile> _associatedUserRecordingFiles = FXCollections.observableArrayList();
     String _pathToFiles;
 
     public UserRecordingFileList(String pathToFiles){
@@ -33,8 +37,28 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
 
+    //This method get files to paint for the scene
+    public void getFilesForMainScene(){
+        getFilesForScene(_userRecordingFilesList);
+    }
+
+    //This method get files to paint for the practise scene
+    public void getFilesForPractiseScene(PractiseFile file){
+        setUserRecordingsAssociatedWith(file);
+        getFilesForScene(_associatedUserRecordingFiles);
+    }
 
 
+    //Method finds all the user recording files that are associated with a particular practise file
+    public void setUserRecordingsAssociatedWith(PractiseFile file){
+        //Looping through all local files to find file that is associated with this practise file
+        for(UserRecordingFile userFile : _userRecordingFilesList){
+           // if (file)
+        }
+    }
+
+
+    /**This method returns the list of userRecordingFiles that are currently selected*/
 
 
 

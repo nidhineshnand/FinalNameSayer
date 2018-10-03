@@ -94,7 +94,7 @@ public class PractiseFileList extends NameSayerFileList{
     }
 
     //This method get files to paint for the scene
-    public void getFilesForScene(){
+    public void getFilesForMainScene(){
         getFilesForScene(_practiseFileList);
     }
 
