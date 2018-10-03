@@ -13,6 +13,7 @@ public class InitializeFiles {
     private String _concatenationsPath = "./resources/concatenations";
     private String _practiseDirPath = "./resources/practise.txt";
     private String _ratingsFilePath = "./resources/ratings.txt";
+    private String _localUserRecordingDirPath = "./resources/user-recording";
 
     public InitializeFiles(String databaseFilePath){
         _databaseFilePath = databaseFilePath;
@@ -29,6 +30,7 @@ public class InitializeFiles {
             new File (_concatenationsPath).mkdir();
             new File(_practiseDirPath).createNewFile();
             new File (_ratingsFilePath).createNewFile();
+            new File (_localUserRecordingDirPath).mkdir();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -75,5 +77,9 @@ public class InitializeFiles {
 
     public String get_ratingsFilePath() {
         return _ratingsFilePath;
+    }
+
+    public String get_localUserRecordingDirPath() {
+        return _localUserRecordingDirPath;
     }
 }
