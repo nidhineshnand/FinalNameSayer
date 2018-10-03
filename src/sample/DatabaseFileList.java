@@ -59,6 +59,24 @@ public class DatabaseFileList extends NameSayerFileList{
         return cachedFile;
     }
 
+    //This method takes input a partial database file name as a string and outputs the best file associated with that string name
+    //If no file is found with that name then a null value is returned
+    public ArrayList<DatabaseFile> getDatabaseFileWithPartName(String fileName){
+
+        ArrayList<DatabaseFile> outputFiles = new ArrayList<>();
+
+        //Looping through all files
+        for(DatabaseFile file : _databaseFiles){
+
+            //Checking if files has the same name as the given
+            if (file.get_displayName().toLowerCase().startsWith(fileName.toLowerCase())){
+                 outputFiles.add(file);
+            }
+        }
+
+        return outputFiles;
+    }
+
 
 
 }

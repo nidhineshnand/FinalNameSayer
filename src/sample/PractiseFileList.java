@@ -33,44 +33,112 @@ public class PractiseFileList extends NameSayerFileList{
             //Filenames
             String line;
             while ((line = reader.readLine()) != null) {
-                //Arraylist to save file names
-                ArrayList<DatabaseFile> associatedDatabaseFiles = new ArrayList<>();
-                ArrayList<String> fileNames= new ArrayList<>();
-                //Splitting filenames by spaces
-                String[] namesHyphened = line.split("\\s+");
+                PractiseFile file = searchGivenName(line, databaseFileList, namesNotFound);
+                if(file!=null){
+                    addPractiseFileToList(file);
+                }
+            }
+                //Handling exceptions
+            } catch(FileNotFoundException e){
+                e.printStackTrace();
+            } catch(IOException ex){
+                ex.printStackTrace();
+            }
 
-                for (String names : namesHyphened){
+        return namesNotFound;
+    }
 
-                    //Splitting filenames by hyphens
-                    String[] singleNames = names.split("-");
 
-                    for(String name : singleNames) {
+    /**Method takes input a string and DatabaseFileList and returns PractiseFile object if it can associate it to one.
+     * Otherwise a null is returned
+     */
+    public PractiseFile searchGivenName(String line, DatabaseFileList databaseFileList, ArrayList<String> namesNotFound) {
 
-                        //Getting associated database files
-                        DatabaseFile associatedFile = databaseFileList.getDatabaseFileWithName(name);
+        //Arraylist to save file names
+        ArrayList<DatabaseFile> associatedDatabaseFiles = new ArrayList<>();
+        ArrayList<String> fileNames = new ArrayList<>();
+        //Splitting filenames by spaces
+        String[] namesHyphened = line.split("\\s+");
 
-                        //Checking if database file is null
-                        if (associatedFile == null){
-                            namesNotFound.add(name);
-                        } else {
-                            //Adding names that are found to the arraylist
-                            associatedDatabaseFiles.add(associatedFile);
-                            fileNames.add(name);
+        for (String names : namesHyphened) {
+
+            //Splitting filenames by hyphens
+            String[] singleNames = names.split("-");
+
+            for (String name : singleNames) {
+
+                //Getting associated database files
+                DatabaseFile associatedFile = databaseFileList.getDatabaseFileWithName(name);
+
+                //Checking if database file is null
+                if (associatedFile == null) {
+                    namesNotFound.add(name);
+                } else {
+                    //Adding names that are found to the arraylist
+                    associatedDatabaseFiles.add(associatedFile);
+                    fileNames.add(name);
+                }
+            }
+        }
+        if (!associatedDatabaseFiles.isEmpty()) {
+            //Creating practisefile object and adding it to the list of practisefile objects
+            return new PractiseFile(associatedDatabaseFiles, _pathToWrite, fileNames);
+        }
+
+        return null;
+    }
+
+
+    /**This method searches takes an input a string and outputs an arraylist of strings that correspond to that string
+     * relating to a concatenation
+     */
+    public ArrayList<String> search(String spaceSeperatedName, DatabaseFileList databaseFileList){
+        ArrayList<String> outputStrings = new ArrayList<>();
+
+        //Separating names by spaces
+        String[] hyphenSeperatedName = spaceSeperatedName.split("\\s+");
+
+        StringBuilder outputString = new StringBuilder();
+        //Iterating through the names in the string
+        for (String string : hyphenSeperatedName){
+
+            boolean addHyphen = false;
+
+            String[] seperatedNames = string.split("-");
+
+            //Making add hyphen true if the string was actually separated
+            if(seperatedNames.length > 1){
+                addHyphen = true;
+            }
+
+            for (String name : seperatedNames){
+
+                DatabaseFile databaseFile = databaseFileList.getDatabaseFileWithName(name);
+
+                // Getting files that are associated with the name typed in
+                if(databaseFile != null){
+                    outputString.append(databaseFile.get_displayName());
+                    //If full name is not typed than part name is searched
+                } else {
+                    //Getting a list of files that match a particular string
+                    ArrayList<DatabaseFile> databaseFilePartNames = databaseFileList.getDatabaseFileWithPartName(name);
+
+                    if(databaseFilePartNames != null){
+                        for (DatabaseFile currentFile : databaseFilePartNames) {
+                            //Returning names with the last name added
+                            outputStrings.add(outputString + currentFile.get_displayName());
                         }
                     }
                 }
-                if (!associatedDatabaseFiles.isEmpty())
-                //Creating practisefile object and adding it to the list of practisefile objects
-                addPractiseFileToList(new PractiseFile(associatedDatabaseFiles, _pathToWrite, fileNames));
-            }
-            //Handling exceptions
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
 
-        return namesNotFound;
+                if(addHyphen){
+                    outputString.append("-");
+                } else {
+                    outputString.append(" ");
+                }
+            }
+        }
+        return outputStrings;
     }
 
     /**This method adds a practise file to the list of practise file if no object exist with the same name*/
