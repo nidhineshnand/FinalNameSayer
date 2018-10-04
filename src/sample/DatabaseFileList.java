@@ -64,13 +64,16 @@ public class DatabaseFileList extends NameSayerFileList{
     public ArrayList<DatabaseFile> getDatabaseFileWithPartName(String fileName){
 
         ArrayList<DatabaseFile> outputFiles = new ArrayList<>();
-
+        String cacheName = "";
         //Looping through all files
         for(DatabaseFile file : _databaseFiles){
 
             //Checking if files has the same name as the given
             if (file.get_displayName().toLowerCase().startsWith(fileName.toLowerCase())){
-                 outputFiles.add(file);
+                if(!file.get_displayName().equalsIgnoreCase(cacheName)) {
+                    outputFiles.add(file);
+                }
+                cacheName = file.get_displayName();
             }
         }
 
