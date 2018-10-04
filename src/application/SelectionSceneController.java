@@ -139,4 +139,5 @@ public class SelectionSceneController extends Controller implements Initializabl
 	private void resetListOfNames() {
 		_listOfNames.clear();
 	}
+
 }
