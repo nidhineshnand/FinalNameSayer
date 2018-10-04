@@ -47,6 +47,7 @@ public class SelectionSceneController extends Controller {
 	private PracticeSceneController _practiceController;
 	private String _name;
 	private VBox _practiceFileList;
+	private PractiseFile _pFile;
 	
 	// Methods
 	
@@ -83,6 +84,10 @@ public class SelectionSceneController extends Controller {
 		}
 	}
 	
+	/**
+	 * loads PracticeScene
+	 * @throws Exception
+	 */
 	public void start() throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
@@ -113,7 +118,7 @@ public class SelectionSceneController extends Controller {
 	 */
 	@FXML
 	void addToListClicked() {
-		
+		staticSearch();
 	}
 	
 	/**
@@ -137,20 +142,44 @@ public class SelectionSceneController extends Controller {
 	 */
 	@FXML
 	void searching() {
+		staticSearch();
+	}
+	
+	/**
+	 * resets the list of names in _listOfNames
+	 */
+	private void resetListOfNames() {
+		_listOfNames.clear();
+	}
+
+	/**
+	 * populates database pane for the startup
+	 */
+	private void populateDatabasePane() {
+		_databaseListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
+	}
+	
+	/**
+	 * when the user enters a name into _nameTextField statically
+	 */
+	private void staticSearch() {
 		ArrayList<String> notFound = new ArrayList<String>();
 		String str = _nameTextField.getText();
 		PractiseFile pFile = _spine.searchButtonPressed(str, notFound);
 		if (pFile == null) {
 			JOptionPane.showMessageDialog(null, "This name is not in the data base");
+		} else {
+			_spine.addPractiseFileToList(pFile);
+			updateDatabaseListPane(pFile);
 		}
 		System.out.println("done");
 	}
 	
-	private void resetListOfNames() {
-		_listOfNames.clear();
-	}
-
-	private void populateDatabasePane() {
-		_databaseListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
+	/**
+	 * updates database list pane
+	 * @param pFile
+	 */
+	private void updateDatabaseListPane(PractiseFile pFile) {
+		_databaseListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
 	}
 }
