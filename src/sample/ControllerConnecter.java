@@ -11,6 +11,7 @@ public class ControllerConnecter {
     DatabaseFileList databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
     PractiseFileList practiseFileList = new PractiseFileList(initializeFiles.get_practiseDirPath());
     UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
+    PointsSystem pointsSystem = new PointsSystem();
 
 
     /**This method outputs a VBox that contains the PractiseFile objects that are loaded by the user*/
@@ -104,5 +105,17 @@ public class ControllerConnecter {
      */
     public void addUserRecording(UserRecordingFile file){
         userRecordingFileList.addUserRecordingToList(file);
+    }
+
+
+    /**This method changes the points associated with the user*/
+    public void changePoints(int val){
+        pointsSystem.changePoints(val);
+    }
+
+    /**This method gets the points if there needs to be any calculations done on the points
+     */
+    public int getPoints(){
+        return pointsSystem.get_points();
     }
 }
