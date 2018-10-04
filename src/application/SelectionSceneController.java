@@ -174,7 +174,7 @@ public class SelectionSceneController extends Controller {
 		if (pFile == null) {
 			JOptionPane.showMessageDialog(null, "This name is not in the data base");
 		} else {
-			_spine.addPractiseFileToList(pFile);
+			//_spine.addPractiseFileToList(pFile);
 			updateDatabaseListPane(pFile);
 		}
 		System.out.println("done");

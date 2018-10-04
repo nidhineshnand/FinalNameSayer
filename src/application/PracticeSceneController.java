@@ -55,6 +55,8 @@ public class PracticeSceneController extends Controller {
 	public Button _saveButton;
 	@FXML
 	public Button _nextButton;
+	@FXML
+	public Button _deleteButton;
 	
 	private int _counter = 0;
 	private double _currentVolume;
@@ -66,6 +68,9 @@ public class PracticeSceneController extends Controller {
 		// TODO Auto-generated method stub
 		super.initialize(location, resources);
 		_currentVolume = _volumeSlider.getValue();
+		_deleteButton.setVisible(false);
+		_saveButton.setVisible(false);
+		_playRecordingButton.setVisible(false);
 	}
 	
 	/**
@@ -130,8 +135,17 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void recordClicked() {
-		String name = _currentName.getText();
-		UserRecordingFile rFile = _spine.createNewUserRecordingFile(name);
+		if (_recordButton.getText().equals("Record")) {
+			String name = _currentName.getText();
+			_recordButton.setText("Stop");
+			//UserRecordingFile rFile = _spine.createNewUserRecordingFile(name);
+		} else {
+			_recordButton.setText("Record");
+			_recordButton.setVisible(false);
+			_playRecordingButton.setVisible(true);
+			_saveButton.setVisible(true);
+			_deleteButton.setVisible(true);
+		}
 	}
 
 	/**
@@ -158,7 +172,19 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void saveClicked() {
-		
+		_recordButton.setVisible(true);
+		_deleteButton.setVisible(false);
+		_saveButton.setVisible(false);
+	}
+	
+	/**
+	 * When _deleteButton is clicked
+	 */
+	@FXML
+	void deleteClicked() {
+		_recordButton.setVisible(true);
+		_deleteButton.setVisible(false);
+		_saveButton.setVisible(false);
 	}
 	
 	/**
