@@ -19,14 +19,14 @@
             <JFXTreeView fx:id="_practiceList" layoutX="1.0" prefHeight="555.0" prefWidth="200.0" />
             <JFXTabPane layoutX="1.0" prefHeight="554.0" prefWidth="198.0">
                <tabs>
-                  <Tab text="Database ">
+                  <Tab text="Practice List">
                      <content>
-                        <Pane fx:id="_databaseListPane" prefHeight="200.0" prefWidth="200.0" />
+                        <Pane fx:id="_practiceListPane" prefHeight="200.0" prefWidth="200.0" />
                      </content>
                   </Tab>
-                  <Tab text="Custom List">
+                  <Tab text="Recordings">
                      <content>
-                        <Pane fx:id="_customListPane" prefHeight="200.0" prefWidth="200.0" />
+                        <Pane fx:id="_recordingListPane" prefHeight="200.0" prefWidth="200.0" />
                      </content>
                   </Tab>
                </tabs>

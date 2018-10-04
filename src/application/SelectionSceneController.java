@@ -40,9 +40,9 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public TextField _nameTextField;
 	@FXML
-	public Pane _customListPane;
+	public Pane _recordingListPane;
 	@FXML
-	public Pane _databaseListPane;
+	public Pane _practiceListPane;
 	
 	private PracticeSceneController _practiceController;
 	private String _name;
@@ -156,7 +156,7 @@ public class SelectionSceneController extends Controller {
 	 * populates database pane for the startup
 	 */
 	private void populateDatabasePane() {
-		_databaseListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
+		_practiceListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
 	}
 	
 	/**
@@ -180,6 +180,6 @@ public class SelectionSceneController extends Controller {
 	 * @param pFile
 	 */
 	private void updateDatabaseListPane(PractiseFile pFile) {
-		_databaseListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
+		_practiceListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
 	}
 }
