@@ -17,13 +17,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.ControllerConnecter;
 import sample.PractiseFile;
 
-public class SelectionSceneController extends Controller implements Initializable{
+public class SelectionSceneController extends Controller {
 	
 	// Fields
 	@FXML
@@ -38,6 +39,10 @@ public class SelectionSceneController extends Controller implements Initializabl
 	public Button _uploadButton;
 	@FXML
 	public TextField _nameTextField;
+	@FXML
+	public Pane _customListPane;
+	@FXML
+	public Pane _databaseListPane;
 	
 	private PracticeSceneController _practiceController;
 	private String _name;
@@ -50,6 +55,7 @@ public class SelectionSceneController extends Controller implements Initializabl
 		// TODO Auto-generated method stub
 		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
 		super.initialize(location, resources);
+		populateDatabasePane();
 	}
 	
 	/**
@@ -131,13 +137,17 @@ public class SelectionSceneController extends Controller implements Initializabl
 	 */
 	@FXML
 	void searching() {
-		ArrayList<String> namesNotFound = new ArrayList<String>();
-		PractiseFile f = _spine.searchButtonPressed(_nameTextField.getText(), namesNotFound);
-		System.out.println(f);
+		ArrayList<String> notFound = new ArrayList<String>();
+		String str = _nameTextField.getText();
+		PractiseFile pFile = _spine.searchButtonPressed(str, notFound);
+		System.out.println("done");
 	}
 	
 	private void resetListOfNames() {
 		_listOfNames.clear();
 	}
 
+	private void populateDatabasePane() {
+		_databaseListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
+	}
 }
