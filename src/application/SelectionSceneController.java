@@ -110,7 +110,12 @@ public class SelectionSceneController extends Controller {
 	 */
 	@FXML
 	void practiceListClicked() {
-		//openPracticeScene();
+		if (_practiceListPane.getChildren().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "There are no names in the practice list");
+		} else {
+			//_listOfNames.addAll(_practiceListPane.getChildren());
+			openPracticeScene();
+		}
 	}
 	
 	/**
