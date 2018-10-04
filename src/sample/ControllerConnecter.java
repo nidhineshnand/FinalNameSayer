@@ -66,10 +66,6 @@ public class ControllerConnecter {
         return userRecordingFileList.getSelectedUserRecording();
     }
 
-    /**This method adds the practise file to the list of practise files*/
-    public void addPractiseFileToList(PractiseFile file){
-        practiseFileList.addPractiseFileToList(file);
-    }
 
     /**This method gets a list of local recording names that are selected (in the practise scene) in the form of an ArrayList*/
     public ArrayList<UserRecordingFile> getSelectedLocalRecordignFilesFromPractiseScene(){
