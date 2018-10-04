@@ -140,6 +140,9 @@ public class SelectionSceneController extends Controller {
 		ArrayList<String> notFound = new ArrayList<String>();
 		String str = _nameTextField.getText();
 		PractiseFile pFile = _spine.searchButtonPressed(str, notFound);
+		if (pFile == null) {
+			JOptionPane.showMessageDialog(null, "This name is not in the data base");
+		}
 		System.out.println("done");
 	}
 	
