@@ -37,7 +37,7 @@ public class ControllerConnecter {
      * Names in the names concatenations that were not found are created into PractiseFile objects with the un-found
      * name removed
      */
-    public ArrayList<String> loadPractiseFilesFromList(String path){
+    public ArrayList<String> loadPractiseFilesFromTextFile(String path){
         return practiseFileList.loadPractiseFilesFromText(path, databaseFileList);
     }
 
