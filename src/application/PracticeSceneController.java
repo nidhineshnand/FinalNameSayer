@@ -130,26 +130,8 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void recordClicked() {
-		if (_recordButton.getText().equals("Record")) {
-			File temp = new File("temp");
-			temp.mkdir();
-			String cmd = "ffmpeg -f alsa -i default -t 5 temp/recording.wav";
-			ProcessBuilder builder = new ProcessBuilder("bash", "-c", cmd);
-			try {
-				_recordButton.setText("Recording");
-				Process process = builder.start();
-				BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-				// just to check if the thing is recording
-				String line = null;
-				while((line = reader.readLine()) != null) {
-					System.out.println(line);
-				}
-				reader.close();
-				_recordButton.setText("Record");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		String name = _currentName.getText();
+		UserRecordingFile rFile = _spine.createNewUserRecordingFile(name);
 	}
 
 	/**
