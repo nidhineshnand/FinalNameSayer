@@ -218,11 +218,11 @@ public class PracticeSceneController extends Controller {
 			String source = file.toURI().toURL().toString();
 			Media media = new Media(source);
 			MediaPlayer player = new MediaPlayer(media);
+			player.setVolume(_currentVolume/100);
 			player.play();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }
