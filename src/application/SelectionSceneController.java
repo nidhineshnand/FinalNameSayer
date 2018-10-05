@@ -107,7 +107,7 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setResizable(false);
         secondaryStage.show();
         
-        resetListOfNames();
+        //resetListOfNames();
 	}
 	
 	// Action listeners 
