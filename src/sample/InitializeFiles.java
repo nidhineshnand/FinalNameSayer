@@ -13,7 +13,7 @@ public class InitializeFiles {
     private String _concatenationsPath = "./resources/concatenations";
     private String _practiseDirPath = "./resources/practise.txt";
     private String _ratingsFilePath = "./resources/ratings.txt";
-    private String _localUserRecordingDirPath = "./resources/user-recording";
+    private String _localUserRecordingDirPath = "./resources/user-recording/";
 
     public InitializeFiles(String databaseFilePath){
         _databaseFilePath = databaseFilePath;
