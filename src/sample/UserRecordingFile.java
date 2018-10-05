@@ -43,8 +43,8 @@ public class UserRecordingFile implements NameSayerFile {
 
     //This method sets display name for UserRecordingFile
     private String setDisplayName(){
-        DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern(" dd MMM yyyy_HH:mm:ss");
-        return  _identity + _creationTime.format(dateAndTimeFormatter);
+        DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss");
+        return  _identity + " " + _creationTime.format(dateAndTimeFormatter);
     }
 
 
