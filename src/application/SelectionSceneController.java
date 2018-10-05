@@ -66,9 +66,15 @@ public class SelectionSceneController extends Controller {
 		if (_nameTextField.getText().equals("")) {
 			JOptionPane.showMessageDialog(null, "Please insert a Name");
 		} else {
-			_name = _nameTextField.getText();
-			_listOfNames.add(_name);
-			openPracticeScene();
+			String name = _nameTextField.getText();
+			_pFile = _spine.searchButtonPressed(name, _notFound);
+			if (_pFile != null) {
+				_listOfNames.add(_pFile);
+				openPracticeScene();
+			} else {
+				JOptionPane.showMessageDialog(null, "This name is not in the database");
+			}
+			
 		}
 	}
 	

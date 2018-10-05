@@ -78,7 +78,7 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * To get names for the list
 	 */
-	void setNameList(ArrayList<String> list) {
+	void setNameList(ArrayList<PractiseFile> list) {
 		_listOfNames = list;
 		populateTable();
 	}
@@ -89,11 +89,11 @@ public class PracticeSceneController extends Controller {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void populateTable() {
 		_recordingList = new TreeView();
-		TreeItem<String> item = new TreeItem<>("Names");
+		TreeItem<PractiseFile> item = new TreeItem<PractiseFile>();
 		item.setExpanded(true);
 		_recordingList.setRoot(item);
-		for (String name:_listOfNames) {
-			TreeItem<String> nameOfItem = new TreeItem<>(name);
+		for (PractiseFile name:_listOfNames) {
+			TreeItem<PractiseFile> nameOfItem = new TreeItem<>(name);
 			item.getChildren().add(nameOfItem);
 		}
 		updateCurrentName();
@@ -139,8 +139,8 @@ public class PracticeSceneController extends Controller {
 	void recordClicked() {
 		if (_recordButton.getText().equals("Record")) {
 			String name = _currentName.getText();
-			PractiseFile pFile = _spine.searchButtonPressed(name, _notFound);
-			UserRecordingFile rFile = _spine.createNewUserRecordingFile(pFile);
+			
+			//UserRecordingFile rFile = _spine.createNewUserRecordingFile(pFile);
 			
 			_recordButton.setText("Stop");
 			//UserRecordingFile rFile = _spine.createNewUserRecordingFile(name);
@@ -206,23 +206,14 @@ public class PracticeSceneController extends Controller {
 	 * updating _currentName
 	 */
 	private void updateCurrentName() {
-		_currentName.setText(_listOfNames.get(_counter));
+		_currentName.setText(_listOfNames.get(_counter).toString());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
 	}
 
 	/**
 	 * When there is a file that needs playing
 	 */
-	private void playItem(String name) throws InterruptedException {
-		File audioFile = new File(name);
-		URL url;
-		try {
-			url = audioFile.toURI().toURL();
-			AudioClip ac = Applet.newAudioClip(url);
-			ac.play();
-			Thread.sleep(3000);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+	private void playItem(PractiseFile practiseFile) throws InterruptedException {
+		
 	}
 }
