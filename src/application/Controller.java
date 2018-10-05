@@ -12,12 +12,14 @@ public abstract class Controller implements Initializable {
 	// Fields
 	ArrayList<String> _listOfNames;
 	ControllerConnecter _spine;
+	private ArrayList<String> _notFound;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		_listOfNames = new ArrayList<String>();
 		_spine = new ControllerConnecter();
+		_notFound = new ArrayList<String>();
 	}
 	
 	/**

@@ -61,7 +61,6 @@ public class PracticeSceneController extends Controller {
 	public Button _deleteButton;
 	
 	private int _counter = 0;
-	private ArrayList<String> _notFound;
 	private double _currentVolume;
 	
 	// Methods
