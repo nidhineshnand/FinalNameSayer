@@ -25,9 +25,9 @@ public class UserRecordingFile implements NameSayerFile {
     public UserRecordingFile(String pathToSave, ArrayList<String> fileNames){
         _pathToSave = pathToSave;
         _identity = String.join(" ", fileNames);
-        _filename = setFileName();
         _creationTime = LocalDateTime.now();
         _displayName = setDisplayName();
+        _filename = setFileName();
         _file = new File(_pathToSave + _filename);
         loadView();
     }
