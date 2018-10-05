@@ -74,12 +74,9 @@ public class UserRecordingFile implements NameSayerFile {
         try{
             ProcessBuilder builder = new ProcessBuilder("bash", "-c", "  ffmpeg -f alsa -ac 2 -i default -t 15 " + _pathToSave + _filename + " -loglevel quiet");
             _process = builder.start();
-            _process.waitFor();
             //Exception handling for the process builder
         } catch (IOException ioe){
             ioe.printStackTrace();
-        } catch (InterruptedException e){
-            e.printStackTrace();
         }
     }
 
