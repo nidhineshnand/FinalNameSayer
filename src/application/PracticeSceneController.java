@@ -29,6 +29,8 @@ import javafx.scene.text.TextAlignment;
 
 import java.applet.AudioClip;
 import sample.ControllerConnecter;
+import sample.PractiseFile;
+import sample.UserRecordingFile;
 
 public class PracticeSceneController extends Controller {
 	
@@ -59,6 +61,7 @@ public class PracticeSceneController extends Controller {
 	public Button _deleteButton;
 	
 	private int _counter = 0;
+	private ArrayList<String> _notFound;
 	private double _currentVolume;
 	
 	// Methods
@@ -67,6 +70,7 @@ public class PracticeSceneController extends Controller {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		super.initialize(location, resources);
+		_notFound = new ArrayList<String>();
 		_currentVolume = _volumeSlider.getValue();
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
@@ -137,6 +141,9 @@ public class PracticeSceneController extends Controller {
 	void recordClicked() {
 		if (_recordButton.getText().equals("Record")) {
 			String name = _currentName.getText();
+			PractiseFile pFile = _spine.searchButtonPressed(name, _notFound);
+			UserRecordingFile rFile = _spine.createNewUserRecordingFile(pFile);
+			
 			_recordButton.setText("Stop");
 			//UserRecordingFile rFile = _spine.createNewUserRecordingFile(name);
 		} else {
