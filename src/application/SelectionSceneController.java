@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -19,6 +20,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.ControllerConnecter;
@@ -145,7 +147,18 @@ public class SelectionSceneController extends Controller {
 	 */
 	@FXML
 	void uploadClicked() {
-		
+		//Launching file chooser
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Open Practise List");
+		File uploadList = fileChooser.showOpenDialog(_practiceListPane.getScene().getWindow());
+
+		//Checking if file is not null
+		if(uploadList != null){
+			_spine.loadPractiseFilesFromTextFile(uploadList.getPath());
+		}
+
+		//Refreshing view
+		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
 	}
 	
 	/**
