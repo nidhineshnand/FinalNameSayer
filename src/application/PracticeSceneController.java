@@ -25,10 +25,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.TextAlignment;
 
 import java.applet.AudioClip;
 import sample.ControllerConnecter;
+import sample.NameSayerFile;
 import sample.PractiseFile;
 import sample.UserRecordingFile;
 
@@ -109,12 +112,7 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void playAllClicked() {
-		try {
-			playItem(_listOfNames.get(_counter));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		playItem(_listOfNames.get(_counter));
 	}
 	
 	/**
@@ -167,7 +165,7 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void playRecordingClicked() {
-		
+		playItem(_rFile);
 	}
 	
 	/**
@@ -175,9 +173,11 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void saveClicked() {
+		_spine.addUserRecording(_rFile);
 		_recordButton.setVisible(true);
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
+		
 	}
 	
 	/**
@@ -212,6 +212,10 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When there is a file that needs playing
 	 */
-	private void playItem(PractiseFile practiseFile) throws InterruptedException {
+	private void playItem(NameSayerFile nameSayerFile) {
+		File file = _spine.getPlayableFileFor(nameSayerFile);
+		Media media = new Media(file.toString());
+		MediaPlayer player = new MediaPlayer(media);
+		player.play();
 	}
 }
