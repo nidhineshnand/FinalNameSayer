@@ -53,14 +53,14 @@ public class UserRecordingFile implements NameSayerFile {
     private String setFileName(){
         DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
         String timeStamp = _creationTime.format(dateAndTimeFormatter);
-        return "User_" + timeStamp + "_" + _displayName.replace(" ", "-") + ".wav";
+        return "User_" + timeStamp + "_" + _identity.replace(" ", "-") + ".wav";
 
     }
 
     //Setting date and time by extrapolating data from the file name
     private LocalDateTime setDateTime(){
         DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
-        return LocalDateTime.parse(_file.getName().substring(5, 25), dateAndTimeFormatter);
+        return LocalDateTime.parse(_file.getName().substring(5, 24), dateAndTimeFormatter);
     }
 
     //This method gets the display name of a file when it is instantiated using a file
