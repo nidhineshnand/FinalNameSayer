@@ -70,7 +70,6 @@ public class SelectionSceneController extends Controller {
 			_pFile = _spine.searchButtonPressed(name, _notFound);
 			if (_pFile != null) {
 				_listOfNames.add(_pFile);
-				_stringsOfNames.add(name);
 				openPracticeScene();
 			} else {
 				JOptionPane.showMessageDialog(null, "This name is not in the database");
@@ -99,7 +98,7 @@ public class SelectionSceneController extends Controller {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		_practiceController = loader.getController();
-		_practiceController.setNameList(_listOfNames, _stringsOfNames);
+		_practiceController.setNameList(_listOfNames);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(Main.primaryStage);

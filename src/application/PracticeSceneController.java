@@ -62,6 +62,7 @@ public class PracticeSceneController extends Controller {
 	
 	private int _counter = 0;
 	private double _currentVolume;
+	private UserRecordingFile _rFile;
 	
 	// Methods
 	
@@ -78,9 +79,8 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * To get names for the list
 	 */
-	void setNameList(ArrayList<PractiseFile> list, ArrayList<String> stringList) {
+	void setNameList(ArrayList<PractiseFile> list) {
 		_listOfNames = list;
-		_stringsOfNames = stringList;
 		populateTable();
 	}
 	
@@ -139,13 +139,11 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	void recordClicked() {
 		if (_recordButton.getText().equals("Record")) {
-			String name = _currentName.getText();
-			
-			//UserRecordingFile rFile = _spine.createNewUserRecordingFile(pFile);
-			
+			_rFile = _spine.createNewUserRecordingFile(_listOfNames.get(_counter));
+			_rFile.startRecording();
 			_recordButton.setText("Stop");
-			//UserRecordingFile rFile = _spine.createNewUserRecordingFile(name);
 		} else {
+			_rFile.stopRecording();
 			_recordButton.setText("Record");
 			_recordButton.setVisible(false);
 			_playRecordingButton.setVisible(true);
@@ -169,8 +167,7 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void playRecordingClicked() {
-		String name = _currentName.getText();
-		File file = new File(name);
+		
 	}
 	
 	/**
@@ -188,6 +185,7 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void deleteClicked() {
+		_rFile.deleteFile();
 		_recordButton.setVisible(true);
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
@@ -207,7 +205,7 @@ public class PracticeSceneController extends Controller {
 	 * updating _currentName
 	 */
 	private void updateCurrentName() {
-		_currentName.setText(_stringsOfNames.get(_counter).toString());
+		_currentName.setText(_listOfNames.get(_counter).get_displayName());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
 	}
 
@@ -215,6 +213,5 @@ public class PracticeSceneController extends Controller {
 	 * When there is a file that needs playing
 	 */
 	private void playItem(PractiseFile practiseFile) throws InterruptedException {
-		
 	}
 }
