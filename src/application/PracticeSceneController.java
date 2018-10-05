@@ -214,8 +214,15 @@ public class PracticeSceneController extends Controller {
 	 */
 	private void playItem(NameSayerFile nameSayerFile) {
 		File file = _spine.getPlayableFileFor(nameSayerFile);
-		Media media = new Media(file.toString());
-		MediaPlayer player = new MediaPlayer(media);
-		player.play();
+		try {
+			String source = file.toURI().toURL().toString();
+			Media media = new Media(source);
+			MediaPlayer player = new MediaPlayer(media);
+			player.play();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }
