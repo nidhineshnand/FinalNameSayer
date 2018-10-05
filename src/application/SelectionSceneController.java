@@ -191,7 +191,7 @@ public class SelectionSceneController extends Controller {
 	 * populates database pane for the startup
 	 */
 	private void populateDatabasePane() {
-		_practiceListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
+		_recordingListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
 	}
 	
 	/**
