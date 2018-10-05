@@ -12,6 +12,7 @@ public abstract class Controller implements Initializable {
 	
 	// Fields
 	ArrayList<PractiseFile> _listOfNames;
+	ArrayList<String> _stringsOfNames;
 	ControllerConnecter _spine;
 	protected ArrayList<String> _notFound;
 	
@@ -21,6 +22,7 @@ public abstract class Controller implements Initializable {
 		_listOfNames = new ArrayList<PractiseFile>();
 		_spine = new ControllerConnecter();
 		_notFound = new ArrayList<String>();
+		_stringsOfNames = new ArrayList<String>();
 	}
 	
 	/**

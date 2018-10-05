@@ -78,8 +78,9 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * To get names for the list
 	 */
-	void setNameList(ArrayList<PractiseFile> list) {
+	void setNameList(ArrayList<PractiseFile> list, ArrayList<String> stringList) {
 		_listOfNames = list;
+		_stringsOfNames = stringList;
 		populateTable();
 	}
 	
@@ -206,7 +207,7 @@ public class PracticeSceneController extends Controller {
 	 * updating _currentName
 	 */
 	private void updateCurrentName() {
-		_currentName.setText(_listOfNames.get(_counter).toString());
+		_currentName.setText(_stringsOfNames.get(_counter).toString());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
 	}
 
