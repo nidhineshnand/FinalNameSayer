@@ -12,7 +12,7 @@ public abstract class Controller implements Initializable {
 	// Fields
 	ArrayList<String> _listOfNames;
 	ControllerConnecter _spine;
-	private ArrayList<String> _notFound;
+	protected ArrayList<String> _notFound;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

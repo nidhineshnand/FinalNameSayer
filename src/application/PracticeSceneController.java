@@ -69,7 +69,6 @@ public class PracticeSceneController extends Controller {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		super.initialize(location, resources);
-		_notFound = new ArrayList<String>();
 		_currentVolume = _volumeSlider.getValue();
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
