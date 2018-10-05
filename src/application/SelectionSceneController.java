@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import javax.swing.JOptionPane;
 
@@ -18,16 +19,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.controlsfx.control.textfield.CustomTextField;
+import org.controlsfx.control.textfield.TextFields;
 import sample.ControllerConnecter;
 import sample.PractiseFile;
 
 public class SelectionSceneController extends Controller {
-	
+
 	// Fields
 	@FXML
 	public TreeView _practiceList;
@@ -40,12 +44,12 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Button _uploadButton;
 	@FXML
-	public TextField _nameTextField;
-	@FXML
 	public Pane _recordingListPane;
 	@FXML
 	public Pane _practiceListPane;
-	
+	public CustomTextField _nameTextField;
+
+
 	private PracticeSceneController _practiceController;
 	private String _name;
 	private VBox _practiceFileList;
@@ -59,6 +63,8 @@ public class SelectionSceneController extends Controller {
 		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
 		super.initialize(location, resources);
 		populateDatabasePane();
+		autoCompleteListBinding();
+
 	}
 	
 	/**
@@ -110,6 +116,11 @@ public class SelectionSceneController extends Controller {
         secondaryStage.show();
         
         //resetListOfNames();
+	}
+
+	public void autoCompleteListBinding(){
+		//Binding search results to textfieled
+		TextFields.bindAutoCompletion(_nameTextField, t -> _spine.continousSearchResults(_nameTextField.getText()));
 	}
 	
 	// Action listeners 
