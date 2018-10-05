@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -63,6 +64,7 @@ public class PracticeSceneController extends Controller {
 	private int _counter = 0;
 	private double _currentVolume;
 	private UserRecordingFile _rFile;
+	private RecordVoice _recordingProcess;
 	
 	// Methods
 	
@@ -139,16 +141,28 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	void recordClicked() {
 		if (_recordButton.getText().equals("Record")) {
+			//Starting recording process in the background
 			_rFile = _spine.createNewUserRecordingFile(_listOfNames.get(_counter));
-			_rFile.startRecording();
+			_recordingProcess = new RecordVoice();
+			new Thread(_recordingProcess).start();
 			_recordButton.setText("Stop");
 		} else {
-			_rFile.stopRecording();
+			_recordingProcess.cancel();
 			_recordButton.setText("Record");
 			_recordButton.setVisible(false);
 			_playRecordingButton.setVisible(true);
 			_saveButton.setVisible(true);
 			_deleteButton.setVisible(true);
+		}
+	}
+
+	//Class responsible for recording voice in a different thread
+	class RecordVoice extends Task<Void> {
+
+		@Override
+		protected Void call() throws Exception {
+			_rFile.startRecording();
+			return null;
 		}
 	}
 
