@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.swing.JOptionPane;
 
+import com.jfoenix.controls.JFXCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,10 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -34,8 +32,6 @@ public class SelectionSceneController extends Controller {
 
 	// Fields
 	@FXML
-	public TreeView _practiceList;
-	@FXML
 	public Button _practiceListButton;
 	@FXML
 	public Button _addToListButton;
@@ -48,6 +44,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Pane _practiceListPane;
 	public CustomTextField _nameTextField;
+	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 
 
 	private PracticeSceneController _practiceController;
@@ -64,9 +61,10 @@ public class SelectionSceneController extends Controller {
 		super.initialize(location, resources);
 		populateDatabasePane();
 		autoCompleteListBinding();
+		//Populates the User Recording files tab
 		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
 	}
-	
+
 	/**
 	 * gets the current name inserted into 
 	 */
@@ -117,11 +115,26 @@ public class SelectionSceneController extends Controller {
         secondaryStage.show();
 	}
 
-	public void autoCompleteListBinding(){
+	private void autoCompleteListBinding(){
 		//Binding search results to textfieled
 		TextFields.bindAutoCompletion(_nameTextField, t -> _spine.continousSearchResults(_nameTextField.getText()));
 	}
-	
+
+	//Sets the select all functionality to the practise file list
+	private void selectAllPractiseFileCheckBox(){
+		//If check box is selected then the label is changed to deselect all and all files are selected
+		if(_practiseFileSelectAllPractiseFileCheckBox.isSelected()){
+			_practiseFileSelectAllPractiseFileCheckBox.setText("Deselect All");
+			_spine.setPractiseFileListCheckBox(true);
+
+			//If checkbox is not selected then the label is changed to select all and all the files are deselected
+		} else {
+			_practiseFileSelectAllPractiseFileCheckBox.setText("Select All");
+			_spine.setPractiseFileListCheckBox(false);
+		}
+
+	}
+
 	// Action listeners 
 	/**
 	 * When _practiceAllButton is clicked

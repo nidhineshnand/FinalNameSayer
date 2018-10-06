@@ -182,8 +182,20 @@ public class PractiseFileList extends NameSayerFileList{
                 list.add(file);
             }
         }
-        return list;
+            return list;
     }
+
+    //This method gets all the checks all the files in the view
+    /**This method returns the list of practiseFiles that are currently selected in the main scene. If no recordings
+     * are selected then an empty list is returned*/
+    public void setCheckBoxesTo(boolean set){
+
+        //Loops through all user recordings to set teh checkbox either true or false
+        for(PractiseFile file : _practiseFileList){
+            file.get_controller().setCheckBox(set);
+        }
+    }
+
 
     public VBox get_practiseFileListVbox() {
         getFilesForMainScene();

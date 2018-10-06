@@ -43,9 +43,13 @@ public class NameSayerFileElementController {
     private void isCheckboxTicked(){
         //If checkbox it ticked then the field _isSelected is set to true
             _isSelected = _checkBox.isSelected();
-
-
     }
+
+    // This method sets the checkbox to ticked
+    public void setCheckBox(Boolean set){
+        _checkBox.setSelected(set);
+    }
+
 
     //Populates the choice box with a list of databasefiles
     private void populateComboBox(){
