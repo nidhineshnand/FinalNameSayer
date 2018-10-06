@@ -83,7 +83,9 @@ public class PractiseFileList extends NameSayerFileList{
         }
         if (!associatedDatabaseFiles.isEmpty()) {
             //Creating practisefile object and adding it to the list of practisefile objects
-            return new PractiseFile(associatedDatabaseFiles, _pathToWrite, fileNames);
+            PractiseFile practiseFile = new PractiseFile(associatedDatabaseFiles, _pathToWrite, fileNames);
+            addPractiseFileToList(practiseFile);
+            return practiseFile;
         }
 
         return null;
