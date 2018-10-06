@@ -64,7 +64,7 @@ public class SelectionSceneController extends Controller {
 		super.initialize(location, resources);
 		populateDatabasePane();
 		autoCompleteListBinding();
-
+		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
 	}
 	
 	/**
@@ -133,6 +133,7 @@ public class SelectionSceneController extends Controller {
 			JOptionPane.showMessageDialog(null, "There are no names in the practice list");
 		} else {
 			//_listOfNames.addAll(_practiceListPane.getChildren());
+			_listOfNames = _spine.getSelectedPractiseFiles();
 			openPracticeScene();
 		}
 	}
@@ -143,6 +144,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	void addToListClicked() {
 		staticSearch();
+		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
 	}
 	
 	/**
@@ -205,16 +207,8 @@ public class SelectionSceneController extends Controller {
 			JOptionPane.showMessageDialog(null, "This name is not in the data base");
 		} else {
 			//_spine.addPractiseFileToList(pFile);
-			updateDatabaseListPane(pFile);
+			System.out.println(pFile.get_displayName());
+			_practiceListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
 		}
-		System.out.println("done");
-	}
-	
-	/**
-	 * updates database list pane
-	 * @param pFile
-	 */
-	private void updateDatabaseListPane(PractiseFile pFile) {
-		_practiceListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
 	}
 }
