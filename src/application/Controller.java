@@ -26,7 +26,7 @@ public abstract class Controller extends Application implements Initializable {
 		_spine = new ControllerConnecter();
 		_notFound = new ArrayList<String>();
 		_recordingList = new ArrayList<UserRecordingFile>();
-		_points = 0;
+		_points = _spine.getPoints();
 	}
 	
 	/**
