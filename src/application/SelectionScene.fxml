@@ -22,7 +22,7 @@
                         <Pane fx:id="_practiceListPane" prefHeight="200.0" prefWidth="198.0">
                            <children>
                               <JFXButton fx:id="_practiceListButton" buttonType="RAISED" layoutY="519.0" onAction="#practiceListClicked" prefHeight="49.0" prefWidth="200.0" text="Practice All" />
-                              <JFXCheckBox fx:id="_selectAllCheckBox" layoutY="501.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="198.0" text="CheckBox" />
+                              <JFXCheckBox fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutY="501.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="198.0" text="Select All" />
                            </children></Pane>
                      </content>
                   </Tab>

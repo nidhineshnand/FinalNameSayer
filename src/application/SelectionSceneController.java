@@ -49,7 +49,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Pane _practiceListPane;
 	public CustomTextField _nameTextField;
-	public JFXCheckBox _selectAllCheckBox;
+	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 
 
 	private PracticeSceneController _practiceController;
@@ -126,7 +126,18 @@ public class SelectionSceneController extends Controller {
 		TextFields.bindAutoCompletion(_nameTextField, t -> _spine.continousSearchResults(_nameTextField.getText()));
 	}
 
-	private void selectAllPractiseFileCheckBoxBinding(){
+	//Sets the select all functionality to the practise file list
+	private void selectAllPractiseFileCheckBox(){
+		//If check box is selected then the label is changed to deselect all and all files are selected
+		if(_practiseFileSelectAllPractiseFileCheckBox.isSelected()){
+			_practiseFileSelectAllPractiseFileCheckBox.setText("Deselect All");
+			_spine.setPractiseFileListCheckBox(true);
+
+			//If checkbox is not selected then the label is changed to select all and all the files are deselected
+		} else {
+			_practiseFileSelectAllPractiseFileCheckBox.setText("Select All");
+			_spine.setPractiseFileListCheckBox(false);
+		}
 
 	}
 
