@@ -26,6 +26,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.TextAlignment;
@@ -52,7 +53,7 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	public Button _recordButton;
 	@FXML
-	public TreeView _recordingList;
+	public Pane _recordingList;
 	@FXML
 	public Button _prevButton;
 	@FXML
@@ -94,19 +95,12 @@ public class PracticeSceneController extends Controller {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void populateTable() {
-		_recordingList = new TreeView();
-		TreeItem<PractiseFile> item = new TreeItem<PractiseFile>();
-		item.setExpanded(true);
-		_recordingList.setRoot(item);
-		for (PractiseFile name:_listOfNames) {
-			TreeItem<PractiseFile> nameOfItem = new TreeItem<>(name);
-			item.getChildren().add(nameOfItem);
-		}
 		updateCurrentName();
 		if (_listOfNames.size() <= 1) {
 			_nextButton.setVisible(false);
 			_prevButton.setVisible(false);
 		}
+		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
 	}
 	
 	/**
@@ -191,7 +185,8 @@ public class PracticeSceneController extends Controller {
 		_recordButton.setVisible(true);
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
-		
+		_playRecordingButton.setVisible(false);
+		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
 	}
 	
 	/**
@@ -203,6 +198,8 @@ public class PracticeSceneController extends Controller {
 		_recordButton.setVisible(true);
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
+		_playRecordingButton.setVisible(false);
+		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
 	}
 	
 	/**
