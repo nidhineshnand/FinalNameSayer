@@ -228,4 +228,10 @@ public class SelectionSceneController extends Controller {
 			_practiceListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
 		}
 	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 }
