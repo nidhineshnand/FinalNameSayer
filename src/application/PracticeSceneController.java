@@ -71,6 +71,7 @@ public class PracticeSceneController extends Controller {
 	private UserRecordingFile _rFile;
 	private RecordVoice _recordingProcess;
 	private SelectionSceneController _parentController;
+	private MediaPlayer _player;
 	
 	// Methods
 	
@@ -235,9 +236,9 @@ public class PracticeSceneController extends Controller {
 		try {
 			String source = file.toURI().toURL().toString();
 			Media media = new Media(source);
-			MediaPlayer player = new MediaPlayer(media);
-			player.setVolume(_currentVolume/100);
-			player.play();
+			_player = new MediaPlayer(media);
+			_player.setVolume(_currentVolume/100);
+			_player.play();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
