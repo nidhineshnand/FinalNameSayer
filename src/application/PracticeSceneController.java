@@ -192,6 +192,7 @@ public class PracticeSceneController extends Controller {
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
 		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+		_spine.changePoints(_points+3);
 	}
 	
 	/**
@@ -205,6 +206,7 @@ public class PracticeSceneController extends Controller {
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
 		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+		_spine.changePoints(_points-1);
 	}
 	
 	/**

@@ -17,6 +17,7 @@ public abstract class Controller extends Application implements Initializable {
 	ControllerConnecter _spine;
 	protected ArrayList<String> _notFound;
 	ArrayList<UserRecordingFile> _recordingList;
+	int _points;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -25,6 +26,7 @@ public abstract class Controller extends Application implements Initializable {
 		_spine = new ControllerConnecter();
 		_notFound = new ArrayList<String>();
 		_recordingList = new ArrayList<UserRecordingFile>();
+		_points = 0;
 	}
 	
 	/**
