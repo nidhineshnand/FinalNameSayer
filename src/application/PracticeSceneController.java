@@ -164,7 +164,9 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	void prevClicked() {
 		_counter--;
-		_counter = _counter % _listOfNames.size();
+		if (_counter < 0) {
+			_counter = _listOfNames.size() - 1;
+		}
 		updateCurrentName();
 	}
 	

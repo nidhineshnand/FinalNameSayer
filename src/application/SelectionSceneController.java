@@ -132,8 +132,11 @@ public class SelectionSceneController extends Controller {
 		if (_practiceListPane.getChildren().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "There are no names in the practice list");
 		} else {
-			//_listOfNames.addAll(_practiceListPane.getChildren());
-			_listOfNames = _spine.getSelectedPractiseFiles();
+			resetListOfNames();
+			for (PractiseFile pFile: _spine.getSelectedPractiseFiles()) {
+				_listOfNames.add(pFile);
+			}
+			System.out.println(_listOfNames.size());
 			openPracticeScene();
 		}
 	}
@@ -152,6 +155,7 @@ public class SelectionSceneController extends Controller {
 	 */
 	@FXML
 	void practiceClicked() {
+		resetListOfNames();
 		getName();
 	}
 	
