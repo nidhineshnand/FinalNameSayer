@@ -112,8 +112,6 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
         secondaryStage.show();
-        
-        //resetListOfNames();
 	}
 
 	private void autoCompleteListBinding(){
@@ -211,6 +209,7 @@ public class SelectionSceneController extends Controller {
 	 */
 	private void populateDatabasePane() {
 		_recordingListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
+		_practiceListPane.getChildren().setAll(_spine.populatePractiseFileForMainScene());
 	}
 	
 	/**

@@ -145,6 +145,7 @@ public class PracticeSceneController extends Controller {
 			_playRecordingButton.setVisible(true);
 			_saveButton.setVisible(true);
 			_deleteButton.setVisible(true);
+			_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
 		}
 	}
 
