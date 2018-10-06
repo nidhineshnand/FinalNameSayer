@@ -10,7 +10,7 @@ import sample.ControllerConnecter;
 import sample.PractiseFile;
 import sample.UserRecordingFile;
 
-public abstract class Controller implements Initializable {
+public abstract class Controller extends Application implements Initializable {
 	
 	// Fields
 	ArrayList<PractiseFile> _listOfNames;

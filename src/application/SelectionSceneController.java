@@ -107,6 +107,7 @@ public class SelectionSceneController extends Controller {
 		Parent root = loader.load();
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames);
+		_practiceController.getSelectionSceneController(this);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(Main.primaryStage);
@@ -194,7 +195,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * populates database pane for the startup
 	 */
-	private void populateDatabasePane() {
+	protected void populateDatabasePane() {
 		_recordingListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
 		_practiceListPane.getChildren().setAll(_spine.populatePractiseFileForMainScene());
 	}

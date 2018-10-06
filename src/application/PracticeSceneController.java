@@ -30,6 +30,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 
 import java.applet.AudioClip;
 import sample.ControllerConnecter;
@@ -69,6 +70,7 @@ public class PracticeSceneController extends Controller {
 	private double _currentVolume;
 	private UserRecordingFile _rFile;
 	private RecordVoice _recordingProcess;
+	private SelectionSceneController _parentController;
 	
 	// Methods
 	
@@ -238,5 +240,23 @@ public class PracticeSceneController extends Controller {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * gets the parent Controller
+	 */
+	void getSelectionSceneController(SelectionSceneController controller) {
+		_parentController = controller;
+	}
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void stop() {
+		_parentController.populateDatabasePane();
 	}
 }
