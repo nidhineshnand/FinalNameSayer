@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.swing.JOptionPane;
 
+import com.jfoenix.controls.JFXCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -48,6 +49,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Pane _practiceListPane;
 	public CustomTextField _nameTextField;
+	public JFXCheckBox _selectAllCheckBox;
 
 
 	private PracticeSceneController _practiceController;
@@ -64,9 +66,10 @@ public class SelectionSceneController extends Controller {
 		super.initialize(location, resources);
 		populateDatabasePane();
 		autoCompleteListBinding();
+		//Populates the User Recording files tab
 		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
 	}
-	
+
 	/**
 	 * gets the current name inserted into 
 	 */
@@ -118,11 +121,15 @@ public class SelectionSceneController extends Controller {
         //resetListOfNames();
 	}
 
-	public void autoCompleteListBinding(){
+	private void autoCompleteListBinding(){
 		//Binding search results to textfieled
 		TextFields.bindAutoCompletion(_nameTextField, t -> _spine.continousSearchResults(_nameTextField.getText()));
 	}
-	
+
+	private void selectAllPractiseFileCheckBoxBinding(){
+
+	}
+
 	// Action listeners 
 	/**
 	 * When _practiceAllButton is clicked
