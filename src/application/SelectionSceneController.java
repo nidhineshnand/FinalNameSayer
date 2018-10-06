@@ -105,6 +105,7 @@ public class SelectionSceneController extends Controller {
 		Parent root = loader.load();
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames);
+		_practiceController.getSelectionSceneController(this);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(Main.primaryStage);
@@ -140,13 +141,13 @@ public class SelectionSceneController extends Controller {
 	 */
 	@FXML
 	void practiceListClicked() {
-		if (_practiceListPane.getChildren().isEmpty()) {
+		resetListOfNames();
+		for (PractiseFile pFile: _spine.getSelectedPractiseFiles()) {
+			_listOfNames.add(pFile);
+		}
+		if (_listOfNames.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "There are no names in the practice list");
 		} else {
-			resetListOfNames();
-			for (PractiseFile pFile: _spine.getSelectedPractiseFiles()) {
-				_listOfNames.add(pFile);
-			}
 			System.out.println(_listOfNames.size());
 			openPracticeScene();
 		}
@@ -207,7 +208,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * populates database pane for the startup
 	 */
-	private void populateDatabasePane() {
+	protected void populateDatabasePane() {
 		_recordingListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
 		_practiceListPane.getChildren().setAll(_spine.populatePractiseFileForMainScene());
 	}
@@ -226,5 +227,11 @@ public class SelectionSceneController extends Controller {
 			System.out.println(pFile.get_displayName());
 			_practiceListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
 		}
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 }
