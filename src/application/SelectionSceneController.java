@@ -16,10 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -34,8 +31,6 @@ import sample.PractiseFile;
 public class SelectionSceneController extends Controller {
 
 	// Fields
-	@FXML
-	public TreeView _practiceList;
 	@FXML
 	public Button _practiceListButton;
 	@FXML
