@@ -112,7 +112,7 @@ public class SelectionSceneController extends Controller {
 		_practiceController.getSelectionSceneController(this);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
-		secondaryStage.initOwner(Main.primaryStage);
+		secondaryStage.initOwner(NameSayerStarter.primaryStage);
         secondaryStage.setTitle("NameSayer");
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
