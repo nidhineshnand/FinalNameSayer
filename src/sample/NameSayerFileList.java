@@ -1,7 +1,9 @@
 package sample;
 
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 import javax.naming.Name;
 import java.io.File;
@@ -12,8 +14,6 @@ import java.util.ArrayList;
 
 //This abstract class is to share code for handeling the playing of a file
 public abstract class NameSayerFileList {
-
-
 
     /**
      * This method takes in a list of files. Then is concatenates, equalizes and removes the silence in those files.
@@ -124,6 +124,13 @@ public abstract class NameSayerFileList {
     public VBox getFilesForScene(ObservableList<? extends NameSayerFile> files){
         VBox container = new VBox();
 
+        //If files are empty then a view saying no files found is returned
+        if (files.isEmpty()) {
+            Label setLabel = new Label("No Files Here Yet");
+            setLabel.setFont(Font.font("Cambria", 28));
+            setLabel.setMinWidth(300);
+            container.getChildren().add(setLabel);
+        }
         //Looping through files to add them to vbox
         for (NameSayerFile file : files){
             container.getChildren().add(file.get_fileView());
