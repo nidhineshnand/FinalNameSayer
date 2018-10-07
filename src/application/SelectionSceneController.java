@@ -112,7 +112,7 @@ public class SelectionSceneController extends Controller {
 		_practiceController.getSelectionSceneController(this);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
-		secondaryStage.initOwner(Main.primaryStage);
+		secondaryStage.initOwner(NameSayerStarter.primaryStage);
         secondaryStage.setTitle("NameSayer");
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
@@ -221,6 +221,8 @@ public class SelectionSceneController extends Controller {
 	 * populates database pane for the startup
 	 */
 	protected void populateDatabasePane() {
+		_recordingListPane.getChildren().clear();
+		_practiceListPane.getChildren().clear();
 		_recordingListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
 		_practiceListPane.getChildren().setAll(_spine.populatePractiseFileForMainScene());
 	}
