@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.swing.JOptionPane;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,6 +51,8 @@ public class SelectionSceneController extends Controller {
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
+    public JFXCheckBox _userRecordingCheckBox;
+	public JFXButton _deleteUserRecording;
 
 
 	private PracticeSceneController _practiceController;
@@ -129,6 +132,22 @@ public class SelectionSceneController extends Controller {
         });
 	}
 
+
+	//Method that is responsible for selecting all user recordings
+
+	public void selectAllUserRecordings(){
+		//If check box is selected then the label is changed to deselect all and all files are selected
+		if(_userRecordingCheckBox.isSelected()){
+			_userRecordingCheckBox.setText("Deselect All");
+			_spine.setUserRecordingFileListCheckBox(true);
+
+			//If checkbox is not selected then the label is changed to select all and all the files are deselected
+		} else {
+			_userRecordingCheckBox.setText("Select All");
+			_spine.setUserRecordingFileListCheckBox(false);
+		}
+		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
+	}
 	private void autoCompleteListBinding(){
 		//Binding search results to textfieled
 		TextFields.bindAutoCompletion(_nameTextField, t -> _spine.continousSearchResults(_nameTextField.getText()));
