@@ -120,8 +120,9 @@ public class SelectionSceneController extends Controller {
 		TextFields.bindAutoCompletion(_nameTextField, t -> _spine.continousSearchResults(_nameTextField.getText()));
 	}
 
+
 	//Sets the select all functionality to the practise file list
-	private void selectAllPractiseFileCheckBox(){
+	public void selectAllPractiseFileCheckBox(){
 		//If check box is selected then the label is changed to deselect all and all files are selected
 		if(_practiseFileSelectAllPractiseFileCheckBox.isSelected()){
 			_practiseFileSelectAllPractiseFileCheckBox.setText("Deselect All");
@@ -132,6 +133,7 @@ public class SelectionSceneController extends Controller {
 			_practiseFileSelectAllPractiseFileCheckBox.setText("Select All");
 			_spine.setPractiseFileListCheckBox(false);
 		}
+		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
 
 	}
 
