@@ -5,6 +5,8 @@
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -65,6 +67,12 @@
                </font>
             </JFXButton>
             <CustomTextField fx:id="_nameTextField" layoutX="134.0" layoutY="168.0" prefHeight="38.0" prefWidth="410.0" />
+            <Label fx:id="_pointsLabel" layoutX="544.0" layoutY="48.0" prefHeight="41.0" prefWidth="59.0" text="Label" />
+            <ImageView fitHeight="43.0" fitWidth="47.0" layoutX="491.0" layoutY="45.0">
+               <image>
+                  <Image url="@../../resources/Yellow_Star.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>
