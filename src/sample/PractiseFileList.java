@@ -3,6 +3,7 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.BufferedReader;
@@ -15,7 +16,7 @@ public class PractiseFileList extends NameSayerFileList{
 
     String _pathToWrite;
     ObservableList<PractiseFile> _practiseFileList = FXCollections.observableArrayList();
-    VBox _practiseFileListVbox = new VBox();
+    VBox _practiseFileListVbox = new VBox(0);
 
     public PractiseFileList(String pathToWrite){
         _pathToWrite = pathToWrite;
@@ -200,6 +201,10 @@ public class PractiseFileList extends NameSayerFileList{
 
     public ScrollPane get_practiseFileListVbox() {
         getFilesForMainScene();
-        return new ScrollPane(_practiseFileListVbox);
+        _practiseFileListVbox.setPrefHeight(500);
+        ScrollPane scrollPane = new ScrollPane(_practiseFileListVbox);
+        scrollPane.setFitToWidth(true);
+        //scrollPane.setFitToWidth(true);
+        return scrollPane;
     }
 }
