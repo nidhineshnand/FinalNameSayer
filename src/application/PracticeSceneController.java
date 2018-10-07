@@ -101,6 +101,11 @@ public class PracticeSceneController extends Controller {
 		//Starting mic sound check
 		_micSensitivityBar.setProgress(0);
 		checkMicLevel();
+
+
+		_volumeSlider.valueProperty().addListener(e -> {
+			volumeSliderDragged();
+		});
 	}
 	
 	/**
@@ -138,6 +143,11 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	void volumeSliderDragged() {
 		_currentVolume = _volumeSlider.getValue();
+		if (_player != null){
+			_player.setVolume(_currentVolume/100);
+		}
+
+		System.out.println("lol");
 	}
 	
 	/**
@@ -286,7 +296,6 @@ public class PracticeSceneController extends Controller {
 			String source = file.toURI().toURL().toString();
 			Media media = new Media(source);
 			_player = new MediaPlayer(media);
-			_player.setVolume(_currentVolume/100);
 			_player.play();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
