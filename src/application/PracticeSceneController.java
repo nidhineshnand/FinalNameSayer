@@ -222,7 +222,7 @@ public class PracticeSceneController extends Controller {
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
 		updateRecordingPane();
-		_spine.changePoints(_points+3);
+		_spine.changePoints(3);
 	}
 	
 	/**
@@ -236,7 +236,7 @@ public class PracticeSceneController extends Controller {
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
 		updateRecordingPane();
-		_spine.changePoints(_points-1);
+		_spine.changePoints(-1);
 	}
 	
 	/**
