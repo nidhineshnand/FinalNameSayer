@@ -187,6 +187,11 @@ public class SelectionSceneController extends Controller {
 			openPracticeScene();
 		}
 	}
+
+	//This method delete selected user recordings
+	public void deleteSelectedUserRecordings(){
+		_spine.deleteSelectedUserRecordingFiles();
+	}
 	
 	/**
 	 * When _addToListButton is clicked
