@@ -124,6 +124,7 @@ public class SelectionSceneController extends Controller {
 			public void handle(WindowEvent arg0) {
 				populatePanes();
 				_pointsLabel.setText(_spine.getPoints() + "");
+				System.out.println("stopping");
 			}
         });
 	}

@@ -69,7 +69,7 @@ public class ControllerConnecter {
 
 
     /**This method gets a list of local recording names that are selected (in the practise scene) in the form of an ArrayList*/
-    public ArrayList<UserRecordingFile> getSelectedLocalRecordignFilesFromPractiseScene(){
+    public ArrayList<UserRecordingFile> getSelectedLocalRecordingFilesFromPractiseScene(){
         return userRecordingFileList.getSelectedUserRecordingInPractiseScene();
     }
 

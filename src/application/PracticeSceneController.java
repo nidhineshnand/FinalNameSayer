@@ -42,6 +42,7 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
+import javax.swing.JOptionPane;
 
 public class PracticeSceneController extends Controller {
 	
@@ -243,7 +244,10 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void deleteSelectedClicked() {
-		
+		ArrayList<UserRecordingFile> toDelete = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
+		for (UserRecordingFile f: toDelete) {
+			f.deleteFile();
+		}
 	}
 	
 	/**
@@ -251,7 +255,12 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void playSelectedClicked() {
-		
+		ArrayList<UserRecordingFile> toDelete = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
+		if (toDelete.size() == 1) {
+			playItem(toDelete.get(0));
+		} else {
+			JOptionPane.showMessageDialog(null, "Please select only one to play");
+		}
 	}
 	
 	/**
