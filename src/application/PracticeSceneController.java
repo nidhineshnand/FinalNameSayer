@@ -82,7 +82,6 @@ public class PracticeSceneController extends Controller {
 	private double _currentMicSensitivity;
 	private UserRecordingFile _rFile;
 	private RecordVoice _recordingProcess;
-	private SelectionSceneController _parentController;
 	private MediaPlayer _player;
 
 	// Methods
@@ -306,7 +305,7 @@ public class PracticeSceneController extends Controller {
 	 * gets the parent Controller
 	 */
 	void getSelectionSceneController(SelectionSceneController controller) {
-		_parentController = controller;
+		_spine = controller.getSpine();
 	}
 
 	/**
