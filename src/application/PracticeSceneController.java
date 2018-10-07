@@ -73,6 +73,7 @@ public class PracticeSceneController extends Controller {
 	
 	private int _counter = 0;
 	private double _currentVolume;
+	private double _currentMicSensitivity;
 	private UserRecordingFile _rFile;
 	private RecordVoice _recordingProcess;
 	private SelectionSceneController _parentController;
@@ -88,6 +89,7 @@ public class PracticeSceneController extends Controller {
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
+		_currentMicSensitivity = _micSensitivitySlider.getValue();
 
 		//Setting mic
 		//Starting mic sound check
@@ -113,7 +115,7 @@ public class PracticeSceneController extends Controller {
 			_nextButton.setVisible(false);
 			_prevButton.setVisible(false);
 		}
-		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+		updateRecordingPane();
 	}
 	
 	/**
@@ -137,7 +139,7 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void micSensitivityDragged() {
-		
+		_currentMicSensitivity = _micSensitivitySlider.getValue();
 	}
 	
 	/**
@@ -158,7 +160,7 @@ public class PracticeSceneController extends Controller {
 			_playRecordingButton.setVisible(true);
 			_saveButton.setVisible(true);
 			_deleteButton.setVisible(true);
-			_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+			updateRecordingPane();
 		}
 	}
 
@@ -182,6 +184,7 @@ public class PracticeSceneController extends Controller {
 			_counter = _listOfNames.size() - 1;
 		}
 		updateCurrentName();
+		updateRecordingPane();
 	}
 	
 	/**
@@ -202,7 +205,7 @@ public class PracticeSceneController extends Controller {
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
-		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+		updateRecordingPane();
 		_spine.changePoints(_points+3);
 	}
 	
@@ -216,7 +219,7 @@ public class PracticeSceneController extends Controller {
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
-		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+		updateRecordingPane();
 		_spine.changePoints(_points-1);
 	}
 	
@@ -228,6 +231,7 @@ public class PracticeSceneController extends Controller {
 		_counter++;
 		_counter = _counter % _listOfNames.size();
 		updateCurrentName();
+		updateRecordingPane();
 	}
 	
 	/**
@@ -236,6 +240,11 @@ public class PracticeSceneController extends Controller {
 	private void updateCurrentName() {
 		_currentName.setText(_listOfNames.get(_counter).get_displayName());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
+	}
+	
+	private void updateRecordingPane() {
+		_recordingList.getChildren().clear();
+		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
 	}
 
 	/**
@@ -261,9 +270,7 @@ public class PracticeSceneController extends Controller {
 	void getSelectionSceneController(SelectionSceneController controller) {
 		_parentController = controller;
 	}
-
-
-
+	
 	/**
 	 * checks mic level
 	 */
