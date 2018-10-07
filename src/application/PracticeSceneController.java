@@ -55,8 +55,6 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	public Slider _volumeSlider;
 	@FXML
-	public Slider _micSensitivitySlider;
-	@FXML
 	public ProgressBar _micSensitivityBar;
 	@FXML
 	public Button _recordButton;
@@ -79,7 +77,6 @@ public class PracticeSceneController extends Controller {
 	
 	private int _counter = 0;
 	private double _currentVolume;
-	private double _currentMicSensitivity;
 	private UserRecordingFile _rFile;
 	private RecordVoice _recordingProcess;
 	private MediaPlayer _player;
@@ -94,7 +91,6 @@ public class PracticeSceneController extends Controller {
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
-		_currentMicSensitivity = _micSensitivitySlider.getValue();
 
 		//Setting mic
 		//Starting mic sound check
@@ -147,14 +143,6 @@ public class PracticeSceneController extends Controller {
 		}
 
 		System.out.println("lol");
-	}
-	
-	/**
-	 * When _micSensitivitySlider is dragged
-	 */
-	@FXML
-	void micSensitivityDragged() {
-		_currentMicSensitivity = _micSensitivitySlider.getValue();
 	}
 	
 	/**
