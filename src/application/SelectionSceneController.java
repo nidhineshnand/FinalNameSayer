@@ -123,6 +123,7 @@ public class SelectionSceneController extends Controller {
 			public void handle(WindowEvent arg0) {
 				populatePanes();
 				_pointsLabel.setText(_spine.getPoints() + "");
+				System.out.println(_spine.getPoints());
 				System.out.println("stopping");
 			}
         });
@@ -226,8 +227,8 @@ public class SelectionSceneController extends Controller {
 	protected void populatePanes() {
 		_recordingListPane.getChildren().clear();
 		_practiceListPane.getChildren().clear();
-		_recordingListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
-		_practiceListPane.getChildren().setAll(_spine.populatePractiseFileForMainScene());
+		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
+		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
 	}
 	
 	/**

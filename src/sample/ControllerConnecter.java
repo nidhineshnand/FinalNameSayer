@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 public class ControllerConnecter {
 
-    InitializeFiles initializeFiles = new InitializeFiles("./resources/database");
-    DatabaseFileList databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
-    PractiseFileList practiseFileList = new PractiseFileList(initializeFiles.get_practiseDirPath());
-    UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
-    PointsSystem pointsSystem = new PointsSystem();
+    private InitializeFiles initializeFiles = new InitializeFiles("./resources/database");
+    private DatabaseFileList databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
+    private PractiseFileList practiseFileList = new PractiseFileList(initializeFiles.get_practiseDirPath());
+    private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
+    private PointsSystem pointsSystem = new PointsSystem();
 
 
     /**This method outputs a VBox that contains the PractiseFile objects that are loaded by the user*/
