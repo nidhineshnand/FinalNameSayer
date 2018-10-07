@@ -13,13 +13,13 @@
 
 <BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
    <left>
-      <AnchorPane prefHeight="600.0" prefWidth="199.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="285.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTabPane layoutX="1.0" prefHeight="600.0" prefWidth="198.0">
+            <JFXTabPane layoutX="1.0" prefHeight="600.0" prefWidth="284.0">
                <tabs>
                   <Tab text="Practice List">
                      <content>
-                        <Pane prefHeight="453.0" prefWidth="198.0">
+                        <Pane prefHeight="453.0" prefWidth="280.0">
                            <children>
                               <JFXButton fx:id="_practiceListButton" buttonType="RAISED" layoutY="518.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="200.0" text="Practice All" />
                               <JFXCheckBox fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="1.0" layoutY="507.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="198.0" text="Select All" />

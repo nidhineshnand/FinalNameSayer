@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.io.BufferedReader;
@@ -197,8 +198,8 @@ public class PractiseFileList extends NameSayerFileList{
     }
 
 
-    public VBox get_practiseFileListVbox() {
+    public ScrollPane get_practiseFileListVbox() {
         getFilesForMainScene();
-        return _practiseFileListVbox;
+        return new ScrollPane(_practiseFileListVbox);
     }
 }
