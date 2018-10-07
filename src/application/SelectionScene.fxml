@@ -17,7 +17,7 @@
    <left>
       <AnchorPane prefHeight="600.0" prefWidth="285.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTabPane layoutX="1.0" prefHeight="600.0" prefWidth="284.0">
+            <JFXTabPane id="_tabParent" layoutX="1.0" prefHeight="600.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css">
                <tabs>
                   <Tab text="Practice List">
                      <content>
@@ -78,9 +78,9 @@
             </JFXButton>
             <CustomTextField fx:id="_nameTextField" layoutX="126.0" layoutY="228.0" prefHeight="38.0" prefWidth="410.0" />
             <Label fx:id="_pointsLabel" layoutX="507.0" layoutY="39.0" prefHeight="41.0" prefWidth="59.0" text="Label" />
-            <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="452.0" layoutY="39.0">
+            <ImageView fitHeight="65.0" fitWidth="68.0" layoutX="427.0" layoutY="27.0">
                <image>
-                  <Image url="@../../Yellow_Star.png" />
+                  <Image url="@../../resources/Yellow_Star.png" />
                </image>
             </ImageView>
          </children>
