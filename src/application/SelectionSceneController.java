@@ -239,6 +239,12 @@ public class SelectionSceneController extends Controller {
 		staticSearch();
 	}
 	
+	@FXML
+	void removeClicked() {
+		_spine.deleteSelectedPractiseFiles();
+		populatePanes();
+	}
+	
 	/**
 	 * resets the list of names in _listOfNames
 	 */
