@@ -70,6 +70,10 @@ public class PracticeSceneController extends Controller {
 	public Button _nextButton;
 	@FXML
 	public Button _deleteButton;
+	@FXML
+	public Button _playSelectedButton;
+	@FXML
+	public Button _deleteSelectedButton;
 	
 	private int _counter = 0;
 	private double _currentVolume;
@@ -232,6 +236,22 @@ public class PracticeSceneController extends Controller {
 		_counter = _counter % _listOfNames.size();
 		updateCurrentName();
 		updateRecordingPane();
+	}
+	
+	/**
+	 * When _deleteSelectedButton is clicked
+	 */
+	@FXML
+	void deleteSelectedClicked() {
+		
+	}
+	
+	/**
+	 * When _playSelectedButton is clicked 
+	 */
+	@FXML
+	void playSelectedClicked() {
+		
 	}
 	
 	/**

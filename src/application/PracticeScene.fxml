@@ -27,11 +27,11 @@
             <Font size="36.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="_playRecordingButton" buttonType="RAISED" layoutX="536.0" layoutY="512.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play Recording">
+      <JFXButton fx:id="_playRecordingButton" buttonType="RAISED" layoutX="466.0" layoutY="93.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play Lastest">
          <font>
             <Font size="14.0" />
          </font></JFXButton>
-      <JFXButton fx:id="_saveButton" buttonType="RAISED" layoutX="670.0" layoutY="512.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="69.0" text="Save">
+      <JFXButton fx:id="_saveButton" buttonType="RAISED" layoutX="595.0" layoutY="93.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="119.0" text="Save Lastest">
          <font>
             <Font size="14.0" />
          </font></JFXButton>
@@ -52,7 +52,7 @@
          </font>
       </JFXButton>
       <JFXProgressBar fx:id="_micSensitivityBar" layoutX="134.0" layoutY="526.0" />
-      <JFXButton fx:id="_deleteButton" buttonType="RAISED" layoutX="740.0" layoutY="512.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="69.0" text="Delete">
+      <JFXButton fx:id="_deleteButton" buttonType="RAISED" layoutX="731.0" layoutY="93.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete Lastest">
          <font>
             <Font size="14.0" />
          </font>
@@ -70,5 +70,15 @@
             </Tab>
          </tabs>
       </JFXTabPane>
+      <JFXButton fx:id="_playSelectedButton" buttonType="RAISED" layoutX="536.0" layoutY="519.0" onAction="#playSelectedClicked" prefHeight="36.0" prefWidth="119.0" text="Play Selected ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="_deleteSelectedButton" buttonType="RAISED" layoutX="688.0" layoutY="519.0" onAction="#deleteSelectedClicked" prefHeight="36.0" prefWidth="119.0" text="Delete Selected">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
