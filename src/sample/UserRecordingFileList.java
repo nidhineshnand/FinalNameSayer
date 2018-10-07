@@ -64,7 +64,6 @@ public class UserRecordingFileList extends NameSayerFileList {
             recordingFile.deleteFile();
         }
         _userRecordingFilesList.removeAll(getSelectedUserRecording());
-        getFilesForMainScene();
     }
 
     //This method creates a UserRecording file and passes it to the front end for recording
