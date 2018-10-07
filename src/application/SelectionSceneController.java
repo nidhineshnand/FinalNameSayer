@@ -122,7 +122,7 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setOnHiding(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent arg0) {
-				populateDatabasePane();
+				populatePanes();
 				_pointsLabel.setText(_spine.getPoints() + "");
 			}
         });
@@ -223,7 +223,7 @@ public class SelectionSceneController extends Controller {
 	/**
 	 * populates database pane for the startup
 	 */
-	protected void populateDatabasePane() {
+	protected void populatePanes() {
 		_recordingListPane.getChildren().clear();
 		_practiceListPane.getChildren().clear();
 		_recordingListPane.getChildren().setAll(_spine.populateUserRecordingFilesForMainScene());
