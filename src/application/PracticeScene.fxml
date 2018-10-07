@@ -21,7 +21,7 @@
             <Font size="36.0" />
          </font>
       </JFXButton>
-      <JFXButton id="_recordButton" fx:id="_recordButton" buttonType="RAISED" layoutX="549.0" layoutY="72.0" onAction="#recordClicked" prefHeight="78.0" prefWidth="242.0" stylesheets="@PracticeSceneStyleSheet.css" text="Record">
+      <JFXButton id="_recordButton" fx:id="_recordButton" buttonType="RAISED" layoutX="567.0" layoutY="65.0" onAction="#recordClicked" prefHeight="78.0" prefWidth="242.0" stylesheets="@PracticeSceneStyleSheet.css" text="Record">
          <font>
             <Font size="36.0" />
          </font>
