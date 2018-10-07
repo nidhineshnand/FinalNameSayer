@@ -39,7 +39,7 @@ public abstract class NameSayerFileList {
         //Writing the names of files to a txt file to concatanate
         for (File fileToConcatanate : file.filesToPlay()) {
             try {
-                Files.write(catFile.toPath(), ("file './resources/names/" + fileToConcatanate.getName() + "'\n").getBytes(), StandardOpenOption.APPEND);
+                Files.write(catFile.toPath(), ("file './resources/database/" + fileToConcatanate.getName() + "'\n").getBytes(), StandardOpenOption.APPEND);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -80,7 +80,7 @@ public abstract class NameSayerFileList {
     //Concatenates the set of files provided
     private void concatenateRecording() {
         try {
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -f concat -safe 0 -i myList.txt -c copy local-files/concatenations/output.wav");
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -f concat -safe 0 -i myList.txt -c copy ./resources/concatenations/output.wav");
             Process process = builder.start();
             process.waitFor();
             //Exception handling for the process builder
@@ -94,7 +94,7 @@ public abstract class NameSayerFileList {
     //Tries to remove the silence required
     private void cleanRecording() {
         try {
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -hide_banner -i  ./local-files/concatenations/output.wav -af silenceremove=1:0:-55dB:1:5:-55dB:0 ./local-files/concatenations/output1.wav");
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -hide_banner -i  ./resources/concatenations/output.wav -af silenceremove=1:0:-50dB:1:5:-50dB:0 ./resources/concatenations/output1.wav");
             Process process = builder.start();
             process.waitFor();
             //Exception handling for the process builder
@@ -108,7 +108,7 @@ public abstract class NameSayerFileList {
     //Normalized audio
     private void normalizeAudio(){
         try {
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i ./local-files/concatenations/output1.wav -filter:a \"dynaudnorm\" ./local-files/concatenations/output2.wav");
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i ./resources/concatenations/output1.wav -filter:a \"dynaudnorm=f=75:g=15\" ./resources/concatenations/output2.wav");
             Process process = builder.start();
             process.waitFor();
             //Exception handling for the process builder
