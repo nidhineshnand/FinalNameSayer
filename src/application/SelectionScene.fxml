@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
 
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
    <left>
       <AnchorPane prefHeight="600.0" prefWidth="285.0" BorderPane.alignment="CENTER">
          <children>
@@ -26,7 +26,7 @@
                               <AnchorPane prefHeight="568.0" prefWidth="289.0">
                                  <children>
                                     <AnchorPane fx:id="_practiceListPane" prefHeight="502.0" prefWidth="290.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <JFXButton fx:id="_practiceListButton" buttonType="RAISED" layoutX="4.0" layoutY="524.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="286.0" text="Practice All" />
+                                    <JFXButton fx:id="_practiceListButton" buttonType="RAISED" layoutX="4.0" layoutY="524.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="135.0" text="Practice All" />
                                     <JFXCheckBox fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="1.0" layoutY="504.0" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="22.0" prefWidth="284.0" text="Select All" />
                                  </children>
                               </AnchorPane>
@@ -67,10 +67,10 @@
                </font>
             </JFXButton>
             <CustomTextField fx:id="_nameTextField" layoutX="134.0" layoutY="168.0" prefHeight="38.0" prefWidth="410.0" />
-            <Label fx:id="_pointsLabel" layoutX="544.0" layoutY="48.0" prefHeight="41.0" prefWidth="59.0" text="Label" />
-            <ImageView fitHeight="43.0" fitWidth="47.0" layoutX="491.0" layoutY="45.0">
+            <Label fx:id="_pointsLabel" layoutX="529.0" layoutY="25.0" prefHeight="41.0" prefWidth="59.0" text="Label" />
+            <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="477.0" layoutY="27.0">
                <image>
-                  <Image url="@../../resources/Yellow_Star.png" />
+                  <Image url="@../../Yellow_Star.png" />
                </image>
             </ImageView>
          </children>

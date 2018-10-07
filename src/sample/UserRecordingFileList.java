@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
@@ -118,13 +119,19 @@ public class UserRecordingFileList extends NameSayerFileList {
         return list;
     }
 
-    public VBox get_userRecordingFileListVBox() {
+    public ScrollPane get_userRecordingFileListVBox() {
         getFilesForMainScene();
-        return _userRecordingFileListVBox;
+        _userRecordingFileListVBox.setPrefHeight(500);
+        ScrollPane scrollPane = new ScrollPane(_userRecordingFileListVBox);
+        scrollPane.setFitToWidth(true);
+        return scrollPane;
     }
 
-    public VBox get_associatedUserRecordingFileListVbox(PractiseFile file) {
+    public ScrollPane get_associatedUserRecordingFileListVbox(PractiseFile file) {
         getFilesForPractiseScene(file);
-        return _associatedUserRecordingFileListVbox;
+        _associatedUserRecordingFileListVbox.setPrefHeight(500);
+        ScrollPane scrollPane = new ScrollPane(_associatedUserRecordingFileListVbox);
+        scrollPane.setFitToWidth(true);
+        return scrollPane;
     }
 }
