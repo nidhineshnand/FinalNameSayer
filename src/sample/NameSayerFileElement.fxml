@@ -11,7 +11,7 @@
    <children>
       <JFXCheckBox fx:id="_checkBox" checkedColor="#10439c" layoutX="14.0" layoutY="6.0" text="CheckBox">
          <font>
-            <Font size="15.0" />
+            <Font size="12.0" />
          </font>
       </JFXCheckBox>
       <CheckComboBox fx:id="_comboBox" layoutX="210.0" layoutY="1.0" prefHeight="20.0" prefWidth="70.0" />
