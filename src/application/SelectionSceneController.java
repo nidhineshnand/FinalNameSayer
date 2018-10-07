@@ -68,6 +68,7 @@ public class SelectionSceneController extends Controller {
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
 		populateDatabasePane();
+		_pointsLabel.setText(_spine.getPoints() + "");
 	}
 
 	/**
@@ -122,6 +123,7 @@ public class SelectionSceneController extends Controller {
 			@Override
 			public void handle(WindowEvent arg0) {
 				populateDatabasePane();
+				_pointsLabel.setText(_spine.getPoints() + "");
 			}
         });
 	}
