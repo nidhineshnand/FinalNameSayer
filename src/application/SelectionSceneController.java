@@ -245,4 +245,11 @@ public class SelectionSceneController extends Controller {
 			populatePanes();
 		}
 	}
+	
+	/**
+	 * getter for the controller connecter
+	 */
+	ControllerConnecter getSpine() {
+		return _spine;
+	}
 }
