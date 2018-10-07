@@ -255,10 +255,8 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void deleteSelectedClicked() {
-		ArrayList<UserRecordingFile> toDelete = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
-		for (UserRecordingFile f: toDelete) {
-			f.deleteFile();
-		}
+		_spine.deleteSelectedUserRecordingFiles();
+		updateRecordingPane();
 	}
 	
 	/**
@@ -268,7 +266,8 @@ public class PracticeSceneController extends Controller {
 	void playSelectedClicked() {
 		ArrayList<UserRecordingFile> toDelete = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
 		if (toDelete.size() == 1) {
-			playItem(toDelete.get(0));
+			_rFile = toDelete.get(0);
+			playItem(_rFile);
 		} else {
 			JOptionPane.showMessageDialog(null, "Please select only one to play");
 		}
