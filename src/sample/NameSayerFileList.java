@@ -94,7 +94,7 @@ public abstract class NameSayerFileList {
     //Tries to remove the silence required
     private void cleanRecording() {
         try {
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -hide_banner -i  ./resources/concatenations/output.wav -af silenceremove=1:0:-50dB:1:5:-50dB:0 ./resources/concatenations/output1.wav");
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -hide_banner -i  ./resources/concatenations/output.wav -af silenceremove=1:0:-55dB:1:5:-55dB:0 ./resources/concatenations/output1.wav");
             Process process = builder.start();
             process.waitFor();
             //Exception handling for the process builder
