@@ -108,7 +108,7 @@ public abstract class NameSayerFileList {
     //Normalized audio
     private void normalizeAudio(){
         try {
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i ./resources/concatenations/output1.wav -filter:a \"dynaudnorm=f=75:g=15\" ./resources/concatenations/output2.wav");
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i ./resources/concatenations/output1.wav -filter:a \"dynaudnorm=f=75:g=11:s=12\" ./resources/concatenations/output2.wav");
             Process process = builder.start();
             process.waitFor();
             //Exception handling for the process builder
