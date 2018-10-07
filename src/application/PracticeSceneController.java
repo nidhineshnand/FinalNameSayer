@@ -246,6 +246,7 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	void deleteSelectedClicked() {
 		_spine.deleteSelectedUserRecordingFiles();
+		updateRecordingPane();
 	}
 	
 	/**
