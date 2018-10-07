@@ -115,6 +115,12 @@ public class ControllerConnecter {
         practiseFileList.setCheckBoxesTo(set);
     }
 
+    /**This method sets all the user recording files recording as either selected or not selected. It takes a boolean input.
+     * True is select all whilst false is deselect all.
+     */
+    public void setUserRecordingFileListCheckBox(Boolean set){
+        userRecordingFileList.setCheckBoxesTo(set);
+    }
 
     /**This method changes the points associated with the user*/
     public void changePoints(int val){

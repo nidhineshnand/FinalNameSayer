@@ -88,6 +88,14 @@ public class UserRecordingFileList extends NameSayerFileList {
         }
     }
 
+    //Method sets all the checkboxes to wither ticked or not
+    public void setCheckBoxesTo(boolean set){
+
+        //Loops through all user recordings to set the checkbox either true or false
+        for(UserRecordingFile file : _userRecordingFilesList){
+            file.get_controller().setCheckBox(set);
+        }
+    }
 
     /**This method returns the list of userRecordingFiles that are currently selected in the main scene. If no recordings
      * are selected then an empty list is returned*/
