@@ -77,7 +77,7 @@ public class PracticeSceneController extends Controller {
 	private RecordVoice _recordingProcess;
 	private SelectionSceneController _parentController;
 	private MediaPlayer _player;
-	
+
 	// Methods
 	
 	@Override
@@ -261,13 +261,13 @@ public class PracticeSceneController extends Controller {
 	void getSelectionSceneController(SelectionSceneController controller) {
 		_parentController = controller;
 	}
-	
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void stop() {
 		_parentController.populateDatabasePane();

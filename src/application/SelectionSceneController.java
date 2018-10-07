@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,6 +25,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import sample.ControllerConnecter;
@@ -113,6 +117,12 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
         secondaryStage.show();
+        secondaryStage.setOnHiding(new EventHandler<WindowEvent>() {
+			@Override
+			public void handle(WindowEvent arg0) {
+				populateDatabasePane();
+			}
+        });
 	}
 
 	private void autoCompleteListBinding(){
@@ -229,11 +239,5 @@ public class SelectionSceneController extends Controller {
 			System.out.println(pFile.get_displayName());
 			_practiceListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
 		}
-	}
-
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
-		
 	}
 }
