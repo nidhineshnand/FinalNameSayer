@@ -17,6 +17,7 @@ public class UserRecordingFileList extends NameSayerFileList {
     ObservableList<UserRecordingFile> _associatedUserRecordingFiles = FXCollections.observableArrayList();
     String _pathToFiles;
     VBox _userRecordingFileListVBox = new VBox();
+    VBox _associatedUserRecordingFileListVbox = new VBox();
 
     public UserRecordingFileList(String pathToFiles){
         _pathToFiles = pathToFiles;
@@ -50,9 +51,9 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
     //This method get files to paint for the practise scene
-    public VBox getFilesForPractiseScene(PractiseFile file){
+    public void getFilesForPractiseScene(PractiseFile file){
         setUserRecordingsAssociatedWith(file);
-        return getFilesForScene(_associatedUserRecordingFiles);
+        _associatedUserRecordingFileListVbox = getFilesForScene(_associatedUserRecordingFiles);
     }
 
     //This method deletes the selected recordings on the main page
@@ -74,11 +75,11 @@ public class UserRecordingFileList extends NameSayerFileList {
     //Adds a user recording object to the list if a recording is created
     public void addUserRecordingToList(UserRecordingFile file){
         _userRecordingFilesList.add(file);
-        getFilesForMainScene();
     }
 
     //Method finds all the user recording files that are associated with a particular practise file
     public void setUserRecordingsAssociatedWith(PractiseFile file){
+        _associatedUserRecordingFiles.clear();
         //Looping through all local files to find file that is associated with this practise file
         for(UserRecordingFile userFile : _userRecordingFilesList){
            if (file.get_displayName().equalsIgnoreCase(userFile.get_identity())){
@@ -120,5 +121,10 @@ public class UserRecordingFileList extends NameSayerFileList {
     public VBox get_userRecordingFileListVBox() {
         getFilesForMainScene();
         return _userRecordingFileListVBox;
+    }
+
+    public VBox get_associatedUserRecordingFileListVbox(PractiseFile file) {
+        getFilesForPractiseScene(file);
+        return _associatedUserRecordingFileListVbox;
     }
 }

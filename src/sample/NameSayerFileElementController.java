@@ -27,6 +27,7 @@ public class NameSayerFileElementController {
             populateComboBox();
         } else {
             _comboBox.setVisible(false);
+            _badRatingText.setVisible(false);
         }
         setListnersToComboBox();
     }

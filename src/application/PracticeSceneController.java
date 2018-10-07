@@ -261,7 +261,7 @@ public class PracticeSceneController extends Controller {
 		_currentName.setText(_listOfNames.get(_counter).get_displayName());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
 	}
-	
+
 	private void updateRecordingPane() {
 		_recordingList.getChildren().clear();
 		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
@@ -290,7 +290,7 @@ public class PracticeSceneController extends Controller {
 	void getSelectionSceneController(SelectionSceneController controller) {
 		_parentController = controller;
 	}
-	
+
 	/**
 	 * checks mic level
 	 */
