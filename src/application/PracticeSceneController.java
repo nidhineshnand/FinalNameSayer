@@ -26,6 +26,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -59,7 +60,7 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	public Button _recordButton;
 	@FXML
-	public Pane _recordingList;
+	public AnchorPane _recordingList = new AnchorPane();
 	@FXML
 	public Button _prevButton;
 	@FXML

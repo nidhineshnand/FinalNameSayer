@@ -46,7 +46,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Pane _recordingListPane;
 	@FXML
-	public AnchorPane _practiceListPane;
+	public Pane _practiceListPane;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
