@@ -191,6 +191,7 @@ public class SelectionSceneController extends Controller {
 	//This method delete selected user recordings
 	public void deleteSelectedUserRecordings(){
 		_spine.deleteSelectedUserRecordingFiles();
+		_recordingListPane.getChildren().add(_spine.populateUserRecordingFilesForMainScene());
 	}
 	
 	/**
