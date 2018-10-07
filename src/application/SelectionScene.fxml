@@ -26,7 +26,7 @@
                               <AnchorPane prefHeight="568.0" prefWidth="289.0">
                                  <children>
                                     <AnchorPane fx:id="_practiceListPane" prefHeight="502.0" prefWidth="290.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <JFXButton fx:id="_practiceListButton" buttonType="RAISED" layoutX="4.0" layoutY="524.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="135.0" text="Practice All" />
+                                    <JFXButton fx:id="_practiceListButton" buttonType="RAISED" layoutX="4.0" layoutY="524.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="135.0" text="Practice Selected" />
                                     <JFXCheckBox fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="1.0" layoutY="504.0" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="22.0" prefWidth="284.0" text="Select All" />
                                  </children>
                               </AnchorPane>
