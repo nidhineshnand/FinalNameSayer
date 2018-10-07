@@ -26,11 +26,11 @@
             <Font size="36.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="_playRecordingButton" buttonType="RAISED" layoutX="466.0" layoutY="93.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play Lastest">
+      <JFXButton fx:id="_playRecordingButton" buttonType="RAISED" layoutX="466.0" layoutY="93.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play">
          <font>
             <Font size="14.0" />
          </font></JFXButton>
-      <JFXButton fx:id="_saveButton" buttonType="RAISED" layoutX="595.0" layoutY="93.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="119.0" text="Save Lastest">
+      <JFXButton fx:id="_saveButton" buttonType="RAISED" layoutX="595.0" layoutY="93.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="119.0" text="Save">
          <font>
             <Font size="14.0" />
          </font></JFXButton>
@@ -51,7 +51,7 @@
          </font>
       </JFXButton>
       <JFXProgressBar fx:id="_micSensitivityBar" layoutX="134.0" layoutY="526.0" />
-      <JFXButton fx:id="_deleteButton" buttonType="RAISED" layoutX="731.0" layoutY="93.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete Lastest">
+      <JFXButton fx:id="_deleteButton" buttonType="RAISED" layoutX="731.0" layoutY="93.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete">
          <font>
             <Font size="14.0" />
          </font>
