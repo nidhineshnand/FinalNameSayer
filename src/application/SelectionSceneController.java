@@ -64,7 +64,6 @@ public class SelectionSceneController extends Controller {
 		// TODO Auto-generated method stub
 		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
 		super.initialize(location, resources);
-		populatePanes();
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
 		populatePanes();
