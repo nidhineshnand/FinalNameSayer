@@ -262,20 +262,6 @@ public class PracticeSceneController extends Controller {
 		_parentController = controller;
 	}
 
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void stop() {
-		_parentController.populateDatabasePane();
-	}
-
-
-
-
 	public void checkMicLevel() {
 		CheckMic mictask = new CheckMic();
 		new Thread(mictask).start();
