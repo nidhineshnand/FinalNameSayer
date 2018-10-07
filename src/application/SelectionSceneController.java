@@ -66,7 +66,7 @@ public class SelectionSceneController extends Controller {
 		populateDatabasePane();
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
-		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
+		populateDatabasePane();
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	void addToListClicked() {
 		staticSearch();
-		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
+		populateDatabasePane();
 	}
 	
 	/**
@@ -199,7 +199,7 @@ public class SelectionSceneController extends Controller {
 		}
 
 		//Refreshing view
-		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
+		populateDatabasePane();
 	}
 	
 	/**
@@ -237,7 +237,7 @@ public class SelectionSceneController extends Controller {
 		} else {
 			//_spine.addPractiseFileToList(pFile);
 			System.out.println(pFile.get_displayName());
-			_practiceListPane.getChildren().add(_spine.populatePractiseFileForMainScene());
+			populateDatabasePane();
 		}
 	}
 }
