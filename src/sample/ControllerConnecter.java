@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
@@ -15,7 +16,7 @@ public class ControllerConnecter {
 
 
     /**This method outputs a VBox that contains the PractiseFile objects that are loaded by the user*/
-    public VBox populatePractiseFileForMainScene(){
+    public ScrollPane populatePractiseFileForMainScene(){
         return practiseFileList.get_practiseFileListVbox();
     }
 

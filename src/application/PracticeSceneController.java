@@ -38,6 +38,11 @@ import sample.NameSayerFile;
 import sample.PractiseFile;
 import sample.UserRecordingFile;
 
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.TargetDataLine;
+
 public class PracticeSceneController extends Controller {
 	
 	// Fields
@@ -71,7 +76,8 @@ public class PracticeSceneController extends Controller {
 	private UserRecordingFile _rFile;
 	private RecordVoice _recordingProcess;
 	private SelectionSceneController _parentController;
-	
+	private MediaPlayer _player;
+
 	// Methods
 	
 	@Override
@@ -82,6 +88,11 @@ public class PracticeSceneController extends Controller {
 		_deleteButton.setVisible(false);
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
+
+		//Setting mic
+		//Starting mic sound check
+		_micSensitivityBar.setProgress(0);
+		checkMicLevel();
 	}
 	
 	/**
@@ -235,9 +246,9 @@ public class PracticeSceneController extends Controller {
 		try {
 			String source = file.toURI().toURL().toString();
 			Media media = new Media(source);
-			MediaPlayer player = new MediaPlayer(media);
-			player.setVolume(_currentVolume/100);
-			player.play();
+			_player = new MediaPlayer(media);
+			_player.setVolume(_currentVolume/100);
+			_player.play();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -249,5 +260,100 @@ public class PracticeSceneController extends Controller {
 	 */
 	void getSelectionSceneController(SelectionSceneController controller) {
 		_parentController = controller;
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void stop() {
+		_parentController.populateDatabasePane();
+	}
+
+
+
+
+	public void checkMicLevel() {
+		CheckMic mictask = new CheckMic();
+		new Thread(mictask).start();
+		_micSensitivityBar.progressProperty().unbind();
+		_micSensitivityBar.progressProperty().bind(mictask.progressProperty());
+	}
+
+	//Class responsible for recording voice in a different thread
+	class CheckMic extends Task<Void> {
+
+		@Override
+		protected Void call() throws Exception {
+
+
+			//Setting audio format
+			AudioFormat format = new AudioFormat(44100, 16, 2, true, true);
+			final int bufferByteSize = 2048;
+
+			//Adding and opening line for audio
+			TargetDataLine line;
+			try{
+				line = AudioSystem.getTargetDataLine(format);
+				line.open(format, bufferByteSize);
+			} catch (LineUnavailableException e){
+				e.getStackTrace();
+				return null;
+			}
+
+			//Setting buffer
+			byte[] buffer = new byte[bufferByteSize];
+			float[] samples = new float[bufferByteSize/2];
+
+			float lastPeak = 0f;
+
+			//Getting values form mic input
+			line.start();
+			for (int s; (s = line.read(buffer, 0, buffer.length)) > -1F;){
+
+				//Converting bytes to samples
+				for (int i = 0, j = 0; i < s;){
+					int sample = 0;
+
+					//Reversing lines
+					sample |= buffer[i++] & 0xFF;
+					sample |= buffer[i++] << 8;   //  if the format is big endian)
+
+					//normalize to range of +-1.0f
+					samples[j++] = sample/32768f;
+
+				}
+
+				//Obtaining the rms value that will be used to symbolize the peaks in the graphic
+				float rms = 0f;
+				float peak = 0f;
+
+				for (float sample : samples){
+
+					float abs = Math.abs(sample);
+					if (abs > peak){
+						peak = abs;
+					}
+
+					rms += sample * sample;
+				}
+
+				rms = (float)Math.sqrt(rms/ samples.length);
+
+				//Comparing peaks for gradual decent
+				if (lastPeak > peak) {
+					peak = lastPeak * 0.875f;
+				}
+
+				lastPeak = peak;
+
+				updateProgress(rms, 1);
+			}
+
+			return null;
+		}
 	}
 }
