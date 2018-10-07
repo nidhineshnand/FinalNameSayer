@@ -19,4 +19,5 @@ public interface NameSayerFile {
 
     /**This method gets the view of the object being painted*/
     public Pane get_fileView();
+
 }

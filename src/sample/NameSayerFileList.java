@@ -39,7 +39,7 @@ public abstract class NameSayerFileList {
         //Writing the names of files to a txt file to concatanate
         for (File fileToConcatanate : file.filesToPlay()) {
             try {
-                Files.write(catFile.toPath(), ("file './resources/database/" + fileToConcatanate.getName() + "'\n").getBytes(), StandardOpenOption.APPEND);
+                Files.write(catFile.toPath(), ("file '" + fileToConcatanate.getAbsolutePath() + "'\n").getBytes(), StandardOpenOption.APPEND);
             } catch (IOException e) {
                 e.printStackTrace();
             }

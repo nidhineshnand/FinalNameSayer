@@ -112,6 +112,7 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
 
+
     /**This method returns the list of userRecordingFiles that are currently selected in the practise scene. If no recordings
      * are selected then an empty list is returned*/
     public ArrayList<UserRecordingFile> getSelectedUserRecordingInPractiseScene(){
