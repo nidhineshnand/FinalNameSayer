@@ -30,7 +30,7 @@ public class ControllerConnecter {
      *  the LocalFile objects that are previously recorded by the user that are associated with the given practise file.
      *  This is for the practise screen*/
     public VBox populateUserRecordingsForPractiseScene(PractiseFile practiseFile){
-        return userRecordingFileList.getFilesForPractiseScene(practiseFile);
+        return userRecordingFileList.get_associatedUserRecordingFileListVbox(practiseFile);
     }
 
 
