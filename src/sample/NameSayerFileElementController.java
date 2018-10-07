@@ -17,7 +17,6 @@ public class NameSayerFileElementController {
 
     private NameSayerFile _fileToDisplay;
     private ArrayList<DatabaseFile> _databaseFiles = new ArrayList<>();
-    private Boolean _isSelected = false;
 
     //This method takes objects from the parent class and sets it in the controller as fields
     public void setup(NameSayerFile fileToDisplay ,ArrayList<DatabaseFile> databaseFiles){
@@ -36,13 +35,6 @@ public class NameSayerFileElementController {
     //This method sets the name of the label to the object associated with it
     private void setLabelName(){
         _checkBox.setText(_fileToDisplay.get_displayName());
-    }
-
-    //This method gets called whenever the checkbox is ticked
-    @FXML
-    private void isCheckboxTicked(){
-        //If checkbox it ticked then the field _isSelected is set to true
-            _isSelected = _checkBox.isSelected();
     }
 
     // This method sets the checkbox to ticked
@@ -68,6 +60,6 @@ public class NameSayerFileElementController {
     }
 
     public Boolean get_isSelected() {
-        return _isSelected;
+        return _checkBox.isSelected();
     }
 }
