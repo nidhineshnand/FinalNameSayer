@@ -64,10 +64,10 @@ public class SelectionSceneController extends Controller {
 		// TODO Auto-generated method stub
 		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
 		super.initialize(location, resources);
-		populateDatabasePane();
+		populatePanes();
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
-		populateDatabasePane();
+		populatePanes();
 		_pointsLabel.setText(_spine.getPoints() + "");
 	}
 
@@ -174,7 +174,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	void addToListClicked() {
 		staticSearch();
-		populateDatabasePane();
+		populatePanes();
 	}
 	
 	/**
@@ -202,7 +202,7 @@ public class SelectionSceneController extends Controller {
 		}
 
 		//Refreshing view
-		populateDatabasePane();
+		populatePanes();
 	}
 	
 	/**
@@ -242,7 +242,7 @@ public class SelectionSceneController extends Controller {
 		} else {
 			//_spine.addPractiseFileToList(pFile);
 			System.out.println(pFile.get_displayName());
-			populateDatabasePane();
+			populatePanes();
 		}
 	}
 }
