@@ -140,6 +140,7 @@ public class PractiseFileList extends NameSayerFileList{
                 }
                 if(addHyphen){
                     outputString.append("-");
+                    addHyphen = false;
                 } else {
                     outputString.append(" ");
                 }
