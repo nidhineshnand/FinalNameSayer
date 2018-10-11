@@ -7,17 +7,44 @@ import java.util.ArrayList;
 
 public class CollectionsFile implements NameSayerFile {
 
+    ArrayList<PractiseFile> _practiseFiles = new ArrayList<>();
+    ArrayList<UserRecordingFile> _userRecordingFiles = new ArrayList<>();
+    ArrayList<File> _fileToPlay = new ArrayList<>();
+
+    CollectionsFile(ArrayList<PractiseFile> practiseFiles, ArrayList<UserRecordingFile> userRecordingFiles){
+        _practiseFiles = practiseFiles;
+        _userRecordingFiles = userRecordingFiles;
+        mergeFiles();
+    }
+
+
+    //This methods gets all the file objects received and puts them together in one variable so that it can be concatenated together
+    public void mergeFiles(){
+        //Getting files associated with the practise files
+        for(PractiseFile practiseFile : _practiseFiles){
+            filesToPlay().addAll(practiseFile.filesToPlay());
+        }
+
+        //Getting files associated with a recording file
+        for(UserRecordingFile userRecordingFile : _userRecordingFiles){
+            filesToPlay().addAll(userRecordingFile.filesToPlay());
+        }
+    }
+
+
 
     @Override
     public ArrayList<File> filesToPlay() {
-        return null;
+        return _fileToPlay;
     }
 
+    //Does not need this implementation as this will not be displayed
     @Override
     public String get_displayName() {
         return null;
     }
 
+    //Does not need this implementation as this will not be displayed
     @Override
     public Pane get_fileView() {
         return null;
