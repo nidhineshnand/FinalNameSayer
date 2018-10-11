@@ -99,6 +99,7 @@ public class PractiseFileList extends NameSayerFileList{
      */
     public ArrayList<String> search(String spaceSeperatedName, DatabaseFileList databaseFileList){
         ArrayList<String> outputStrings = new ArrayList<>();
+        boolean subName = false;
 
         //Separating names by spaces
         String[] hyphenSeperatedName = spaceSeperatedName.split("\\s+");
@@ -123,25 +124,29 @@ public class PractiseFileList extends NameSayerFileList{
                 // Getting files that are associated with the name typed in
                 if(databaseFile != null){
                     outputString.append(databaseFile.get_displayName());
+
                     //If full name is not typed than part name is searched
                 } else {
                     //Getting a list of files that match a particular string
                     ArrayList<DatabaseFile> databaseFilePartNames = databaseFileList.getDatabaseFileWithPartName(name);
 
                     if(databaseFilePartNames != null){
+                        subName = true;
                         for (DatabaseFile currentFile : databaseFilePartNames) {
                             //Returning names with the last name added
                             outputStrings.add(outputString + currentFile.get_displayName());
                         }
                     }
                 }
-                outputStrings.add(outputString.toString());
                 if(addHyphen){
                     outputString.append("-");
                 } else {
                     outputString.append(" ");
                 }
             }
+        }
+        if(!subName){
+            outputStrings.add(outputString.toString());
         }
         return outputStrings;
     }
