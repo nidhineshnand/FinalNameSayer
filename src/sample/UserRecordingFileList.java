@@ -142,4 +142,9 @@ public class UserRecordingFileList extends NameSayerFileList {
         scrollPane.setFitToWidth(true);
         return scrollPane;
     }
+
+    //Returns that user recordings that are associated with the current practise file
+    public ObservableList<UserRecordingFile> get_associatedUserRecordingFiles() {
+        return _associatedUserRecordingFiles;
+    }
 }
