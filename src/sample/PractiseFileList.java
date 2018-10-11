@@ -135,7 +135,7 @@ public class PractiseFileList extends NameSayerFileList{
                         }
                     }
                 }
-
+                outputStrings.add(outputString.toString());
                 if(addHyphen){
                     outputString.append("-");
                 } else {
