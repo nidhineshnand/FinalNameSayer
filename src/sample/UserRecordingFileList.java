@@ -9,6 +9,8 @@ import java.io.File;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 import static java.util.Arrays.asList;
 
@@ -48,12 +50,14 @@ public class UserRecordingFileList extends NameSayerFileList {
 
     //This method get files to paint for the scene
     private void getFilesForMainScene(){
+        FXCollections.reverse(_userRecordingFilesList);
         _userRecordingFileListVBox = getFilesForScene(_userRecordingFilesList);
     }
 
     //This method get files to paint for the practise scene
     public void getFilesForPractiseScene(PractiseFile file){
         setUserRecordingsAssociatedWith(file);
+        FXCollections.reverse(_associatedUserRecordingFiles);
         _associatedUserRecordingFileListVbox = getFilesForScene(_associatedUserRecordingFiles);
     }
 
