@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
@@ -131,5 +132,12 @@ public class ControllerConnecter {
      */
     public int getPoints(){
         return pointsSystem.get_points();
+    }
+
+    /**This method returns an observable list of user recording files that will be used in the loop names section. The
+     * user recording in the list will be the most recent one
+      */
+    public ObservableList<UserRecordingFile> getAssociatedUserRecordingFilesForLoop(){
+        return userRecordingFileList.get_associatedUserRecordingFiles();
     }
 }
