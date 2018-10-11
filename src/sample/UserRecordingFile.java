@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class UserRecordingFile implements NameSayerFile {
+public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordingFile> {
 
     private String _pathToSave;
     private String _displayName;
@@ -129,5 +129,10 @@ public class UserRecordingFile implements NameSayerFile {
 
     public NameSayerFileElementController get_controller() {
         return _controller;
+    }
+
+    @Override
+    public int compareTo(UserRecordingFile o) {
+        return _creationTime.compareTo(o._creationTime);
     }
 }
