@@ -132,7 +132,11 @@ public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordin
     }
 
     @Override
-    public int compareTo(UserRecordingFile o) {
-        return _creationTime.compareTo(o._creationTime);
+    public int compareTo(UserRecordingFile other) {
+        if (!_identity.equals(other._identity)){
+            return _identity.compareTo(other._identity);
+        } else {
+            return _creationTime.compareTo(other._creationTime);
+        }
     }
 }
