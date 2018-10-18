@@ -226,7 +226,7 @@ public class SelectionSceneController extends Controller {
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);
 	        secondaryStage.setTitle("Shop");
-	        secondaryStage.setScene(new Scene(root, 1000, 800));
+	        secondaryStage.setScene(new Scene(root, 900, 600));
 	        secondaryStage.setResizable(false);
 	        secondaryStage.show();
 		} catch (Exception e) {
