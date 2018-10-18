@@ -16,6 +16,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("application/SelectionScene.fxml"));
         primaryStage.setTitle("NameSayer");
         primaryStage.setScene(new Scene(root, 1000, 800));
+        primaryStage.setResizable(true);
         primaryStage.show();
     }
 

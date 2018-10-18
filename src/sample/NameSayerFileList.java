@@ -135,6 +135,7 @@ public abstract class NameSayerFileList {
         for (NameSayerFile file : files){
             container.getChildren().add(file.get_fileView());
         }
+        container.setStyle("-fx-background-color: rgb(224,226,225)");
         return container;
     }
 
