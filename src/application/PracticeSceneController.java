@@ -16,18 +16,8 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MultipleSelectionModel;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.*;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.TextAlignment;
@@ -59,7 +49,7 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	public Button _recordButton;
 	@FXML
-	public AnchorPane _recordingList = new AnchorPane();
+	public ScrollPane _recordingList;
 	@FXML
 	public Button _prevButton;
 	@FXML
@@ -269,8 +259,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	private void updateRecordingPane() {
-		_recordingList.getChildren().clear();
-		_recordingList.getChildren().addAll(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+		_recordingList.setContent(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
 	}
 
 	/**

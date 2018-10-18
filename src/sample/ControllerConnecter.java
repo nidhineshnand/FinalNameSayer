@@ -23,14 +23,14 @@ public class ControllerConnecter {
 
     /**This method outputs a VBox that contains the LocalFile objects that are previously recorded by the user. This is
      * for the main screen*/
-    public ScrollPane populateUserRecordingFilesForMainScene(){
+    public VBox populateUserRecordingFilesForMainScene(){
         return userRecordingFileList.get_userRecordingFileListVBox();
     }
 
     /**This method takes as input a PractiseFile that the user is currently practising and outputs a VBox that contains
      *  the LocalFile objects that are previously recorded by the user that are associated with the given practise file.
      *  This is for the practise screen*/
-    public ScrollPane populateUserRecordingsForPractiseScene(PractiseFile practiseFile){
+    public VBox populateUserRecordingsForPractiseScene(PractiseFile practiseFile){
         return userRecordingFileList.get_associatedUserRecordingFileListVbox(practiseFile);
     }
 

@@ -131,20 +131,20 @@ public class UserRecordingFileList extends NameSayerFileList {
         return list;
     }
 
-    public ScrollPane get_userRecordingFileListVBox() {
+    public VBox get_userRecordingFileListVBox() {
         getFilesForMainScene();
         //_userRecordingFileListVBox.setPrefHeight(500);
         ScrollPane scrollPane = new ScrollPane(_userRecordingFileListVBox);
         scrollPane.setFitToWidth(true);
-        return scrollPane;
+        return _userRecordingFileListVBox;
     }
 
-    public ScrollPane get_associatedUserRecordingFileListVbox(PractiseFile file) {
+    public VBox get_associatedUserRecordingFileListVbox(PractiseFile file) {
         getFilesForPractiseScene(file);
         //_associatedUserRecordingFileListVbox.setPrefHeight(500);
         ScrollPane scrollPane = new ScrollPane(_associatedUserRecordingFileListVbox);
         scrollPane.setFitToWidth(true);
-        return scrollPane;
+        return _associatedUserRecordingFileListVbox;
     }
 
     //Returns that user recordings that are associated with the current practise file
