@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTabPane;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,17 +49,19 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Button _uploadButton;
 	@FXML
-	public ScrollPane _recordingListPane;
+	public ScrollPane _recordingListPane = new ScrollPane();
 	@FXML
-	public ScrollPane _practiceListPane;
+	public ScrollPane _practiceListPane = new ScrollPane();
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
 	public JFXTabPane _tabs;
+	public VBox _practiseListContainer;
 
-
+	private VBox _practiseList = new VBox();
+	private VBox _userRecordingList = new VBox();
 	private PracticeSceneController _practiceController;
 	private String _name;
 	private VBox _practiceFileList;
@@ -74,7 +78,15 @@ public class SelectionSceneController extends Controller {
 		//Populates the User Recording files tab
 		populatePanes();
 		_pointsLabel.setText(_spine.getPoints() + "");
-		//_tabs.setStyle("-fx-background-color: red");
+		_tabs.heightProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+
+				_practiceFileList.setPrefHeight(newValue.doubleValue() - 120);
+				_userRecordingList.setPrefHeight(newValue.doubleValue());
+				System.out.println(newValue);
+			}
+		});
 	}
 
 	/**
@@ -150,7 +162,8 @@ public class SelectionSceneController extends Controller {
 			_userRecordingCheckBox.setText("Select All");
 			_spine.setUserRecordingFileListCheckBox(false);
 		}
-		_recordingListPane.setContent(_spine.populateUserRecordingFilesForMainScene());
+
+		populatePanes();
 	}
 	private void autoCompleteListBinding(){
 		//Binding search results to textfieled
@@ -170,7 +183,7 @@ public class SelectionSceneController extends Controller {
 			_practiseFileSelectAllPractiseFileCheckBox.setText("Select All");
 			_spine.setPractiseFileListCheckBox(false);
 		}
-		_practiceListPane.setContent(_spine.populatePractiseFileForMainScene());
+		populatePanes();
 
 	}
 
@@ -195,7 +208,7 @@ public class SelectionSceneController extends Controller {
 	//This method delete selected user recordings
 	public void deleteSelectedUserRecordings(){
 		_spine.deleteSelectedUserRecordingFiles();
-		_recordingListPane.setContent(_spine.populateUserRecordingFilesForMainScene());
+		populatePanes();
 	}
 	
 	/**
@@ -260,8 +273,10 @@ public class SelectionSceneController extends Controller {
 	 * populates database pane for the startup
 	 */
 	protected void populatePanes() {
-		_recordingListPane.setContent(_spine.populateUserRecordingFilesForMainScene());
-		_practiceListPane.setContent(_spine.populatePractiseFileForMainScene());
+		_userRecordingList = _spine.populateUserRecordingFilesForMainScene();
+		_recordingListPane.setContent(_userRecordingList);
+		_practiceFileList = _spine.populatePractiseFileForMainScene();
+		_practiceListPane.setContent(_practiceFileList);
 	}
 	
 	/**

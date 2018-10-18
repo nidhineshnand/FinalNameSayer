@@ -22,11 +22,11 @@
          <tabs>
             <Tab fx:id="tabpane" text="Practice List">
                <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                  <Pane>
                      <children>
-                        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                        <VBox layoutX="-11.0" layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
-                              <ScrollPane fx:id="_practiceListPane" prefHeight="489.0" prefWidth="301.0" />
+                              <ScrollPane fx:id="_practiceListPane" />
                               <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
                               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="301.0" spacing="3.0">
                                  <children>
@@ -36,8 +36,7 @@
                               </HBox>
                            </children>
                         </VBox>
-                     </children>
-                  </Pane>
+                     </children></Pane>
                </content>
             </Tab>
             <Tab text="Recordings">
@@ -46,9 +45,9 @@
                      <children>
                         <VBox layoutX="-9.0">
                            <children>
-                              <ScrollPane fx:id="_recordingListPane" prefHeight="200.0" prefWidth="200.0" />
                               <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
                               <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0" />
                            </children>
                         </VBox>
                      </children>
