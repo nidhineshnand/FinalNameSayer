@@ -47,7 +47,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Button _uploadButton;
 	@FXML
-	public Pane _recordingListPane;
+	public ScrollPane _recordingListPane;
 	@FXML
 	public ScrollPane _practiceListPane;
 	public CustomTextField _nameTextField;
@@ -150,7 +150,7 @@ public class SelectionSceneController extends Controller {
 			_userRecordingCheckBox.setText("Select All");
 			_spine.setUserRecordingFileListCheckBox(false);
 		}
-		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
+		_recordingListPane.setContent(_spine.populateUserRecordingFilesForMainScene());
 	}
 	private void autoCompleteListBinding(){
 		//Binding search results to textfieled
@@ -195,7 +195,7 @@ public class SelectionSceneController extends Controller {
 	//This method delete selected user recordings
 	public void deleteSelectedUserRecordings(){
 		_spine.deleteSelectedUserRecordingFiles();
-		_recordingListPane.getChildren().add(_spine.populateUserRecordingFilesForMainScene());
+		_recordingListPane.setContent(_spine.populateUserRecordingFilesForMainScene());
 	}
 	
 	/**
@@ -260,8 +260,7 @@ public class SelectionSceneController extends Controller {
 	 * populates database pane for the startup
 	 */
 	protected void populatePanes() {
-		_recordingListPane.getChildren().clear();
-		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
+		_recordingListPane.setContent(_spine.populateUserRecordingFilesForMainScene());
 		_practiceListPane.setContent(_spine.populatePractiseFileForMainScene());
 	}
 	

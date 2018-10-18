@@ -44,13 +44,13 @@
                <content>
                   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                      <children>
-                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                        <VBox layoutX="-9.0">
                            <children>
-                              <AnchorPane id="_recordingListPane" fx:id="_recordingListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" />
-                              <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" layoutY="517.0" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
-                              <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" layoutX="1.0" layoutY="494.0" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                              <ScrollPane fx:id="_recordingListPane" prefHeight="200.0" prefWidth="200.0" />
+                              <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                              <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
                            </children>
-                        </AnchorPane>
+                        </VBox>
                      </children>
                   </Pane>
                </content>
