@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
    <top>
       <Label alignment="CENTER" prefHeight="135.0" prefWidth="463.0" text="Shop" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
@@ -18,14 +17,14 @@
    <left>
       <AnchorPane prefHeight="665.0" prefWidth="336.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="61.0" layoutY="483.0" prefHeight="99.0" prefWidth="214.0" text="Default Theme" />
+            <JFXButton fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="61.0" layoutY="483.0" onAction="#defaultThemeClicked" prefHeight="99.0" prefWidth="214.0" text="Default Theme" />
          </children>
       </AnchorPane>
    </left>
    <center>
       <AnchorPane prefHeight="665.0" prefWidth="346.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="487.0" prefHeight="99.0" prefWidth="214.0" text="Dark Theme" />
+            <JFXButton fx:id="_darkThemeButton" buttonType="RAISED" layoutX="66.0" layoutY="487.0" onAction="#darkThemeClicked" prefHeight="99.0" prefWidth="214.0" text="Dark Theme" />
          </children>
       </AnchorPane>
    </center>
