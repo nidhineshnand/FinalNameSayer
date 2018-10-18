@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
-      <Label fx:id="_currentName" alignment="CENTER" layoutX="68.0" layoutY="72.0" prefHeight="112.0" prefWidth="334.0" text="Name">
+      <Label id="_nameLabel" fx:id="_currentName" alignment="CENTER" layoutX="68.0" layoutY="72.0" prefHeight="112.0" prefWidth="334.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
          <font>
             <Font size="48.0" />
          </font>
@@ -69,12 +69,12 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <Label layoutX="187.0" layoutY="326.0" prefHeight="36.0" prefWidth="96.0" text="Volume" textAlignment="JUSTIFY">
+      <Label id="_volumeLabel" layoutX="187.0" layoutY="326.0" prefHeight="36.0" prefWidth="96.0" stylesheets="@PracticeSceneStyleSheet.css" text="Volume" textAlignment="JUSTIFY">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="145.0" layoutY="433.0" prefHeight="36.0" prefWidth="180.0" text="Mic Sensitivity" textAlignment="JUSTIFY">
+      <Label id="_micSensitivityLabel" layoutX="145.0" layoutY="433.0" prefHeight="36.0" prefWidth="180.0" stylesheets="@PracticeSceneStyleSheet.css" text="Mic Sensitivity" textAlignment="JUSTIFY">
          <font>
             <Font size="24.0" />
          </font>
