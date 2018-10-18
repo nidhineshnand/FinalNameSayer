@@ -133,7 +133,7 @@ public class UserRecordingFileList extends NameSayerFileList {
 
     public ScrollPane get_userRecordingFileListVBox() {
         getFilesForMainScene();
-        _userRecordingFileListVBox.setPrefHeight(500);
+        //_userRecordingFileListVBox.setPrefHeight(500);
         ScrollPane scrollPane = new ScrollPane(_userRecordingFileListVBox);
         scrollPane.setFitToWidth(true);
         return scrollPane;
@@ -141,7 +141,7 @@ public class UserRecordingFileList extends NameSayerFileList {
 
     public ScrollPane get_associatedUserRecordingFileListVbox(PractiseFile file) {
         getFilesForPractiseScene(file);
-        _associatedUserRecordingFileListVbox.setPrefHeight(500);
+        //_associatedUserRecordingFileListVbox.setPrefHeight(500);
         ScrollPane scrollPane = new ScrollPane(_associatedUserRecordingFileListVbox);
         scrollPane.setFitToWidth(true);
         return scrollPane;

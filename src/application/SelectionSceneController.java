@@ -49,15 +49,13 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Pane _recordingListPane;
 	@FXML
-	public Pane _practiceListPane;
+	public ScrollPane _practiceListPane;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
-	public VBox _tabContainer;
 	public JFXTabPane _tabs;
-	public VBox lel;
 
 
 	private PracticeSceneController _practiceController;
@@ -172,7 +170,7 @@ public class SelectionSceneController extends Controller {
 			_practiseFileSelectAllPractiseFileCheckBox.setText("Select All");
 			_spine.setPractiseFileListCheckBox(false);
 		}
-		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
+		_practiceListPane.setContent(_spine.populatePractiseFileForMainScene());
 
 	}
 
@@ -263,9 +261,8 @@ public class SelectionSceneController extends Controller {
 	 */
 	protected void populatePanes() {
 		_recordingListPane.getChildren().clear();
-		_practiceListPane.getChildren().clear();
 		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
-		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
+		_practiceListPane.setContent(_spine.populatePractiseFileForMainScene());
 	}
 	
 	/**

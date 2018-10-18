@@ -4,12 +4,15 @@
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
 
@@ -17,25 +20,29 @@
    <left>
       <JFXTabPane id="_tabParent" fx:id="_tabs" stylesheets="@SelectionSceneStyleSheet.css">
          <tabs>
-            <Tab text="Practice List">
+            <Tab fx:id="tabpane" text="Practice List">
                <content>
-                  <Pane>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                      <children>
-                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
-                              <AnchorPane id="_practiceListPane" fx:id="_practiceListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                              <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" layoutY="513.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="143.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
-                              <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="3.0" layoutY="485.0" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
-                              <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" layoutX="145.0" layoutY="513.0" onAction="#removeClicked" prefHeight="48.0" prefWidth="141.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
+                              <ScrollPane fx:id="_practiceListPane" prefHeight="489.0" prefWidth="301.0" />
+                              <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="301.0" spacing="3.0">
+                                 <children>
+                                    <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="151.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
+                                    <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" onAction="#removeClicked" prefHeight="48.0" prefWidth="140.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
+                                 </children>
+                              </HBox>
                            </children>
-                        </AnchorPane>
+                        </VBox>
                      </children>
                   </Pane>
                </content>
             </Tab>
             <Tab text="Recordings">
                <content>
-                  <Pane>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                      <children>
                         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>

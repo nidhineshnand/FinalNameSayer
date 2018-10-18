@@ -17,7 +17,7 @@ public class ControllerConnecter {
 
 
     /**This method outputs a VBox that contains the PractiseFile objects that are loaded by the user*/
-    public ScrollPane populatePractiseFileForMainScene(){
+    public VBox populatePractiseFileForMainScene(){
         return practiseFileList.get_practiseFileListVbox();
     }
 
