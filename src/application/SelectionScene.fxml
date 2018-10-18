@@ -61,17 +61,17 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <JFXButton id="_addToListButton" fx:id="_addToListButton" buttonType="RAISED" layoutX="308.0" layoutY="370.0" onAction="#addToListClicked" prefHeight="49.0" prefWidth="110.0" stylesheets="@SelectionSceneStyleSheet.css" text="Add to List">
+            <JFXButton id="_addToListButton" fx:id="_addToListButton" buttonType="RAISED" layoutX="292.0" layoutY="381.0" onAction="#addToListClicked" prefHeight="38.0" prefWidth="126.0" stylesheets="@SelectionSceneStyleSheet.css" text="Add to List">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton id="_uploadButton" fx:id="_uploadButton" buttonType="RAISED" layoutX="126.0" layoutY="474.0" onAction="#uploadClicked" prefHeight="76.0" prefWidth="150.0" stylesheets="@SelectionSceneStyleSheet.css" text="Upload">
+            <JFXButton id="_uploadButton" fx:id="_uploadButton" buttonType="RAISED" layoutX="26.0" layoutY="554.0" onAction="#uploadClicked" prefHeight="32.0" prefWidth="106.0" stylesheets="@SelectionSceneStyleSheet.css" text="Upload">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton id="_pracButton" fx:id="_practiceButton" buttonType="RAISED" layoutX="440.0" layoutY="370.0" onAction="#practiceClicked" prefHeight="49.0" prefWidth="110.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice">
+            <JFXButton id="_pracButton" fx:id="_practiceButton" buttonType="RAISED" layoutX="441.0" layoutY="381.0" onAction="#practiceClicked" prefHeight="38.0" prefWidth="109.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice">
                <font>
                   <Font size="18.0" />
                </font>
