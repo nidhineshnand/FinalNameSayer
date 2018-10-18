@@ -13,79 +13,84 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
-   <left>
-      <AnchorPane id="tabAnchorPane" prefHeight="600.0" prefWidth="285.0" stylesheets="@SelectionSceneStyleSheet.css" BorderPane.alignment="CENTER">
-         <children>
-            <JFXTabPane id="_tabParent" layoutX="1.0" prefHeight="600.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css">
-               <tabs>
-                  <Tab text="Practice List">
-                     <content>
-                        <Pane prefHeight="453.0" prefWidth="280.0">
-                           <children>
-                              <AnchorPane prefHeight="568.0" prefWidth="289.0">
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <left>
+            <AnchorPane id="tabAnchorPane" stylesheets="@SelectionSceneStyleSheet.css" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTabPane id="_tabParent" layoutX="1.0" prefHeight="600.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css">
+                     <tabs>
+                        <Tab text="Practice List">
+                           <content>
+                              <Pane>
                                  <children>
-                                    <AnchorPane id="_practiceListPane" fx:id="_practiceListPane" prefHeight="489.0" prefWidth="289.0" stylesheets="@SelectionSceneStyleSheet.css" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" layoutY="513.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="143.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
-                                    <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="3.0" layoutY="485.0" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
-                                    <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" layoutX="145.0" layoutY="513.0" onAction="#removeClicked" prefHeight="48.0" prefWidth="141.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
+                                    <AnchorPane>
+                                       <children>
+                                          <AnchorPane id="_practiceListPane" fx:id="_practiceListPane" stylesheets="@SelectionSceneStyleSheet.css" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" layoutY="513.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="143.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
+                                          <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="3.0" layoutY="485.0" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                                          <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" layoutX="145.0" layoutY="513.0" onAction="#removeClicked" prefHeight="48.0" prefWidth="141.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
+                                       </children>
+                                    </AnchorPane>
                                  </children>
-                              </AnchorPane>
-                           </children>
-                        </Pane>
-                     </content>
-                  </Tab>
-                  <Tab text="Recordings">
-                     <content>
-                        <Pane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <AnchorPane prefHeight="567.0" prefWidth="285.0">
+                              </Pane>
+                           </content>
+                        </Tab>
+                        <Tab text="Recordings">
+                           <content>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <AnchorPane id="_recordingListPane" fx:id="_recordingListPane" prefHeight="494.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" />
-                                    <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" layoutY="517.0" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
-                                    <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" layoutX="1.0" layoutY="494.0" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                                    <AnchorPane>
+                                       <children>
+                                          <AnchorPane id="_recordingListPane" fx:id="_recordingListPane" stylesheets="@SelectionSceneStyleSheet.css" />
+                                          <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" layoutY="517.0" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
+                                          <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" layoutX="1.0" layoutY="494.0" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                                       </children>
+                                    </AnchorPane>
                                  </children>
-                              </AnchorPane>
-                           </children>
-                        </Pane>
-                     </content>
-                  </Tab>
-               </tabs>
-            </JFXTabPane>
-         </children>
-      </AnchorPane>
-   </left>
-   <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="625.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="126.0" layoutY="127.0" prefHeight="70.0" prefWidth="411.0" text="Type in a Name">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
-            <JFXButton id="_addToListButton" fx:id="_addToListButton" buttonType="RAISED" layoutX="292.0" layoutY="381.0" onAction="#addToListClicked" prefHeight="38.0" prefWidth="126.0" stylesheets="@SelectionSceneStyleSheet.css" text="Add to List">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton id="_uploadButton" fx:id="_uploadButton" buttonType="RAISED" layoutX="26.0" layoutY="548.0" onAction="#uploadClicked" prefHeight="39.0" prefWidth="124.0" stylesheets="@SelectionSceneStyleSheet.css" text="Upload">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton id="_pracButton" fx:id="_practiceButton" buttonType="RAISED" layoutX="441.0" layoutY="381.0" onAction="#practiceClicked" prefHeight="38.0" prefWidth="109.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </JFXButton>
-            <CustomTextField fx:id="_nameTextField" layoutX="126.0" layoutY="228.0" prefHeight="38.0" prefWidth="410.0" />
-            <Label fx:id="_pointsLabel" layoutX="507.0" layoutY="39.0" prefHeight="41.0" prefWidth="59.0" text="Label" />
-            <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="456.0" layoutY="43.0">
-               <image>
-                  <Image url="@Yellow_Star.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+                              </Pane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="126.0" layoutY="127.0" prefHeight="70.0" prefWidth="411.0" text="Type in a Name">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <JFXButton id="_addToListButton" fx:id="_addToListButton" buttonType="RAISED" layoutX="292.0" layoutY="381.0" onAction="#addToListClicked" prefHeight="38.0" prefWidth="126.0" stylesheets="@SelectionSceneStyleSheet.css" text="Add to List">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="_uploadButton" fx:id="_uploadButton" buttonType="RAISED" layoutX="26.0" layoutY="548.0" onAction="#uploadClicked" prefHeight="39.0" prefWidth="124.0" stylesheets="@SelectionSceneStyleSheet.css" text="Upload">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="_pracButton" fx:id="_practiceButton" buttonType="RAISED" layoutX="441.0" layoutY="381.0" onAction="#practiceClicked" prefHeight="38.0" prefWidth="109.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <CustomTextField fx:id="_nameTextField" layoutX="126.0" layoutY="228.0" prefHeight="38.0" prefWidth="410.0" />
+                  <Label fx:id="_pointsLabel" layoutX="507.0" layoutY="39.0" prefHeight="41.0" prefWidth="59.0" text="Label" />
+                  <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="456.0" layoutY="43.0">
+                     <image>
+                        <Image url="@Yellow_Star.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
