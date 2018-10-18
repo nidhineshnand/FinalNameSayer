@@ -9,13 +9,13 @@
 
 <AnchorPane prefHeight="41.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NameSayerFileElementController">
    <children>
-      <JFXCheckBox fx:id="_checkBox" checkedColor="#10439c" layoutX="14.0" layoutY="6.0" text="CheckBox">
+      <JFXCheckBox fx:id="_checkBox" checkedColor="#10439c" layoutX="14.0" layoutY="19.0" text="CheckBox">
          <font>
             <Font size="12.0" />
          </font>
       </JFXCheckBox>
-      <CheckComboBox fx:id="_comboBox" layoutX="210.0" layoutY="1.0" prefHeight="20.0" prefWidth="70.0" />
-      <Label fx:id="_badRatingText" layoutX="207.0" layoutY="28.0" prefHeight="20.0" prefWidth="76.0" text="Bad Quality" />
+      <CheckComboBox fx:id="_comboBox" layoutX="186.0" layoutY="14.0" prefHeight="25.0" prefWidth="107.0" />
+      <Label fx:id="_badRatingText" layoutX="193.0" layoutY="18.0" prefHeight="18.0" prefWidth="76.0" text="Bad Quality" />
    </children>
    <cursor>
       <Cursor fx:constant="DEFAULT" />

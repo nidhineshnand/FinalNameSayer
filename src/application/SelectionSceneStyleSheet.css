@@ -3,11 +3,11 @@
 }
 
 #_addToListButton {
-	-fx-background-color: rgba(218, 198, 175, 0.4);
+	-fx-background-color: rgba(255, 235, 204, 0.4);
 }
 
 #_uploadButton {
-	-fx-background-color: rgba(218, 198, 175, 0.4);
+	-fx-background-color: rgba(255, 232, 205, 0.4);
 }
 
 #_pracSelButton {

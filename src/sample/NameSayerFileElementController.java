@@ -30,6 +30,7 @@ public class NameSayerFileElementController {
             _badRatingText.setVisible(false);
         }
         setListnersToComboBox();
+        _badRatingText.setMouseTransparent(true);
     }
 
 
@@ -48,6 +49,7 @@ public class NameSayerFileElementController {
     private void populateComboBox(){
         _comboBox.getItems().addAll(_databaseFiles);
     }
+
 
     //Sets a listener to checkbox items in order to mark the file as bad
     private void setListnersToComboBox(){
