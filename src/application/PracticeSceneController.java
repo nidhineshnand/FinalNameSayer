@@ -49,7 +49,7 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	public Button _recordButton;
 	@FXML
-	public ScrollPane _recordingList;
+	public ScrollPane _recordingList = new ScrollPane();
 	@FXML
 	public Button _prevButton;
 	@FXML
