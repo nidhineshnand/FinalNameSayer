@@ -6,32 +6,32 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
+<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
    <top>
-      <Label alignment="CENTER" prefHeight="135.0" prefWidth="463.0" text="Shop" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label id="_shopLabel" alignment="CENTER" prefHeight="135.0" prefWidth="463.0" stylesheets="@ShopSceneStyleSheet.css" text="Shop" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font size="74.0" />
          </font>
       </Label>
    </top>
    <left>
-      <AnchorPane prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+      <AnchorPane id="_defaultThemePane" prefHeight="465.0" prefWidth="300.0" stylesheets="@ShopSceneStyleSheet.css" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="61.0" layoutY="321.0" onAction="#defaultThemeClicked" prefHeight="99.0" prefWidth="214.0" text="Default Theme" />
+            <JFXButton id="_defaultThemeButton" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="61.0" layoutY="321.0" onAction="#defaultThemeClicked" prefHeight="99.0" prefWidth="214.0" stylesheets="@ShopSceneStyleSheet.css" text="Default Theme" />
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+      <AnchorPane id="_darkThemePane" prefHeight="465.0" prefWidth="300.0" stylesheets="@ShopSceneStyleSheet.css" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="_darkThemeButton" buttonType="RAISED" layoutX="43.0" layoutY="319.0" onAction="#darkThemeClicked" prefHeight="99.0" prefWidth="214.0" text="Dark Theme" />
+            <JFXButton id="_darkThemeButton" fx:id="_darkThemeButton" buttonType="RAISED" layoutX="43.0" layoutY="319.0" onAction="#darkThemeClicked" prefHeight="99.0" prefWidth="214.0" stylesheets="@ShopSceneStyleSheet.css" text="Dark Theme" />
          </children>
       </AnchorPane>
    </center>
    <right>
-      <AnchorPane prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="465.0" prefWidth="300.0" stylesheets="@ShopSceneStyleSheet.css" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="313.0" prefHeight="99.0" prefWidth="214.0" text="3rd Theme" />
+            <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="313.0" prefHeight="99.0" prefWidth="214.0" stylesheets="@ShopSceneStyleSheet.css" text="3rd Theme" />
          </children>
       </AnchorPane>
    </right>
