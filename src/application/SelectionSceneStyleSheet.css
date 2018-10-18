@@ -42,3 +42,8 @@
 	-fx-background-color: rgb(230, 230, 230);
 }
 
+#_shopButton {
+	-fx-background-color: rgb(200, 0, 255, 0.4);
+}
+
+
