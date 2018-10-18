@@ -31,6 +31,9 @@ public class NameSayerFileElementController {
         }
         setListnersToComboBox();
         _badRatingText.setMouseTransparent(true);
+        _badRatingText.setStyle("-fx-background-color: rgb(190,192,191)");
+        _comboBox.setStyle("-fx-background-color: rgb(190,192,191)");
+
     }
 
 
