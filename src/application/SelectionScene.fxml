@@ -24,14 +24,14 @@
                <content>
                   <Pane>
                      <children>
-                        <VBox layoutX="-11.0" layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                        <VBox layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
                               <ScrollPane fx:id="_practiceListPane" />
                               <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
-                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="301.0" spacing="3.0">
+                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="309.0" spacing="3.0">
                                  <children>
-                                    <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="151.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
-                                    <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" onAction="#removeClicked" prefHeight="48.0" prefWidth="140.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
+                                    <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="148.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
+                                    <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" onAction="#removeClicked" prefHeight="48.0" prefWidth="153.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
                                  </children>
                               </HBox>
                            </children>

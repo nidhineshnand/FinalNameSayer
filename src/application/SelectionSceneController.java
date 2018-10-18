@@ -82,7 +82,7 @@ public class SelectionSceneController extends Controller {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 
-				_practiceFileList.setPrefHeight(newValue.doubleValue() - 120);
+				_practiceFileList.setPrefHeight(newValue.doubleValue() - 110);
 				_userRecordingList.setPrefHeight(newValue.doubleValue());
 				System.out.println(newValue);
 			}
