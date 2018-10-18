@@ -48,6 +48,8 @@ public class SelectionSceneController extends Controller {
 	public Pane _recordingListPane;
 	@FXML
 	public Pane _practiceListPane;
+	@FXML
+	public Button _shopButton;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
@@ -210,6 +212,26 @@ public class SelectionSceneController extends Controller {
 	void practiceClicked() {
 		resetListOfNames();
 		getName();
+	}
+	
+	/**
+	 * When _shopButton is clicked
+	 */
+	@FXML
+	void shopClicked() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
+			Parent root = loader.load();
+			Stage secondaryStage = new Stage();
+			secondaryStage.initModality(Modality.WINDOW_MODAL);
+			secondaryStage.initOwner(NameSayerStarter.primaryStage);
+	        secondaryStage.setTitle("Shop");
+	        secondaryStage.setScene(new Scene(root, 1000, 800));
+	        secondaryStage.setResizable(false);
+	        secondaryStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
 
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
    <left>
       <AnchorPane prefHeight="600.0" prefWidth="285.0" BorderPane.alignment="CENTER">
          <children>
@@ -83,6 +83,11 @@
                   <Image url="@../../resources/Yellow_Star.png" />
                </image>
             </ImageView>
+            <JFXButton fx:id="_shopButton" layoutX="425.0" layoutY="474.0" onAction="#shopClicked" prefHeight="76.0" prefWidth="140.0" text="Shop">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </center>
