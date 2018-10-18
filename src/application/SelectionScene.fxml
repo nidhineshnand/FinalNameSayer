@@ -19,7 +19,7 @@
          <tabs>
             <Tab text="Practice List">
                <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                  <Pane>
                      <children>
                         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
@@ -35,7 +35,7 @@
             </Tab>
             <Tab text="Recordings">
                <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                  <Pane>
                      <children>
                         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
