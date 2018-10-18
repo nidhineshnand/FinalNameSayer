@@ -15,45 +15,41 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
    <left>
-      <AnchorPane id="tabAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" BorderPane.alignment="CENTER">
-         <children>
-            <JFXTabPane id="_tabParent" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <tabs>
-                  <Tab text="Practice List">
-                     <content>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+      <JFXTabPane id="_tabParent" fx:id="_tabs" stylesheets="@SelectionSceneStyleSheet.css">
+         <tabs>
+            <Tab text="Practice List">
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
-                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
-                                 <children>
-                                    <AnchorPane id="_practiceListPane" fx:id="_practiceListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" layoutY="513.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="143.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
-                                    <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="3.0" layoutY="485.0" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
-                                    <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" layoutX="145.0" layoutY="513.0" onAction="#removeClicked" prefHeight="48.0" prefWidth="141.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
-                                 </children>
-                              </AnchorPane>
+                              <AnchorPane id="_practiceListPane" fx:id="_practiceListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" layoutY="513.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="143.0" stylesheets="@SelectionSceneStyleSheet.css" text="Practice Selected" />
+                              <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" layoutX="3.0" layoutY="485.0" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                              <JFXButton id="_removeSelButton" fx:id="_removeButton" buttonType="RAISED" layoutX="145.0" layoutY="513.0" onAction="#removeClicked" prefHeight="48.0" prefWidth="141.0" stylesheets="@SelectionSceneStyleSheet.css" text="Remove Selected" />
                            </children>
-                        </Pane>
-                     </content>
-                  </Tab>
-                  <Tab text="Recordings">
-                     <content>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Recordings">
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
-                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
-                                 <children>
-                                    <AnchorPane id="_recordingListPane" fx:id="_recordingListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" />
-                                    <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" layoutY="517.0" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
-                                    <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" layoutX="1.0" layoutY="494.0" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
-                                 </children>
-                              </AnchorPane>
+                              <AnchorPane id="_recordingListPane" fx:id="_recordingListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@SelectionSceneStyleSheet.css" />
+                              <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" layoutY="517.0" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
+                              <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" layoutX="1.0" layoutY="494.0" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
                            </children>
-                        </Pane>
-                     </content>
-                  </Tab>
-               </tabs>
-            </JFXTabPane>
-         </children>
-      </AnchorPane>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
    </left>
    <center>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">

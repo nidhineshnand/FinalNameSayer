@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -53,6 +55,9 @@ public class SelectionSceneController extends Controller {
 	public Label _pointsLabel;
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
+	public VBox _tabContainer;
+	public JFXTabPane _tabs;
+	public VBox lel;
 
 
 	private PracticeSceneController _practiceController;
@@ -71,6 +76,7 @@ public class SelectionSceneController extends Controller {
 		//Populates the User Recording files tab
 		populatePanes();
 		_pointsLabel.setText(_spine.getPoints() + "");
+		//_tabs.setStyle("-fx-background-color: red");
 	}
 
 	/**
