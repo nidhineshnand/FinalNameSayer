@@ -162,7 +162,7 @@ public class SelectionSceneController extends Controller {
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(NameSayerStarter.primaryStage);
 		secondaryStage.setTitle("Warning");
-		secondaryStage.setScene(new Scene(root, 500, 200));
+		secondaryStage.setScene(new Scene(root, 500, 300));
 		secondaryStage.setResizable(false);
 		secondaryStage.show();
 	}
