@@ -58,6 +58,7 @@ public class SelectionSceneController extends Controller {
 
 
 	private PracticeSceneController _practiceController;
+	private ShopSceneController _shopController;
 	private String _name;
 	private VBox _practiceFileList;
 	private PractiseFile _pFile;
@@ -123,11 +124,13 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
         secondaryStage.show();
+        _spine.setUserRecordingFileListCheckBox(false);
         secondaryStage.setOnHiding(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent arg0) {
 				populatePanes();
 				_pointsLabel.setText(_spine.getPoints() + "");
+				_spine.setUserRecordingFileListCheckBox(false);
 				System.out.println(_spine.getPoints());
 				System.out.println("stopping");
 			}
@@ -222,6 +225,8 @@ public class SelectionSceneController extends Controller {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
+			_shopController = loader.getController();
+			_shopController.setup(_spine);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);
