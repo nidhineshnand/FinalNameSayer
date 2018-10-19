@@ -83,7 +83,12 @@ public class SelectionSceneController extends Controller {
 	 */
 	private void getName() {
 		if (_nameTextField.getText().equals("")) {
-			JOptionPane.showMessageDialog(null, "Please insert a Name");
+			try {
+				openErrorScene(null, "NoNameSelected");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			String name = _nameTextField.getText();
 			_pFile = _spine.searchButtonPressed(name, _notFound);
@@ -91,7 +96,12 @@ public class SelectionSceneController extends Controller {
 				_listOfNames.add(_pFile);
 				openPracticeScene();
 			} else {
-				JOptionPane.showMessageDialog(null, "This name is not in the database");
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}
@@ -143,7 +153,7 @@ public class SelectionSceneController extends Controller {
 	 * loads ErrorScene.fxml
 	 * @throws Exception 
 	 */
-	public void openErrorScene(ArrayList<String> namesNotFound, String message) throws Exception {
+	private void openErrorScene(ArrayList<String> namesNotFound, String message) throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("ErrorScene.fxml"));
 		Parent root = loader.load();
 		_errorController = loader.getController();
