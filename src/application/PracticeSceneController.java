@@ -146,8 +146,6 @@ public class PracticeSceneController extends Controller {
 		if (_player != null){
 			_player.setVolume(_currentVolume/100);
 		}
-
-		System.out.println("lol");
 	}
 	
 	/**
@@ -268,6 +266,8 @@ public class PracticeSceneController extends Controller {
 	/**Loops the selected files the given number of times*/
 	@FXML
 	void loopFiles(){
+
+
 
 	}
 	

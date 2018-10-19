@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
       <Label id="_nameLabel" fx:id="_currentName" alignment="CENTER" layoutX="109.0" layoutY="53.0" prefHeight="68.0" prefWidth="242.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
          <font>
@@ -43,7 +43,7 @@
          <font>
             <Font size="14.0" />
          </font></JFXButton>
-      <JFXButton id="_nextButton" fx:id="_nextButton" buttonType="RAISED" layoutX="359.0" layoutY="154.0" onAction="#nextClicked" prefHeight="47.0" prefWidth="86.0" stylesheets="@PracticeSceneStyleSheet.css" text="Next">
+      <JFXButton id="_nextButton" fx:id="_nextButton" buttonType="RAISED" layoutX="341.0" layoutY="154.0" onAction="#nextClicked" prefHeight="47.0" prefWidth="86.0" stylesheets="@PracticeSceneStyleSheet.css" text="Next">
          <font>
             <Font size="14.0" />
          </font>
@@ -85,7 +85,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="_userRecordingDropdown" layoutX="250.0" layoutY="475.0" prefWidth="150.0" />
+      <JFXComboBox fx:id="_userRecordingDropdown" layoutX="220.0" layoutY="475.0" prefHeight="26.0" prefWidth="194.0" />
       <Label id="_nameLabel" fx:id="_currentName1" alignment="CENTER" layoutX="55.0" layoutY="475.0" prefHeight="26.0" prefWidth="85.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
          <font>
             <Font size="22.0" />
