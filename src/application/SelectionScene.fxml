@@ -78,16 +78,16 @@
             </JFXButton>
             <CustomTextField id="_searchBar" fx:id="_nameTextField" layoutX="126.0" layoutY="228.0" prefHeight="38.0" prefWidth="410.0" stylesheets="@SelectionSceneStyleSheet.css" />
             <Label id="_pointLabel" fx:id="_pointsLabel" layoutX="507.0" layoutY="39.0" prefHeight="41.0" prefWidth="59.0" stylesheets="@SelectionSceneStyleSheet.css" text="Label" />
-            <ImageView fitHeight="59.0" fitWidth="63.0" layoutX="432.0" layoutY="30.0">
+            <ImageView fx:id="_shopButton" fitHeight="73.0" fitWidth="92.0" layoutX="34.0" layoutY="23.0" onMouseClicked="#shopClicked">
                <image>
-                  <Image url="@../../resources/Yellow_Star.png" />
+                  <Image url="@../images/Trolley.png" />
                </image>
             </ImageView>
-            <JFXButton id="_shopButton" fx:id="_shopButton" layoutX="425.0" layoutY="474.0" onAction="#shopClicked" prefHeight="76.0" prefWidth="140.0" stylesheets="@SelectionSceneStyleSheet.css" text="Shop">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </JFXButton>
+            <ImageView fitHeight="69.0" fitWidth="71.0" layoutX="418.0" layoutY="25.0">
+               <image>
+                  <Image url="@../images/Yellow_Star.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>
