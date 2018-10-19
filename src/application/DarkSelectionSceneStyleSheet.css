@@ -1,10 +1,11 @@
-#_pracButton, #_addToListButton, #_uploadButton, #_pracSelButton, #_removeSelButton, #_deleteSelButton {
+#_pracButton, #_addToListButton, #_uploadButton, #_pracSelButton, #_removeSelButton, #_deleteSelButton, #_pracSelButton, 
+#_removeSelButton {
 	
 	-fx-background-color: rgb(50, 50, 50, 0.9);
 	-fx-text-fill: red;
 }
 
-#_practiceListPane, #_recordingListPane, #_checkBoxToggle, #_selectAllToggle {
+#_practiceListPane, #_recordingListPane, #_checkBoxToggle, #_selectAllToggle, #_leftPane {
 	-fx-background-color: rgb(80, 80, 80);
 }
 
@@ -15,7 +16,7 @@
 
 #_typeInANameLabel {
 	-fx-background-color: black;
-	-fx-color: red;
+	-fx-text-fill: red;
 }
 
 #_searchBar {
@@ -25,3 +26,8 @@
 #_background {
 	-fx-background-color: black;
 }
+
+#_marketIcon > .imageView {
+	filter: invert(100%);
+}
+
