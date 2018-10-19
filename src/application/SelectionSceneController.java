@@ -58,10 +58,9 @@ public class SelectionSceneController extends Controller {
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
 	public JFXTabPane _tabs;
-	public VBox _practiseListContainer;
 
 	private VBox _practiseList = new VBox();
-	private VBox _userRecordingList = new VBox();
+	private VBox _userRecordingList;
 	private PracticeSceneController _practiceController;
 	private String _name;
 	private VBox _practiceFileList;
@@ -83,7 +82,7 @@ public class SelectionSceneController extends Controller {
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 
 				_practiceFileList.setPrefHeight(newValue.doubleValue() - 110);
-				_userRecordingList.setPrefHeight(newValue.doubleValue());
+				_userRecordingList.setPrefHeight(newValue.doubleValue() - 110);
 				System.out.println(newValue);
 			}
 		});

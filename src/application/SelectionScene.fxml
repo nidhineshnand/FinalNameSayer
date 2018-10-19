@@ -41,13 +41,13 @@
             </Tab>
             <Tab text="Recordings">
                <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                  <Pane>
                      <children>
-                        <VBox layoutX="-9.0">
+                        <VBox fx:id="_recordingListContainer" layoutX="-9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
+                              <ScrollPane fx:id="_recordingListPane" />
                               <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="283.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
                               <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="49.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
-                              <ScrollPane prefHeight="200.0" prefWidth="200.0" />
                            </children>
                         </VBox>
                      </children>
