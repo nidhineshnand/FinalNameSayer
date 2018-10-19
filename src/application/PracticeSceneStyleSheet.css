@@ -1,37 +1,37 @@
 #_saveCurButton{
-    -fx-background-color: rgb(0, 255, 0, 0.2);
+    -fx-background-color: lightgrey;
 }
 
 #_recordButton{
-	-fx-background-color: rgb(0, 255, 0, 0.2);
+	-fx-background-color: lightgrey;
 }
 
 #_playCurButton {
-	-fx-background-color: rgb(0, 255, 0, 0.2);
+	-fx-background-color: lightgrey;
 }
 
 #_deleteCurButton {
-	-fx-background-color: rgb(255, 0, 0, 0.2);
+	-fx-background-color: lightgrey;
 }
 
 #_playSelectedButton {
-	-fx-background-color: rgb(0, 255, 0, 0.2);
+	-fx-background-color: lightgrey;
 }
 
 #_deleteSelectedButton {
-	-fx-background-color: rgb(255, 0, 0, 0.2);
+	-fx-background-color: lightgrey;
 }
 
 #_playButton {
-	-fx-background-color: rgb(0, 255, 0, 0.2);
+	-fx-background-color: lightgrey;
 }
 
 #_nextButton {
-	-fx-background-color: rgb(200, 200, 200, 0.4);
+	-fx-background-color: lightgrey;
 }
 
 #_prevButton {
-	-fx-background-color: rgb(200, 200, 200, 0.4);
+	-fx-background-color: lightgrey;
 }
 
 #_recordingPane {
