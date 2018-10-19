@@ -60,6 +60,7 @@ public class SelectionSceneController extends Controller {
 
 	private PracticeSceneController _practiceController;
 	private ShopSceneController _shopController;
+	private ErrorSceneController _errorController;
 	private String _name;
 	private VBox _practiceFileList;
 	private PractiseFile _pFile;
@@ -142,9 +143,11 @@ public class SelectionSceneController extends Controller {
 	 * loads ErrorScene.fxml
 	 * @throws Exception 
 	 */
-	public void openErrorScene() throws Exception {
+	public void openErrorScene(ArrayList<String> namesNotFound, String message) throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("ErrorScene.fxml"));
 		Parent root = loader.load();
+		_errorController = loader.getController();
+		_errorController.setup(namesNotFound, message);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(NameSayerStarter.primaryStage);
