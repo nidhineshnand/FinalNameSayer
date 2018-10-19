@@ -255,6 +255,8 @@ public class SelectionSceneController extends Controller {
 	void uploadClicked() {
 		//Launching file chooser
 		FileChooser fileChooser = new FileChooser();
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+		fileChooser.getExtensionFilters().add(extFilter);
 		fileChooser.setTitle("Open Practise List");
 		File uploadList = fileChooser.showOpenDialog(_practiceListPane.getScene().getWindow());
 
