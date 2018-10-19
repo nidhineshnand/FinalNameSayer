@@ -1,55 +1,27 @@
-#_pracButton {
-	-fx-background-color: rgb(230, 230, 230, 0.4);
+#_pracButton, #_addToListButton, #_uploadButton, #_pracSelButton, #_removeSelButton, #_deleteSelButton {
+	
+	-fx-background-color: rgb(50, 50, 50, 0.9);
+	-fx-text-fill: red;
 }
 
-#_addToListButton {
-	-fx-background-color: rgb(230, 230, 230, 0.4);
+#_practiceListPane, #_recordingListPane, #_checkBoxToggle, #_selectAllToggle {
+	-fx-background-color: rgb(80, 80, 80);
 }
 
-#_uploadButton {
-	-fx-background-color: rgb(230, 230, 230, 0.4);
-}
-
-#_pracSelButton {
-	-fx-background-color: rgb(230, 230, 230, 0.4);
-}
-
-#_removeSelButton {
-	-fx-background-color: rgb(230, 230, 230, 0.4);
-}
-
-#_deleteSelButton {
-	-fx-background-color: rgb(230, 230, 230, 0.4);	
-}
-
-#_practiceListPane {
-	-fx-background-color: rgb(230, 230, 230);
-}
-
-#_recordingListPane {
-	-fx-background-color: rgb(230, 230, 230);
-}
-
-#_checkBoxToggle {
-	-fx-background-color: rgb(230, 230, 230);
-}
-
-#_selectAllToggle {
-	-fx-background-color: rgb(230, 230, 230);
-}
 
 #_tabParent {
 	-fx-background-color: rgb(230, 230, 230);
 }
 
 #_typeInANameLabel {
-	-fx-background-color: rgb(230, 230, 230);
+	-fx-background-color: black;
+	-fx-color: red;
 }
 
 #_searchBar {
-	-fx-background-color: rgb(230, 230, 230);
+	-fx-background-color: rgb(80, 80, 80);
 }
 
 #_background {
-	-fx-background-color: rgb(255, 255, 255);
+	-fx-background-color: black;
 }
