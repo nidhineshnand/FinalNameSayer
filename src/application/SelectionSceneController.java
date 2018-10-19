@@ -216,6 +216,8 @@ public class SelectionSceneController extends Controller {
 	void addToListClicked() {
 		staticSearch();
 		populatePanes();
+		_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+		_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 	}
 	
 	/**
