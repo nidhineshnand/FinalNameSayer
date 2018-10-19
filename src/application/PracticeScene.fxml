@@ -8,6 +8,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
@@ -50,12 +51,18 @@
          <font>
             <Font size="14.0" />
          </font>
+         <graphic>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" />
+         </graphic>
       </JFXButton>
       <JFXTabPane layoutX="536.0" layoutY="150.0" prefHeight="338.0" prefWidth="303.0">
          <tabs>
             <Tab text="Recordings ">
                <content>
-                  <ScrollPane prefHeight="200.0" prefWidth="200.0" />
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane fx:id="_recordingList" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="303.0" />
+                     </children></Pane>
                </content></Tab>
          </tabs>
       </JFXTabPane>

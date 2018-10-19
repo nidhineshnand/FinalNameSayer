@@ -142,8 +142,6 @@ public class UserRecordingFileList extends NameSayerFileList {
     public VBox get_associatedUserRecordingFileListVbox(PractiseFile file) {
         getFilesForPractiseScene(file);
         //_associatedUserRecordingFileListVbox.setPrefHeight(500);
-        ScrollPane scrollPane = new ScrollPane(_associatedUserRecordingFileListVbox);
-        scrollPane.setFitToWidth(true);
         return _associatedUserRecordingFileListVbox;
     }
 
