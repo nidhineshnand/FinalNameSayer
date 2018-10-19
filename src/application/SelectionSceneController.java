@@ -57,7 +57,7 @@ public class SelectionSceneController extends Controller {
 	public Label _pointsLabel;
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
-	public JFXTabPane _tabs;
+	public Pane _mainContainer;
 
 	private VBox _practiseList = new VBox();
 	private VBox _userRecordingList;
@@ -77,14 +77,11 @@ public class SelectionSceneController extends Controller {
 		//Populates the User Recording files tab
 		populatePanes();
 		_pointsLabel.setText(_spine.getPoints() + "");
-		_tabs.heightProperty().addListener(new ChangeListener<Number>() {
-			@Override
-			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+		_mainContainer.heightProperty().addListener((observable, oldValue, newValue) -> {
 
-				_practiceFileList.setPrefHeight(newValue.doubleValue() - 110);
-				_userRecordingList.setPrefHeight(newValue.doubleValue() - 110);
-				System.out.println(newValue);
-			}
+			_practiceFileList.setPrefHeight(newValue.doubleValue() - 110);
+			_userRecordingList.setPrefHeight(newValue.doubleValue() - 110);
+			System.out.println(newValue);
 		});
 	}
 
@@ -143,6 +140,9 @@ public class SelectionSceneController extends Controller {
 				_pointsLabel.setText(_spine.getPoints() + "");
 				System.out.println(_spine.getPoints());
 				System.out.println("stopping");
+				//Resizing scene
+				_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+				_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 			}
         });
 	}
@@ -245,6 +245,8 @@ public class SelectionSceneController extends Controller {
 
 		//Refreshing view
 		populatePanes();
+		_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+		_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 	}
 	
 	/**
