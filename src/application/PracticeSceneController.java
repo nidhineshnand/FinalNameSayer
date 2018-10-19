@@ -101,6 +101,10 @@ public class PracticeSceneController extends Controller {
 
 	/**Populates the loop dropdown with the observable list of UserRecordingFiles.*/
 	public void populateDropdown(){
+		//Checking if there are items already added before
+		if(_userRecordingDropdown.getItems() != null){
+			_userRecordingDropdown.getItems().clear();
+		}
 		_userRecordingDropdown.getItems().addAll(_spine.getAssociatedUserRecordingFilesForLoop(_listOfNames.get(_counter)));
 	}
 
@@ -112,8 +116,13 @@ public class PracticeSceneController extends Controller {
 		_listOfNames = list;
 		populateTable();
 		populateDropdown();
+		setSpinner();
 	}
-	
+
+	//Sets the input value that the spinner will take
+	private void setSpinner() {
+		_loopCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30));
+	}
 	/**
 	 * populates the TableView _recordingList
 	 */
@@ -211,6 +220,7 @@ public class PracticeSceneController extends Controller {
 		_playRecordingButton.setVisible(false);
 		updateRecordingPane();
 		_spine.changePoints(3);
+		populateDropdown();
 	}
 	
 	/**
@@ -264,9 +274,11 @@ public class PracticeSceneController extends Controller {
 	/**Loops the selected files the given number of times*/
 	@FXML
 	void loopFiles(){
-		CollectionsFile collectionsFile = new CollectionsFile(_listOfNames.get(_counter), _userRecordingDropdown.getValue());
-		for(int i = 0; i < _loopCount.getValue(); i++){
-			playItem(collectionsFile);
+		if(_userRecordingDropdown.getValue() != null) {
+			CollectionsFile collectionsFile = new CollectionsFile(_listOfNames.get(_counter), _userRecordingDropdown.getValue());
+			for (int i = 0; i < _loopCount.getValue(); i++) {
+				playItem(collectionsFile);
+			}
 		}
 	}
 	
