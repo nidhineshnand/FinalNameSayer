@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@DarkPracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
       <Label id="_nameLabel" fx:id="_currentName" alignment="CENTER" layoutX="68.0" layoutY="72.0" prefHeight="112.0" prefWidth="334.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
          <font>
@@ -24,7 +24,7 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <JFXButton id="_playButton" fx:id="_playAllButton" buttonType="RAISED" layoutX="151.0" layoutY="171.0" onAction="#playAllClicked" prefHeight="84.0" prefWidth="168.0" stylesheets="@PracticeSceneStyleSheet.css" text="Play">
+      <JFXButton id="_playButton" fx:id="_playAllButton" buttonType="RAISED" layoutX="151.0" layoutY="171.0" onAction="#playAllClicked" prefHeight="84.0" prefWidth="168.0" text="Play">
          <font>
             <Font size="36.0" />
          </font>
@@ -36,7 +36,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXButton id="_recordButton" fx:id="_recordButton" buttonType="RAISED" layoutX="567.0" layoutY="65.0" onAction="#recordClicked" prefHeight="78.0" prefWidth="242.0" stylesheets="@PracticeSceneStyleSheet.css" text="Record">
+      <JFXButton id="_recordButton" fx:id="_recordButton" buttonType="RAISED" layoutX="567.0" layoutY="65.0" onAction="#recordClicked" prefHeight="78.0" prefWidth="242.0" text="Record">
          <font>
             <Font size="36.0" />
          </font>
@@ -48,7 +48,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXButton id="_playCurButton" fx:id="_playRecordingButton" buttonType="RAISED" layoutX="466.0" layoutY="93.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" stylesheets="@PracticeSceneStyleSheet.css" text="Play">
+      <JFXButton id="_playCurButton" fx:id="_playRecordingButton" buttonType="RAISED" layoutX="466.0" layoutY="93.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play">
          <font>
             <Font size="14.0" />
          </font>
@@ -59,7 +59,7 @@
                </font>
             </Tooltip>
          </tooltip></JFXButton>
-      <JFXButton id="_saveCurButton" fx:id="_saveButton" buttonType="RAISED" layoutX="595.0" layoutY="93.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="119.0" stylesheets="@PracticeSceneStyleSheet.css" text="Save">
+      <JFXButton id="_saveCurButton" fx:id="_saveButton" buttonType="RAISED" layoutX="595.0" layoutY="93.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="119.0" text="Save">
          <font>
             <Font size="14.0" />
          </font>
@@ -70,8 +70,8 @@
                </font>
             </Tooltip>
          </tooltip></JFXButton>
-      <JFXSlider fx:id="_volumeSlider" blockIncrement="1.0" layoutX="151.0" layoutY="377.0" onDragDone="#volumeSliderDragged" prefHeight="14.0" prefWidth="168.0" value="30.0" />
-      <JFXButton id="_prevButton" fx:id="_prevButton" buttonType="RAISED" layoutX="43.0" layoutY="190.0" onAction="#prevClicked" prefHeight="47.0" prefWidth="85.0" stylesheets="@PracticeSceneStyleSheet.css" text="Previous">
+      <JFXSlider id="_volumeBar" fx:id="_volumeSlider" blockIncrement="1.0" layoutX="151.0" layoutY="377.0" onDragDone="#volumeSliderDragged" prefHeight="14.0" prefWidth="168.0" stylesheets="@PracticeSceneStyleSheet.css" value="30.0" />
+      <JFXButton id="_prevButton" fx:id="_prevButton" buttonType="RAISED" layoutX="43.0" layoutY="190.0" onAction="#prevClicked" prefHeight="47.0" prefWidth="85.0" text="Previous">
          <font>
             <Font size="14.0" />
          </font>
@@ -82,7 +82,7 @@
                </font>
             </Tooltip>
          </tooltip></JFXButton>
-      <JFXButton id="_nextButton" fx:id="_nextButton" buttonType="RAISED" layoutX="359.0" layoutY="189.0" onAction="#nextClicked" prefHeight="47.0" prefWidth="86.0" stylesheets="@PracticeSceneStyleSheet.css" text="Next">
+      <JFXButton id="_nextButton" fx:id="_nextButton" buttonType="RAISED" layoutX="359.0" layoutY="189.0" onAction="#nextClicked" prefHeight="47.0" prefWidth="86.0" text="Next">
          <font>
             <Font size="14.0" />
          </font>
@@ -94,8 +94,8 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="135.0" layoutY="487.0" />
-      <JFXButton id="_deleteCurButton" fx:id="_deleteButton" buttonType="RAISED" layoutX="731.0" layoutY="93.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" stylesheets="@PracticeSceneStyleSheet.css" text="Delete">
+      <JFXProgressBar id="_micSensitivityBar" fx:id="_micSensitivityBar" layoutX="135.0" layoutY="487.0" stylesheets="@PracticeSceneStyleSheet.css" />
+      <JFXButton id="_deleteCurButton" fx:id="_deleteButton" buttonType="RAISED" layoutX="731.0" layoutY="93.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete">
          <font>
             <Font size="14.0" />
          </font>
@@ -111,7 +111,7 @@
          <tabs>
             <Tab text="Recordings ">
               <content>
-                <AnchorPane id="_recordingPane" fx:id="_recordingList" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@PracticeSceneStyleSheet.css" />
+                <AnchorPane id="_recordingPane" fx:id="_recordingList" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
                <tooltip>
                   <Tooltip text="Empty Tooltip" />
@@ -119,7 +119,7 @@
             </Tab>
          </tabs>
       </JFXTabPane>
-      <JFXButton id="_playSelectedButton" fx:id="_playSelectedButton" buttonType="RAISED" layoutX="536.0" layoutY="519.0" onAction="#playSelectedClicked" prefHeight="36.0" prefWidth="119.0" stylesheets="@PracticeSceneStyleSheet.css" text="Play Selected ">
+      <JFXButton id="_playSelectedButton" fx:id="_playSelectedButton" buttonType="RAISED" layoutX="536.0" layoutY="519.0" onAction="#playSelectedClicked" prefHeight="36.0" prefWidth="119.0" text="Play Selected ">
          <font>
             <Font size="14.0" />
          </font>
@@ -131,7 +131,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXButton id="_deleteSelectedButton" fx:id="_deleteSelectedButton" buttonType="RAISED" layoutX="688.0" layoutY="519.0" onAction="#deleteSelectedClicked" prefHeight="36.0" prefWidth="119.0" stylesheets="@PracticeSceneStyleSheet.css" text="Delete Selected">
+      <JFXButton id="_deleteSelectedButton" fx:id="_deleteSelectedButton" buttonType="RAISED" layoutX="688.0" layoutY="519.0" onAction="#deleteSelectedClicked" prefHeight="36.0" prefWidth="119.0" text="Delete Selected">
          <font>
             <Font size="14.0" />
          </font>
