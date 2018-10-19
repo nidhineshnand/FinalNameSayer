@@ -40,8 +40,16 @@ public class ShopSceneController extends Controller {
 		
 	}
 	
+	/**
+	 * When this window is made this is called to set up the spine and the points
+	 * @param spine
+	 */
 	void setup(ControllerConnecter spine) {
 		_spine = spine;
 		_pointLabel.setText(_spine.getPoints() + "");
+	}
+	
+	void changeTheme() {
+		
 	}
 }
