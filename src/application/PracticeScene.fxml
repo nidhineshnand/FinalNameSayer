@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
@@ -12,14 +14,13 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
-      <Label id="_nameLabel" fx:id="_currentName" alignment="CENTER" layoutX="68.0" layoutY="72.0" prefHeight="112.0" prefWidth="334.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
+      <Label id="_nameLabel" fx:id="_currentName" alignment="CENTER" layoutX="109.0" layoutY="53.0" prefHeight="68.0" prefWidth="242.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-      <JFXButton id="_playButton" fx:id="_playAllButton" buttonType="RAISED" layoutX="151.0" layoutY="171.0" onAction="#playAllClicked" prefHeight="84.0" prefWidth="168.0" stylesheets="@PracticeSceneStyleSheet.css" text="Play">
+      <JFXButton id="_playButton" fx:id="_playAllButton" buttonType="RAISED" layoutX="159.0" layoutY="143.0" onAction="#playAllClicked" prefHeight="47.0" prefWidth="153.0" stylesheets="@PracticeSceneStyleSheet.css" text="Play">
          <font>
             <Font size="36.0" />
          </font>
@@ -37,17 +38,17 @@
          <font>
             <Font size="14.0" />
          </font></JFXButton>
-      <JFXSlider fx:id="_volumeSlider" blockIncrement="1.0" layoutX="151.0" layoutY="377.0" onDragDone="#volumeSliderDragged" prefHeight="14.0" prefWidth="168.0" value="30.0" />
-      <JFXButton id="_prevButton" fx:id="_prevButton" buttonType="RAISED" layoutX="43.0" layoutY="190.0" onAction="#prevClicked" prefHeight="47.0" prefWidth="85.0" stylesheets="@PracticeSceneStyleSheet.css" text="Previous">
+      <JFXSlider fx:id="_volumeSlider" blockIncrement="1.0" layoutX="289.0" layoutY="294.0" onDragDone="#volumeSliderDragged" prefHeight="14.0" prefWidth="168.0" value="30.0" />
+      <JFXButton id="_prevButton" fx:id="_prevButton" buttonType="RAISED" layoutX="50.0" layoutY="154.0" onAction="#prevClicked" prefHeight="47.0" prefWidth="85.0" stylesheets="@PracticeSceneStyleSheet.css" text="Previous">
          <font>
             <Font size="14.0" />
          </font></JFXButton>
-      <JFXButton id="_nextButton" fx:id="_nextButton" buttonType="RAISED" layoutX="359.0" layoutY="189.0" onAction="#nextClicked" prefHeight="47.0" prefWidth="86.0" stylesheets="@PracticeSceneStyleSheet.css" text="Next">
+      <JFXButton id="_nextButton" fx:id="_nextButton" buttonType="RAISED" layoutX="359.0" layoutY="154.0" onAction="#nextClicked" prefHeight="47.0" prefWidth="86.0" stylesheets="@PracticeSceneStyleSheet.css" text="Next">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="135.0" layoutY="487.0" />
+      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="26.0" layoutY="301.0" />
       <JFXButton id="_deleteCurButton" fx:id="_deleteButton" buttonType="RAISED" layoutX="731.0" layoutY="93.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" stylesheets="@PracticeSceneStyleSheet.css" text="Delete">
          <font>
             <Font size="14.0" />
@@ -74,15 +75,27 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <Label id="_volumeLabel" layoutX="187.0" layoutY="326.0" prefHeight="36.0" prefWidth="96.0" stylesheets="@PracticeSceneStyleSheet.css" text="Volume" textAlignment="JUSTIFY">
+      <Label id="_volumeLabel" layoutX="325.0" layoutY="243.0" prefHeight="36.0" prefWidth="96.0" stylesheets="@PracticeSceneStyleSheet.css" text="Volume" textAlignment="JUSTIFY">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="145.0" layoutY="433.0" prefHeight="36.0" prefWidth="180.0" text="Mic Sensitivity" textAlignment="JUSTIFY">
+      <Label layoutX="50.0" layoutY="243.0" prefHeight="36.0" prefWidth="180.0" text="Mic Sensitivity" textAlignment="JUSTIFY">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+      <JFXComboBox fx:id="_serRecordingDropdown" layoutX="250.0" layoutY="475.0" prefWidth="150.0" />
+      <Label id="_nameLabel" fx:id="_currentName1" alignment="CENTER" layoutX="55.0" layoutY="475.0" prefHeight="26.0" prefWidth="85.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="_loop" layoutX="38.0" layoutY="404.0" prefHeight="36.0" prefWidth="119.0" text="Loop">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="_loopCount" layoutX="157.0" layoutY="414.0" prefHeight="3.0" prefWidth="28.0" text="3" />
    </children>
 </AnchorPane>

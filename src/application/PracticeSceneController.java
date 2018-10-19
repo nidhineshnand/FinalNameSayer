@@ -10,6 +10,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -64,7 +67,11 @@ public class PracticeSceneController extends Controller {
 	public Button _playSelectedButton;
 	@FXML
 	public Button _deleteSelectedButton;
-	
+	public JFXComboBox _serRecordingDropdown;
+	public JFXButton _loop;
+	public JFXTextField _loopCount;
+	public Label _currentName1;
+
 	private int _counter = 0;
 	private double _currentVolume;
 	private UserRecordingFile _rFile;
@@ -256,6 +263,8 @@ public class PracticeSceneController extends Controller {
 	private void updateCurrentName() {
 		_currentName.setText(_listOfNames.get(_counter).get_displayName());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
+		_currentName1.setText(_listOfNames.get(_counter).get_displayName());
+		_currentName1.setTextAlignment(TextAlignment.CENTER);
 	}
 
 	private void updateRecordingPane() {
