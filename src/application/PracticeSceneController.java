@@ -258,17 +258,13 @@ public class PracticeSceneController extends Controller {
 	}
 	
 	/**
-	 * When _playSelectedButton is clicked 
+	 * When _playSelectedButton is clicked then the selected recordings are played
 	 */
 	@FXML
 	void playSelectedClicked() {
-		ArrayList<UserRecordingFile> toDelete = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
-		if (toDelete.size() == 1) {
-			_rFile = toDelete.get(0);
-			playItem(_rFile);
-		} else {
-			JOptionPane.showMessageDialog(null, "Please select only one to play");
-		}
+		ArrayList<UserRecordingFile> selectedRecordings = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
+		CollectionsFile collectionsFile = new CollectionsFile(null, selectedRecordings);
+		playItem(collectionsFile);
 	}
 
 	/**Loops the selected files the given number of times*/

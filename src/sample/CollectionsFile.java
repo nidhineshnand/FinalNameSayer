@@ -26,14 +26,19 @@ public class CollectionsFile implements NameSayerFile {
 
     //This methods gets all the file objects received and puts them together in one variable so that it can be concatenated together
     public void mergeFiles(){
-        //Getting files associated with the practise files
-        for(PractiseFile practiseFile : _practiseFiles){
-            filesToPlay().addAll(practiseFile.filesToPlay());
+        //Checking that file is not null
+        if(_practiseFiles != null) {
+            //Getting files associated with the practise files
+            for (PractiseFile practiseFile : _practiseFiles) {
+                filesToPlay().addAll(practiseFile.filesToPlay());
+            }
         }
 
-        //Getting files associated with a recording file
-        for(UserRecordingFile userRecordingFile : _userRecordingFiles){
-            filesToPlay().addAll(userRecordingFile.filesToPlay());
+        if (_userRecordingFiles != null) {
+            //Getting files associated with a recording file
+            for (UserRecordingFile userRecordingFile : _userRecordingFiles) {
+                filesToPlay().addAll(userRecordingFile.filesToPlay());
+            }
         }
     }
 
