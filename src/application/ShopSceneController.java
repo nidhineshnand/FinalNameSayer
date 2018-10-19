@@ -49,7 +49,7 @@ public class ShopSceneController extends Controller {
 		_pointLabel.setText(_spine.getPoints() + "");
 	}
 	
-	void changeTheme() {
+	void changeTheme(String themeURL) {
 		
 	}
 }
