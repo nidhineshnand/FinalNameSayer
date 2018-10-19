@@ -12,13 +12,13 @@ public class CollectionsFile implements NameSayerFile {
     ArrayList<UserRecordingFile> _userRecordingFiles = new ArrayList<>();
     ArrayList<File> _fileToPlay = new ArrayList<>();
 
-    CollectionsFile(ArrayList<PractiseFile> practiseFiles, ArrayList<UserRecordingFile> userRecordingFiles){
+    public CollectionsFile(ArrayList<PractiseFile> practiseFiles, ArrayList<UserRecordingFile> userRecordingFiles){
         _practiseFiles = practiseFiles;
         _userRecordingFiles = userRecordingFiles;
         mergeFiles();
     }
 
-    CollectionsFile(PractiseFile practiseFile, UserRecordingFile userRecordingFile){
+    public CollectionsFile(PractiseFile practiseFile, UserRecordingFile userRecordingFile){
         _fileToPlay.addAll(practiseFile.filesToPlay());
         _fileToPlay.addAll(userRecordingFile.filesToPlay());
     }

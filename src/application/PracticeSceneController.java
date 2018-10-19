@@ -27,10 +27,8 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.applet.AudioClip;
-import sample.ControllerConnecter;
-import sample.NameSayerFile;
-import sample.PractiseFile;
-import sample.UserRecordingFile;
+
+import sample.*;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
@@ -69,7 +67,7 @@ public class PracticeSceneController extends Controller {
 	public Button _deleteSelectedButton;
 	public JFXComboBox<UserRecordingFile> _userRecordingDropdown;
 	public JFXButton _loop;
-	public JFXTextField _loopCount;
+	public Spinner<Integer> _loopCount;
 	public Label _currentName1;
 
 	private int _counter = 0;
@@ -266,9 +264,10 @@ public class PracticeSceneController extends Controller {
 	/**Loops the selected files the given number of times*/
 	@FXML
 	void loopFiles(){
-
-
-
+		CollectionsFile collectionsFile = new CollectionsFile(_listOfNames.get(_counter), _userRecordingDropdown.getValue());
+		for(int i = 0; i < _loopCount.getValue(); i++){
+			playItem(collectionsFile);
+		}
 	}
 	
 	/**
