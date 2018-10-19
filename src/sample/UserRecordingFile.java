@@ -139,4 +139,9 @@ public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordin
             return _creationTime.compareTo(other._creationTime);
         }
     }
+
+    @Override
+    public String toString() {
+        return _displayName;
+    }
 }

@@ -67,7 +67,7 @@ public class PracticeSceneController extends Controller {
 	public Button _playSelectedButton;
 	@FXML
 	public Button _deleteSelectedButton;
-	public JFXComboBox _userRecordingDropdown;
+	public JFXComboBox<UserRecordingFile> _userRecordingDropdown;
 	public JFXButton _loop;
 	public JFXTextField _loopCount;
 	public Label _currentName1;
