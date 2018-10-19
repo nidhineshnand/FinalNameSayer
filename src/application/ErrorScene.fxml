@@ -21,9 +21,9 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="_nameScrollPane" layoutX="108.0" layoutY="150.0" prefHeight="97.0" prefWidth="364.0">
+      <ScrollPane fx:id="_nameScrollPane" layoutX="108.0" layoutY="111.0" prefHeight="158.0" prefWidth="364.0">
          <content>
-            <Pane fx:id="_namePane" prefHeight="103.0" prefWidth="344.0" />
+            <Pane fx:id="_namePane" prefHeight="157.0" prefWidth="344.0" />
          </content>
       </ScrollPane>
    </children>

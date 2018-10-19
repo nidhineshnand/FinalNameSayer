@@ -103,8 +103,8 @@ public class SelectionSceneController extends Controller {
 					e.printStackTrace();
 				}
 			}
-			
 		}
+		_notFound.clear();
 	}
 	
 	/**
@@ -337,16 +337,19 @@ public class SelectionSceneController extends Controller {
 	 * when the user enters a name into _nameTextField statically
 	 */
 	private void staticSearch() {
-		ArrayList<String> notFound = new ArrayList<String>();
 		String str = _nameTextField.getText();
-		PractiseFile pFile = _spine.searchButtonPressed(str, notFound);
+		PractiseFile pFile = _spine.searchButtonPressed(str, _notFound);
 		if (pFile == null) {
-			JOptionPane.showMessageDialog(null, "This name is not in the data base");
+			try {
+				openErrorScene(_notFound, "NamesNotFound");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
-			//_spine.addPractiseFileToList(pFile);
-			System.out.println(pFile.get_displayName());
 			populatePanes();
 		}
+		_notFound.clear();
 	}
 	
 	/**
