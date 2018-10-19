@@ -10,6 +10,9 @@ import javax.swing.JOptionPane;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXTabPane;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -45,18 +49,18 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public Button _uploadButton;
 	@FXML
-	public Pane _recordingListPane;
+	public ScrollPane _recordingListPane = new ScrollPane();
 	@FXML
-	public Pane _practiceListPane;
-	@FXML
-	public Button _shopButton;
+	public ScrollPane _practiceListPane = new ScrollPane();
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
+	public Pane _mainContainer;
 
-
+	private VBox _practiseList = new VBox();
+	private VBox _userRecordingList;
 	private PracticeSceneController _practiceController;
 	private String _name;
 	private VBox _practiceFileList;
@@ -73,6 +77,12 @@ public class SelectionSceneController extends Controller {
 		//Populates the User Recording files tab
 		populatePanes();
 		_pointsLabel.setText(_spine.getPoints() + "");
+		_mainContainer.heightProperty().addListener((observable, oldValue, newValue) -> {
+
+			_practiceFileList.setPrefHeight(newValue.doubleValue() - 110);
+			_userRecordingList.setPrefHeight(newValue.doubleValue() - 110);
+			System.out.println(newValue);
+		});
 	}
 
 	/**
@@ -130,6 +140,9 @@ public class SelectionSceneController extends Controller {
 				_pointsLabel.setText(_spine.getPoints() + "");
 				System.out.println(_spine.getPoints());
 				System.out.println("stopping");
+				//Resizing scene
+				_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+				_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 			}
         });
 	}
@@ -148,7 +161,8 @@ public class SelectionSceneController extends Controller {
 			_userRecordingCheckBox.setText("Select All");
 			_spine.setUserRecordingFileListCheckBox(false);
 		}
-		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
+
+		populatePanes();
 	}
 	private void autoCompleteListBinding(){
 		//Binding search results to textfieled
@@ -168,7 +182,7 @@ public class SelectionSceneController extends Controller {
 			_practiseFileSelectAllPractiseFileCheckBox.setText("Select All");
 			_spine.setPractiseFileListCheckBox(false);
 		}
-		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
+		populatePanes();
 
 	}
 
@@ -193,7 +207,7 @@ public class SelectionSceneController extends Controller {
 	//This method delete selected user recordings
 	public void deleteSelectedUserRecordings(){
 		_spine.deleteSelectedUserRecordingFiles();
-		_recordingListPane.getChildren().add(_spine.populateUserRecordingFilesForMainScene());
+		populatePanes();
 	}
 	
 	/**
@@ -233,7 +247,7 @@ public class SelectionSceneController extends Controller {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * When _uploadButton is clicked
 	 */
@@ -251,6 +265,8 @@ public class SelectionSceneController extends Controller {
 
 		//Refreshing view
 		populatePanes();
+		_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+		_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 	}
 	
 	/**
@@ -278,10 +294,10 @@ public class SelectionSceneController extends Controller {
 	 * populates database pane for the startup
 	 */
 	protected void populatePanes() {
-		_recordingListPane.getChildren().clear();
-		_practiceListPane.getChildren().clear();
-		_recordingListPane.getChildren().addAll(_spine.populateUserRecordingFilesForMainScene());
-		_practiceListPane.getChildren().addAll(_spine.populatePractiseFileForMainScene());
+		_userRecordingList = _spine.populateUserRecordingFilesForMainScene();
+		_recordingListPane.setContent(_userRecordingList);
+		_practiceFileList = _spine.populatePractiseFileForMainScene();
+		_practiceListPane.setContent(_practiceFileList);
 	}
 	
 	/**

@@ -38,7 +38,19 @@
 	-fx-background-color: rgb(230, 230, 230);
 }
 
+.jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab-selected-line {
+	-fx-background-color: green;
+}
 
+.jfx-tab-pane .headers-region
+{
+	-fx-background-color: cornflowerblue;
+}
+
+.jfx-tab-pane .tab-header-background
+{
+	-fx-background-color: cornflowerblue;
+}
 
 
 

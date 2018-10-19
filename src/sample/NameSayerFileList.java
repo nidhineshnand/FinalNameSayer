@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
@@ -128,13 +129,15 @@ public abstract class NameSayerFileList {
         if (files.isEmpty()) {
             Label setLabel = new Label("No Files Here Yet");
             setLabel.setFont(Font.font("Cambria", 28));
-            setLabel.setMinWidth(300);
+            setLabel.setMinWidth(310);
+            VBox.setVgrow(container, Priority.ALWAYS);
             container.getChildren().add(setLabel);
         }
         //Looping through files to add them to vbox
         for (NameSayerFile file : files){
             container.getChildren().add(file.get_fileView());
         }
+        container.setStyle("-fx-background-color: rgb(224,226,225)");
         return container;
     }
 

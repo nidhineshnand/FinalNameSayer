@@ -205,12 +205,11 @@ public class PractiseFileList extends NameSayerFileList{
     }
 
 
-    public ScrollPane get_practiseFileListVbox() {
+    public VBox get_practiseFileListVbox() {
         getFilesForMainScene();
-        _practiseFileListVbox.setPrefHeight(500);
+        //_practiseFileListVbox.setPrefHeight(500);
         ScrollPane scrollPane = new ScrollPane(_practiseFileListVbox);
         scrollPane.setFitToWidth(true);
-        //scrollPane.setFitToWidth(true);
-        return scrollPane;
+        return _practiseFileListVbox;
     }
 }

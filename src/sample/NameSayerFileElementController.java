@@ -30,6 +30,10 @@ public class NameSayerFileElementController {
             _badRatingText.setVisible(false);
         }
         setListnersToComboBox();
+        _badRatingText.setMouseTransparent(true);
+        _badRatingText.setStyle("-fx-background-color: rgb(190,192,191)");
+        _comboBox.setStyle("-fx-background-color: rgb(190,192,191)");
+
     }
 
 
@@ -48,6 +52,7 @@ public class NameSayerFileElementController {
     private void populateComboBox(){
         _comboBox.getItems().addAll(_databaseFiles);
     }
+
 
     //Sets a listener to checkbox items in order to mark the file as bad
     private void setListnersToComboBox(){
