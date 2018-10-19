@@ -99,12 +99,11 @@ public class PracticeSceneController extends Controller {
 			volumeSliderDragged();
 		});
 
-		populateDropdown();
 	}
 
 	/**Populates the loop dropdown with the observable list of UserRecordingFiles.*/
 	public void populateDropdown(){
-		_userRecordingDropdown.getItems().addAll(_spine.getAssociatedUserRecordingFilesForLoop());
+		_userRecordingDropdown.getItems().addAll(_spine.getAssociatedUserRecordingFilesForLoop(_listOfNames.get(_counter)));
 	}
 
 
@@ -114,6 +113,7 @@ public class PracticeSceneController extends Controller {
 	void setNameList(ArrayList<PractiseFile> list) {
 		_listOfNames = list;
 		populateTable();
+		populateDropdown();
 	}
 	
 	/**
