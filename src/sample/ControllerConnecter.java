@@ -137,7 +137,7 @@ public class ControllerConnecter {
     /**This method returns an observable list of user recording files that will be used in the loop names section. The
      * user recording in the list will be the most recent one
       */
-    public ObservableList<UserRecordingFile> getAssociatedUserRecordingFilesForLoop(){
-        return userRecordingFileList.get_associatedUserRecordingFiles();
+    public ObservableList<UserRecordingFile> getAssociatedUserRecordingFilesForLoop(PractiseFile file){
+        return userRecordingFileList.get_associatedUserRecordingFiles(file);
     }
 }

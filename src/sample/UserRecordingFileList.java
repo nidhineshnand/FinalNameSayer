@@ -146,7 +146,8 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
     //Returns that user recordings that are associated with the current practise file
-    public ObservableList<UserRecordingFile> get_associatedUserRecordingFiles() {
+    public ObservableList<UserRecordingFile> get_associatedUserRecordingFiles(PractiseFile file) {
+        setUserRecordingsAssociatedWith(file);
         return _associatedUserRecordingFiles;
     }
 }
