@@ -1,49 +1,14 @@
-#_pracButton {
+#_pracButton, #_addToListButton, #_uploadButton, #_pracSelButton, #_removeSelButton, #_deleteSelButton, #_shopButton {
 	-fx-background-color: lightgrey;
 }
 
-#_addToListButton {
-	-fx-background-color: lightgrey;
-}
 
-#_uploadButton {
-	-fx-background-color: lightgrey;
-}
-
-#_pracSelButton {
-	-fx-background-color: lightgrey;
-}
-
-#_removeSelButton {
-	-fx-background-color: lightgrey;
-}
-
-#_deleteSelButton {
-	-fx-background-color: lightgrey;	
-}
-
-#_practiceListPane {
-	-fx-background-color: rgb(230, 230, 230);
-}
-
-#_recordingListPane {
-	-fx-background-color: rgb(230, 230, 230);
-}
-
-#_checkBoxToggle {
-	-fx-background-color: rgb(230, 230, 230);
-}
-
-#_selectAllToggle {
+#_practiceListPane, #_recordingListPane, #_checkBoxToggle, #_selectAllToggle {
 	-fx-background-color: rgb(230, 230, 230);
 }
 
 #_tabParent {
 	-fx-background-color: rgb(230, 230, 230);
-}
-
-#_shopButton {
-	-fx-background-color: lightgrey;
 }
 
 
