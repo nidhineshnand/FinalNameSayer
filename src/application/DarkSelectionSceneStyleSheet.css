@@ -5,16 +5,20 @@
 	-fx-text-fill: red;
 }
 
-#_practiceListPane, #_recordingListPane, #_checkBoxToggle, #_selectAllToggle, #_leftPane {
+#_practiceListPane, #_recordingListPane,  #_leftPane, #_leftAnchorPane, #_parentPracticePane, #_parentRecordingPane {
 	-fx-background-color: rgb(80, 80, 80);
 }
 
+#_checkBoxToggle, #_selectAllToggle {
+	-fx-background-color: rgb(80, 80, 80);
+	-fx-text-fill: red;
+}
 
 #_tabParent {
 	-fx-background-color: rgb(80, 80, 80);
 }
 
-#_typeInANameLabel {
+#_typeInANameLabel, #_pointLabel {
 	-fx-background-color: black;
 	-fx-text-fill: red;
 }
@@ -27,7 +31,4 @@
 	-fx-background-color: black;
 }
 
-#_marketIcon > .imageView {
-	filter: invert(100%);
-}
 

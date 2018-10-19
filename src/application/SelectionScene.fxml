@@ -22,9 +22,9 @@
                <tabs>
                   <Tab text="Practice List">
                      <content>
-                        <Pane prefHeight="453.0" prefWidth="280.0">
+                        <Pane id="_parentPracticePane" prefHeight="453.0" prefWidth="280.0">
                            <children>
-                              <AnchorPane prefHeight="568.0" prefWidth="289.0">
+                              <AnchorPane id="_leftAnchorPane" prefHeight="568.0" prefWidth="289.0">
                                  <children>
                                     <AnchorPane id="_practiceListPane" fx:id="_practiceListPane" prefHeight="489.0" prefWidth="289.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                     <JFXButton id="_pracSelButton" fx:id="_practiceListButton" buttonType="RAISED" layoutY="513.0" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="143.0" text="Practice Selected">
@@ -46,7 +46,7 @@
                   </Tab>
                   <Tab text="Recordings">
                      <content>
-                        <Pane prefHeight="200.0" prefWidth="200.0">
+                        <Pane id="_parentRecordingPane" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <AnchorPane prefHeight="567.0" prefWidth="285.0">
                                  <children>
