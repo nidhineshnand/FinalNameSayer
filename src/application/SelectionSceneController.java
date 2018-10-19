@@ -1,6 +1,7 @@
 package application;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -135,6 +136,22 @@ public class SelectionSceneController extends Controller {
 				System.out.println("stopping");
 			}
         });
+	}
+	
+	/**
+	 * loads ErrorScene.fxml
+	 * @throws Exception 
+	 */
+	public void openErrorScene() throws Exception {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ErrorScene.fxml"));
+		Parent root = loader.load();
+		Stage secondaryStage = new Stage();
+		secondaryStage.initModality(Modality.WINDOW_MODAL);
+		secondaryStage.initOwner(NameSayerStarter.primaryStage);
+		secondaryStage.setTitle("Warning");
+		secondaryStage.setScene(new Scene(root, 500, 200));
+		secondaryStage.setResizable(false);
+		secondaryStage.show();
 	}
 
 
