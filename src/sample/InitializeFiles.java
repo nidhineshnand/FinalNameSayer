@@ -50,6 +50,7 @@ public class InitializeFiles {
 
                 //Copying database recording file
                 try {
+                    equalizeBitrate("./resources/database/" + file.getName(), "./resources/database/" + file.getName());
                     Files.copy(file.toPath(), (new File("./resources/database/" + file.getName()).toPath()));
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -58,6 +59,19 @@ public class InitializeFiles {
         }
     }
 
+    //Equalizes bitrate
+    private void equalizeBitrate(String input, String output) {
+        try {
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i " + input + " -codec:a libmp3lame -b:a 44k " + output);
+            Process process = builder.start();
+            process.waitFor();
+            //Exception handling for the process builder
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     public String get_localResourcesPath() {
         return _localResourcesPath;

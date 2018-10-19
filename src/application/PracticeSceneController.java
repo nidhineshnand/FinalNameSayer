@@ -37,7 +37,7 @@ import javax.sound.sampled.TargetDataLine;
 import javax.swing.JOptionPane;
 
 public class PracticeSceneController extends Controller {
-	
+
 	// Fields
 	@FXML
 	public Label _currentName;
@@ -78,7 +78,7 @@ public class PracticeSceneController extends Controller {
 	private ControllerConnecter _spine;
 
 	// Methods
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -137,15 +137,15 @@ public class PracticeSceneController extends Controller {
 		}
 		updateRecordingPane();
 	}
-	
+
 	/**
 	 * When _playAllButton is clicked
 	 */
 	@FXML
 	void playAllClicked() {
-		playItem(_listOfNames.get(_counter));
+		playItem(_listOfNames.get(_counter), 1);
 	}
-	
+
 	/**
 	 * When _volumnSlider is dragged
 	 */
@@ -156,7 +156,7 @@ public class PracticeSceneController extends Controller {
 			_player.setVolume(_currentVolume/100);
 		}
 	}
-	
+
 	/**
 	 * When _recordButton is clicked
 	 */
@@ -201,15 +201,15 @@ public class PracticeSceneController extends Controller {
 		updateCurrentName();
 		updateRecordingPane();
 	}
-	
+
 	/**
 	 * When _playRecordingButton is clicked
 	 */
 	@FXML
 	void playRecordingClicked() {
-		playItem(_rFile);
+		playItem(_rFile, 1);
 	}
-	
+
 	/**
 	 * When _saveButton is clicked
 	 */
@@ -224,7 +224,7 @@ public class PracticeSceneController extends Controller {
 		_spine.changePoints(3);
 		populateDropdown();
 	}
-	
+
 	/**
 	 * When _deleteButton is clicked
 	 */
@@ -238,7 +238,7 @@ public class PracticeSceneController extends Controller {
 		updateRecordingPane();
 		_spine.changePoints(-1);
 	}
-	
+
 	/**
 	 * When _nextButton is clicked
 	 */
@@ -249,7 +249,7 @@ public class PracticeSceneController extends Controller {
 		updateCurrentName();
 		updateRecordingPane();
 	}
-	
+
 	/**
 	 * When _deleteSelectedButton is clicked
 	 */
@@ -258,7 +258,7 @@ public class PracticeSceneController extends Controller {
 		_spine.deleteSelectedUserRecordingFiles();
 		updateRecordingPane();
 	}
-	
+
 	/**
 	 * When _playSelectedButton is clicked then the selected recordings are played
 	 */
@@ -267,7 +267,7 @@ public class PracticeSceneController extends Controller {
 		updateRecordingPane();
 		ArrayList<UserRecordingFile> selectedRecordings = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
 		CollectionsFile collectionsFile = new CollectionsFile(null, selectedRecordings);
-		playItem(collectionsFile);
+		playItem(collectionsFile, 1);
 	}
 
 	/**Loops the selected files the given number of times*/
@@ -275,12 +275,10 @@ public class PracticeSceneController extends Controller {
 	void loopFiles(){
 		if(_userRecordingDropdown.getValue() != null) {
 			CollectionsFile collectionsFile = new CollectionsFile(_listOfNames.get(_counter), _userRecordingDropdown.getValue());
-			for (int i = 0; i < _loopCount.getValue(); i++) {
-				playItem(collectionsFile);
-			}
+			playItem(collectionsFile, _loopCount.getValue());
 		}
 	}
-	
+
 	/**
 	 * updating _currentName
 	 */
@@ -298,12 +296,13 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * When there is a file that needs playing
 	 */
-	private void playItem(NameSayerFile nameSayerFile) {
+	private void playItem(NameSayerFile nameSayerFile, int loop) {
 		File file = _spine.getPlayableFileFor(nameSayerFile);
 		try {
 			String source = file.toURI().toURL().toString();
 			Media media = new Media(source);
 			_player = new MediaPlayer(media);
+			_player.setCycleCount(loop);
 			_player.play();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
