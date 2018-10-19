@@ -124,8 +124,7 @@ public class SelectionSceneController extends Controller {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		_practiceController = loader.getController();
-		_practiceController.setNameList(_listOfNames);
-		_practiceController.getSelectionSceneController(this);
+		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(NameSayerStarter.primaryStage);
@@ -316,12 +315,5 @@ public class SelectionSceneController extends Controller {
 			System.out.println(pFile.get_displayName());
 			populatePanes();
 		}
-	}
-	
-	/**
-	 * getter for the controller connecter
-	 */
-	ControllerConnecter getSpine() {
-		return _spine;
 	}
 }

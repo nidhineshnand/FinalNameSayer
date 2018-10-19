@@ -75,6 +75,7 @@ public class PracticeSceneController extends Controller {
 	private UserRecordingFile _rFile;
 	private RecordVoice _recordingProcess;
 	private MediaPlayer _player;
+	private ControllerConnecter _spine;
 
 	// Methods
 	
@@ -87,7 +88,6 @@ public class PracticeSceneController extends Controller {
 		_saveButton.setVisible(false);
 		_playRecordingButton.setVisible(false);
 
-		//Setting mic
 		//Starting mic sound check
 		_micSensitivityBar.setProgress(0);
 		checkMicLevel();
@@ -112,9 +112,11 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * To get names for the list
 	 */
-	void setNameList(ArrayList<PractiseFile> list) {
+	void setNameList(ArrayList<PractiseFile> list, ControllerConnecter spine) {
 		_listOfNames = list;
+		_spine = spine;
 		populateTable();
+		updateRecordingPane();
 		populateDropdown();
 		setSpinner();
 	}
@@ -167,7 +169,7 @@ public class PracticeSceneController extends Controller {
 			new Thread(_recordingProcess).start();
 			_recordButton.setText("Stop");
 		} else {
-			_recordingProcess.cancel();
+			_recordingProcess.cancel(true);
 			_recordButton.setText("Record");
 			_recordButton.setVisible(false);
 			_playRecordingButton.setVisible(true);
@@ -262,6 +264,7 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void playSelectedClicked() {
+		updateRecordingPane();
 		ArrayList<UserRecordingFile> selectedRecordings = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
 		CollectionsFile collectionsFile = new CollectionsFile(null, selectedRecordings);
 		playItem(collectionsFile);
@@ -311,8 +314,8 @@ public class PracticeSceneController extends Controller {
 	/**
 	 * gets the parent Controller
 	 */
-	void getSelectionSceneController(SelectionSceneController controller) {
-		_spine = controller.getSpine();
+	void getSelectionSceneController(ControllerConnecter spine) {
+		_spine = spine;
 	}
 
 	/**
