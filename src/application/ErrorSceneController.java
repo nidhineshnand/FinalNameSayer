@@ -39,12 +39,16 @@ public class ErrorSceneController extends Controller {
 		// when the user inputs a list but some are not found
 		if (errorMessage.equals("NamesNotFound")) {
 			_warningMessage.setText("The following names were \nnot found in the database.");
+			Label names = new Label();
 			for (int i = 0; i < namesNotFound.size(); i++) {
-				_namePane.getChildren().add(new Label(namesNotFound.get(0)));
+				names.setText(names.getText() + namesNotFound.get(i) + "\n");
 			}
+			_namePane.getChildren().add(names);
 			_nameScrollPane.setVisible(true);
 		} else if (errorMessage.equals("NoNameSelected")) { // when the user doesn't search up a name
 			_warningMessage.setText("Please select a name.");
+		} else if (errorMessage.equals("EmptyPracticeList")) { // when the user doesn't have a practice list
+			_warningMessage.setText("Please upload a \nlist to practice");
 		}
 	}
 	

@@ -216,7 +216,12 @@ public class SelectionSceneController extends Controller {
 			_listOfNames.add(pFile);
 		}
 		if (_listOfNames.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "There are no names in the practice list");
+			try {
+				openErrorScene(null, "EmptyPracticeList");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			System.out.println(_listOfNames.size());
 			openPracticeScene();
@@ -281,7 +286,16 @@ public class SelectionSceneController extends Controller {
 
 		//Checking if file is not null
 		if(uploadList != null){
-			_spine.loadPractiseFilesFromTextFile(uploadList.getPath());
+			_notFound = _spine.loadPractiseFilesFromTextFile(uploadList.getPath());
+			if (!_notFound.isEmpty()) {
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			_notFound.clear();
 		}
 
 		//Refreshing view
