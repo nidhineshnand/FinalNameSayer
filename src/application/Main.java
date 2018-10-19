@@ -13,9 +13,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
     	this.primaryStage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("application/SelectionScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SelectionScene.fxml"));
         primaryStage.setTitle("NameSayer");
-        primaryStage.setScene(new Scene(root, 1000, 800));
+        primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
     }
 
