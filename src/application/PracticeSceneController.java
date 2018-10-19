@@ -67,7 +67,7 @@ public class PracticeSceneController extends Controller {
 	public Button _playSelectedButton;
 	@FXML
 	public Button _deleteSelectedButton;
-	public JFXComboBox _serRecordingDropdown;
+	public JFXComboBox _userRecordingDropdown;
 	public JFXButton _loop;
 	public JFXTextField _loopCount;
 	public Label _currentName1;
@@ -98,8 +98,16 @@ public class PracticeSceneController extends Controller {
 		_volumeSlider.valueProperty().addListener(e -> {
 			volumeSliderDragged();
 		});
+
+		populateDropdown();
 	}
-	
+
+	/**Populates the loop dropdown with the observable list of UserRecordingFiles.*/
+	public void populateDropdown(){
+		_userRecordingDropdown.getItems().addAll(_spine.getAssociatedUserRecordingFilesForLoop());
+	}
+
+
 	/**
 	 * To get names for the list
 	 */
@@ -255,6 +263,12 @@ public class PracticeSceneController extends Controller {
 		} else {
 			JOptionPane.showMessageDialog(null, "Please select only one to play");
 		}
+	}
+
+	/**Loops the selected files the given number of times*/
+	@FXML
+	void loopFiles(){
+
 	}
 	
 	/**

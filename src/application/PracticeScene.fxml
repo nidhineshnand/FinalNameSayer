@@ -85,7 +85,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="_serRecordingDropdown" layoutX="250.0" layoutY="475.0" prefWidth="150.0" />
+      <JFXComboBox fx:id="_userRecordingDropdown" layoutX="250.0" layoutY="475.0" prefWidth="150.0" />
       <Label id="_nameLabel" fx:id="_currentName1" alignment="CENTER" layoutX="55.0" layoutY="475.0" prefHeight="26.0" prefWidth="85.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
          <font>
             <Font size="22.0" />
