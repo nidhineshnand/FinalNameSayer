@@ -38,7 +38,7 @@ public class ErrorSceneController extends Controller {
 	void setup(ArrayList<String> namesNotFound, String errorMessage) {
 		// when the user inputs a list but some are not found
 		if (errorMessage.equals("NamesNotFound")) {
-			_warningMessage.setText("The following names were not found in the database.");
+			_warningMessage.setText("The following names were \nnot found in the database.");
 			for (int i = 0; i < namesNotFound.size(); i++) {
 				_namePane.getChildren().add(new Label(namesNotFound.get(0)));
 			}
