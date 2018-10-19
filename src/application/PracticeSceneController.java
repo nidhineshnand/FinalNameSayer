@@ -256,7 +256,12 @@ public class PracticeSceneController extends Controller {
 			_rFile = toDelete.get(0);
 			playItem(_rFile);
 		} else {
-			JOptionPane.showMessageDialog(null, "Please select only one to play");
+			try {
+				openErrorScene(null, "MultipleSelected");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	

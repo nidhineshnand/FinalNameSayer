@@ -49,6 +49,8 @@ public class ErrorSceneController extends Controller {
 			_warningMessage.setText("Please select a name.");
 		} else if (errorMessage.equals("EmptyPracticeList")) { // when the user doesn't have a practice list
 			_warningMessage.setText("Please upload a list to practice \nor select names from your list \nto practice.");
+		} else if (errorMessage.equals("MultipleSelected")) {
+			_warningMessage.setText("Please select only one to play.");
 		}
 	}
 	
