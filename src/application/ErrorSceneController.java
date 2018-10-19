@@ -48,7 +48,7 @@ public class ErrorSceneController extends Controller {
 		} else if (errorMessage.equals("NoNameSelected")) { // when the user doesn't search up a name
 			_warningMessage.setText("Please select a name.");
 		} else if (errorMessage.equals("EmptyPracticeList")) { // when the user doesn't have a practice list
-			_warningMessage.setText("Please upload a \nlist to practice");
+			_warningMessage.setText("Please upload a list to practice \nor select names from your list \nto practice.");
 		}
 	}
 	
