@@ -49,6 +49,7 @@ public class SelectionSceneController extends Controller {
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
 	public Pane _mainContainer;
+	public Label _databaseFileCount;
 
 	private VBox _practiseList = new VBox();
 	private VBox _userRecordingList;

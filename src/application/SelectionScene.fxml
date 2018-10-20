@@ -130,6 +130,7 @@
                   </HBox>
                </children>
             </Pane>
+            <Label fx:id="_databaseFileCount" text="Database File:  " AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" />
          </children>
       </AnchorPane>
    </center>
