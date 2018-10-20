@@ -47,14 +47,7 @@ public class InitializeFiles {
         for (File file : listOfFiles) {
             //If file exists then it is not copied
             if (!new File("./resources/database/" + file.getName()).exists()) {
-
-                //Copying database recording file
-                try {
-                    equalizeBitrate("./resources/database/" + file.getName(), "./resources/database/" + file.getName());
-                    Files.copy(file.toPath(), (new File("./resources/database/" + file.getName()).toPath()));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                    equalizeBitrate(file.getAbsolutePath(), "./resources/database/" + file.getName());
             }
         }
     }
@@ -62,7 +55,7 @@ public class InitializeFiles {
     //Equalizes bitrate
     private void equalizeBitrate(String input, String output) {
         try {
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i " + input + " -codec:a libmp3lame -b:a 44k " + output);
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i " + input + " -ar 44100 " + output);
             Process process = builder.start();
             process.waitFor();
             //Exception handling for the process builder
