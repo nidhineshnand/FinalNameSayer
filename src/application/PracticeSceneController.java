@@ -21,6 +21,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.TextAlignment;
@@ -69,6 +70,7 @@ public class PracticeSceneController extends Controller {
 	public JFXButton _loop;
 	public Spinner<Integer> _loopCount;
 	public Label _currentName1;
+	private VBox _userRecordingList = new VBox();
 
 	private int _counter = 0;
 	private double _currentVolume;
@@ -115,10 +117,13 @@ public class PracticeSceneController extends Controller {
 	void setNameList(ArrayList<PractiseFile> list, ControllerConnecter spine) {
 		_listOfNames = list;
 		_spine = spine;
+		_userRecordingList = _spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter));
+		_userRecordingList.prefHeight(200);
 		populateTable();
 		updateRecordingPane();
 		populateDropdown();
 		setSpinner();
+
 	}
 
 	//Sets the input value that the spinner will take
@@ -290,7 +295,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	private void updateRecordingPane() {
-		_recordingList.setContent(_spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter)));
+		_recordingList.setContent(_userRecordingList);
 	}
 
 	/**

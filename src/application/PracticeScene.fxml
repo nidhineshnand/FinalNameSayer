@@ -58,9 +58,9 @@
          <tabs>
             <Tab text="Recordings ">
                <content>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
+                  <Pane prefHeight="200.0" prefWidth="305.0">
                      <children>
-                        <ScrollPane fx:id="_recordingList" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="303.0" />
+                        <ScrollPane fx:id="_recordingList" layoutY="3.0" />
                      </children></Pane>
                </content></Tab>
          </tabs>
