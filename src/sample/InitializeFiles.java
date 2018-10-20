@@ -17,7 +17,6 @@ public class InitializeFiles {
     private String _savedCSS = "./resources/saves/CSS.txt";
     private String _ratingsFilePath = "./resources/saves/ratings.txt";
     private String _localUserRecordingDirPath = "./resources/user-recording/";
-    private int _databaseFileCount = 0;
 
     public InitializeFiles(String databaseFilePath){
         _databaseFilePath = databaseFilePath;
@@ -55,11 +54,15 @@ public class InitializeFiles {
             //If file exists or is not a file then it is not copied
             if (!new File("./resources/database/" + file.getName()).exists() && file.getName().matches("se206_[\\S]+_[\\S]+_[\\S]+\\.wav")) {
                 equalizeBitrate(file.getAbsolutePath(), "./resources/database/" + file.getName());
-                _databaseFileCount++;
+
             }
         }
     }
 
+    //Gets the database file count
+    public int get_databaseFileCount() {
+        return new File(_databaseFilePath).listFiles().length;
+    }
 
     //Equalizes bitrate
     private void equalizeBitrate(String input, String output) {
@@ -107,7 +110,5 @@ public class InitializeFiles {
         return _savedCSS;
     }
 
-    public int get_databaseFileCount() {
-        return _databaseFileCount;
-    }
+
 }

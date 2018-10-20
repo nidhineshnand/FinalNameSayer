@@ -77,6 +77,8 @@ public class SelectionSceneController extends Controller {
 			_userRecordingList.setPrefHeight(newValue.doubleValue() - 110);
 			System.out.println(newValue);
 		});
+		//Setting the number of database file counts
+		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 	}
 
 	/**
@@ -338,6 +340,8 @@ public class SelectionSceneController extends Controller {
 
 		//Passing the directory location for it to be added
 		_spine.addFilesToDatabase(selectedDirectory.getPath());
+		//Setting the number of database file counts
+		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 
 	}
 
