@@ -148,4 +148,11 @@ public class ControllerConnecter {
     private void loadPreviousState(){
         practiseFileList.loadPractiseFilesFromText(initializeFiles.get_practiseDirPath(), databaseFileList);
     }
+
+    /**This method adds the .wav files that are present in the path to the folder provided that meet the specific pattern
+     * of a database file
+     */
+    public void addFilesToDatabase(String path){
+        initializeFiles.copyDatabaseFiles(path);
+    }
 }

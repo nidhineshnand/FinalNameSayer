@@ -45,7 +45,7 @@ public class InitializeFiles {
     }
 
     //This method copies the files from where the user specifies to our internal folder
-    private void copyDatabaseFiles(String databaseFolderPath) {
+    public void copyDatabaseFiles(String databaseFolderPath) {
         //Reading database files
         File databaseFolder = new File(databaseFolderPath);
         File[] listOfFiles = databaseFolder.listFiles();
