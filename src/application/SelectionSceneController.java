@@ -1,41 +1,34 @@
 package application;
 
-import java.io.File;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-
-import javax.swing.JOptionPane;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXTabPane;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
-import sample.ControllerConnecter;
+import sample.CollectionsFile;
 import sample.PractiseFile;
+
+import javax.swing.*;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class SelectionSceneController extends Controller {
 
@@ -65,6 +58,7 @@ public class SelectionSceneController extends Controller {
 	private String _name;
 	private VBox _practiceFileList;
 	private PractiseFile _pFile;
+	private MediaPlayer _player;
 	
 	// Methods
 	
@@ -316,6 +310,22 @@ public class SelectionSceneController extends Controller {
 			//_spine.addPractiseFileToList(pFile);
 			System.out.println(pFile.get_displayName());
 			populatePanes();
+		}
+	}
+
+	/**When the play selected recordings button is clicked it played the chosen recrodings*/
+	public void playSelectedRecordingsClicked() {
+		//Making a collectionsfile object to play the selected recording
+		CollectionsFile collectionsFile = new CollectionsFile(null, _spine.getSelectedLocalRecordingFiles());
+		//Playing the audio
+		File file = _spine.getPlayableFileFor(collectionsFile);
+		try {
+			String source = file.toURI().toURL().toString();
+			Media media = new Media(source);
+			_player = new MediaPlayer(media);
+			_player.play();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
 		}
 	}
 }
