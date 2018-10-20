@@ -95,4 +95,12 @@ public class InitializeFiles {
     public String get_localUserRecordingDirPath() {
         return _localUserRecordingDirPath;
     }
+
+    public String get_savedScore() {
+        return _savedScore;
+    }
+
+    public String get_savedCSS() {
+        return _savedCSS;
+    }
 }
