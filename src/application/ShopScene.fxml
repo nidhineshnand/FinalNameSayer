@@ -30,7 +30,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXButton id="_rainbowThemeButton" fx:id="_rainbowThemeButton" buttonType="RAISED" layoutX="74.0" layoutY="280.0" onAction="#rainbowThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Rainbow Theme" />
+            <JFXButton id="_sunsetThemeButton" fx:id="_sunsetThemeButton" buttonType="RAISED" layoutX="74.0" layoutY="280.0" onAction="#sunsetThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Sunset Theme" />
          </children>
       </AnchorPane>
    </center>
