@@ -3,8 +3,7 @@ package sample;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -38,19 +37,45 @@ public class PractiseFile implements NameSayerFile {
     }
 
     //Writes to file so that it can be accessed when the app is closed
-    private void writeToFile(){
+    public void writeToFile() {
         ArrayList<String> fileNames = new ArrayList<>();
         //Getting the string to add to file
-        for(DatabaseFile file: _filesToPlay){
+        for (DatabaseFile file : _filesToPlay) {
             fileNames.add(file.get_displayName());
         }
 
-        //Saving to file
-        try {
-            Files.write(Paths.get(_pathToWrite), (String.join(" ",fileNames) + "\n").getBytes(), StandardOpenOption.APPEND);
-        }catch (IOException e) {
-            e.printStackTrace();
+        //Checking if practise file has already been written to file
+        if (!isWrittenToFile()) {
+            //Saving to file
+            try {
+                Files.write(Paths.get(_pathToWrite), (_displayName + "\n").getBytes(), StandardOpenOption.APPEND);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    //Method checks if the practisefile has already been written to file
+    private boolean isWrittenToFile(){
+        //Reading file
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(_pathToWrite));
+            //Filename and rating
+            String line;
+            while ((line = reader.readLine()) != null) {
+                //Checking if line refers to this practise file
+                if (line.equals(_displayName)) {
+                    return true;
+                }
+            }
+            //Handling exceptions
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 
     //Loads a FXML pane that will be used to display the file on the scene

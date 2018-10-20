@@ -51,6 +51,10 @@ public class PractiseFileList extends NameSayerFileList{
         return namesNotFound;
     }
 
+    /**This methods saves the practise files list as a text file and can load it at startup if it is saved*/
+    public void savePractiseFileList(){
+
+    }
 
     /**Method takes input a string and DatabaseFileList and returns PractiseFile object if it can associate it to one.
      * otherwise a null is returned
