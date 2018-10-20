@@ -154,7 +154,7 @@ public class ControllerConnecter {
     public void saveProgramState(String css){
         practiseFileList.savePractiseFileList();
         pointsSystem.savePoints();
-        initializeFiles.saveCSS(css);
+        //initializeFiles.saveCSS(css);
     }
 
     /**This method adds the .wav files that are present in the path to the folder provided that meet the specific pattern
