@@ -2,7 +2,7 @@
 	-fx-background-color: black;
 }
 
-#_defaultThemeButton, #_darkThemeButton, #_sunsetThemeButton {
+#_defaultThemeButton, #_darkThemeButton, #_sunsetThemeButton, #_chocoThemeButton {
 	-fx-background-color: rgb(50, 50, 50, 0.9);
 	-fx-text-fill: red;
 }

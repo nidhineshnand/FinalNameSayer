@@ -17,6 +17,8 @@ public class ShopSceneController extends Controller {
 	@FXML
 	public Button _sunsetThemeButton;
 	@FXML
+	public Button _chocoThemeButton;
+	@FXML
 	public Label _pointLabel;
 	
 	
@@ -35,7 +37,7 @@ public class ShopSceneController extends Controller {
 	}
 	
 	/**
-	 * When _rainbowThemeButton is clicked
+	 * When _sunsetThemeButton is clicked
 	 */
 	@FXML
 	void sunsetThemeClicked() {
@@ -50,11 +52,25 @@ public class ShopSceneController extends Controller {
 	}
 	
 	/**
+	 * When _chocoThemeButton is clicked
+	 */
+	@FXML
+	void chocoThemeClicked() {
+		if (_spine.getPoints() < 10) {
+			try {
+				openErrorScene(null, "NotEnoughPoints");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
 	 * When _darkThemeButton is clicked
 	 */
 	@FXML
 	void darkThemeClicked() {
-		if (_spine.getPoints() < 10) {
+		if (_spine.getPoints() < 15) {
 			try {
 				openErrorScene(null, "NotEnoughPoints");
 			} catch (Exception e) {
