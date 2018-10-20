@@ -127,7 +127,7 @@ public class PracticeSceneController extends Controller {
 
 	//Sets the input value that the spinner will take
 	private void setSpinner() {
-		_loopCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30));
+		_loopCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 30));
 	}
 	/**
 	 * populates the TableView _recordingList
