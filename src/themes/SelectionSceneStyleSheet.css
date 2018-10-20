@@ -1,0 +1,14 @@
+#_pracButton, #_addToListButton, #_uploadButton, #_pracSelButton, #_removeSelButton, #_deleteSelButton, #_shopButton {
+	-fx-background-color: lightgrey;
+}
+
+
+#_practiceListPane, #_recordingListPane, #_checkBoxToggle, #_selectAllToggle {
+	-fx-background-color: rgb(230, 230, 230);
+}
+
+#_tabParent {
+	-fx-background-color: rgb(230, 230, 230);
+}
+
+

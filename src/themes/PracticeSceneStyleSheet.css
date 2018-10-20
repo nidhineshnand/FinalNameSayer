@@ -1,0 +1,15 @@
+#_saveCurButton, #_recordButton, #_playCurButton, #_deleteCurButton, #_playSelectedButton, #_deleteSelectedButton, 
+#_playButton, #_nextButton, #_prevButton {
+    -fx-background-color: lightgrey;
+}
+
+#_recordingPane {
+	-fx-background-color: rgb(230, 230, 230);
+}
+
+
+
+
+
+
+
