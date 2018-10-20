@@ -48,7 +48,12 @@
                            <children>
                               <ScrollPane fx:id="_recordingListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />
                               <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="307.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
-                              <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="44.0" prefWidth="305.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
+                              <HBox spacing="3.0">
+                                 <children>
+                                    <JFXButton id="_deleteSelButton" fx:id="_deleteUserRecording" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="44.0" prefWidth="159.0" stylesheets="@SelectionSceneStyleSheet.css" text="Delete Selected" />
+                                    <JFXButton mnemonicParsing="false" prefHeight="44.0" prefWidth="145.0" text="Play Selected" />
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </children>
@@ -97,11 +102,17 @@
                         </JFXButton>
                      </children>
                   </HBox>
-                  <JFXButton id="_uploadButton" fx:id="_uploadButton" buttonType="RAISED" onAction="#uploadClicked" prefHeight="39.0" prefWidth="124.0" stylesheets="@SelectionSceneStyleSheet.css" text="Upload">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </JFXButton>
+                  <HBox>
+                     <children>
+                        <JFXButton id="_uploadButton" fx:id="_uploadButton" buttonType="RAISED" onAction="#uploadClicked" prefHeight="39.0" prefWidth="124.0" stylesheets="@SelectionSceneStyleSheet.css" text="Upload">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton mnemonicParsing="false" prefHeight="38.0" prefWidth="137.0" text="Add To Database" />
+                        <JFXButton mnemonicParsing="false" prefHeight="36.0" prefWidth="112.0" text="Save Session" />
+                     </children>
+                  </HBox>
                </children>
                <opaqueInsets>
                   <Insets />
