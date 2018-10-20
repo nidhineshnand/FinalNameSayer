@@ -15,6 +15,8 @@ public class ShopSceneController extends Controller {
 	@FXML
 	public Button _darkThemeButton;
 	@FXML
+	public Button _rainbowThemeButton;
+	@FXML
 	public Label _pointLabel;
 	
 	
@@ -29,6 +31,14 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void defaultThemeClicked() {
+		
+	}
+	
+	/**
+	 * When _rainbowThemeButton is clicked
+	 */
+	@FXML
+	void rainbowThemeClicked() {
 		
 	}
 	

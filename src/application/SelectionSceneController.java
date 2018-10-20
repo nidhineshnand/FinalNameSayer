@@ -242,7 +242,7 @@ public class SelectionSceneController extends Controller {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			_shopController = loader.getController();
-			_shopController.setup(_spine);
+			_shopController.setup(this._spine);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);

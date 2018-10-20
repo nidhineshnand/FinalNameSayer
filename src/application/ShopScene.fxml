@@ -2,52 +2,69 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
-   <top>
-      <Label id="_shopLabel" alignment="CENTER" prefHeight="135.0" prefWidth="463.0" text="Shop" textAlignment="CENTER" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="74.0" />
-         </font>
-      </Label>
-   </top>
    <left>
-      <AnchorPane id="_defaultThemePane" prefHeight="465.0" prefWidth="300.0" stylesheets="@ShopSceneStyleSheet.css" BorderPane.alignment="CENTER">
+      <AnchorPane id="_themePane" prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton id="_defaultThemeButton" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="61.0" layoutY="321.0" onAction="#defaultThemeClicked" prefHeight="99.0" prefWidth="214.0" text="Default Theme" />
-            <Label id="_defaultThemeCost" alignment="CENTER" layoutX="49.0" layoutY="14.0" prefHeight="77.0" prefWidth="203.0" text="Cost: FREE">
+            <JFXButton id="_defaultThemeButton" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="284.0" onAction="#defaultThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Default Theme" />
+            <Label id="_costLabel" alignment="CENTER" layoutX="99.0" layoutY="344.0" prefHeight="36.0" prefWidth="103.0" text="0 points">
                <font>
-                  <Font size="36.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane id="_darkThemePane" prefHeight="465.0" prefWidth="300.0" stylesheets="@ShopSceneStyleSheet.css" BorderPane.alignment="CENTER">
+      <AnchorPane id="_themePane" prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton id="_darkThemeButton" fx:id="_darkThemeButton" buttonType="RAISED" layoutX="43.0" layoutY="319.0" onAction="#darkThemeClicked" prefHeight="99.0" prefWidth="214.0" text="Dark Theme" />
-            <Label id="_darkThemeCost" alignment="CENTER" layoutX="49.0" layoutY="14.0" prefHeight="77.0" prefWidth="203.0" text="Cost: 3">
+            <Label id="_costLabel" alignment="CENTER" layoutX="99.0" layoutY="348.0" prefHeight="36.0" prefWidth="103.0" text="5 points">
                <font>
-                  <Font size="36.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
+            <JFXButton id="_rainbowThemeButton" fx:id="_rainbowThemeButton" buttonType="RAISED" layoutX="74.0" layoutY="280.0" onAction="#rainbowThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Rainbow Theme" />
          </children>
       </AnchorPane>
    </center>
    <right>
-      <AnchorPane prefHeight="465.0" prefWidth="300.0" stylesheets="@ShopSceneStyleSheet.css" BorderPane.alignment="CENTER">
+      <AnchorPane id="_themePane" prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="313.0" prefHeight="99.0" prefWidth="214.0" text="3rd Theme" />
-            <Label alignment="CENTER" layoutX="58.0" layoutY="14.0" prefHeight="77.0" prefWidth="203.0" text="Cost: ?">
+            <Label id="_costLabel" alignment="CENTER" layoutX="99.0" layoutY="345.0" prefHeight="36.0" prefWidth="103.0" text="10 points">
                <font>
-                  <Font size="36.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
+            <JFXButton id="_darkThemeButton" fx:id="_darkThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="276.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
          </children>
       </AnchorPane>
    </right>
+   <top>
+      <Pane id="_themePane" prefHeight="194.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="_shopLabel" alignment="CENTER" layoutX="261.0" layoutY="30.0" prefHeight="135.0" prefWidth="378.0" text="Shop" textAlignment="CENTER">
+               <font>
+                  <Font size="74.0" />
+               </font>
+            </Label>
+            <Label fx:id="_pointLabel" layoutX="742.0" layoutY="82.0" prefHeight="48.0" prefWidth="82.0" text="Points">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="65.0" fitWidth="66.0" layoutX="660.0" layoutY="74.0">
+               <image>
+                  <Image url="@../images/Yellow_Star.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
 </BorderPane>
