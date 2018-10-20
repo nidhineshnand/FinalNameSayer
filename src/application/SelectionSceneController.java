@@ -179,6 +179,7 @@ public class SelectionSceneController extends Controller {
 		}
 		populatePanes();
 
+
 	}
 
 	// Action listeners 
@@ -212,8 +213,6 @@ public class SelectionSceneController extends Controller {
 	void addToListClicked() {
 		staticSearch();
 		populatePanes();
-		_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
-		_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 	}
 	
 	/**
@@ -264,8 +263,6 @@ public class SelectionSceneController extends Controller {
 
 		//Refreshing view
 		populatePanes();
-		_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
-		_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 	}
 	
 	/**
@@ -297,6 +294,8 @@ public class SelectionSceneController extends Controller {
 		_recordingListPane.setContent(_userRecordingList);
 		_practiceFileList = _spine.populatePractiseFileForMainScene();
 		_practiceListPane.setContent(_practiceFileList);
+		_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+		_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 	}
 	
 	/**
@@ -338,10 +337,12 @@ public class SelectionSceneController extends Controller {
 		chooser.setTitle("Add To Database");
 		File selectedDirectory = chooser.showDialog(_practiceListButton.getScene().getWindow());
 
-		//Passing the directory location for it to be added
-		_spine.addFilesToDatabase(selectedDirectory.getPath());
-		//Setting the number of database file counts
-		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
+		if (selectedDirectory != null) {
+			//Passing the directory location for it to be added
+			_spine.addFilesToDatabase(selectedDirectory.getPath());
+			//Setting the number of database file counts
+			_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
+		}
 
 	}
 

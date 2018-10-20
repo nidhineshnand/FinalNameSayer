@@ -271,8 +271,10 @@ public class PracticeSceneController extends Controller {
 	void playSelectedClicked() {
 		updateRecordingPane();
 		ArrayList<UserRecordingFile> selectedRecordings = _spine.getSelectedLocalRecordingFilesFromPractiseScene();
-		CollectionsFile collectionsFile = new CollectionsFile(null, selectedRecordings);
-		playItem(collectionsFile, 1);
+		if(!selectedRecordings.isEmpty()) {
+			CollectionsFile collectionsFile = new CollectionsFile(null, selectedRecordings);
+			playItem(collectionsFile, 1);
+		}
 	}
 
 	/**Loops the selected files the given number of times*/

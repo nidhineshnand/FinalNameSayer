@@ -68,7 +68,7 @@ public class InitializeFiles {
     //Equalizes bitrate
     private void equalizeBitrate(String input, String output) {
         try {
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i " + input + " -ar 44100 " + output);
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i " + input + " -ac 1 -ar 44100 " + output);
             Process process = builder.start();
             process.waitFor();
             //Exception handling for the process builder
