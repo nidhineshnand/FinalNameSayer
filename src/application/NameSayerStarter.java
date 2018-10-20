@@ -15,7 +15,7 @@ public class NameSayerStarter extends Application {
     	this.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("application/SelectionScene.fxml"));
         primaryStage.setTitle("NameSayer");
-        primaryStage.setScene(new Scene(root, 900, 600));
+        primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.setResizable(true);
         primaryStage.show();
     }
