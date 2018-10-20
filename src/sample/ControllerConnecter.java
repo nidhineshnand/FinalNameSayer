@@ -15,6 +15,9 @@ public class ControllerConnecter {
     private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
     private PointsSystem pointsSystem = new PointsSystem();
 
+    ControllerConnecter(){
+        loadPreviousState();
+    }
 
     /**This method outputs a VBox that contains the PractiseFile objects that are loaded by the user*/
     public VBox populatePractiseFileForMainScene(){
@@ -139,5 +142,10 @@ public class ControllerConnecter {
       */
     public ObservableList<UserRecordingFile> getAssociatedUserRecordingFilesForLoop(PractiseFile file){
         return userRecordingFileList.get_associatedUserRecordingFiles(file);
+    }
+
+    /**Load previously saved state*/
+    private void loadPreviousState(){
+        practiseFileList.loadPractiseFilesFromText(initializeFiles.get_practiseDirPath(), databaseFileList);
     }
 }
