@@ -118,7 +118,6 @@ public class PracticeSceneController extends Controller {
 		_listOfNames = list;
 		_spine = spine;
 		_userRecordingList = _spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter));
-		_userRecordingList.prefHeight(200);
 		populateTable();
 		updateRecordingPane();
 		populateDropdown();
@@ -297,7 +296,9 @@ public class PracticeSceneController extends Controller {
 	}
 
 	private void updateRecordingPane() {
+		_userRecordingList = _spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter));
 		_recordingList.setContent(_userRecordingList);
+		_userRecordingList.prefHeight(200);
 	}
 
 	/**
