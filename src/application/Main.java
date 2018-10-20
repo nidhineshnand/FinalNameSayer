@@ -14,6 +14,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
     	this.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("SelectionScene.fxml"));
+        //root.getStylesheets().clear();
+        //root.getStylesheets().add("themes/DarkSelectionSceneStyleSheet.css");
         primaryStage.setTitle("NameSayer");
         primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();

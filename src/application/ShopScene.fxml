@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
+<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
    <left>
       <AnchorPane id="_defaultThemePane" prefHeight="465.0" prefWidth="300.0" stylesheets="@ShopSceneStyleSheet.css" BorderPane.alignment="CENTER">
          <children>
@@ -53,16 +53,16 @@
                   <Font size="72.0" />
                </font>
             </Label>
-            <ImageView fitHeight="54.0" fitWidth="55.0" layoutX="629.0" layoutY="67.0">
-               <image>
-                  <Image url="@../../resources/Yellow_Star.png" />
-               </image>
-            </ImageView>
             <Label id="_pointLabel" fx:id="_pointLabel" layoutX="701.0" layoutY="71.0" prefHeight="46.0" prefWidth="78.0" stylesheets="@ShopSceneStyleSheet.css" text="points">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
+            <ImageView fitHeight="77.0" fitWidth="78.0" layoutX="608.0" layoutY="62.0">
+               <image>
+                  <Image url="@../images/Yellow_Star.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </top>

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
       <Label id="_nameLabel" fx:id="_currentName" alignment="CENTER" layoutX="68.0" layoutY="72.0" prefHeight="112.0" prefWidth="334.0" stylesheets="@PracticeSceneStyleSheet.css" text="Name">
          <font>
