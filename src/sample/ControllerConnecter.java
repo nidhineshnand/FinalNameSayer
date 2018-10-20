@@ -164,6 +164,11 @@ public class ControllerConnecter {
         initializeFiles.copyDatabaseFiles(path);
     }
 
+    /**This method reads if there is a saved CSS files and it uploads the theme for the program if it is saved*/
+    public String getPrevioudCSSTheme(){
+        return initializeFiles.getSavedCSS();
+    }
+
 
     /**This method gets the count of the database file that is in the system*/
     public int getDatabaseFilesCount(){
