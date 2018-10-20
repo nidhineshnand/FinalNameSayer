@@ -1,0 +1,28 @@
+#_saveCurButton, #_recordButton, #_playCurButton, #_deleteCurButton, #_playSelectedButton, #_deleteSelectedButton, 
+#_playButton, #_nextButton, #_prevButton {
+    -fx-background-color: rgb(50, 50, 50, 0.9);
+	-fx-text-fill: red;
+	-fx-accent: crimson;
+}
+
+#_recordingPane {
+	-fx-background-color: rgb(80, 80, 80);
+}
+
+#_background {
+	-fx-background-color: black;
+}
+
+#_nameLabel, #_volumeLabel, #_micSensitivityLabel {
+	-fx-text-fill: red;
+}
+
+#_micSensitivityBar > .track, #_micSensitivityBar > .bar {
+	-fx-background-radius: 0;
+	-fx-background-insets: 0;
+	-fx-background-color: red;
+}
+
+#_volumeBar > .track, #_volumeBar > .slider {
+	-fx-control-inner-background: red;
+}

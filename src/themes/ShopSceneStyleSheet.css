@@ -1,0 +1,8 @@
+#_defaultThemeButton, #_darkThemeButton, #_sunsetThemeButton {
+	-fx-background-color: lightgrey;
+}
+
+#_themePane {
+	-fx-background-color: rgb(230, 230, 230);
+}
+

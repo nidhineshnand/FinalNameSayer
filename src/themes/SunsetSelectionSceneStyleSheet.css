@@ -1,0 +1,34 @@
+#_pracButton, #_addToListButton, #_uploadButton, #_pracSelButton, #_removeSelButton, #_deleteSelButton, #_pracSelButton, 
+#_removeSelButton {
+	
+	-fx-background-color: #765285;
+	-fx-text-fill: #F5AB99;
+}
+
+#_practiceListPane, #_recordingListPane,  #_leftPane, #_leftAnchorPane, #_parentPracticePane, #_parentRecordingPane {
+	-fx-background-color: #765285;
+}
+
+#_checkBoxToggle, #_selectAllToggle {
+	-fx-background-color: #765285;
+	-fx-text-fill: #F5AB99;
+}
+
+#_tabParent {
+	-fx-background-color: #765285;
+}
+
+#_typeInANameLabel, #_pointLabel {
+	-fx-background-color: #351C4D;
+	-fx-text-fill: #F5AB99;
+}
+
+#_searchBar {
+	-fx-background-color: #765285;
+}
+
+#_background {
+	-fx-background-color: #351C4D;
+}
+
+

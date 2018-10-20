@@ -1,0 +1,19 @@
+#_background {
+	-fx-background-color: black;
+}
+
+#_defaultThemeButton, #_darkThemeButton, #_sunsetThemeButton {
+	-fx-background-color: rgb(50, 50, 50, 0.9);
+	-fx-text-fill: red;
+}
+
+#_shopLabel, #_costLabel, #_pointLabel {
+	-fx-background-color: black;
+	-fx-text-fill: red;
+}
+
+#_themePane {
+	-fx-background-color: black;
+}
+
+

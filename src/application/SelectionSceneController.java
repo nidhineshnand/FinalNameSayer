@@ -1,5 +1,14 @@
 package application;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
+import javax.swing.JOptionPane;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.event.ActionEvent;
@@ -11,6 +20,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -42,7 +54,7 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	public ScrollPane _recordingListPane = new ScrollPane();
 	@FXML
-	public ScrollPane _practiceListPane = new ScrollPane();
+	public ImageView _shopButton;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
@@ -54,12 +66,13 @@ public class SelectionSceneController extends Controller {
 	private VBox _practiseList = new VBox();
 	private VBox _userRecordingList;
 	private PracticeSceneController _practiceController;
+	private ShopSceneController _shopController;
 	private String _name;
 	private VBox _practiceFileList;
 	private PractiseFile _pFile;
 	private MediaPlayer _player;
 	private String _cssName;
-	
+
 	// Methods
 	
 	@Override
@@ -86,7 +99,12 @@ public class SelectionSceneController extends Controller {
 	 */
 	private void getName() {
 		if (_nameTextField.getText().equals("")) {
-			JOptionPane.showMessageDialog(null, "Please insert a Name");
+			try {
+				openErrorScene(null, "NoNameSelected");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			String name = _nameTextField.getText();
 			_pFile = _spine.searchButtonPressed(name, _notFound);
@@ -94,10 +112,16 @@ public class SelectionSceneController extends Controller {
 				_listOfNames.add(_pFile);
 				openPracticeScene();
 			} else {
-				JOptionPane.showMessageDialog(null, "This name is not in the database");
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}
+		_notFound.clear();
 	}
 	
 	/**
@@ -128,11 +152,13 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
         secondaryStage.show();
+        _spine.setUserRecordingFileListCheckBox(false);
         secondaryStage.setOnHiding(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent arg0) {
 				populatePanes();
 				_pointsLabel.setText(_spine.getPoints() + "");
+				_spine.setUserRecordingFileListCheckBox(false);
 				System.out.println(_spine.getPoints());
 				System.out.println("stopping");
 				//Resizing scene
@@ -193,7 +219,12 @@ public class SelectionSceneController extends Controller {
 			_listOfNames.add(pFile);
 		}
 		if (_listOfNames.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "There are no names in the practice list");
+			try {
+				openErrorScene(null, "EmptyPracticeList");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			System.out.println(_listOfNames.size());
 			openPracticeScene();
@@ -232,6 +263,8 @@ public class SelectionSceneController extends Controller {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
+			_shopController = loader.getController();
+			_shopController.setup(this._spine);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);
@@ -258,7 +291,16 @@ public class SelectionSceneController extends Controller {
 
 		//Checking if file is not null
 		if(uploadList != null){
-			_spine.loadPractiseFilesFromTextFile(uploadList.getPath());
+			_notFound = _spine.loadPractiseFilesFromTextFile(uploadList.getPath());
+			if (!_notFound.isEmpty()) {
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			_notFound.clear();
 		}
 
 		//Refreshing view
@@ -302,16 +344,19 @@ public class SelectionSceneController extends Controller {
 	 * when the user enters a name into _nameTextField statically
 	 */
 	private void staticSearch() {
-		ArrayList<String> notFound = new ArrayList<String>();
 		String str = _nameTextField.getText();
-		PractiseFile pFile = _spine.searchButtonPressed(str, notFound);
+		PractiseFile pFile = _spine.searchButtonPressed(str, _notFound);
 		if (pFile == null) {
-			JOptionPane.showMessageDialog(null, "This name is not in the data base");
+			try {
+				openErrorScene(_notFound, "NamesNotFound");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
-			//_spine.addPractiseFileToList(pFile);
-			System.out.println(pFile.get_displayName());
 			populatePanes();
 		}
+		_notFound.clear();
 	}
 
 	/**When the play selected recordings button is clicked it played the chosen recrodings*/
