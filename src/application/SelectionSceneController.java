@@ -2,6 +2,7 @@ package application;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.FileChooser;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
+import javafx.stage.*;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import sample.CollectionsFile;
@@ -327,5 +325,20 @@ public class SelectionSceneController extends Controller {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	/**This method lets the user pick if they was to add more names to the database*/
+	public void AddToDatabaseClicked(ActionEvent actionEvent) {
+		//Opening up Directory chooser
+		DirectoryChooser chooser = new DirectoryChooser();
+		chooser.setTitle("Add To Database");
+		File selectedDirectory = chooser.showDialog(_practiceListButton.getScene().getWindow());
+
+		//Passing the directory location for it to be added
+		_spine.addFilesToDatabase(selectedDirectory.getPath());
+
+	}
+
+	public void saveSessionClicked(ActionEvent actionEvent) {
 	}
 }
