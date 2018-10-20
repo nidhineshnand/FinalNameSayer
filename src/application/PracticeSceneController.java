@@ -173,7 +173,7 @@ public class PracticeSceneController extends Controller {
 			new Thread(_recordingProcess).start();
 			_recordButton.setText("Stop");
 		} else {
-			_recordingProcess.cancel(true);
+			_recordingProcess.terminate();
 			_recordButton.setText("Record");
 			_recordButton.setVisible(false);
 			_playRecordingButton.setVisible(true);
@@ -183,14 +183,23 @@ public class PracticeSceneController extends Controller {
 		}
 	}
 
+
 	//Class responsible for recording voice in a different thread
 	class RecordVoice extends Task<Void> {
+		private volatile boolean running = true;
+
+		public void terminate() {
+			_rFile.stopRecording();
+		}
 
 		@Override
 		protected Void call() throws Exception {
-			_rFile.startRecording();
-			return null;
+				_rFile.startRecording();
+				return null;
+
 		}
+
+
 	}
 
 	/**

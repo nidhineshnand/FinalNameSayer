@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -129,11 +130,13 @@ public abstract class NameSayerFileList {
 
         //If files are empty then a view saying no files found is returned
         if (files.isEmpty()) {
-            Label setLabel = new Label("No Files Here Yet");
-            setLabel.setFont(Font.font("Cambria", 28));
+            Label setLabel = new Label("Nothing Here Yet");
+            setLabel.setFont(Font.font("Cambria", 20));
+            setLabel.setAlignment(Pos.CENTER);
             setLabel.setMinWidth(310);
             VBox.setVgrow(container, Priority.ALWAYS);
             container.getChildren().add(setLabel);
+            container.setAlignment(Pos.CENTER);
         }
         //Looping through files to add them to vbox
         for (NameSayerFile file : files){

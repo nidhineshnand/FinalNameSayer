@@ -72,7 +72,7 @@ public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordin
     /**Method that starts recording name when it is called*/
     public void startRecording(){
         try{
-            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "  ffmpeg -f alsa -ac 2 -i default -t 15 " + _pathToSave + _filename + " -loglevel quiet");
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "  ffmpeg -f alsa -ac 1 -ar 44100 -i default -t 15 " + _pathToSave + _filename + " -loglevel quiet");
             _process = builder.start();
             //Exception handling for the process builder
         } catch (IOException ioe){
