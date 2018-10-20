@@ -1,8 +1,6 @@
 package sample;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class PointsSystem {
 
@@ -35,5 +33,26 @@ public class PointsSystem {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    //This method loads the points if they were previously saved
+    public void loadPoints(){
+        //Reading file
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(_pathToSave));
+            //Filename and rating
+            String line;
+            while ((line = reader.readLine()) != null) {
+                //Checking if line has points
+                _points = Integer.parseInt(line);
+            }
+            //Handling exceptions
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        _points = 0;
     }
 }

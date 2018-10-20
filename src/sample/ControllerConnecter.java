@@ -13,7 +13,7 @@ public class ControllerConnecter {
     private DatabaseFileList databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
     private PractiseFileList practiseFileList = new PractiseFileList(initializeFiles.get_practiseDirPath());
     private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
-    private PointsSystem pointsSystem = new PointsSystem();
+    private PointsSystem pointsSystem = new PointsSystem(initializeFiles.get_savedScore());
 
     public ControllerConnecter(){
         loadPreviousState();
@@ -147,10 +147,11 @@ public class ControllerConnecter {
     /**Load previously saved state*/
     private void loadPreviousState(){
         practiseFileList.loadPractiseFilesFromText(initializeFiles.get_practiseDirPath(), databaseFileList);
+        pointsSystem.loadPoints();
     }
 
     /**This method saves the practise file list, points and theme of the program so that the user can resume whenever they want to*/
-    public void saveProgramState(){
+    public void saveProgramState(String css){
         practiseFileList.savePractiseFileList();
         pointsSystem.savePoints();
     }
