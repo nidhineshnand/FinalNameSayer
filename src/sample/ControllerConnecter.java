@@ -15,7 +15,7 @@ public class ControllerConnecter {
     private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
     private PointsSystem pointsSystem = new PointsSystem();
 
-    ControllerConnecter(){
+    public ControllerConnecter(){
         loadPreviousState();
     }
 

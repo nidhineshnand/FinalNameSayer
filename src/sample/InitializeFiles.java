@@ -11,8 +11,11 @@ public class InitializeFiles {
     private String _localResourcesPath = "./resources";
     private String _localDatabasePath = "./resources/database";
     private String _concatenationsPath = "./resources/concatenations";
-    private String _practiseDirPath = "./resources/practise.txt";
-    private String _ratingsFilePath = "./resources/ratings.txt";
+    private String _saves = "./resources/saves";
+    private String _practiseDirPath = "./resources/saves/practise.txt";
+    private String _savedScore = "./resources/saves/points.txt";
+    private String _savedCSS = "./resources/saves/CSS.txt";
+    private String _ratingsFilePath = "./resources/saves/ratings.txt";
     private String _localUserRecordingDirPath = "./resources/user-recording/";
 
     public InitializeFiles(String databaseFilePath){
@@ -28,9 +31,12 @@ public class InitializeFiles {
             new File(_localResourcesPath).mkdir();
             new File(_localDatabasePath).mkdir();
             new File (_concatenationsPath).mkdir();
-            new File(_practiseDirPath).createNewFile();
-            new File (_ratingsFilePath).createNewFile();
             new File (_localUserRecordingDirPath).mkdir();
+            new File(_saves).mkdir();
+            new File (_ratingsFilePath).createNewFile();
+            new File(_practiseDirPath).createNewFile();
+            new File (_savedScore).createNewFile();
+            new File (_savedCSS).createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
