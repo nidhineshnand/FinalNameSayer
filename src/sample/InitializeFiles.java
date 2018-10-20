@@ -51,9 +51,10 @@ public class InitializeFiles {
         File[] listOfFiles = databaseFolder.listFiles();
 
         for (File file : listOfFiles) {
-            //If file exists then it is not copied
-            if (!new File("./resources/database/" + file.getName()).exists()) {
-                    equalizeBitrate(file.getAbsolutePath(), "./resources/database/" + file.getName());
+            //If file exists or is not a file then it is not copied
+            if (!new File("./resources/database/" + file.getName()).exists() && file.getName().matches("se206_[\\S]+_[\\S]+_[\\S]+\\.wav")) {
+                equalizeBitrate(file.getAbsolutePath(), "./resources/database/" + file.getName());
+
             }
         }
     }
