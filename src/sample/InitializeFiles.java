@@ -3,6 +3,7 @@ package sample;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Objects;
 
 /**This class initializes the files that will be used by this program in the future*/
 public class InitializeFiles {
@@ -60,8 +61,8 @@ public class InitializeFiles {
     }
 
     //Gets the database file count
-    public int get_databaseFileCount() {
-        return new File(_databaseFilePath).listFiles().length;
+    public int getDatabaseFileCount() {
+        return Objects.requireNonNull(new File(_databaseFilePath).listFiles()).length;
     }
 
     //Equalizes bitrate

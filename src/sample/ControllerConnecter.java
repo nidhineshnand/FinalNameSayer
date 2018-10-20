@@ -166,6 +166,6 @@ public class ControllerConnecter {
 
     /**This method gets the count of the database file that is in the system*/
     public int getDatabaseFilesCount(){
-        return initializeFiles.get_databaseFileCount();
+        return initializeFiles.getDatabaseFileCount();
     }
 }
