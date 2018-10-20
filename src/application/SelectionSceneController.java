@@ -57,6 +57,7 @@ public class SelectionSceneController extends Controller {
 	private VBox _practiceFileList;
 	private PractiseFile _pFile;
 	private MediaPlayer _player;
+	private String _cssName;
 	
 	// Methods
 	
@@ -340,5 +341,6 @@ public class SelectionSceneController extends Controller {
 	}
 
 	public void saveSessionClicked(ActionEvent actionEvent) {
+		_spine.saveProgramState(_cssName);
 	}
 }

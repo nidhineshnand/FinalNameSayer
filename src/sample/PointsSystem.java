@@ -28,7 +28,7 @@ public class PointsSystem {
         //Writing to file
         try {
             FileWriter f2 = new FileWriter(file, false);
-            f2.write(_points);
+            f2.write(Integer.toString(_points));
             f2.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,6 +53,5 @@ public class PointsSystem {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        _points = 0;
     }
 }
