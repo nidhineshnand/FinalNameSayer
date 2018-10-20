@@ -53,7 +53,9 @@ public class PractiseFileList extends NameSayerFileList{
 
     /**This methods saves the practise files list as a text file and can load it at startup if it is saved*/
     public void savePractiseFileList(){
-
+        for(PractiseFile practiseFile : _practiseFileList){
+            practiseFile.writeToFile();
+        }
     }
 
     /**Method takes input a string and DatabaseFileList and returns PractiseFile object if it can associate it to one.

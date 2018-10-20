@@ -38,12 +38,6 @@ public class PractiseFile implements NameSayerFile {
 
     //Writes to file so that it can be accessed when the app is closed
     public void writeToFile() {
-        ArrayList<String> fileNames = new ArrayList<>();
-        //Getting the string to add to file
-        for (DatabaseFile file : _filesToPlay) {
-            fileNames.add(file.get_displayName());
-        }
-
         //Checking if practise file has already been written to file
         if (!isWrittenToFile()) {
             //Saving to file
