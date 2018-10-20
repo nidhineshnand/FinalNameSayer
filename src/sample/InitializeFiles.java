@@ -1,6 +1,7 @@
 package sample;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Objects;
@@ -75,6 +76,20 @@ public class InitializeFiles {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Saves the string as a CSS file
+    public void saveCSS(String name){
+        File file = new File(_savedCSS);
+
+        //Writing to file
+        try {
+            FileWriter f2 = new FileWriter(file, false);
+            f2.write(name);
+            f2.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
