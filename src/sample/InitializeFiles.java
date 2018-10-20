@@ -1,6 +1,8 @@
 package sample;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Objects;
 
@@ -92,24 +94,6 @@ public class InitializeFiles {
         }
     }
 
-    public String getSavedCSS() {
-        //Reading file
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader(_savedCSS));
-            //Filename and rating
-            String line;
-            while ((line = reader.readLine()) != null) {
-                //Checking if line has a reference to a css file
-                return line;
-            }
-            //Handling exceptions
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        return null;
-    }
-
     public String get_localResourcesPath() {
         return _localResourcesPath;
     }
@@ -138,6 +122,9 @@ public class InitializeFiles {
         return _savedScore;
     }
 
+    public String get_savedCSS() {
+        return _savedCSS;
+    }
 
 
 }
