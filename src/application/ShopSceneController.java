@@ -39,7 +39,14 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void rainbowThemeClicked() {
-		
+		if (_spine.getPoints() < 5) {
+			try {
+				openErrorScene(null, "NotEnoughPoints");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	/**
@@ -47,7 +54,14 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void darkThemeClicked() {
-		
+		if (_spine.getPoints() < 10) {
+			try {
+				openErrorScene(null, "NotEnoughPoints");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	/**

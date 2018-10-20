@@ -51,6 +51,8 @@ public class ErrorSceneController extends Controller {
 			_warningMessage.setText("Please upload a list to practice \nor select names from your list \nto practice.");
 		} else if (errorMessage.equals("MultipleSelected")) {
 			_warningMessage.setText("Please select only one to play.");
+		} else if (errorMessage.equals("NotEnoughPoints")) {
+			_warningMessage.setText("You do not have enough points.");
 		}
 	}
 	
