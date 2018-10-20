@@ -7,7 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -103,12 +102,12 @@
                <children>
                   <HBox alignment="TOP_RIGHT" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="20.0">
                       <children>
-                        <ImageView fitHeight="37.0" fitWidth="40.0">
+                        <Label fx:id="_pointsLabel" prefHeight="43.0" prefWidth="329.0" text="Label" />
+                        <ImageView fitHeight="42.0" fitWidth="51.0">
                            <image>
-                              <Image url="@Yellow_Star.png" />
+                              <Image url="@star-png-image-5a3a7e8248b579.21422032151378291429783986.jpg" />
                            </image>
                         </ImageView>
-                        <Label fx:id="_pointsLabel" prefHeight="43.0" prefWidth="329.0" text="Label" />
                      </children>
                      <opaqueInsets>
                         <Insets right="20.0" top="20.0" />

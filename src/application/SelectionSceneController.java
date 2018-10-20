@@ -62,6 +62,7 @@ public class SelectionSceneController extends Controller {
 	public JFXButton _deleteUserRecording;
 	public Pane _mainContainer;
 	public Label _databaseFileCount;
+	public ScrollPane _practiceListPane;
 
 	private VBox _practiseList = new VBox();
 	private VBox _userRecordingList;
@@ -287,7 +288,7 @@ public class SelectionSceneController extends Controller {
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
 		fileChooser.getExtensionFilters().add(extFilter);
 		fileChooser.setTitle("Open Practise List");
-		File uploadList = fileChooser.showOpenDialog(_practiceListPane.getScene().getWindow());
+		File uploadList = fileChooser.showOpenDialog(_pointsLabel.getScene().getWindow());
 
 		//Checking if file is not null
 		if(uploadList != null){
