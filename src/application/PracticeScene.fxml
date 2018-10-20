@@ -60,7 +60,7 @@
                <content>
                   <Pane prefHeight="200.0" prefWidth="305.0">
                      <children>
-                        <ScrollPane fx:id="_recordingList" layoutY="3.0" />
+                        <ScrollPane fx:id="_recordingList" layoutY="3.0" prefHeight="307.0" prefWidth="303.0" />
                      </children></Pane>
                </content></Tab>
          </tabs>
