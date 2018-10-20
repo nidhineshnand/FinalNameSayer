@@ -149,6 +149,12 @@ public class ControllerConnecter {
         practiseFileList.loadPractiseFilesFromText(initializeFiles.get_practiseDirPath(), databaseFileList);
     }
 
+    /**This method saves the practise file list, points and theme of the program so that the user can resume whenever they want to*/
+    public void saveProgramState(){
+        practiseFileList.savePractiseFileList();
+        pointsSystem.savePoints();
+    }
+
     /**This method adds the .wav files that are present in the path to the folder provided that meet the specific pattern
      * of a database file
      */
