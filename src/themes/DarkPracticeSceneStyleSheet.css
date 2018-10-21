@@ -16,6 +16,11 @@
 	-fx-text-fill: red;
 }
 
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-insets: red;
+}
+
 /**
 #_micSensitivityBar > .track, #_micSensitivityBar > .bar {
 	-fx-background-radius: 0;
