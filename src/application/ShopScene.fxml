@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,43 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
-   <left>
-      <AnchorPane id="_themePane" prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
-         <children>
-            <JFXButton id="_button" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="284.0" onAction="#defaultThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Default Theme" />
-            <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="344.0" prefHeight="36.0" prefWidth="103.0" text="0 points">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </left>
-   <center>
-      <AnchorPane id="_themePane" prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="348.0" prefHeight="36.0" prefWidth="103.0" text="5 points">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <JFXButton id="_button" fx:id="_sunsetThemeButton" buttonType="RAISED" layoutX="74.0" layoutY="280.0" onAction="#sunsetThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Sunset Theme" />
-         </children>
-      </AnchorPane>
-   </center>
-   <right>
-      <AnchorPane id="_themePane" prefHeight="465.0" prefWidth="300.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="345.0" prefHeight="36.0" prefWidth="103.0" text="10 points">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <JFXButton id="_button" fx:id="_darkThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="276.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
-         </children>
-      </AnchorPane>
-   </right>
+<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
    <top>
       <Pane id="_themePane" prefHeight="194.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -67,4 +32,54 @@
          </children>
       </Pane>
    </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <Pane id="_themePane" prefHeight="384.0" prefWidth="1217.0">
+               <children>
+                  <AnchorPane id="_themePane" layoutX="300.0" layoutY="-1.0" prefHeight="389.0" prefWidth="300.0">
+                     <children>
+                        <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="348.0" prefHeight="36.0" prefWidth="103.0" text="5 points">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton id="_button" fx:id="_sunsetThemeButton" buttonType="RAISED" layoutX="74.0" layoutY="280.0" onAction="#sunsetThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Sunset Theme" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="_themePane" prefHeight="387.0" prefWidth="300.0">
+                     <children>
+                        <JFXButton id="_button" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="284.0" onAction="#defaultThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Default Theme" />
+                        <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="344.0" prefHeight="36.0" prefWidth="103.0" text="0 points">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="_themePane" layoutX="600.0" prefHeight="384.0" prefWidth="300.0">
+                     <children>
+                        <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="345.0" prefHeight="36.0" prefWidth="103.0" text="10 points">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton id="_button" fx:id="_chocoThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="276.0" onAction="#chocoThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Choco Theme" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="_themePane" layoutX="900.0" layoutY="2.0" prefHeight="381.0" prefWidth="300.0">
+                     <children>
+                        <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="345.0" prefHeight="36.0" prefWidth="103.0" text="15 points">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton id="_button" fx:id="_darkThemeButton11" buttonType="RAISED" layoutX="67.0" layoutY="276.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </center>
 </BorderPane>
