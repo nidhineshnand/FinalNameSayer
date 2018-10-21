@@ -159,7 +159,7 @@ public class ControllerConnecter {
 
     /**This method gets the saved CSS file if there exists one from a previous session*/
      public String getSavedCSS(){
-         return initializeFiles.get_savedCSS();
+         return initializeFiles.getCSSName();
      }
 
     /**This method adds the .wav files that are present in the path to the folder provided that meet the specific pattern

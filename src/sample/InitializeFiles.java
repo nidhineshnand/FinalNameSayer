@@ -1,8 +1,6 @@
 package sample;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.Objects;
 
@@ -80,6 +78,29 @@ public class InitializeFiles {
         }
     }
 
+    //Reads the previous saved CSS file
+    public String getCSSName() {
+
+        //Reading file
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(_savedCSS));
+            //Filename and rating
+            String line;
+            while ((line = reader.readLine()) != null) {
+                //Checking if line has points
+                return line;
+            }
+            //Handling exceptions
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+
     //Saves the string as a CSS file
     public void saveCSS(String name){
         File file = new File(_savedCSS);
@@ -120,10 +141,6 @@ public class InitializeFiles {
 
     public String get_savedScore() {
         return _savedScore;
-    }
-
-    public String get_savedCSS() {
-        return _savedCSS;
     }
 
 
