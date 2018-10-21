@@ -96,7 +96,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXTabPane layoutX="535.0" layoutY="131.0" prefHeight="338.0" prefWidth="303.0">
+      <JFXTabPane layoutX="535.0" layoutY="141.0" prefHeight="328.0" prefWidth="303.0">
          <tabs>
             <Tab text="Recordings ">
                <content>
