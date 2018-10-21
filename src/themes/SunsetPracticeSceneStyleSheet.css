@@ -8,8 +8,9 @@
 	-fx-text-fill: #F5AB99
 }
 
-#_pane {
+#_pane, .scrollPane {
 	-fx-background-color: #765285;
+	-fx-background:  #765285;
 }
 
 #_background {
@@ -18,4 +19,9 @@
 
 #_label {
 	-fx-text-fill: #F5AB99;
+}
+
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: #765285;
+	-fx-skin: #F5AB99;
 }
