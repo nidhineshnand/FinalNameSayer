@@ -14,7 +14,7 @@ public class InitializeFiles {
     private String _saves = "./resources/saves";
     private String _practiseDirPath = "./resources/saves/practise.txt";
     private String _savedScore = "./resources/saves/points.txt";
-    private String _savedCSS = "./resources/saves/CSS.txt";
+    private String _savedCSSFilePath = "./resources/saves/CSS.txt";
     private String _ratingsFilePath = "./resources/saves/ratings.txt";
     private String _localUserRecordingDirPath = "./resources/user-recording/";
 
@@ -36,7 +36,7 @@ public class InitializeFiles {
             new File (_ratingsFilePath).createNewFile();
             new File(_practiseDirPath).createNewFile();
             new File (_savedScore).createNewFile();
-            new File (_savedCSS).createNewFile();
+            new File (_savedCSSFilePath).createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,7 +84,7 @@ public class InitializeFiles {
         //Reading file
         BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader(_savedCSS));
+            reader = new BufferedReader(new FileReader(_savedCSSFilePath));
             //Filename and rating
             String line;
             while ((line = reader.readLine()) != null) {
@@ -103,7 +103,7 @@ public class InitializeFiles {
 
     //Saves the string as a CSS file
     public void saveCSS(String name){
-        File file = new File(_savedCSS);
+        File file = new File(_savedCSSFilePath);
 
         //Writing to file
         try {
