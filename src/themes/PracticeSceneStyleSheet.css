@@ -1,5 +1,4 @@
-#_saveCurButton, #_recordButton, #_playCurButton, #_deleteCurButton, #_playSelectedButton, #_deleteSelectedButton, 
-#_playButton, #_nextButton, #_prevButton {
+#_button {
     -fx-background-color: lightgrey;
 }
 
