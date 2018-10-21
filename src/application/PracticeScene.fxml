@@ -98,9 +98,9 @@
       </JFXButton>
       <JFXTabPane layoutX="535.0" layoutY="123.0" prefHeight="346.0" prefWidth="303.0">
          <tabs>
-            <Tab text="Recordings ">
+            <Tab id="_tab" text="Recordings ">
                <content>
-                  <Pane prefHeight="200.0" prefWidth="305.0">
+                  <Pane id="_pane" prefHeight="200.0" prefWidth="305.0">
                      <children>
                         <ScrollPane id="_pane" fx:id="_recordingList" layoutY="3.0" prefHeight="307.0" prefWidth="303.0" />
                      </children></Pane>

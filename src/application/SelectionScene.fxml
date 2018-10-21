@@ -17,18 +17,18 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
 
-<BorderPane fx:id="_mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
+<BorderPane id="_" fx:id="_mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="966.0" stylesheets="@../themes/SelectionSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
    <left>
-      <JFXTabPane id="_tabParent" stylesheets="@SelectionSceneStyleSheet.css">
+      <JFXTabPane id="_pane">
          <tabs>
-            <Tab fx:id="tabpane" text="Practice List">
+            <Tab id="_tabs" fx:id="tabpane" text="Practice List">
                <content>
-                  <Pane>
+                  <Pane id="_pane">
                      <children>
                         <VBox layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
-                              <ScrollPane fx:id="_practiceListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />
-                              <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" stylesheets="@SelectionSceneStyleSheet.css" text="Select All" />
+                              <ScrollPane id="_pane" fx:id="_practiceListPane" />
+                              <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" text="Select All" />
                               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="309.0" spacing="3.0">
                                  <children>
                                     <JFXButton id="_button" fx:id="_practiceListButton" buttonType="RAISED" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="148.0" text="Practice Selected" />
@@ -40,7 +40,7 @@
                      </children></Pane>
                </content>
             </Tab>
-            <Tab text="Recordings">
+            <Tab id="_tab" text="Recordings">
                <content>
                   <Pane>
                      <children>
@@ -64,11 +64,11 @@
       </JFXTabPane>
    </left>
    <center>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane id="_pane" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" layoutX="4.0" layoutY="83.0" prefHeight="379.0" prefWidth="652.0" AnchorPane.bottomAnchor="159.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="83.0">
                <children>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="453.0">
+                  <Pane id="_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="453.0">
                      <children>
                         <CustomTextField id="_searchBar" fx:id="_nameTextField" layoutX="25.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="367.0" />
                         <Label id="_label" layoutX="14.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Type in a Name">
@@ -78,7 +78,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="127.0">
+                  <Pane id="_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="127.0">
                      <children>
                         <HBox alignment="TOP_RIGHT" spacing="20.0">
                              <children>
@@ -98,7 +98,7 @@
                   </Pane>
                </children>
             </VBox>
-            <Pane AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
+            <Pane id="_pane" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
                <children>
                   <HBox alignment="TOP_RIGHT" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="20.0">
                       <children>
@@ -115,7 +115,7 @@
                   </HBox>
                </children>
             </Pane>
-            <Pane AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Pane id="_pane" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <children>
                   <HBox layoutX="30.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
                      <children>
@@ -124,14 +124,14 @@
                               <Font size="18.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton id="_button" mnemonicParsing="false" onAction="#AddToDatabaseClicked" prefHeight="38.0" prefWidth="137.0" text="Add To Database" />
-                        <JFXButton id="_button" mnemonicParsing="false" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session" />
+                        <JFXButton id="_button" onAction="#AddToDatabaseClicked" prefHeight="38.0" prefWidth="137.0" text="Add To Database" />
+                        <JFXButton id="_button" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session" />
                      </children>
                   </HBox>
                </children>
             </Pane>
             <Label id="_label" fx:id="_databaseFileCount" text="Database File:  " AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" />
-            <ImageView fx:id="_shopButton" fitHeight="84.0" fitWidth="88.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#shopClicked">
+            <ImageView id="_image" fx:id="_shopButton" fitHeight="84.0" fitWidth="88.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#shopClicked">
                <image>
                   <Image url="@../images/Trolley.png" />
                </image>

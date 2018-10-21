@@ -1,4 +1,4 @@
-#_defaultThemeButton, #_darkThemeButton, #_sunsetThemeButton {
+#_button {
 	-fx-background-color: lightgrey;
 }
 
