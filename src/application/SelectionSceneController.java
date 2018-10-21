@@ -156,7 +156,7 @@ public class SelectionSceneController extends Controller {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		root.getStylesheets().clear();
-		root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.fxml");
+		root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
@@ -278,7 +278,7 @@ public class SelectionSceneController extends Controller {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			root.getStylesheets().clear();
-			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.fxml");
+			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.css");
 			_shopController = loader.getController();
 			_shopController.setup(this);
 			Stage secondaryStage = new Stage();
