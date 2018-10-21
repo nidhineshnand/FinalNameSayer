@@ -33,6 +33,7 @@
 
 .jfx-tab-pane .tab-header-background {
 	-fx-background-color: rgb(50, 50, 50);
+	-fx-text-fill: rgb(50, 50, 50);
 	-fx-skin: red;
 }
 
