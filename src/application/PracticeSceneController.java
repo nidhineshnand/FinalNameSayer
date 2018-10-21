@@ -66,10 +66,8 @@ public class PracticeSceneController extends Controller {
 	public Button _playSelectedButton;
 	@FXML
 	public Button _deleteSelectedButton;
-	public JFXComboBox<UserRecordingFile> _userRecordingDropdown;
 	public JFXButton _loop;
 	public Spinner<Integer> _loopCount;
-	public Label _currentName1;
 	private VBox _userRecordingList = new VBox();
 
 	private int _counter = 0;
@@ -95,9 +93,7 @@ public class PracticeSceneController extends Controller {
 		checkMicLevel();
 
 
-		_volumeSlider.valueProperty().addListener(e -> {
-			volumeSliderDragged();
-		});
+
 
 	}
 
@@ -112,6 +108,9 @@ public class PracticeSceneController extends Controller {
 		populateTable();
 		updateRecordingPane();
 		setSpinner();
+		_volumeSlider.valueProperty().addListener(e -> {
+			volumeSliderDragged();
+		});
 
 	}
 
@@ -146,9 +145,6 @@ public class PracticeSceneController extends Controller {
 	@FXML
 	void volumeSliderDragged() {
 		_currentVolume = _volumeSlider.getValue();
-		if (_player != null){
-			_player.setVolume(_currentVolume/100);
-		}
 	}
 
 	/**
@@ -291,8 +287,6 @@ public class PracticeSceneController extends Controller {
 	private void updateCurrentName() {
 		_currentName.setText(_listOfNames.get(_counter).get_displayName());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
-		_currentName1.setText(_listOfNames.get(_counter).get_displayName());
-		_currentName1.setTextAlignment(TextAlignment.CENTER);
 	}
 
 	private void updateRecordingPane() {
@@ -311,6 +305,7 @@ public class PracticeSceneController extends Controller {
 			Media media = new Media(source);
 			_player = new MediaPlayer(media);
 			_player.setCycleCount(loop);
+			_player.setVolume(_currentVolume/100);
 			_player.play();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
