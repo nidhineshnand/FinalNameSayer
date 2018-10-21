@@ -103,9 +103,9 @@
                   <HBox id="_background" alignment="TOP_RIGHT" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="20.0">
                       <children>
                         <Label id="_label" fx:id="_pointsLabel" prefHeight="43.0" prefWidth="329.0" text="Label" />
-                        <ImageView fitHeight="42.0" fitWidth="51.0">
+                        <ImageView fitHeight="44.0" fitWidth="51.0">
                            <image>
-                              <Image url="@star-png-image-5a3a7e8248b579.21422032151378291429783986.jpg" />
+                              <Image url="@../images/Yellow_Star.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -131,7 +131,7 @@
                </children>
             </Pane>
             <Label id="_label" fx:id="_databaseFileCount" text="Database File:  " AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" />
-            <ImageView id="_image" fx:id="_shopButton" fitHeight="84.0" fitWidth="88.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#shopClicked">
+            <ImageView id="_image" fx:id="_shopButton" fitHeight="64.0" fitWidth="66.0" layoutX="27.0" layoutY="20.0" onMouseClicked="#shopClicked">
                <image>
                   <Image url="@../images/Trolley.png" />
                </image>
