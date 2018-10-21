@@ -4,8 +4,9 @@
 	-fx-accent: crimson;
 }
 
-#_pane {
+#_pane, .scrollPane {
 	-fx-background-color: rgb(80, 80, 80);
+	-fx-background: rgb(80, 80, 80);
 }
 
 #_background {
@@ -15,6 +16,13 @@
 #_label {
 	-fx-text-fill: red;
 }
+
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-skin: red;
+}
+
+
 
 /**
 #_micSensitivityBar > .track, #_micSensitivityBar > .bar {

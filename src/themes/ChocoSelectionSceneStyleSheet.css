@@ -1,0 +1,33 @@
+#_button {
+	
+	-fx-background-color: #453823;
+	-fx-text-fill: #BAA378;
+}
+
+#_pane {
+	-fx-background-color: #382E1C;
+}
+
+#_checkBoxToggle, #_selectAllToggle {
+	-fx-background-color: #382E1C;
+	-fx-text-fill: #BAA378;
+}
+
+#_tabParent {
+	-fx-background-color: #382E1C;
+}
+
+#_label {
+	-fx-background-color: #382E1C;
+	-fx-text-fill: #BAA378;
+}
+
+#_searchBar {
+	-fx-background-color: #382E1C;
+}
+
+#_background {
+	-fx-background-color: #382E1C;
+}
+
+

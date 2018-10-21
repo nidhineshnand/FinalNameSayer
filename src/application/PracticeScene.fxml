@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/DarkPracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
       <Label id="_label" fx:id="_currentName" alignment="CENTER" layoutX="37.0" layoutY="53.0" prefHeight="68.0" prefWidth="381.0" text="Name">
          <font>
@@ -66,7 +66,7 @@
          <font>
             <Font size="14.0" />
          </font></JFXButton>
-      <JFXSlider fx:id="_volumeSlider" blockIncrement="1.0" layoutX="144.0" layoutY="222.0" onDragDone="#volumeSliderDragged" prefHeight="16.0" prefWidth="229.0" value="30.0" />
+      <JFXSlider fx:id="_volumeSlider" blockIncrement="1.0" layoutX="139.0" layoutY="258.0" onDragDone="#volumeSliderDragged" prefHeight="16.0" prefWidth="229.0" value="30.0" />
       <JFXButton id="_button" fx:id="_prevButton" buttonType="RAISED" layoutX="50.0" layoutY="154.0" onAction="#prevClicked" prefHeight="47.0" prefWidth="85.0" text="Previous">
          <font>
             <Font size="14.0" />
@@ -98,7 +98,7 @@
       </JFXButton>
       <JFXTabPane layoutX="535.0" layoutY="123.0" prefHeight="346.0" prefWidth="303.0">
          <tabs>
-            <Tab id="_tab" text="Recordings ">
+            <Tab text="Recordings ">
                <content>
                   <Pane id="_pane" prefHeight="200.0" prefWidth="305.0">
                      <children>
@@ -131,7 +131,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <Label id="_label" layoutX="66.0" layoutY="212.0" prefHeight="36.0" prefWidth="66.0" text="Volume" textAlignment="JUSTIFY">
+      <Label id="_label" layoutX="66.0" layoutY="249.0" prefHeight="36.0" prefWidth="66.0" text="Volume" textAlignment="JUSTIFY">
          <font>
             <Font size="15.0" />
          </font>
@@ -155,7 +155,7 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <JFXButton id="_label" fx:id="_loop" layoutX="85.0" layoutY="300.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
+      <JFXButton id="_button" fx:id="_loop" layoutX="85.0" layoutY="300.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
          <font>
             <Font size="23.0" />
          </font>
