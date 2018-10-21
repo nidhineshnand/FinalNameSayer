@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
 
-<BorderPane id="_" fx:id="_mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="966.0" stylesheets="@../themes/DarkSelectionSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
+<BorderPane id="_" fx:id="_mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="966.0" stylesheets="@../themes/SelectionSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
    <left>
       <JFXTabPane id="_pane">
          <tabs>
@@ -134,6 +134,11 @@
             <ImageView id="_image" fx:id="_shopButton" fitHeight="84.0" fitWidth="88.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#shopClicked">
                <image>
                   <Image url="@../images/Trolley.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="_invertedShopButton" fitHeight="97.0" fitWidth="97.0" layoutX="16.0" layoutY="4.0" onMouseClicked="#shopClicked" visible="false">
+               <image>
+                  <Image url="@../images/InvertedTrolley.png" />
                </image>
             </ImageView>
          </children>

@@ -55,6 +55,8 @@ public class SelectionSceneController extends Controller {
 	public ScrollPane _recordingListPane = new ScrollPane();
 	@FXML
 	public ImageView _shopButton;
+	@FXML
+	public ImageView _invertedShopButton;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;

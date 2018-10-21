@@ -4,8 +4,9 @@
 	-fx-text-fill: #BAA378;
 }
 
-#_pane {
+#_pane, .scrollPane {
 	-fx-background-color: #382E1C;
+	-fx-background: #453823;
 }
 
 #_checkBoxToggle, #_selectAllToggle {
@@ -23,11 +24,16 @@
 }
 
 #_searchBar {
-	-fx-background-color: #382E1C;
+	-fx-background-color: #453823;
 }
 
 #_background {
 	-fx-background-color: #382E1C;
+}
+
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: #453823;
+	-fx-skin: #BAA378;
 }
 
 
