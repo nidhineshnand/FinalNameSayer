@@ -1,8 +1,6 @@
 package sample;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.Objects;
 
@@ -16,7 +14,7 @@ public class InitializeFiles {
     private String _saves = "./resources/saves";
     private String _practiseDirPath = "./resources/saves/practise.txt";
     private String _savedScore = "./resources/saves/points.txt";
-    private String _savedCSS = "./resources/saves/CSS.txt";
+    private String _savedCSSFilePath = "./resources/saves/CSS.txt";
     private String _ratingsFilePath = "./resources/saves/ratings.txt";
     private String _localUserRecordingDirPath = "./resources/user-recording/";
 
@@ -38,7 +36,7 @@ public class InitializeFiles {
             new File (_ratingsFilePath).createNewFile();
             new File(_practiseDirPath).createNewFile();
             new File (_savedScore).createNewFile();
-            new File (_savedCSS).createNewFile();
+            new File (_savedCSSFilePath).createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,9 +78,32 @@ public class InitializeFiles {
         }
     }
 
+    //Reads the previous saved CSS file
+    public String getCSSName() {
+
+        //Reading file
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(_savedCSSFilePath));
+            //Filename and rating
+            String line;
+            while ((line = reader.readLine()) != null) {
+                //Checking if line has points
+                return line;
+            }
+            //Handling exceptions
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+
     //Saves the string as a CSS file
     public void saveCSS(String name){
-        File file = new File(_savedCSS);
+        File file = new File(_savedCSSFilePath);
 
         //Writing to file
         try {
@@ -120,10 +141,6 @@ public class InitializeFiles {
 
     public String get_savedScore() {
         return _savedScore;
-    }
-
-    public String get_savedCSS() {
-        return _savedCSS;
     }
 
 
