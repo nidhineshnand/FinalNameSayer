@@ -70,7 +70,7 @@
                <children>
                   <Pane id="_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="453.0">
                      <children>
-                        <CustomTextField id="_searchBar" fx:id="_nameTextField" layoutX="25.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="367.0" />
+                        <CustomTextField id="_searchBar" fx:id="_nameTextField" layoutX="46.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="376.0" />
                         <Label id="_label" layoutX="14.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Type in a Name">
                            <font>
                               <Font size="48.0" />
@@ -103,9 +103,9 @@
                   <HBox alignment="TOP_RIGHT" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="20.0">
                       <children>
                         <Label id="_label" fx:id="_pointsLabel" prefHeight="43.0" prefWidth="329.0" text="Label" />
-                        <ImageView fitHeight="42.0" fitWidth="51.0">
+                        <ImageView fitHeight="45.0" fitWidth="49.0">
                            <image>
-                              <Image url="@star-png-image-5a3a7e8248b579.21422032151378291429783986.jpg" />
+                              <Image url="@../images/Yellow_Star.png" />
                            </image>
                         </ImageView>
                      </children>
