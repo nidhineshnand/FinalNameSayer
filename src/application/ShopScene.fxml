@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
+<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
    <top>
       <Pane id="_themePane" prefHeight="194.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -57,7 +57,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane id="_themePane" layoutX="600.0" prefHeight="384.0" prefWidth="300.0">
+                  <AnchorPane id="_themePane" layoutX="600.0" prefHeight="387.0" prefWidth="300.0">
                      <children>
                         <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="345.0" prefHeight="36.0" prefWidth="103.0" text="10 points">
                            <font>

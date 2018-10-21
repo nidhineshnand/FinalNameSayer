@@ -2,12 +2,12 @@
 	-fx-background-color: #351C4D;
 }
 
-#_defaultThemeButton, #_darkThemeButton, #_sunsetThemeButton {
+#_button {
 	-fx-background-color: #765285;
 	-fx-text-fill: #F5AB99;
 }
 
-#_shopLabel, #_costLabel, #_pointLabel {
+#_label {
 	-fx-background-color: #351C4D;
 	-fx-text-fill: #F5AB99;
 }

@@ -1,11 +1,10 @@
-#_pracButton, #_addToListButton, #_uploadButton, #_pracSelButton, #_removeSelButton, #_deleteSelButton, #_pracSelButton, 
-#_removeSelButton {
+#_button {
 	
 	-fx-background-color: #765285;
 	-fx-text-fill: #F5AB99;
 }
 
-#_practiceListPane, #_recordingListPane,  #_leftPane, #_leftAnchorPane, #_parentPracticePane, #_parentRecordingPane {
+#_pane {
 	-fx-background-color: #765285;
 }
 
@@ -18,7 +17,7 @@
 	-fx-background-color: #765285;
 }
 
-#_typeInANameLabel, #_pointLabel {
+#_label {
 	-fx-background-color: #351C4D;
 	-fx-text-fill: #F5AB99;
 }
