@@ -124,8 +124,8 @@
                               <Font size="18.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton id="_button" onAction="#AddToDatabaseClicked" prefHeight="38.0" prefWidth="137.0" text="Add To Database" />
-                        <JFXButton id="_button" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session" />
+                        <JFXButton id="_button" buttonType="RAISED" onAction="#AddToDatabaseClicked" prefHeight="38.0" prefWidth="137.0" text="Add To Database" />
+                        <JFXButton id="_button" buttonType="RAISED" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session" />
                      </children>
                   </HBox>
                </children>
