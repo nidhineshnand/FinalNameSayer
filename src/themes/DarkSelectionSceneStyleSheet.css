@@ -4,8 +4,9 @@
 	-fx-text-fill: red;
 }
 
-#_pane {
+#_pane, .scrollPane {
 	-fx-background-color: rgb(80, 80, 80);
+	-fx-background: rgb(80, 80, 80);
 }
 
 #_checkBoxToggle, #_selectAllToggle {
@@ -29,5 +30,17 @@
 #_background {
 	-fx-background-color: black;
 }
+
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-skin: red;
+}
+
+#_image {
+	-fx-background: rgb(80,80,80);
+	-webkit-filter: invert(1);
+	filter: invert(100%);
+}
+
 
 

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/DarkPracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
       <Label id="_label" fx:id="_currentName" alignment="CENTER" layoutX="37.0" layoutY="53.0" prefHeight="68.0" prefWidth="381.0" text="Name">
          <font>
