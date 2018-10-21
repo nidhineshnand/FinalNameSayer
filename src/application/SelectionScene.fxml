@@ -100,13 +100,13 @@
             </VBox>
             <Pane id="_background" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
                <children>
-                  <HBox id="_background" alignment="TOP_RIGHT" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="15.0">
+                  <HBox id="_background" alignment="CENTER_RIGHT" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="15.0">
                       <children>
-                        <Label id="_label" fx:id="_pointsLabel" contentDisplay="RIGHT" prefHeight="43.0" prefWidth="37.0" text="999" textAlignment="CENTER">
+                        <Label id="_label" fx:id="_pointsLabel" contentDisplay="RIGHT" prefHeight="43.0" prefWidth="43.0" text="999" textAlignment="CENTER">
                            <font>
-                              <Font name="Droid Sans Bold" size="17.0" />
+                              <Font name="Droid Sans Bold" size="23.0" />
                            </font></Label>
-                        <ImageView fitHeight="40.0" fitWidth="46.0">
+                        <ImageView fitHeight="44.0" fitWidth="46.0">
                            <image>
                               <Image url="@../images/Yellow_Star.png" />
                            </image>
