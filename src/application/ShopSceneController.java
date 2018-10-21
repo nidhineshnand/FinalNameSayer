@@ -21,6 +21,7 @@ public class ShopSceneController extends Controller {
 	@FXML
 	public Label _pointLabel;
 	
+	private SelectionSceneController _parent;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -33,7 +34,7 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void defaultThemeClicked() {
-		
+		_parent.setCssName("");
 	}
 	
 	/**
@@ -46,6 +47,13 @@ public class ShopSceneController extends Controller {
 				openErrorScene(null, "NotEnoughPoints");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			_parent.setCssName("Sunset");
+			try {
+				openErrorScene(null, "SaveAndRestart");
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -64,7 +72,12 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		} else {
-			
+			_parent.setCssName("Dark");
+			try {
+				openErrorScene(null, "SaveAndRestart");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -79,6 +92,13 @@ public class ShopSceneController extends Controller {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else {
+			_parent.setCssName("Choco");
+			try {
+				openErrorScene(null, "SaveAndRestart");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -86,12 +106,9 @@ public class ShopSceneController extends Controller {
 	 * When this window is made this is called to set up the spine and the points
 	 * @param spine
 	 */
-	void setup(ControllerConnecter spine) {
-		_spine = spine;
+	void setup(SelectionSceneController parent) {
+		_parent = parent;
+		_spine = _parent._spine;
 		_pointLabel.setText(_spine.getPoints() + "");
-	}
-	
-	void changeTheme(String themeURL) {
-		
 	}
 }

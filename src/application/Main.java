@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.ControllerConnecter;
 
 public class Main extends Application {
 
@@ -14,9 +15,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
     	this.primaryStage = primaryStage;
+    	ControllerConnecter _spine = new ControllerConnecter();
         Parent root = FXMLLoader.load(getClass().getResource("SelectionScene.fxml"));
-        //root.getStylesheets().clear();
-        //root.getStylesheets().add("themes/DarkSelectionSceneStyleSheet.css");
+        root.getStylesheets().clear();
+        root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"SelectionSceneStyleSheet.css");
         primaryStage.setTitle("NameSayer");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.setResizable(true);

@@ -1,6 +1,7 @@
 #_button {
 	-fx-background-color: #453823;
 	-fx-text-fill: #BAA378;
+	-fx-accent: #BAA378;
 }
 
 #_label {
@@ -8,8 +9,9 @@
 	-fx-text-fill: #BAA378;
 }
 
-#_themePane {
+#_pane, .scrollPane {
 	-fx-background-color: #382E1C;
+	-fx-background: #BAA378;
 }
 
 #_background {
@@ -19,4 +21,9 @@
 #_label {
 	-fx-background-color: #382E1C;
 	-fx-text-fill: #BAA378;
+}
+
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: #453823;
+	-fx-skin: #BAA378;
 }

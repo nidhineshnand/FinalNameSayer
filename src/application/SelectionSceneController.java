@@ -56,11 +56,14 @@ public class SelectionSceneController extends Controller {
 	public ScrollPane _recordingListPane = new ScrollPane();
 	@FXML
 	public ImageView _shopButton;
+	@FXML
+	public ImageView _invertedShopButton;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
+	@FXML
 	public Pane _mainContainer;
 	public Label _databaseFileCount;
 	public ScrollPane _practiceListPane;
@@ -95,6 +98,14 @@ public class SelectionSceneController extends Controller {
 		});
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
+		
+		if (_spine.getSavedCSS() != null ) {
+			if (_spine.getSavedCSS().equals("Dark")) {
+				_shopButton.setVisible(false);
+				_invertedShopButton.setVisible(true);
+			}
+		}
+		
 	}
 
 	/**
@@ -146,6 +157,8 @@ public class SelectionSceneController extends Controller {
 	public void start() throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
+		root.getStylesheets().clear();
+		root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
@@ -267,8 +280,10 @@ public class SelectionSceneController extends Controller {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
+			root.getStylesheets().clear();
+			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.css");
 			_shopController = loader.getController();
-			_shopController.setup(this._spine);
+			_shopController.setup(this);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);
@@ -397,5 +412,9 @@ public class SelectionSceneController extends Controller {
 
 	public void saveSessionClicked(ActionEvent actionEvent) {
 		_spine.saveProgramState(_cssName);
+	}
+	
+	public void setCssName(String name) {
+		_cssName = name;
 	}
 }
