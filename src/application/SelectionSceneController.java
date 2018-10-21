@@ -95,6 +95,8 @@ public class SelectionSceneController extends Controller {
 		});
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
+		
+		this.getClass().getResource("../themes/"+_spine.getSavedCSS()+"SelectionSceneStyleSheet.css");
 	}
 
 	/**
@@ -147,6 +149,7 @@ public class SelectionSceneController extends Controller {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		root.getStylesheets().clear();
+		root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.fxml");
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
@@ -267,6 +270,8 @@ public class SelectionSceneController extends Controller {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
+			root.getStylesheets().clear();
+			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.fxml");
 			_shopController = loader.getController();
 			_shopController.setup(this);
 			Stage secondaryStage = new Stage();
