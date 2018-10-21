@@ -66,7 +66,7 @@
          <font>
             <Font size="14.0" />
          </font></JFXButton>
-      <JFXSlider fx:id="_volumeSlider" blockIncrement="1.0" layoutX="289.0" layoutY="294.0" onDragDone="#volumeSliderDragged" prefHeight="14.0" prefWidth="168.0" value="30.0" />
+      <JFXSlider fx:id="_volumeSlider" blockIncrement="1.0" layoutX="144.0" layoutY="222.0" onDragDone="#volumeSliderDragged" prefHeight="16.0" prefWidth="229.0" value="30.0" />
       <JFXButton id="_button" fx:id="_prevButton" buttonType="RAISED" layoutX="50.0" layoutY="154.0" onAction="#prevClicked" prefHeight="47.0" prefWidth="85.0" text="Previous">
          <font>
             <Font size="14.0" />
@@ -96,7 +96,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXTabPane layoutX="536.0" layoutY="150.0" prefHeight="338.0" prefWidth="303.0">
+      <JFXTabPane layoutX="535.0" layoutY="131.0" prefHeight="338.0" prefWidth="303.0">
          <tabs>
             <Tab text="Recordings ">
                <content>
@@ -107,7 +107,7 @@
                </content></Tab>
          </tabs>
       </JFXTabPane>
-      <JFXButton id="_button" fx:id="_playSelectedButton" buttonType="RAISED" layoutX="536.0" layoutY="519.0" onAction="#playSelectedClicked" prefHeight="36.0" prefWidth="119.0" text="Play Selected ">
+      <JFXButton id="_button" fx:id="_playSelectedButton" buttonType="RAISED" layoutX="535.0" layoutY="500.0" onAction="#playSelectedClicked" prefHeight="36.0" prefWidth="142.0" text="Play Selected ">
          <font>
             <Font size="14.0" />
          </font>
@@ -119,7 +119,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXButton id="_button" fx:id="_deleteSelectedButton" buttonType="RAISED" layoutX="688.0" layoutY="519.0" onAction="#deleteSelectedClicked" prefHeight="36.0" prefWidth="119.0" text="Delete Selected">
+      <JFXButton id="_button" fx:id="_deleteSelectedButton" buttonType="RAISED" layoutX="696.0" layoutY="500.0" onAction="#deleteSelectedClicked" prefHeight="36.0" prefWidth="142.0" text="Delete Selected">
          <font>
             <Font size="14.0" />
          </font>
@@ -131,9 +131,9 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <Label id="_label" layoutX="325.0" layoutY="243.0" prefHeight="36.0" prefWidth="96.0" text="Volume" textAlignment="JUSTIFY">
+      <Label id="_label" layoutX="66.0" layoutY="212.0" prefHeight="36.0" prefWidth="66.0" text="Volume" textAlignment="JUSTIFY">
          <font>
-            <Font size="24.0" />
+            <Font size="15.0" />
          </font>
          <tooltip>
             <Tooltip text="Volume.">
@@ -155,11 +155,11 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <JFXButton id="_label" fx:id="_loop" layoutX="466.0" layoutY="20.0" onAction="#loopFiles" prefHeight="36.0" prefWidth="119.0" text="Loop">
+      <JFXButton id="_label" fx:id="_loop" layoutX="85.0" layoutY="300.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
          <font>
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <Spinner fx:id="_loopCount" layoutX="573.0" layoutY="30.0" prefHeight="26.0" prefWidth="66.0" />
+      <Spinner fx:id="_loopCount" layoutX="276.0" layoutY="310.0" prefHeight="26.0" prefWidth="57.0" />
    </children>
 </AnchorPane>
