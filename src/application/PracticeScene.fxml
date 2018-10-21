@@ -155,7 +155,7 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <JFXButton id="_label" fx:id="_loop" layoutX="85.0" layoutY="300.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
+      <JFXButton id="_button" fx:id="_loop" layoutX="85.0" layoutY="300.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
          <font>
             <Font size="23.0" />
          </font>
