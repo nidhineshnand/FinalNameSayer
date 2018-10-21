@@ -62,6 +62,7 @@ public class SelectionSceneController extends Controller {
 	public Label _pointsLabel;
     public JFXCheckBox _userRecordingCheckBox;
 	public JFXButton _deleteUserRecording;
+	@FXML
 	public Pane _mainContainer;
 	public Label _databaseFileCount;
 	public ScrollPane _practiceListPane;
@@ -96,7 +97,13 @@ public class SelectionSceneController extends Controller {
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 		
-		this.getClass().getResource("../themes/"+_spine.getSavedCSS()+"SelectionSceneStyleSheet.css");
+		if (_spine.getSavedCSS() != null ) {
+			if (_spine.getSavedCSS().equals("Dark")) {
+				_shopButton.setVisible(false);
+				_invertedShopButton.setVisible(true);
+			}
+		}
+		
 	}
 
 	/**

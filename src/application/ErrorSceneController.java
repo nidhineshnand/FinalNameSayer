@@ -53,6 +53,8 @@ public class ErrorSceneController extends Controller {
 			_warningMessage.setText("Please select only one \nto play.");
 		} else if (errorMessage.equals("NotEnoughPoints")) {
 			_warningMessage.setText("You do not have enough \npoints.");
+		} else if (errorMessage.equals("SaveAndRestart")) {
+			_warningMessage.setText("Now save and restart app \nto use your new \ntheme.");
 		}
 	}
 	

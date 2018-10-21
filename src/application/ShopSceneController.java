@@ -42,7 +42,7 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void sunsetThemeClicked() {
-		/**if (_spine.getPoints() < 5) {
+		if (_spine.getPoints() < 5) {
 			try {
 				openErrorScene(null, "NotEnoughPoints");
 			} catch (Exception e) {
@@ -51,8 +51,12 @@ public class ShopSceneController extends Controller {
 			}
 		} else {
 			_parent.setCssName("Sunset");
-		}*/
-		_parent.setCssName("Sunset");
+			try {
+				openErrorScene(null, "SaveAndRestart");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	/**
@@ -69,6 +73,11 @@ public class ShopSceneController extends Controller {
 			}
 		} else {
 			_parent.setCssName("Dark");
+			try {
+				openErrorScene(null, "SaveAndRestart");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -85,6 +94,11 @@ public class ShopSceneController extends Controller {
 			}
 		} else {
 			_parent.setCssName("Choco");
+			try {
+				openErrorScene(null, "SaveAndRestart");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
