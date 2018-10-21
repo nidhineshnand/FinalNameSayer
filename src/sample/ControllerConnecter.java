@@ -154,8 +154,13 @@ public class ControllerConnecter {
     public void saveProgramState(String css){
         practiseFileList.savePractiseFileList();
         pointsSystem.savePoints();
-        //initializeFiles.saveCSS(css);
+        initializeFiles.saveCSS(css);
     }
+
+    /**This method gets the saved CSS file if there exists one from a previous session*/
+     public String getSavedCSS(){
+         return initializeFiles.get_savedCSS();
+     }
 
     /**This method adds the .wav files that are present in the path to the folder provided that meet the specific pattern
      * of a database file
