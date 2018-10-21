@@ -37,11 +37,6 @@
 	-fx-skin: red;
 }
 
-#_image {
-	-fx-background: rgb(80,80,80);
-	-webkit-filter: invert(1);
-	filter: invert(100%);
-}
 
 
 
