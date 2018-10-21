@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -85,6 +86,7 @@ public class SelectionSceneController extends Controller {
 		//Populates the User Recording files tab
 		populatePanes();
 		_pointsLabel.setText(_spine.getPoints() + "");
+		_pointsLabel.setAlignment(Pos.CENTER_RIGHT);
 		_mainContainer.heightProperty().addListener((observable, oldValue, newValue) -> {
 
 			_practiceFileList.setPrefHeight(newValue.doubleValue() - 110);
@@ -159,6 +161,7 @@ public class SelectionSceneController extends Controller {
 			public void handle(WindowEvent arg0) {
 				populatePanes();
 				_pointsLabel.setText(_spine.getPoints() + "");
+				_pointsLabel.setAlignment(Pos.CENTER_RIGHT);
 				_spine.setUserRecordingFileListCheckBox(false);
 				System.out.println(_spine.getPoints());
 				System.out.println("stopping");
