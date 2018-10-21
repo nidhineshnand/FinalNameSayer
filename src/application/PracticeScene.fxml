@@ -101,7 +101,7 @@
          <tabs>
             <Tab id="_tab" text="Recordings ">
                <content>
-                  <Pane prefHeight="200.0" prefWidth="305.0">
+                  <Pane id="_pane" prefHeight="200.0" prefWidth="305.0">
                      <children>
                         <ScrollPane id="_pane" fx:id="_recordingList" layoutY="3.0" prefHeight="307.0" prefWidth="303.0" />
                      </children></Pane>
