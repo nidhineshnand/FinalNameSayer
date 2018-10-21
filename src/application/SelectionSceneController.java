@@ -146,6 +146,7 @@ public class SelectionSceneController extends Controller {
 	public void start() throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
+		root.getStylesheets().clear();
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
@@ -267,7 +268,7 @@ public class SelectionSceneController extends Controller {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			_shopController = loader.getController();
-			_shopController.setup(this._spine);
+			_shopController.setup(this);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);
@@ -396,5 +397,9 @@ public class SelectionSceneController extends Controller {
 
 	public void saveSessionClicked(ActionEvent actionEvent) {
 		_spine.saveProgramState(_cssName);
+	}
+	
+	public void setCssName(String name) {
+		_cssName = name;
 	}
 }
