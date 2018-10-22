@@ -4,9 +4,10 @@
 	-fx-text-fill: red;
 }
 
-#_pane, .scrollPane {
+#_pane, .scroll-pane {
 	-fx-background-color: rgb(50, 50,50);
 	-fx-background: rgb(50, 50, 50);
+	-fx-text-fill: red;
 }
 
 #_checkBoxToggle, #_selectAllToggle {
@@ -42,6 +43,7 @@
 	-fx-background-color: rgb(50, 50, 50);
 	-fx-text-fill: red;
 }
+
 
 
 
