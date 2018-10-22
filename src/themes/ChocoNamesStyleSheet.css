@@ -1,0 +1,10 @@
+#_pane, #_checkBox, #_checkComboBox {
+	-fx-background-color: #382E1C;
+	color: #382E1C;
+	-fx-text-fill: #BAA378;
+	-fx-check-color: #84563C;
+}
+
+#_label {
+	-fx-text-fill: #BAA378;
+}

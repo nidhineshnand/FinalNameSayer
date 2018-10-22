@@ -5,16 +5,22 @@
 }
 
 #_pane {
-	-fx-background-color: #765285;
+	-fx-color: #765285;
+	color: #351C4D;
+	-fx-background-color: #351C4D;
+	-fx-background: #351C4D;
+	-fx-text-fill: #F5AB99;
+	-fx-font-fill: #F5AB99;
 }
 
 #_checkBoxToggle, #_selectAllToggle {
 	-fx-background-color: #765285;
 	-fx-text-fill: #F5AB99;
+	-fx-font-fill: #F5AB99;
 }
 
 #_tabParent {
-	-fx-background-color: #765285;
+	-fx-background-color: #351C4D;
 }
 
 #_label {
@@ -24,10 +30,27 @@
 
 #_searchBar {
 	-fx-background-color: #765285;
+	-fx-text-fill: #F5AB99;
 }
 
 #_background {
 	-fx-background-color: #351C4D;
 }
+
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: #765285;
+	-fx-skin: #F5AB99;
+}
+
+.tab .tab-label {
+	-fx-background-color: #765285;
+	-fx-text-fill: #F5AB99;
+}
+
+.tab {
+	-fx-background-color: #765285;
+}
+
+
 
 

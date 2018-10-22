@@ -91,10 +91,14 @@ public class PracticeSceneController extends Controller {
 		//Starting mic sound check
 		_micSensitivityBar.setProgress(0);
 		checkMicLevel();
-
-
-
-
+		
+		//Setting mnemonics for major keys
+		_playAllButton.setMnemonicParsing(true);
+		_playAllButton.setText("_Play");
+		_recordButton.setMnemonicParsing(true);
+		_recordButton.setText("_Recording");
+		_loop.setMnemonicParsing(true);
+		_loop.setText("_Loop");
 	}
 
 
@@ -152,15 +156,15 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void recordClicked() {
-		if (_recordButton.getText().equals("Record")) {
+		if (_recordButton.getText().equals("_Record")) {
 			//Starting recording process in the background
 			_rFile = _spine.createNewUserRecordingFile(_listOfNames.get(_counter));
 			_recordingProcess = new RecordVoice();
 			new Thread(_recordingProcess).start();
-			_recordButton.setText("Stop");
+			_recordButton.setText("_Stop");
 		} else {
 			_recordingProcess.terminate();
-			_recordButton.setText("Record");
+			_recordButton.setText("_Record");
 			_recordButton.setVisible(false);
 			_playRecordingButton.setVisible(true);
 			_saveButton.setVisible(true);

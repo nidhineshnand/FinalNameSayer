@@ -39,7 +39,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXButton id="_button" fx:id="_recordButton" buttonType="RAISED" layoutX="99.0" layoutY="386.0" onAction="#recordClicked" prefHeight="78.0" prefWidth="242.0" text="Record">
+      <JFXButton id="_button" fx:id="_recordButton" buttonType="RAISED" layoutX="107.0" layoutY="300.0" onAction="#recordClicked" prefHeight="78.0" prefWidth="242.0" text="Record">
          <font>
             <Font size="36.0" />
          </font>
@@ -51,7 +51,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXButton id="_button" fx:id="_playRecordingButton" buttonType="RAISED" layoutX="36.0" layoutY="407.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play">
+      <JFXButton id="_button" fx:id="_playRecordingButton" buttonType="RAISED" layoutX="40.0" layoutY="321.0" onAction="#playRecordingClicked" prefHeight="36.0" prefWidth="119.0" text="Play">
          <font>
             <Font size="14.0" />
          </font>
@@ -62,7 +62,7 @@
                </font>
             </Tooltip>
          </tooltip></JFXButton>
-      <JFXButton id="_button" fx:id="_saveButton" buttonType="RAISED" layoutX="165.0" layoutY="407.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="109.0" text="Save">
+      <JFXButton id="_button" fx:id="_saveButton" buttonType="RAISED" layoutX="169.0" layoutY="321.0" onAction="#saveClicked" prefHeight="36.0" prefWidth="109.0" text="Save">
          <font>
             <Font size="14.0" />
          </font></JFXButton>
@@ -86,8 +86,8 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="137.0" layoutY="506.0" />
-      <JFXButton id="_button" fx:id="_deleteButton" buttonType="RAISED" layoutX="301.0" layoutY="407.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete">
+      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="190.0" layoutY="428.0" />
+      <JFXButton id="_button" fx:id="_deleteButton" buttonType="RAISED" layoutX="290.0" layoutY="321.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete">
          <font>
             <Font size="14.0" />
          </font>
@@ -146,7 +146,7 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <Label id="_label" layoutX="93.0" layoutY="488.0" prefHeight="36.0" prefWidth="29.0" text="Mic" textAlignment="JUSTIFY">
+      <Label id="_label" layoutX="121.0" layoutY="411.0" prefHeight="36.0" prefWidth="29.0" text="Mic" textAlignment="JUSTIFY">
          <font>
             <Font size="15.0" />
          </font>
@@ -158,11 +158,11 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <JFXButton id="_button" fx:id="_loop" layoutX="85.0" layoutY="300.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
+      <JFXButton id="_button" fx:id="_loop" buttonType="RAISED" layoutX="106.0" layoutY="475.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
          <font>
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <Spinner fx:id="_loopCount" layoutX="276.0" layoutY="310.0" prefHeight="26.0" prefWidth="57.0" />
+      <Spinner fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="26.0" prefWidth="57.0" />
    </children>
 </AnchorPane>

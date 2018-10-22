@@ -45,9 +45,14 @@
                            </font>
                         </Label>
                         <JFXButton id="_button" fx:id="_sunsetThemeButton" buttonType="RAISED" layoutX="74.0" layoutY="280.0" onAction="#sunsetThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Sunset Theme" />
+                        <ImageView fitHeight="283.0" fitWidth="262.0" layoutX="29.0">
+                           <image>
+                              <Image url="@../images/SunsetTeaser.PNG" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane id="_themePane" prefHeight="386.0" prefWidth="300.0">
+                  <AnchorPane id="_themePane" prefHeight="391.0" prefWidth="300.0">
                      <children>
                         <JFXButton id="_button" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="284.0" onAction="#defaultThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Default Theme" />
                         <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="344.0" prefHeight="36.0" prefWidth="103.0" text="0 points">
@@ -55,6 +60,11 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="283.0" fitWidth="262.0" layoutX="18.0" layoutY="-1.0">
+                           <image>
+                              <Image url="@../images/DefaultTeaser.PNG" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane id="_themePane" layoutX="600.0" layoutY="1.0" prefHeight="388.0" prefWidth="300.0">
@@ -64,7 +74,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <JFXButton id="_button" fx:id="_chocoThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="276.0" onAction="#chocoThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Choco Theme" />
+                        <JFXButton id="_button" fx:id="_chocoThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="283.0" onAction="#chocoThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Choco Theme" />
+                        <ImageView fitHeight="283.0" fitWidth="262.0" layoutX="20.0">
+                           <image>
+                              <Image url="@../images/ChocoTeaser.PNG" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane id="_themePane" layoutX="900.0" layoutY="1.0" prefHeight="388.0" prefWidth="300.0">
@@ -74,7 +89,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <JFXButton id="_button" fx:id="_darkThemeButton1" buttonType="RAISED" layoutX="67.0" layoutY="276.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
+                        <JFXButton id="_button" fx:id="_darkThemeButton1" buttonType="RAISED" layoutX="67.0" layoutY="283.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
+                        <ImageView fitHeight="283.0" fitWidth="262.0" layoutX="29.0">
+                           <image>
+                              <Image url="@../images/DarkTeaser.PNG" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>

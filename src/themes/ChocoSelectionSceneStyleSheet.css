@@ -4,14 +4,19 @@
 	-fx-text-fill: #BAA378;
 }
 
-#_pane, .scrollPane {
+#_pane {
+	-fx-color: #453823;
+	color: #382E1C;
 	-fx-background-color: #382E1C;
 	-fx-background: #453823;
+	-fx-text-fill: #BAA378;
+	-fx-font-fill: #BAA378;
 }
 
 #_checkBoxToggle, #_selectAllToggle {
 	-fx-background-color: #382E1C;
 	-fx-text-fill: #BAA378;
+	-fx-font-fill: #BAA378;
 }
 
 #_tabParent {
@@ -25,6 +30,7 @@
 
 #_searchBar {
 	-fx-background-color: #453823;
+	-fx-text-fill: #BAA378;
 }
 
 #_background {
@@ -35,5 +41,16 @@
 	-fx-background-color: #453823;
 	-fx-skin: #BAA378;
 }
+
+.tab .tab-label {
+	-fx-background-color: #382E1C;
+	-fx-text-fill: #BAA378;
+}
+
+.tab {
+	-fx-background-color: #382E1C;
+}
+
+
 
 

@@ -58,6 +58,8 @@ public class SelectionSceneController extends Controller {
 	public ImageView _shopButton;
 	@FXML
 	public ImageView _invertedShopButton;
+	@FXML
+	public Button _saveButton;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
@@ -100,12 +102,17 @@ public class SelectionSceneController extends Controller {
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 		
 		if (_spine.getSavedCSS() != null ) {
-			if (_spine.getSavedCSS().equals("Dark")) {
-				_shopButton.setVisible(false);
-				_invertedShopButton.setVisible(true);
-			}
+			_shopButton.setVisible(false);
+			_invertedShopButton.setVisible(true);
 		}
-		
+		_practiceButton.setMnemonicParsing(true);
+		_practiceButton.setText("_Practice");
+		_practiceListButton.setMnemonicParsing(true);
+		_practiceListButton.setText("Practice _List");
+		_uploadButton.setMnemonicParsing(true);
+		_uploadButton.setText("_Upload");
+		_saveButton.setMnemonicParsing(true);
+		_saveButton.setText("_Save Session");
 	}
 
 	/**
@@ -121,7 +128,15 @@ public class SelectionSceneController extends Controller {
 			}
 		} else {
 			String name = _nameTextField.getText();
+			_notFound.clear();
 			_pFile = _spine.searchButtonPressed(name, _notFound);
+			if (!_notFound.isEmpty()) {
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			if (_pFile != null) {
 				_listOfNames.add(_pFile);
 				openPracticeScene();
@@ -158,7 +173,11 @@ public class SelectionSceneController extends Controller {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		root.getStylesheets().clear();
-		root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
+		if (_spine.getSavedCSS() == null) {
+			root.getStylesheets().add("themes/PracticeSceneStyleSheet.css");
+		} else {
+			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
+		}
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
@@ -281,7 +300,11 @@ public class SelectionSceneController extends Controller {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			root.getStylesheets().clear();
-			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.css");
+			if (_spine.getSavedCSS() == null) {
+				root.getStylesheets().add("themes/ShopSceneStyleSheet.css");
+			} else {
+				root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.css");
+			}
 			_shopController = loader.getController();
 			_shopController.setup(this);
 			Stage secondaryStage = new Stage();
