@@ -89,7 +89,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <JFXButton id="_button" fx:id="_darkThemeButton1" buttonType="RAISED" layoutX="67.0" layoutY="276.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
+                        <JFXButton id="_button" fx:id="_darkThemeButton1" buttonType="RAISED" layoutX="67.0" layoutY="283.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
                         <ImageView fitHeight="283.0" fitWidth="262.0" layoutX="29.0">
                            <image>
                               <Image url="@../images/DarkTeaser.PNG" />
