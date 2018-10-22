@@ -5,6 +5,8 @@
 }
 
 #_pane {
+	-fx-color: #765285;
+	color: #351C4D;
 	-fx-background-color: #351C4D;
 	-fx-background: #351C4D;
 	-fx-text-fill: #F5AB99;
