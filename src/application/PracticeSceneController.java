@@ -91,10 +91,6 @@ public class PracticeSceneController extends Controller {
 		//Starting mic sound check
 		_micSensitivityBar.setProgress(0);
 		checkMicLevel();
-
-
-
-
 	}
 
 
