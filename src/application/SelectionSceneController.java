@@ -100,10 +100,8 @@ public class SelectionSceneController extends Controller {
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 		
 		if (_spine.getSavedCSS() != null ) {
-			if (_spine.getSavedCSS().equals("Dark")) {
-				_shopButton.setVisible(false);
-				_invertedShopButton.setVisible(true);
-			}
+			_shopButton.setVisible(false);
+			_invertedShopButton.setVisible(true);
 		}
 		
 	}
