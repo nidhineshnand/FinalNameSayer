@@ -27,3 +27,12 @@
 	-fx-background-color: #453823;
 	-fx-skin: #BAA378;
 }
+
+.tab .tab-label {
+	-fx-background-color: #453823;
+	-fx-text-fill: #BAA378;
+}
+
+.tab {
+	-fx-background-color: 382E1C;
+}

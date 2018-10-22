@@ -22,16 +22,11 @@
 	-fx-skin: red;
 }
 
-
-
-/**
-#_micSensitivityBar > .track, #_micSensitivityBar > .bar {
-	-fx-background-radius: 0;
-	-fx-background-insets: 0;
-	-fx-background-color: red;
+.tab .tab-label {
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-text-fill: red;
 }
 
-#_volumeBar > .track, #_volumeBar > .slider {
-	-fx-control-inner-background: red;
+.tab {
+	-fx-background-color: black;
 }
-*/
