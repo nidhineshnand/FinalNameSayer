@@ -128,7 +128,15 @@ public class SelectionSceneController extends Controller {
 			}
 		} else {
 			String name = _nameTextField.getText();
+			_notFound.clear();
 			_pFile = _spine.searchButtonPressed(name, _notFound);
+			if (!_notFound.isEmpty()) {
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			if (_pFile != null) {
 				_listOfNames.add(_pFile);
 				openPracticeScene();
