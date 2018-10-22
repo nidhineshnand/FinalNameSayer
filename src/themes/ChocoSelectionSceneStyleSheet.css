@@ -4,7 +4,7 @@
 	-fx-text-fill: #BAA378;
 }
 
-#_pane, .scrollPane {
+#_pane {
 	-fx-background-color: #382E1C;
 	-fx-background: #453823;
 	-fx-text-fill: #BAA378;
