@@ -5,17 +5,17 @@
 }
 
 #_pane, .scrollPane {
-	-fx-background-color: rgb(80, 80, 80);
-	-fx-background: rgb(80, 80, 80);
+	-fx-background-color: rgb(50, 50,50);
+	-fx-background: rgb(50, 50, 50);
 }
 
 #_checkBoxToggle, #_selectAllToggle {
-	-fx-background-color: rgb(80, 80, 80);
+	-fx-background-color: rgb(50, 50, 50);
 	-fx-text-fill: red;
 }
 
 #_tabParent {
-	-fx-background-color: rgb(80, 80, 80);
+	-fx-background-color: rgb(50, 50, 50);
 }
 
 #_label {
@@ -24,7 +24,8 @@
 }
 
 #_searchBar {
-	-fx-background-color: rgb(80, 80, 80);
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-text-fill: red;
 }
 
 #_background {
