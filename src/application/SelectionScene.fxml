@@ -176,7 +176,7 @@
                   <Image url="@../images/Trolley.png" />
                </image>
             </ImageView>
-            <ImageView id="_image" fx:id="_invertedShopButton" fitHeight="54.0" fitWidth="53.0" layoutX="27.0" layoutY="25.0" onMouseClicked="#shopClicked">
+            <ImageView id="_image" fx:id="_invertedShopButton" fitHeight="54.0" fitWidth="53.0" layoutX="27.0" layoutY="25.0" onMouseClicked="#shopClicked" visible="false">
                <image>
                   <Image url="@../images/InvertedTrolley.png" />
                </image>
