@@ -86,7 +86,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="137.0" layoutY="506.0" />
+      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="190.0" layoutY="428.0" />
       <JFXButton id="_button" fx:id="_deleteButton" buttonType="RAISED" layoutX="290.0" layoutY="321.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete">
          <font>
             <Font size="14.0" />
@@ -146,7 +146,7 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <Label id="_label" layoutX="93.0" layoutY="488.0" prefHeight="36.0" prefWidth="29.0" text="Mic" textAlignment="JUSTIFY">
+      <Label id="_label" layoutX="121.0" layoutY="411.0" prefHeight="36.0" prefWidth="29.0" text="Mic" textAlignment="JUSTIFY">
          <font>
             <Font size="15.0" />
          </font>
@@ -158,11 +158,11 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <JFXButton id="_button" fx:id="_loop" buttonType="RAISED" layoutX="53.0" layoutY="409.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
+      <JFXButton id="_button" fx:id="_loop" buttonType="RAISED" layoutX="106.0" layoutY="475.0" onAction="#loopFiles" prefHeight="45.0" prefWidth="168.0" text="Loop">
          <font>
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <Spinner fx:id="_loopCount" layoutX="262.0" layoutY="419.0" prefHeight="26.0" prefWidth="57.0" />
+      <Spinner fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="26.0" prefWidth="57.0" />
    </children>
 </AnchorPane>
