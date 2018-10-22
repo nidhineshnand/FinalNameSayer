@@ -58,6 +58,8 @@ public class SelectionSceneController extends Controller {
 	public ImageView _shopButton;
 	@FXML
 	public ImageView _invertedShopButton;
+	@FXML
+	public Button _saveButton;
 	public CustomTextField _nameTextField;
 	public JFXCheckBox _practiseFileSelectAllPractiseFileCheckBox;
 	public Label _pointsLabel;
@@ -103,7 +105,14 @@ public class SelectionSceneController extends Controller {
 			_shopButton.setVisible(false);
 			_invertedShopButton.setVisible(true);
 		}
-		
+		_practiceButton.setMnemonicParsing(true);
+		_practiceButton.setText("_Practice");
+		_practiceListButton.setMnemonicParsing(true);
+		_practiceListButton.setText("Practice _List");
+		_uploadButton.setMnemonicParsing(true);
+		_uploadButton.setText("_Upload");
+		_saveButton.setMnemonicParsing(true);
+		_saveButton.setText("_Save Session");
 	}
 
 	/**
@@ -161,7 +170,6 @@ public class SelectionSceneController extends Controller {
 		} else {
 			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
 		}
-		root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();

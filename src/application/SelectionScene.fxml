@@ -162,7 +162,7 @@
                            <tooltip>
                               <Tooltip text="Add seached name to list" />
                            </tooltip></JFXButton>
-                        <JFXButton id="_button" buttonType="RAISED" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session">
+                        <JFXButton id="_button" fx:id="_saveButton" buttonType="RAISED" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session">
                            <tooltip>
                               <Tooltip text="Save current theme and points" />
                            </tooltip></JFXButton>
