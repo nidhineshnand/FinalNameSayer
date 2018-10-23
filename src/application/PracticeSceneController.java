@@ -94,11 +94,11 @@ public class PracticeSceneController extends Controller {
 		
 		//Setting mnemonics for major keys
 		_playAllButton.setMnemonicParsing(true);
-		_playAllButton.setText("_Play");
+		_playAllButton.setText("Play");
 		_recordButton.setMnemonicParsing(true);
-		_recordButton.setText("_Recording");
+		_recordButton.setText("Record");
 		_loop.setMnemonicParsing(true);
-		_loop.setText("_Loop");
+		_loop.setText("Loop");
 	}
 
 
@@ -156,15 +156,15 @@ public class PracticeSceneController extends Controller {
 	 */
 	@FXML
 	void recordClicked() {
-		if (_recordButton.getText().equals("_Record")) {
+		if (_recordButton.getText().equals("Record")) {
 			//Starting recording process in the background
 			_rFile = _spine.createNewUserRecordingFile(_listOfNames.get(_counter));
 			_recordingProcess = new RecordVoice();
 			new Thread(_recordingProcess).start();
-			_recordButton.setText("_Stop");
+			_recordButton.setText("Stop");
 		} else {
 			_recordingProcess.terminate();
-			_recordButton.setText("_Record");
+			_recordButton.setText("Record");
 			_recordButton.setVisible(false);
 			_playRecordingButton.setVisible(true);
 			_saveButton.setVisible(true);
