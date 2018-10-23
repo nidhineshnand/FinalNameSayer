@@ -165,17 +165,17 @@
                </children>
             </Pane>
             <Label id="_label" fx:id="_databaseFileCount" text="Database File:  " AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" />
-            <ImageView id="_image" fx:id="_shopButton" fitHeight="84.0" fitWidth="88.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#shopClicked">
+            <ImageView id="_image" fx:id="_shopButton" fitHeight="60.0" fitWidth="59.0" layoutX="27.0" layoutY="19.0" onMouseClicked="#shopClicked">
                <image>
                   <Image url="@../images/Trolley.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="_invertedShopButton" fitHeight="90.0" fitWidth="91.0" layoutX="22.0" layoutY="8.0" onMouseClicked="#shopClicked" visible="false">
+            <ImageView fx:id="_invertedShopButton" fitHeight="59.0" fitWidth="62.0" layoutX="25.0" layoutY="20.0" onMouseClicked="#shopClicked" visible="false">
                <image>
                   <Image url="@../images/InvertedTrolley.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="22.0" layoutY="12.0" mnemonicParsing="false" onAction="#shopClicked" opacity="0.0" prefHeight="84.0" prefWidth="90.0" ripplerFill="#000000ba" />
+            <JFXButton layoutX="28.0" layoutY="18.0" mnemonicParsing="false" onAction="#shopClicked" opacity="0.0" prefHeight="64.0" prefWidth="63.0" ripplerFill="#000000ba" />
          </children>
       </AnchorPane>
    </center>
