@@ -18,11 +18,6 @@
 	-fx-background-color: #382E1C;
 }
 
-#_label {
-	-fx-background-color: #382E1C;
-	-fx-text-fill: #BAA378;
-}
-
 .jfx-tab-pane .tab-header-background {
 	-fx-background-color: #453823;
 	-fx-skin: #BAA378;
@@ -45,17 +40,17 @@
 	-fx-background-color: #BAA378;
 }
 
-.scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
+.spinner {
+	-fx-prompt-text-fill: #BAA378;
+	-fx-text-fill: #BAA378;
 	-fx-background-color: #65350F;
-	-fx-background-radius: 0;
+	-fx-padding: 0 0 3 0;
 }
 
-.spinner {
-	-fx-prompt-text-fill: black;
-	-fx-text-fill: black;
-	-fx-background-color: none;
-
-	-fx-padding: 0 0 3 0;
+.spinner .text-field {
+	-fx-background-color: #65350F;
+	-fx-text-fill: #BAA378;
+	-fx-border-width: 0 0 1 0;
 }
 
 .spinner .increment-arrow-button,
@@ -65,22 +60,21 @@
 
 .spinner .increment-arrow-button .increment-arrow,
 .spinner .decrement-arrow-button .decrement-arrow {
-	-fx-background-color: #007cff;
+	-fx-background-color: #BAA378;
 	-fx-font-size: 30px;
 }
 
-.spinner .text-field {
-	-fx-background-color: transparent;
-	-fx-border-width: 0 0 1 0;
-	-fx-border-color: #bdbdbd;
+.scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
+	-fx-background-color: #65350F;
+	-fx-background-radius: 0;
 }
 
 .scroll-pane {
-	-fx-background-color: black;
+	-fx-background-color: #382E1C;
 }
 
 .scroll-bar:horizontal, .scroll-bar:vertical{
-	-fx-background-color:transparent;
+	-fx-background-color: #65350F;
 }
 
 .increment-button, .decrement-button {
@@ -97,6 +91,6 @@
 
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb {
-	-fx-background-color: white;
+	-fx-background-color: #BAA378;
 	-fx-background-radius: 5em;
 }

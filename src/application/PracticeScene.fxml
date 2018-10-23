@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
       <Label id="_label" fx:id="_currentName" alignment="CENTER" layoutX="29.0" layoutY="55.0" prefHeight="68.0" prefWidth="397.0" text="Name">
          <font>
@@ -168,7 +168,7 @@
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <Spinner id="_spinner" fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="26.0" prefWidth="57.0" />
+      <Spinner id="_spinner" fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="31.0" prefWidth="66.0" />
       <HBox id="_background" alignment="CENTER_RIGHT" layoutX="727.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="10.0">
          <children>
             <ImageView fitHeight="44.0" fitWidth="46.0">
