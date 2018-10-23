@@ -16,5 +16,8 @@
 	-fx-background-color: #453823;
 }
 
-
+#_pointLabel {
+	-fx-background-color: #382E1C;
+	-fx-text-fill: #BAA378;
+}
 
