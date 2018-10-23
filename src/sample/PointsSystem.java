@@ -54,4 +54,9 @@ public class PointsSystem {
             ex.printStackTrace();
         }
     }
+
+    //This method resets the score to 0
+    public void clearScore(){
+        _points = 0;
+    }
 }
