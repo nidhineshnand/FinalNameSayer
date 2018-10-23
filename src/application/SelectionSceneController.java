@@ -114,6 +114,8 @@ public class SelectionSceneController extends Controller {
 			_shopButton.setVisible(false);
 			_invertedShopButton.setVisible(true);
 		}
+		
+		//mnemonics for the main buttons
 		_practiceButton.setMnemonicParsing(true);
 		_practiceButton.setText("_Practice");
 		_practiceListButton.setMnemonicParsing(true);
