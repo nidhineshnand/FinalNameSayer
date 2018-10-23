@@ -189,6 +189,6 @@
             <Insets right="20.0" top="20.0" />
          </opaqueInsets>
       </HBox>
-      <JFXSpinner layoutX="408.0" layoutY="300.0" prefHeight="78.0" prefWidth="85.0" />
+      <JFXSpinner fx:id="_jfxSpinner" layoutX="408.0" layoutY="300.0" prefHeight="78.0" prefWidth="85.0" visible="false" />
    </children>
 </AnchorPane>

@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -70,7 +71,8 @@ public class PracticeSceneController extends Controller {
 	public JFXButton _loop;
 	public Spinner<Integer> _loopCount;
     public Label _pointsLabel;
-    private VBox _userRecordingList = new VBox();
+	public JFXSpinner _jfxSpinner;
+	private VBox _userRecordingList = new VBox();
 
 	private int _counter = 0;
 	private double _currentVolume;
@@ -167,9 +169,11 @@ public class PracticeSceneController extends Controller {
 			_recordingProcess = new RecordVoice();
 			new Thread(_recordingProcess).start();
 			_recordButton.setText("Stop");
+			_jfxSpinner.setVisible(true);
 		} else {
 			_recordingProcess.terminate();
 			_recordButton.setText("Record");
+			_jfxSpinner.setVisible(false);
 			_recordButton.setVisible(false);
 			_playRecordingButton.setVisible(true);
 			_saveButton.setVisible(true);
