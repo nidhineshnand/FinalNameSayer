@@ -9,7 +9,7 @@
 	-fx-text-fill: #BAA378;
 }
 
-#_pane, .scrollPane {
+#_pane {
 	-fx-background-color: #382E1C;
 	-fx-background: #BAA378;
 }
@@ -40,3 +40,13 @@
 .jfx-slider > .colored-track, .jfx-slider > .thumb, .jfx-slider > .animated-thumb {
 	-fx-background-color: #BAA378;
 }
+
+#_progressBar > .bar {
+	-fx-background-color: #BAA378;
+}
+
+.scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
+	-fx-background-color: #65350F;
+	-fx-background-radius: 0;
+}
+

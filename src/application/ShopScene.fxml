@@ -50,7 +50,7 @@
                            </font>
                         </Label>
                         <JFXButton id="_button" fx:id="_sunsetThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="300.0" onAction="#sunsetThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Sunset Theme" />
-                        <ImageView fitHeight="282.0" fitWidth="262.0" layoutX="20.0">
+                        <ImageView fitHeight="282.0" fitWidth="262.0" layoutX="20.0" onMouseClicked="#sunsetThemeClicked">
                            <image>
                               <Image url="@../images/SunsetTeaser.PNG" />
                            </image>
@@ -65,7 +65,7 @@
                            </font>
                         </Label>
                         <JFXButton id="_button" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="296.0" onAction="#defaultThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Default Theme" />
-                        <ImageView fitHeight="284.0" fitWidth="261.0" layoutX="20.0">
+                        <ImageView fitHeight="284.0" fitWidth="261.0" layoutX="20.0" onMouseClicked="#defaultThemeClicked">
                            <image>
                               <Image url="@../images/DefaultTeaser.PNG" />
                            </image>
@@ -80,7 +80,7 @@
                            </font>
                         </Label>
                         <JFXButton id="_button" fx:id="_chocoThemeButton" buttonType="RAISED" layoutX="62.0" layoutY="297.0" onAction="#chocoThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Choco Theme" />
-                        <ImageView fitHeight="279.0" fitWidth="263.0" layoutX="14.0">
+                        <ImageView fitHeight="279.0" fitWidth="263.0" layoutX="14.0" onMouseClicked="#chocoThemeClicked">
                            <image>
                               <Image url="@../images/ChocoTeaser.PNG" />
                            </image>
@@ -95,7 +95,7 @@
                            </font>
                         </Label>
                         <JFXButton id="_button" fx:id="_darkThemeButton11" buttonType="RAISED" layoutX="67.0" layoutY="297.0" onAction="#darkThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Dark Theme" />
-                        <ImageView fitHeight="279.0" fitWidth="271.0" layoutX="15.0" layoutY="-1.0">
+                        <ImageView fitHeight="279.0" fitWidth="271.0" layoutX="15.0" layoutY="-1.0" onMouseClicked="#darkThemeClicked">
                            <image>
                               <Image url="@../images/DarkTeaser.PNG" />
                            </image>
