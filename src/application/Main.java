@@ -23,6 +23,8 @@ public class Main extends Application {
         primaryStage.setTitle("NameSayer");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.setResizable(true);
+        primaryStage.setMinWidth(970);
+        primaryStage.setMinHeight(630);
         primaryStage.show();
     }
 
