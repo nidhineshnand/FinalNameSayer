@@ -18,6 +18,10 @@
 	-fx-text-fill: #BAA378;
 	-fx-font-fill: #BAA378;
 }
+.combo-box-base:hover
+{
+	-fx-color: #BAA378;
+}
 
 #_tabParent {
 	-fx-background-color: #382E1C;
