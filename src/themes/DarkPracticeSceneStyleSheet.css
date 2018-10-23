@@ -1,12 +1,12 @@
 #_button {
-    -fx-background-color: rgb(50, 50, 50, 0.9);
-	-fx-text-fill: red;
+    -fx-background-color: #3C373D;
+	-fx-text-fill: #F92F08;
 	-fx-accent: crimson;
 }
 
 #_pane, .scrollPane {
-	-fx-background-color: rgb(80, 80, 80);
-	-fx-background: rgb(80, 80, 80);
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-background: rgb(50, 50, 50);
 }
 
 #_background {
@@ -14,17 +14,17 @@
 }
 
 #_label {
-	-fx-text-fill: red;
+	-fx-text-fill: #F92F08;
 }
 
 .jfx-tab-pane .tab-header-background {
 	-fx-background-color: rgb(50, 50, 50);
-	-fx-skin: red;
+	-fx-skin: #F92F08;
 }
 
 .tab .tab-label {
 	-fx-background-color: rgb(50, 50, 50);
-	-fx-text-fill: red;
+	-fx-text-fill: #F92F08;
 }
 
 .tab {
