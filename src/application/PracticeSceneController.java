@@ -103,6 +103,7 @@ public class PracticeSceneController extends Controller {
 		_recordButton.setText("Record");
 		_loop.setMnemonicParsing(true);
 		_loop.setText("Loop");
+        _pointsLabel.setText(_spine.getPoints() + "");
 	}
 
 
@@ -229,6 +230,7 @@ public class PracticeSceneController extends Controller {
 		_playRecordingButton.setVisible(false);
 		updateRecordingPane();
 		_spine.changePoints(3);
+        _pointsLabel.setText(_spine.getPoints() + "");
 	}
 
 	/**
@@ -243,6 +245,7 @@ public class PracticeSceneController extends Controller {
 		_playRecordingButton.setVisible(false);
 		updateRecordingPane();
 		_spine.changePoints(-1);
+        _pointsLabel.setText(_spine.getPoints() + "");
 	}
 
 	/**
