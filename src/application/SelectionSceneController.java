@@ -107,11 +107,6 @@ public class SelectionSceneController extends Controller {
 		});
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
-
-		if (_spine.getCurrentTheme() != null ) {
-			_shopButton.setVisible(true);
-			_invertedShopButton.setVisible(false);
-		}
 		
 		//mnemonics for the main buttons
 		_practiceButton.setMnemonicParsing(true);
@@ -129,8 +124,14 @@ public class SelectionSceneController extends Controller {
 
 		_selectionSceneParent.getStylesheets().clear();
 			_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
-		_shopButton.setVisible(true);
-		_invertedShopButton.setVisible(false);
+			if(_spine.getCurrentTheme().isEmpty()) {
+				_shopButton.setVisible(true);
+				_invertedShopButton.setVisible(false);
+			} else {
+				_shopButton.setVisible(false);
+				_invertedShopButton.setVisible(true);
+
+			}
 	}
 
 	/**
