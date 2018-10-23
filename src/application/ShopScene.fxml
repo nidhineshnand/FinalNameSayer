@@ -19,12 +19,12 @@
                   <Font size="74.0" />
                </font>
             </Label>
-            <Label id="_backLabel" fx:id="_pointLabel" layoutX="741.0" layoutY="79.0" prefHeight="48.0" prefWidth="93.0" text="Points">
+            <Label id="_backLabel" fx:id="_pointLabel" layoutX="768.0" layoutY="30.0" prefHeight="48.0" prefWidth="93.0" text="Points">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="681.0" layoutY="79.0">
+            <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="708.0" layoutY="30.0">
                <image>
                   <Image url="@../images/Yellow_Star.png" />
                </image>

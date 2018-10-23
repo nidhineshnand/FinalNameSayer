@@ -69,7 +69,8 @@ public class PracticeSceneController extends Controller {
 	public Button _deleteSelectedButton;
 	public JFXButton _loop;
 	public Spinner<Integer> _loopCount;
-	private VBox _userRecordingList = new VBox();
+    public Label _pointsLabel;
+    private VBox _userRecordingList = new VBox();
 
 	private int _counter = 0;
 	private double _currentVolume;

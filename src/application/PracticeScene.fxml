@@ -4,12 +4,16 @@
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -164,5 +168,25 @@
          </font>
       </JFXButton>
       <Spinner id="_spinner" fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="26.0" prefWidth="57.0" />
+      <HBox id="_background" alignment="CENTER_RIGHT" layoutX="727.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="10.0">
+         <children>
+            <ImageView fitHeight="44.0" fitWidth="46.0">
+               <image>
+                  <Image url="@../images/Yellow_Star.png" />
+               </image>
+            </ImageView>
+            <Label id="_label" fx:id="_pointsLabel" contentDisplay="RIGHT" prefHeight="43.0" prefWidth="47.0" text="999" textAlignment="CENTER">
+               <font>
+                  <Font name="Droid Sans Bold" size="23.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets right="20.0" top="20.0" />
+         </opaqueInsets>
+      </HBox>
    </children>
 </AnchorPane>
