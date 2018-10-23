@@ -121,7 +121,7 @@ public class PracticeSceneController extends Controller {
 
 	//Sets the input value that the spinner will take
 	private void setSpinner() {
-		_loopCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 30));
+		_loopCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
 	}
 	/**
 	 * populates the TableView _recordingList
@@ -278,12 +278,15 @@ public class PracticeSceneController extends Controller {
 	/**Loops the selected files the given number of times*/
 	@FXML
 	void loopFiles(){
+	    //File is only looped if a recording file is selected and the loop button is not at a stop
 		if(_spine.getSelectedLocalRecordingFilesFromPractiseScene() != null) {
 			ArrayList<PractiseFile> practiseFiles = new ArrayList<>();
 			practiseFiles.add(_listOfNames.get(_counter));
 			CollectionsFile collectionsFile = new CollectionsFile(practiseFiles, _spine.getSelectedLocalRecordingFilesFromPractiseScene());
 			playItem(collectionsFile, _loopCount.getValue());
-		}
+        }
+
+
 	}
 
 	/**
