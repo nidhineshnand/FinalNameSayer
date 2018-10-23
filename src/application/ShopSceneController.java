@@ -45,7 +45,7 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void defaultThemeClicked() {
-		_parent.setCssName("");
+		changeThemeTo(null);;
 	}
 	
 	/**
@@ -69,11 +69,7 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
-		_spine.setCurrentTheme("Sunset");
-		_selectionSceneParent.getStylesheets().clear();
-		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
-		_marketSceneParent.getStylesheets().clear();
-		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		changeThemeTo("Sunset");
 	}
 	
 	/**
@@ -97,11 +93,7 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
-        _spine.setCurrentTheme("Dark");
-		_selectionSceneParent.getStylesheets().clear();
-		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
-		_marketSceneParent.getStylesheets().clear();
-		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		changeThemeTo("Dark");
 	}
 	
 	/**
@@ -124,7 +116,13 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
-        _spine.setCurrentTheme("Choco");
+        changeThemeTo("Choco");
+
+	}
+
+	/**This method changes the theme of the marketplace and selection scene during runtime*/
+	private void changeThemeTo(String theme){
+		_spine.setCurrentTheme(theme);
 		_selectionSceneParent.getStylesheets().clear();
 		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 		_marketSceneParent.getStylesheets().clear();
