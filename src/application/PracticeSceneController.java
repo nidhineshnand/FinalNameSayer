@@ -77,6 +77,8 @@ public class PracticeSceneController extends Controller {
 	private RecordVoice _recordingProcess;
 	private MediaPlayer _player;
 	private ControllerConnecter _spine;
+	private File _fileToPlay;
+	private NameSayerFile _nameSayerFile;
 
 	// Methods
 
@@ -189,8 +191,6 @@ public class PracticeSceneController extends Controller {
 				return null;
 
 		}
-
-
 	}
 
 	/**
@@ -213,6 +213,8 @@ public class PracticeSceneController extends Controller {
 	void playRecordingClicked() {
 		playItem(_rFile, 1);
 	}
+
+
 
 	/**
 	 * When _saveButton is clicked
@@ -307,13 +309,16 @@ public class PracticeSceneController extends Controller {
 	 * When there is a file that needs playing
 	 */
 	private void playItem(NameSayerFile nameSayerFile, int loop) {
-		File file = _spine.getPlayableFileFor(nameSayerFile);
-		try {
+		_nameSayerFile = nameSayerFile;
+		GeneratePlayableFile generatePlayableFile = new GeneratePlayableFile();
+		new Thread(generatePlayableFile).start();
+		generatePlayableFile.setOnSucceeded(event ->{
+	try {
 			if (_player != null){
 				_player.stop();
 				_player.dispose();
 			}
-			String source = file.toURI().toURL().toString();
+			String source = _fileToPlay.toURI().toURL().toString();
 			Media media = new Media(source);
 			_player = new MediaPlayer(media);
 			_player.setCycleCount(loop);
@@ -321,10 +326,25 @@ public class PracticeSceneController extends Controller {
 			_player.seek(Duration.millis(0));
 			_player.play();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		});
+
+	}
+	//Class responsible for recording voice in a different thread
+	class GeneratePlayableFile extends Task<Void> {
+
+		@Override
+		protected Void call() throws Exception {
+			_fileToPlay = _spine.getPlayableFileFor(_nameSayerFile);
+			return null;
+
 		}
 	}
+
+
+
 
 	/**
 	 * checks mic level
