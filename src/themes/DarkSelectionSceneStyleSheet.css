@@ -26,6 +26,11 @@
 	-fx-text-fill: #F92F08;
 }
 
+#_qualityLabel {
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-text-fill: #F92F08;
+}
+
 #_searchBar {
 	-fx-background-color: rgb(50, 50, 50);
 	-fx-text-fill: #F92F08;
