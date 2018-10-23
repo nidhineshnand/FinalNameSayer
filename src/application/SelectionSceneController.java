@@ -105,7 +105,6 @@ public class SelectionSceneController extends Controller {
 
 			_practiceFileList.setPrefHeight(newValue.doubleValue() - 110);
 			_userRecordingList.setPrefHeight(newValue.doubleValue() - 110);
-			System.out.println(newValue);
 		});
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
@@ -205,8 +204,6 @@ public class SelectionSceneController extends Controller {
 			_pointsLabel.setText(_spine.getPoints() + "");
 			_pointsLabel.setAlignment(Pos.CENTER_RIGHT);
 			_spine.setUserRecordingFileListCheckBox(false);
-			System.out.println(_spine.getPoints());
-			System.out.println("stopping");
 			//Resizing scene
 			_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
 			_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
