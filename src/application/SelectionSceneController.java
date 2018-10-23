@@ -80,7 +80,6 @@ public class SelectionSceneController extends Controller {
 	private String _cssName;
 	private Scene _selectionScene;
 	private ControllerConnecter _spine;
-	private String _cssFileName;
 
 	// Methods
 
@@ -111,7 +110,7 @@ public class SelectionSceneController extends Controller {
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 
-		if (_spine.getSavedCSS() != null ) {
+		if (_spine.getCurrentTheme() != null ) {
 			_shopButton.setVisible(false);
 			_invertedShopButton.setVisible(true);
 		}
@@ -127,12 +126,12 @@ public class SelectionSceneController extends Controller {
 
 	/**This method sets the theme for the selection scene*/
 	public void setTheme(){
-		_cssFileName = _spine.getSavedCSS();
+
 		_selectionScene.getStylesheets().clear();
-		if (_cssFileName == null) {
+		if (_spine.getCurrentTheme() == null) {
 			_selectionScene.getStylesheets().add("themes/SelectionSceneStyleSheet.css");
 		} else {
-			_selectionScene.getStylesheets().add("themes/"+_cssFileName+"SelectionSceneStyleSheet.css");
+			_selectionScene.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 		}
 
 	}
@@ -195,10 +194,10 @@ public class SelectionSceneController extends Controller {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		root.getStylesheets().clear();
-		if (_spine.getSavedCSS() == null) {
+		if (_spine.getCurrentTheme() == null) {
 			root.getStylesheets().add("themes/PracticeSceneStyleSheet.css");
 		} else {
-			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
+			root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"PracticeSceneStyleSheet.css");
 		}
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
@@ -210,20 +209,17 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setResizable(false);
         secondaryStage.show();
         _spine.setUserRecordingFileListCheckBox(false);
-        secondaryStage.setOnHiding(new EventHandler<WindowEvent>() {
-			@Override
-			public void handle(WindowEvent arg0) {
-				populatePanes();
-				_pointsLabel.setText(_spine.getPoints() + "");
-				_pointsLabel.setAlignment(Pos.CENTER_RIGHT);
-				_spine.setUserRecordingFileListCheckBox(false);
-				System.out.println(_spine.getPoints());
-				System.out.println("stopping");
-				//Resizing scene
-				_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
-				_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
-			}
-        });
+        secondaryStage.setOnHiding(arg0 -> {
+			populatePanes();
+			_pointsLabel.setText(_spine.getPoints() + "");
+			_pointsLabel.setAlignment(Pos.CENTER_RIGHT);
+			_spine.setUserRecordingFileListCheckBox(false);
+			System.out.println(_spine.getPoints());
+			System.out.println("stopping");
+			//Resizing scene
+			_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+			_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
+		});
 	}
 
 
@@ -322,10 +318,10 @@ public class SelectionSceneController extends Controller {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			root.getStylesheets().clear();
-			if (_spine.getSavedCSS() == null) {
+			if (_spine.getCurrentTheme() == null) {
 				root.getStylesheets().add("themes/ShopSceneStyleSheet.css");
 			} else {
-				root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.css");
+				root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"ShopSceneStyleSheet.css");
 			}
 			_shopController = loader.getController();
 			_shopController.setup(this);
@@ -456,7 +452,7 @@ public class SelectionSceneController extends Controller {
 	}
 
 	public void saveSessionClicked(ActionEvent actionEvent) {
-		_spine.saveProgramState(_cssName);
+		_spine.saveProgramState();
 	}
 	
 	public void setCssName(String name) {
