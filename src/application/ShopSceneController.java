@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,19 +25,19 @@ public class ShopSceneController extends Controller {
 	
 	private SelectionSceneController _parent;
 	private ControllerConnecter _spine;
-	private Scene _practiseScene;
-	private Scene _marketScene;
+	private Parent _practiseScene;
+	private Parent _marketScene;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		super.initialize(location, resources);
 	}
 
-	public void setup(ControllerConnecter spine, Scene practiseScene, Scene marketScene){
+	public void setup(ControllerConnecter spine, Parent practiseSceneParent, Parent marketSceneParent){
 		_spine = spine;
-		_practiseScene = practiseScene;
+		_practiseScene = practiseSceneParent;
         _pointLabel.setText(_spine.getPoints() + "");
-        _marketScene = marketScene;
+        _marketScene = marketSceneParent;
 	}
 	
 	/**
@@ -69,7 +70,6 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
 		_spine.setCurrentTheme("Sunset");
-		_parent.setCssName("Sunset");
 	}
 	
 	/**
@@ -94,7 +94,6 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
         _spine.setCurrentTheme("Dark");
-		_parent.setCssName("Dark");
 	}
 	
 	/**
@@ -118,7 +117,6 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
         _spine.setCurrentTheme("Choco");
-		_parent.setCssName("Choco");
 	}
 
 }

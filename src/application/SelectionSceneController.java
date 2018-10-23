@@ -78,7 +78,7 @@ public class SelectionSceneController extends Controller {
 	private PractiseFile _pFile;
 	private MediaPlayer _player;
 	private String _cssName;
-	private Scene _selectionScene;
+	private Parent _selectionSceneParent;
 	private ControllerConnecter _spine;
 
 	// Methods
@@ -92,8 +92,8 @@ public class SelectionSceneController extends Controller {
 	}
 
 	//This method supplements the initialize class by setting fields required by selection scene
-	public void setup(Scene scene, ControllerConnecter controllerConnecter){
-		_selectionScene = scene;
+	public void setup(Parent scene, ControllerConnecter controllerConnecter){
+		_selectionSceneParent = scene;
 		_spine = controllerConnecter;
 		setTheme();
 		autoCompleteListBinding();
@@ -127,11 +127,11 @@ public class SelectionSceneController extends Controller {
 	/**This method sets the theme for the selection scene*/
 	public void setTheme(){
 
-		_selectionScene.getStylesheets().clear();
+		_selectionSceneParent.getStylesheets().clear();
 		if (_spine.getCurrentTheme() == null) {
-			_selectionScene.getStylesheets().add("themes/SelectionSceneStyleSheet.css");
+			_selectionSceneParent.getStylesheets().add("themes/SelectionSceneStyleSheet.css");
 		} else {
-			_selectionScene.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+			_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 		}
 
 	}
@@ -324,7 +324,7 @@ public class SelectionSceneController extends Controller {
 				root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"ShopSceneStyleSheet.css");
 			}
 			_shopController = loader.getController();
-			_shopController.setup(this);
+			_shopController.setup(_spine, _selectionSceneParent, root);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);
