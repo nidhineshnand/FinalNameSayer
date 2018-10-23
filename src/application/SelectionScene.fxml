@@ -29,7 +29,7 @@
                         <VBox layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
                               <ScrollPane fx:id="_practiceListPane" />
-                              <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" text="Select All">
+                              <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="308.0" text="Select All">
                                  <tooltip>
                                     <Tooltip text="Select all names from the list" />
                                  </tooltip></JFXCheckBox>
@@ -46,6 +46,9 @@
                                  </children>
                               </HBox>
                            </children>
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
                         </VBox>
                      </children></Pane>
                </content>
@@ -57,7 +60,7 @@
                         <VBox fx:id="_recordingListContainer" alignment="TOP_CENTER" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
                               <ScrollPane fx:id="_recordingListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />
-                              <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="307.0" text="Select All">
+                              <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="308.0" text="Select All">
                                  <tooltip>
                                     <Tooltip text="Select all your recordings" />
                                  </tooltip></JFXCheckBox>
@@ -74,6 +77,9 @@
                                  </children>
                               </HBox>
                            </children>
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
                         </VBox>
                      </children>
                   </Pane>
@@ -175,7 +181,7 @@
                   <Image url="@../images/InvertedTrolley.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="28.0" layoutY="18.0" mnemonicParsing="false" onAction="#shopClicked" opacity="0.0" prefHeight="64.0" prefWidth="63.0" ripplerFill="#000000ba" />
+            <JFXButton layoutX="28.0" layoutY="18.0" mnemonicParsing="false" onAction="#shopClicked" opacity="0.0" prefHeight="65.0" prefWidth="63.0" ripplerFill="#000000ba" />
          </children>
       </AnchorPane>
    </center>
