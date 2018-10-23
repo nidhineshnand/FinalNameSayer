@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 
 import java.applet.AudioClip;
 
+import javafx.util.Duration;
 import sample.*;
 
 import javax.sound.sampled.AudioFormat;
@@ -305,23 +306,21 @@ public class PracticeSceneController extends Controller {
 	private void playItem(NameSayerFile nameSayerFile, int loop) {
 		File file = _spine.getPlayableFileFor(nameSayerFile);
 		try {
+			if (_player != null){
+				_player.stop();
+				_player.dispose();
+			}
 			String source = file.toURI().toURL().toString();
 			Media media = new Media(source);
 			_player = new MediaPlayer(media);
 			_player.setCycleCount(loop);
 			_player.setVolume(_currentVolume/100);
+			_player.seek(Duration.millis(0));
 			_player.play();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * gets the parent Controller
-	 */
-	void getSelectionSceneController(ControllerConnecter spine) {
-		_spine = spine;
 	}
 
 	/**

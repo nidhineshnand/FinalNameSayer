@@ -143,6 +143,8 @@ public class ShopSceneController extends Controller {
 
 	/**This method resets the score to 0*/
 	public void resetButtonClicked() {
+		//Launching warning scene
+		//	openErrorScene(null, "Are you sure ");
 		_spine.clearScore();
 		_pointLabel.setText(_spine.getPoints() + "");
 	}
