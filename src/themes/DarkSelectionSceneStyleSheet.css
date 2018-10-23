@@ -1,7 +1,7 @@
 #_button {
 	
-	-fx-background-color: #3C373D;
-	-fx-text-fill: #F92F08;
+	-fx-background-color: rgb(50, 50, 50, 0.9);
+	-fx-text-fill: red;
 }
 
 #_pane {
@@ -9,12 +9,12 @@
 	color: rgb(50, 50, 50);
 	-fx-background-color: rgb(50, 50,50);
 	-fx-background: rgb(50, 50, 50);
-	-fx-text-fill: #F92F08;
+	-fx-text-fill: red;
 }
 
 #_checkBoxToggle, #_selectAllToggle {
 	-fx-background-color: rgb(50, 50, 50);
-	-fx-text-fill: #F92F08;
+	-fx-text-fill: red;
 }
 
 #_tabParent {
@@ -23,17 +23,12 @@
 
 #_label {
 	-fx-background-color: black;
-	-fx-text-fill: #F92F08;
-}
-
-#_qualityLabel {
-	-fx-background-color: rgb(50, 50, 50);
-	-fx-text-fill: #F92F08;
+	-fx-text-fill: red;
 }
 
 #_searchBar {
 	-fx-background-color: rgb(50, 50, 50);
-	-fx-text-fill: #F92F08;
+	-fx-text-fill: red;
 }
 
 #_background {
@@ -43,12 +38,12 @@
 .jfx-tab-pane .tab-header-background {
 	-fx-background-color: rgb(50, 50, 50);
 	-fx-text-fill: rgb(50, 50, 50);
-	-fx-skin: #F92F08;
+	-fx-skin: red;
 }
 
 .tab .tab-label {
 	-fx-background-color: rgb(50, 50, 50);
-	-fx-text-fill: #F92F08;
+	-fx-text-fill: red;
 }
 
 

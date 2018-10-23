@@ -3,21 +3,18 @@
 }
 
 #_button {
-	-fx-background-color: #65350F;
+	-fx-background-color: #453823;
 	-fx-text-fill: #BAA378;
 }
 
 #_label {
-	-fx-background-color: #453823;
+	-fx-background-color: #382E1C;
 	-fx-text-fill: #BAA378;
 }
 
 #_themePane {
-	-fx-background-color: #453823;
+	-fx-background-color: #382E1C;
 }
 
-#_pointLabel {
-	-fx-background-color: #382E1C;
-	-fx-text-fill: #BAA378;
-}
+
 

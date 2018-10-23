@@ -32,7 +32,6 @@ import javafx.stage.*;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import sample.CollectionsFile;
-import sample.ControllerConnecter;
 import sample.PractiseFile;
 
 import javax.swing.*;
@@ -70,6 +69,8 @@ public class SelectionSceneController extends Controller {
 	public Pane _mainContainer;
 	public Label _databaseFileCount;
 	public ScrollPane _practiceListPane;
+
+	private VBox _practiseList = new VBox();
 	private VBox _userRecordingList;
 	private PracticeSceneController _practiceController;
 	private ShopSceneController _shopController;
@@ -78,24 +79,14 @@ public class SelectionSceneController extends Controller {
 	private PractiseFile _pFile;
 	private MediaPlayer _player;
 	private String _cssName;
-	private Parent _selectionSceneParent;
-	private ControllerConnecter _spine;
 
 	// Methods
-
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
 		super.initialize(location, resources);
-
-	}
-
-	//This method supplements the initialize class by setting fields required by selection scene
-	public void setup(Parent scene, ControllerConnecter controllerConnecter){
-		_selectionSceneParent = scene;
-		_spine = controllerConnecter;
-		setTheme();
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
 		populatePanes();
@@ -109,13 +100,11 @@ public class SelectionSceneController extends Controller {
 		});
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
-
-		if (_spine.getCurrentTheme() != null ) {
+		
+		if (_spine.getSavedCSS() != null ) {
 			_shopButton.setVisible(false);
 			_invertedShopButton.setVisible(true);
 		}
-		
-		//mnemonics for the main buttons
 		_practiceButton.setMnemonicParsing(true);
 		_practiceButton.setText("_Practice");
 		_practiceListButton.setMnemonicParsing(true);
@@ -124,18 +113,6 @@ public class SelectionSceneController extends Controller {
 		_uploadButton.setText("_Upload");
 		_saveButton.setMnemonicParsing(true);
 		_saveButton.setText("_Save Session");
-	}
-
-	/**This method sets the theme for the selection scene*/
-	public void setTheme(){
-
-		_selectionSceneParent.getStylesheets().clear();
-		if (_spine.getCurrentTheme() == null) {
-			_selectionSceneParent.getStylesheets().add("themes/SelectionSceneStyleSheet.css");
-		} else {
-			_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
-		}
-
 	}
 
 	/**
@@ -153,10 +130,25 @@ public class SelectionSceneController extends Controller {
 			String name = _nameTextField.getText();
 			_notFound.clear();
 			_pFile = _spine.searchButtonPressed(name, _notFound);
+			if (!_notFound.isEmpty()) {
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			if (_pFile != null) {
 				_listOfNames.add(_pFile);
 				openPracticeScene();
-			} 
+			} else {
+				try {
+					openErrorScene(_notFound, "NamesNotFound");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 		}
 		_notFound.clear();
 	}
@@ -166,7 +158,7 @@ public class SelectionSceneController extends Controller {
 	 */
 	private void openPracticeScene() {
 		try {
-			startPractiseScene();
+			start();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -177,43 +169,39 @@ public class SelectionSceneController extends Controller {
 	 * loads PracticeScene
 	 * @throws Exception
 	 */
-	public void startPractiseScene() throws Exception {
+	public void start() throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		root.getStylesheets().clear();
-		if (_spine.getCurrentTheme() == null) {
+		if (_spine.getSavedCSS() == null) {
 			root.getStylesheets().add("themes/PracticeSceneStyleSheet.css");
 		} else {
-			root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"PracticeSceneStyleSheet.css");
+			root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"PracticeSceneStyleSheet.css");
 		}
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
-		secondaryStage.initOwner(Main.primaryStage);
+		secondaryStage.initOwner(NameSayerStarter.primaryStage);
         secondaryStage.setTitle("NameSayer");
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
         secondaryStage.show();
         _spine.setUserRecordingFileListCheckBox(false);
-        if (!_notFound.isEmpty()) {
-			try {
-				openErrorScene(_notFound, "NamesNotFound");
-			} catch (Exception e) {
-				e.printStackTrace();
+        secondaryStage.setOnHiding(new EventHandler<WindowEvent>() {
+			@Override
+			public void handle(WindowEvent arg0) {
+				populatePanes();
+				_pointsLabel.setText(_spine.getPoints() + "");
+				_pointsLabel.setAlignment(Pos.CENTER_RIGHT);
+				_spine.setUserRecordingFileListCheckBox(false);
+				System.out.println(_spine.getPoints());
+				System.out.println("stopping");
+				//Resizing scene
+				_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
+				_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
 			}
-		}
-        secondaryStage.setOnHiding(arg0 -> {
-			populatePanes();
-			_pointsLabel.setText(_spine.getPoints() + "");
-			_pointsLabel.setAlignment(Pos.CENTER_RIGHT);
-			_spine.setUserRecordingFileListCheckBox(false);
-			System.out.println(_spine.getPoints());
-			System.out.println("stopping");
-			//Resizing scene
-			_practiceFileList.setPrefHeight(_mainContainer.getHeight() - 110);
-			_userRecordingList.setPrefHeight(_mainContainer.getHeight() - 110);
-		});
+        });
 	}
 
 
@@ -266,7 +254,15 @@ public class SelectionSceneController extends Controller {
 		for (PractiseFile pFile: _spine.getSelectedPractiseFiles()) {
 			_listOfNames.add(pFile);
 		}
-		if (!_listOfNames.isEmpty()) {
+		if (_listOfNames.isEmpty()) {
+			try {
+				openErrorScene(null, "EmptyPracticeList");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println(_listOfNames.size());
 			openPracticeScene();
 		}
 	}
@@ -304,16 +300,16 @@ public class SelectionSceneController extends Controller {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			root.getStylesheets().clear();
-			if (_spine.getCurrentTheme().isEmpty()) {
+			if (_spine.getSavedCSS() == null) {
 				root.getStylesheets().add("themes/ShopSceneStyleSheet.css");
 			} else {
-				root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"ShopSceneStyleSheet.css");
+				root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"ShopSceneStyleSheet.css");
 			}
 			_shopController = loader.getController();
-			_shopController.setup(_spine, _selectionSceneParent, root, this);
+			_shopController.setup(this);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
-			secondaryStage.initOwner(Main.primaryStage);
+			secondaryStage.initOwner(NameSayerStarter.primaryStage);
 	        secondaryStage.setTitle("Shop");
 	        secondaryStage.setScene(new Scene(root, 900, 600));
 	        secondaryStage.setResizable(false);
@@ -438,7 +434,7 @@ public class SelectionSceneController extends Controller {
 	}
 
 	public void saveSessionClicked(ActionEvent actionEvent) {
-		_spine.saveProgramState();
+		_spine.saveProgramState(_cssName);
 	}
 	
 	public void setCssName(String name) {
