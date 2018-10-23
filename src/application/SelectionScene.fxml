@@ -33,7 +33,7 @@
                                  <tooltip>
                                     <Tooltip text="Select all names from list" />
                                  </tooltip></JFXCheckBox>
-                              <HBox id="_background" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="309.0" spacing="3.0">
+                              <HBox id="_background" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="309.0" spacing="5.0">
                                  <children>
                                     <JFXButton id="_button" fx:id="_practiceListButton" buttonType="RAISED" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="148.0" text="Practice Selected">
                                        <tooltip>
@@ -115,7 +115,7 @@
                                     <Tooltip text="Add searched name to list" />
                                  </tooltip>
                               </JFXButton>
-                              <JFXButton id="_button" fx:id="_practiceButton" buttonType="RAISED" onAction="#practiceClicked" prefHeight="38.0" prefWidth="109.0" text="Practice">
+                              <JFXButton id="_button" fx:id="_practiceButton" buttonType="RAISED" onAction="#practiceClicked" prefHeight="38.0" prefWidth="129.0" text="Practice">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -133,8 +133,11 @@
                <children>
                   <HBox id="_background" alignment="TOP_RIGHT" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="20.0">
                       <children>
-                        <Label id="_label" fx:id="_pointsLabel" prefHeight="43.0" prefWidth="329.0" text="Label" />
-                        <ImageView fitHeight="40.0" fitWidth="46.0">
+                        <Label id="_label" fx:id="_pointsLabel" prefHeight="43.0" prefWidth="329.0" text="999">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Label>
+                        <ImageView fitHeight="46.0" fitWidth="52.0">
                            <image>
                               <Image url="@../images/Yellow_Star.png" />
                            </image>
@@ -155,11 +158,11 @@
                               <Tooltip text="Upload list via text file" />
                            </tooltip>
                         </JFXButton>
-                        <JFXButton id="_button" buttonType="RAISED" onAction="#AddToDatabaseClicked" prefHeight="38.0" prefWidth="131.0" text="Extend Database">
+                        <JFXButton id="_button" buttonType="RAISED" onAction="#AddToDatabaseClicked" prefHeight="39.0" prefWidth="131.0" text="Extend Database">
                            <tooltip>
                               <Tooltip text="Add seached name to list" />
                            </tooltip></JFXButton>
-                        <JFXButton id="_button" fx:id="_saveButton" buttonType="RAISED" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="122.0" text="Save Session">
+                        <JFXButton id="_button" fx:id="_saveButton" buttonType="RAISED" onAction="#saveSessionClicked" prefHeight="39.0" prefWidth="122.0" text="Save Session">
                            <tooltip>
                               <Tooltip text="Save current theme and points" />
                            </tooltip></JFXButton>
