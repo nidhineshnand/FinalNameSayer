@@ -111,8 +111,8 @@ public class SelectionSceneController extends Controller {
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 
 		if (_spine.getCurrentTheme() != null ) {
-			_shopButton.setVisible(false);
-			_invertedShopButton.setVisible(true);
+			_shopButton.setVisible(true);
+			_invertedShopButton.setVisible(false);
 		}
 		
 		//mnemonics for the main buttons
@@ -130,12 +130,9 @@ public class SelectionSceneController extends Controller {
 	public void setTheme(){
 
 		_selectionSceneParent.getStylesheets().clear();
-		if (_spine.getCurrentTheme() == null) {
-			_selectionSceneParent.getStylesheets().add("themes/SelectionSceneStyleSheet.css");
-		} else {
 			_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
-		}
-
+		_shopButton.setVisible(true);
+		_invertedShopButton.setVisible(false);
 	}
 
 	/**
