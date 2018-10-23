@@ -28,6 +28,11 @@
 	-fx-text-fill: #BAA378;
 }
 
+#_qualityLabel {
+	-fx-background-color: #453823;
+	-fx-text-fill: #BAA378;
+}
+
 #_searchBar {
 	-fx-background-color: #453823;
 	-fx-text-fill: #BAA378;

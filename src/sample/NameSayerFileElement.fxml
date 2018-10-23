@@ -7,15 +7,15 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane id="_pane" prefHeight="41.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NameSayerFileElementController">
+<AnchorPane prefHeight="41.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NameSayerFileElementController">
    <children>
-      <JFXCheckBox id="_checkBox" fx:id="_checkBox" checkedColor="#10439c" layoutX="14.0" layoutY="18.0" text="CheckBox">
+      <JFXCheckBox fx:id="_checkBox" checkedColor="#10439c" layoutX="14.0" layoutY="18.0" text="CheckBox">
          <font>
             <Font size="12.0" />
          </font>
       </JFXCheckBox>
-      <CheckComboBox id="_checkComboBox" fx:id="_comboBox" layoutX="186.0" layoutY="14.0" prefHeight="25.0" prefWidth="107.0" />
-      <Label id="_label" fx:id="_badRatingText" layoutX="187.0" layoutY="14.0" prefHeight="26.0" prefWidth="85.0" text="  Bad Quality" textAlignment="CENTER" />
+      <CheckComboBox fx:id="_comboBox" layoutX="186.0" layoutY="14.0" prefHeight="25.0" prefWidth="107.0" />
+      <Label id="_qualityLabel" fx:id="_badRatingText" layoutX="187.0" layoutY="14.0" prefHeight="26.0" prefWidth="85.0" text="  Bad Quality" textAlignment="CENTER" />
    </children>
    <cursor>
       <Cursor fx:constant="DEFAULT" />
