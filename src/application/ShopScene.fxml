@@ -19,7 +19,7 @@
                   <Font size="74.0" />
                </font>
             </Label>
-            <Label id="_label" fx:id="_pointLabel" layoutX="742.0" layoutY="82.0" prefHeight="48.0" prefWidth="82.0" text="Points">
+            <Label id="_pointLabel" fx:id="_pointLabel" layoutX="742.0" layoutY="82.0" prefHeight="48.0" prefWidth="82.0" text="Points">
                <font>
                   <Font size="24.0" />
                </font>
@@ -54,12 +54,12 @@
                   </AnchorPane>
                   <AnchorPane id="_themePane" prefHeight="387.0" prefWidth="300.0">
                      <children>
-                        <JFXButton id="_button" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="296.0" onAction="#defaultThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Default Theme" />
                         <Label id="_label" alignment="CENTER" layoutX="99.0" layoutY="344.0" prefHeight="36.0" prefWidth="103.0" text="0 points">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
+                        <JFXButton id="_button" fx:id="_defaultThemeButton" buttonType="RAISED" layoutX="67.0" layoutY="296.0" onAction="#defaultThemeClicked" prefHeight="48.0" prefWidth="167.0" text="Default Theme" />
                         <ImageView fitHeight="284.0" fitWidth="261.0" layoutX="20.0">
                            <image>
                               <Image url="@../images/DefaultTeaser.PNG" />
