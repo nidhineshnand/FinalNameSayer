@@ -45,7 +45,7 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void defaultThemeClicked() {
-		changeThemeTo(null);;
+		changeThemeTo(null);
 	}
 	
 	/**

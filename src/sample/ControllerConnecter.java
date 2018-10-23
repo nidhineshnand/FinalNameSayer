@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.javafx.webkit.ThemeClientImpl;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
@@ -15,6 +16,7 @@ public class ControllerConnecter {
     private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
     private PointsSystem pointsSystem = new PointsSystem(initializeFiles.get_savedScore());
     private String currentTheme;
+    private final String DEFAULT_THEME = "";
 
     public ControllerConnecter(){
         loadPreviousState();
@@ -161,6 +163,10 @@ public class ControllerConnecter {
 
     /**This method gets the saved CSS file if there exists one from a previous session*/
      public String getCurrentTheme(){
+         if (currentTheme.isEmpty()){
+             //Default theme is used
+             return DEFAULT_THEME;
+         }
          return currentTheme;
      }
 
