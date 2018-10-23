@@ -36,3 +36,7 @@
 .tab {
 	-fx-background-color: #382E1C;
 }
+
+.jfx-slider > .colored-track, .jfx-slider > .thumb, .jfx-slider > .animated-thumb {
+	-fx-background-color: #BAA378;
+}

@@ -30,3 +30,7 @@
 .tab {
 	-fx-background-color: black;
 }
+
+.jfx-slider > .colored-track, .jfx-slider > .thumb, .jfx-slider > .animated-thumb {
+	-fx-background-color: #F92F08;
+}
