@@ -405,6 +405,10 @@ public class SelectionSceneController extends Controller {
 		//Playing the audio
 		File file = _spine.getPlayableFileFor(collectionsFile);
 		try {
+			if (_player != null){
+				_player.stop();
+				_player.dispose();
+			}
 			String source = file.toURI().toURL().toString();
 			Media media = new Media(source);
 			_player = new MediaPlayer(media);
