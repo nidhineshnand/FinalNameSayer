@@ -114,6 +114,14 @@ public class InitializeFiles {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else {
+            //File is cleaned which signifies the default theme
+            file.delete();
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
