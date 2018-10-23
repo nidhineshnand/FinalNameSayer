@@ -22,12 +22,16 @@ public class ShopSceneController extends Controller {
 	public Label _pointLabel;
 	
 	private SelectionSceneController _parent;
+	private ControllerConnecter _spine;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		super.initialize(location, resources);
 	}
-	
+
+	public void setup(ControllerConnecter spine){
+		_spine = spine;
+	}
 	
 	/**
 	 * When _dafaultThemeButton is clicked
@@ -114,7 +118,6 @@ public class ShopSceneController extends Controller {
 	 */
 	void setup(SelectionSceneController parent) {
 		_parent = parent;
-		_spine = _parent._spine;
 		_pointLabel.setText(_spine.getPoints() + "");
 	}
 }
