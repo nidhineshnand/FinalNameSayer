@@ -326,7 +326,7 @@ public class SelectionSceneController extends Controller {
 				root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"ShopSceneStyleSheet.css");
 			}
 			_shopController = loader.getController();
-			_shopController.setup(_spine, _selectionSceneParent, root);
+			_shopController.setup(_spine, _selectionSceneParent, root, this);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
 			secondaryStage.initOwner(NameSayerStarter.primaryStage);

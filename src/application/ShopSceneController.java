@@ -27,17 +27,19 @@ public class ShopSceneController extends Controller {
 	private ControllerConnecter _spine;
 	private Parent _selectionSceneParent;
 	private Parent _marketSceneParent;
+	private SelectionSceneController _selectionController;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		super.initialize(location, resources);
 	}
 
-	public void setup(ControllerConnecter spine, Parent practiseSceneParent, Parent marketSceneParent){
+	public void setup(ControllerConnecter spine, Parent practiseSceneParent, Parent marketSceneParent, SelectionSceneController selectionController){
 		_spine = spine;
 		_selectionSceneParent = practiseSceneParent;
         _pointLabel.setText(_spine.getPoints() + "");
         _marketSceneParent = marketSceneParent;
+        _selectionController = selectionController;
 	}
 	
 	/**
@@ -46,6 +48,8 @@ public class ShopSceneController extends Controller {
 	@FXML
 	void defaultThemeClicked() {
 		changeThemeTo(null);
+		_selectionController._shopButton.setVisible(true);
+		_selectionController._invertedShopButton.setVisible(false);
 	}
 	
 	/**
@@ -70,6 +74,8 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
 		changeThemeTo("Sunset");
+		_selectionController._shopButton.setVisible(false);
+		_selectionController._invertedShopButton.setVisible(true);
 	}
 	
 	/**
@@ -94,6 +100,8 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
 		changeThemeTo("Dark");
+		_selectionController._shopButton.setVisible(false);
+		_selectionController._invertedShopButton.setVisible(true);
 	}
 	
 	/**
@@ -117,6 +125,8 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
         changeThemeTo("Choco");
+        _selectionController._shopButton.setVisible(false);
+		_selectionController._invertedShopButton.setVisible(true);
 
 	}
 
