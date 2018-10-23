@@ -133,7 +133,7 @@ public abstract class NameSayerFileList {
             Label setLabel = new Label("Nothing Here Yet");
             setLabel.setFont(Font.font("Cambria", 20));
             setLabel.setAlignment(Pos.CENTER);
-            setLabel.setMinWidth(310);
+            setLabel.setMinWidth(311);
             VBox.setVgrow(container, Priority.ALWAYS);
             container.getChildren().add(setLabel);
             container.setAlignment(Pos.CENTER);
