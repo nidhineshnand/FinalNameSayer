@@ -40,3 +40,7 @@
 .jfx-slider > .colored-track, .jfx-slider > .thumb, .jfx-slider > .animated-thumb {
 	-fx-background-color: #BAA378;
 }
+
+#_progressBar > .bar {
+	-fx-background-color: #BAA378;
+}
