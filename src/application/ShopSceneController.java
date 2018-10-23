@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import sample.ControllerConnecter;
@@ -23,14 +24,19 @@ public class ShopSceneController extends Controller {
 	
 	private SelectionSceneController _parent;
 	private ControllerConnecter _spine;
+	private Scene _practiseScene;
+	private Scene _marketScene;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		super.initialize(location, resources);
 	}
 
-	public void setup(ControllerConnecter spine){
+	public void setup(ControllerConnecter spine, Scene practiseScene, Scene marketScene){
 		_spine = spine;
+		_practiseScene = practiseScene;
+        _pointLabel.setText(_spine.getPoints() + "");
+        _marketScene = marketScene;
 	}
 	
 	/**
@@ -62,6 +68,7 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
+		_spine.setCurrentTheme("Sunset");
 		_parent.setCssName("Sunset");
 	}
 	
@@ -86,6 +93,7 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
+        _spine.setCurrentTheme("Dark");
 		_parent.setCssName("Dark");
 	}
 	
@@ -109,15 +117,8 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
+        _spine.setCurrentTheme("Choco");
 		_parent.setCssName("Choco");
 	}
-	
-	/**
-	 * When this window is made this is called to set up the spine and the points
-	 * @param spine
-	 */
-	void setup(SelectionSceneController parent) {
-		_parent = parent;
-		_pointLabel.setText(_spine.getPoints() + "");
-	}
+
 }
