@@ -163,7 +163,7 @@ public class ControllerConnecter {
 
     /**This method gets the saved CSS file if there exists one from a previous session*/
      public String getCurrentTheme(){
-         if (currentTheme.isEmpty()){
+         if (currentTheme == null){
              //Default theme is used
              return DEFAULT_THEME;
          }

@@ -16,7 +16,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
     	this.primaryStage = primaryStage;
     	ControllerConnecter _spine = new ControllerConnecter();
-        Parent root = FXMLLoader.load(getClass().getResource("SelectionScene.fxml"));
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SelectionScene.fxml"));
+        Parent root = fxmlLoader.load();
+        SelectionSceneController selectionSceneController = fxmlLoader.getController();
+        selectionSceneController.setup(root, _spine);
         primaryStage.setTitle("NameSayer");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.setResizable(true);
