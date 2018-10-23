@@ -93,10 +93,9 @@ public class SelectionSceneController extends Controller {
 	}
 
 	//This method supplements the initialize class by setting fields required by selection scene
-	public void setup(Scene scene, ControllerConnecter controllerConnecter, String cssFileName){
+	public void setup(Scene scene, ControllerConnecter controllerConnecter){
 		_selectionScene = scene;
 		_spine = controllerConnecter;
-		_cssFileName = cssFileName;
 		setTheme();
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
@@ -128,6 +127,13 @@ public class SelectionSceneController extends Controller {
 
 	/**This method sets the theme for the selection scene*/
 	public void setTheme(){
+		_cssFileName = _spine.getSavedCSS();
+		_selectionScene.getStylesheets().clear();
+		if (_cssFileName == null) {
+			_selectionScene.getStylesheets().add("themes/SelectionSceneStyleSheet.css");
+		} else {
+			_selectionScene.getStylesheets().add("themes/"+_cssFileName+"SelectionSceneStyleSheet.css");
+		}
 
 	}
 
@@ -174,7 +180,7 @@ public class SelectionSceneController extends Controller {
 	 */
 	private void openPracticeScene() {
 		try {
-			start();
+			startPractiseScene();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -185,7 +191,7 @@ public class SelectionSceneController extends Controller {
 	 * loads PracticeScene
 	 * @throws Exception
 	 */
-	public void start() throws Exception {
+	public void startPractiseScene() throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		root.getStylesheets().clear();
