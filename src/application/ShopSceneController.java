@@ -3,6 +3,8 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,7 +24,7 @@ public class ShopSceneController extends Controller {
 	public Button _chocoThemeButton;
 	@FXML
 	public Label _pointLabel;
-	
+
 	private SelectionSceneController _parent;
 	private ControllerConnecter _spine;
 	private Parent _selectionSceneParent;
@@ -139,4 +141,9 @@ public class ShopSceneController extends Controller {
 		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"ShopSceneStyleSheet.css");
 	}
 
+	/**This method resets the score to 0*/
+	public void resetButtonClicked() {
+		_spine.clearScore();
+		_pointLabel.setText(_spine.getPoints() + "");
+	}
 }
