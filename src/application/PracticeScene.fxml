@@ -163,6 +163,6 @@
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <Spinner fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="26.0" prefWidth="57.0" />
+      <Spinner id="_spinner" fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="26.0" prefWidth="57.0" />
    </children>
 </AnchorPane>
