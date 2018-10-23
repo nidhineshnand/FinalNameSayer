@@ -41,7 +41,7 @@ import javax.swing.JOptionPane;
 
 public class PracticeSceneController extends Controller {
 
-	// Fields
+	// GUI fields
 	@FXML
 	public Label _currentName;
 	@FXML
@@ -74,6 +74,7 @@ public class PracticeSceneController extends Controller {
 	public JFXSpinner _jfxSpinner;
 	private VBox _userRecordingList = new VBox();
 
+	// Fields
 	private int _counter = 0;
 	private double _currentVolume;
 	private UserRecordingFile _rFile;
@@ -85,9 +86,11 @@ public class PracticeSceneController extends Controller {
 
 	// Methods
 
+	/**
+	 * Method for setting up SelectionScene
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		super.initialize(location, resources);
 		_currentVolume = _volumeSlider.getValue();
 		_deleteButton.setVisible(false);
@@ -100,11 +103,11 @@ public class PracticeSceneController extends Controller {
 		
 		//Setting mnemonics for major keys
 		_playAllButton.setMnemonicParsing(true);
-		_playAllButton.setText("Play");
+		_playAllButton.setText("_Play");
 		_recordButton.setMnemonicParsing(true);
-		_recordButton.setText("Record");
+		_recordButton.setText("_Record");
 		_loop.setMnemonicParsing(true);
-		_loop.setText("Loop");
+		_loop.setText("_Loop");
 	}
 
 
@@ -115,20 +118,26 @@ public class PracticeSceneController extends Controller {
 		_listOfNames = list;
 		_spine = spine;
 		_userRecordingList = _spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter));
+		
+		// populate tables on the left hand side
 		populateTable();
 		updateRecordingPane();
+		
+		// setting spinner and volume dragger and points system
 		setSpinner();
 		_volumeSlider.valueProperty().addListener(e -> {
 			volumeSliderDragged();
 		});
-
 		_pointsLabel.setText(_spine.getPoints() + "");
 	}
 
-	//Sets the input value that the spinner will take
+	/**
+	 * Sets the input value that the spinner will take
+	 */
 	private void setSpinner() {
 		_loopCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
 	}
+	
 	/**
 	 * populates the TableView _recordingList
 	 */
@@ -171,6 +180,7 @@ public class PracticeSceneController extends Controller {
 			_recordButton.setText("Stop");
 			_jfxSpinner.setVisible(true);
 		} else {
+			//Stop recording process in the background
 			_recordingProcess.terminate();
 			_recordButton.setText("Record");
 			_jfxSpinner.setVisible(false);
@@ -183,7 +193,9 @@ public class PracticeSceneController extends Controller {
 	}
 
 
-	//Class responsible for recording voice in a different thread
+	/**
+	 * Class responsible for recording voice in a different thread
+	 */
 	class RecordVoice extends Task<Void> {
 		private volatile boolean running = true;
 
@@ -195,12 +207,11 @@ public class PracticeSceneController extends Controller {
 		protected Void call() throws Exception {
 				_rFile.startRecording();
 				return null;
-
 		}
 	}
 
 	/**
-	 * When _prevButton is clicked
+	 * When _prevButton is clicked, go to the previous name
 	 */
 	@FXML
 	void prevClicked() {
@@ -213,7 +224,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	/**
-	 * When _playRecordingButton is clicked
+	 * When _playRecordingButton is clicked, play the recorded name
 	 */
 	@FXML
 	void playRecordingClicked() {
@@ -223,7 +234,7 @@ public class PracticeSceneController extends Controller {
 
 
 	/**
-	 * When _saveButton is clicked
+	 * When _saveButton is clicked, save the most recent recording
 	 */
 	@FXML
 	void saveClicked() {
@@ -238,7 +249,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	/**
-	 * When _deleteButton is clicked
+	 * When _deleteButton is clicked, delete the most recent recording file
 	 */
 	@FXML
 	void deleteClicked() {
@@ -253,7 +264,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	/**
-	 * When _nextButton is clicked
+	 * When _nextButton is clicked, go to the next name in the list
 	 */
 	@FXML
 	void nextClicked() {
@@ -264,7 +275,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	/**
-	 * When _deleteSelectedButton is clicked
+	 * When _deleteSelectedButton is clicked, delete all the names selected
 	 */
 	@FXML
 	void deleteSelectedClicked() {
@@ -285,7 +296,9 @@ public class PracticeSceneController extends Controller {
 		}
 	}
 
-	/**Loops the selected files the given number of times*/
+	/**
+	 * Loops the selected files the given number of times
+	 */
 	@FXML
 	void loopFiles(){
 	    //File is only looped if a recording file is selected and the loop button is not at a stop
@@ -300,13 +313,17 @@ public class PracticeSceneController extends Controller {
 	}
 
 	/**
-	 * updating _currentName
+	 * updating _currentName, so that it displays the name currently 
 	 */
 	private void updateCurrentName() {
 		_currentName.setText(_listOfNames.get(_counter).get_displayName());
 		_currentName.setTextAlignment(TextAlignment.CENTER);
 	}
 
+	/**
+	 * update the recording pane on the right to match that of the current name 
+	 * that is being practiced
+	 */
 	private void updateRecordingPane() {
 		_userRecordingList = _spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter));
 		_recordingList.setContent(_userRecordingList);
@@ -321,33 +338,34 @@ public class PracticeSceneController extends Controller {
 		GeneratePlayableFile generatePlayableFile = new GeneratePlayableFile();
 		new Thread(generatePlayableFile).start();
 		generatePlayableFile.setOnSucceeded(event ->{
-	try {
-			if (_player != null){
-				_player.stop();
-				_player.dispose();
+			try {
+				// remove the player if it doesn't exist
+				if (_player != null){
+					_player.stop();
+					_player.dispose();
+				}
+				// create source and player to play
+				String source = _fileToPlay.toURI().toURL().toString();
+				Media media = new Media(source);
+				_player = new MediaPlayer(media);
+				_player.setCycleCount(loop);
+				_player.setVolume(_currentVolume/100);
+				_player.seek(Duration.millis(0));
+				_player.play();
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
 			}
-			String source = _fileToPlay.toURI().toURL().toString();
-			Media media = new Media(source);
-			_player = new MediaPlayer(media);
-			_player.setCycleCount(loop);
-			_player.setVolume(_currentVolume/100);
-			_player.seek(Duration.millis(0));
-			_player.play();
-		} catch (MalformedURLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
 		});
-
 	}
-	//Class responsible for recording voice in a different thread
+	
+	/**
+	 * Class responsible for recording voice in a different thread
+	 */
 	class GeneratePlayableFile extends Task<Void> {
-
 		@Override
 		protected Void call() throws Exception {
 			_fileToPlay = _spine.getPlayableFileFor(_nameSayerFile);
 			return null;
-
 		}
 	}
 
@@ -355,7 +373,7 @@ public class PracticeSceneController extends Controller {
 
 
 	/**
-	 * checks mic level
+	 * checks mic level and update the mic sensitivity bar
 	 */
 	public void checkMicLevel() {
 		CheckMic mictask = new CheckMic();
@@ -364,13 +382,12 @@ public class PracticeSceneController extends Controller {
 		_micSensitivityBar.progressProperty().bind(mictask.progressProperty());
 	}
 
-	//Class responsible for recording voice in a different thread
+	/**
+	 * Class responsible for recording voice in a different thread
+	 */
 	class CheckMic extends Task<Void> {
-
 		@Override
 		protected Void call() throws Exception {
-
-
 			//Setting audio format
 			AudioFormat format = new AudioFormat(44100, 16, 2, true, true);
 			final int bufferByteSize = 2048;
