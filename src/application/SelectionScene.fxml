@@ -18,30 +18,30 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
 
-<BorderPane id="_pane" fx:id="_mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="966.0" stylesheets="@../themes/SelectionSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
+<BorderPane id="_" fx:id="_mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="966.0" stylesheets="@../themes/SelectionSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionSceneController">
    <left>
       <JFXTabPane id="_pane">
          <tabs>
             <Tab fx:id="tabpane" text="Practice List">
                <content>
-                  <Pane id="_background">
+                  <Pane id="_pane">
                      <children>
-                        <VBox id="_pane" layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                        <VBox layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
-                              <ScrollPane id="_pane" fx:id="_practiceListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />
+                              <ScrollPane fx:id="_practiceListPane" />
                               <JFXCheckBox id="_selectAllToggle" fx:id="_practiseFileSelectAllPractiseFileCheckBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#selectAllPractiseFileCheckBox" prefHeight="28.0" prefWidth="284.0" text="Select All">
                                  <tooltip>
-                                    <Tooltip text="Select all names from list" />
+                                    <Tooltip text="Select all names from the list" />
                                  </tooltip></JFXCheckBox>
-                              <HBox id="_background" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="309.0" spacing="3.0">
+                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="309.0" spacing="3.0">
                                  <children>
                                     <JFXButton id="_button" fx:id="_practiceListButton" buttonType="RAISED" onAction="#practiceListClicked" prefHeight="48.0" prefWidth="148.0" text="Practice Selected">
                                        <tooltip>
-                                          <Tooltip text="Practice selected names from list" />
+                                          <Tooltip text="Practice the selected list" />
                                        </tooltip></JFXButton>
                                     <JFXButton id="_button" fx:id="_removeButton" buttonType="RAISED" onAction="#removeClicked" prefHeight="48.0" prefWidth="153.0" text="Remove Selected">
                                        <tooltip>
-                                          <Tooltip text="Remove selected names from list" />
+                                          <Tooltip text="Remove the selected list" />
                                        </tooltip></JFXButton>
                                  </children>
                               </HBox>
@@ -49,28 +49,25 @@
                         </VBox>
                      </children></Pane>
                </content>
-               <tooltip>
-                  <Tooltip text="Empty Tooltip" />
-               </tooltip>
             </Tab>
             <Tab text="Recordings">
                <content>
-                  <Pane id="_background">
+                  <Pane>
                      <children>
-                        <VBox id="_pane" fx:id="_recordingListContainer" alignment="TOP_CENTER" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                        <VBox fx:id="_recordingListContainer" alignment="TOP_CENTER" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                            <children>
-                              <ScrollPane id="_pane" fx:id="_recordingListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />
+                              <ScrollPane fx:id="_recordingListPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />
                               <JFXCheckBox id="_checkBoxToggle" fx:id="_userRecordingCheckBox" mnemonicParsing="false" onAction="#selectAllUserRecordings" prefHeight="26.0" prefWidth="307.0" text="Select All">
                                  <tooltip>
-                                    <Tooltip text="Select all recordings from list" />
+                                    <Tooltip text="Select all your recordings" />
                                  </tooltip></JFXCheckBox>
                               <HBox spacing="3.0">
                                  <children>
-                                    <JFXButton id="_button" fx:id="_deleteUserRecording" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="44.0" prefWidth="159.0" text="Delete Selected">
+                                    <JFXButton id="_button" fx:id="_deleteUserRecording" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteSelectedUserRecordings" prefHeight="44.0" prefWidth="159.0" text="Delete Selected">
                                        <tooltip>
-                                          <Tooltip text="Delete selected recording" />
+                                          <Tooltip text="Delete the selected recordings" />
                                        </tooltip></JFXButton>
-                                    <JFXButton id="_button" buttonType="RAISED" mnemonicParsing="false" onAction="#playSelectedRecordingsClicked" prefHeight="44.0" prefWidth="145.0" text="Play Selected">
+                                    <JFXButton id="_button" mnemonicParsing="false" onAction="#playSelectedRecordingsClicked" prefHeight="44.0" prefWidth="145.0" text="Play Selected">
                                        <tooltip>
                                           <Tooltip text="Play selected recordings" />
                                        </tooltip></JFXButton>
@@ -92,10 +89,7 @@
                <children>
                   <Pane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="453.0">
                      <children>
-                        <CustomTextField id="_searchBar" fx:id="_nameTextField" layoutX="46.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="376.0">
-                           <tooltip>
-                              <Tooltip text="Type in a Name" />
-                           </tooltip></CustomTextField>
+                        <CustomTextField id="_searchBar" fx:id="_nameTextField" layoutX="46.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="376.0" />
                         <Label id="_label" layoutX="14.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Type in a Name">
                            <font>
                               <Font size="48.0" />
@@ -112,7 +106,7 @@
                                     <Font size="18.0" />
                                  </font>
                                  <tooltip>
-                                    <Tooltip text="Add searched name to list" />
+                                    <Tooltip text="Add the name you search to the list" />
                                  </tooltip>
                               </JFXButton>
                               <JFXButton id="_button" fx:id="_practiceButton" buttonType="RAISED" onAction="#practiceClicked" prefHeight="38.0" prefWidth="109.0" text="Practice">
@@ -120,7 +114,7 @@
                                     <Font size="18.0" />
                                  </font>
                                  <tooltip>
-                                    <Tooltip text="Practice searched name" />
+                                    <Tooltip text="Practice just the name you searched" />
                                  </tooltip>
                               </JFXButton>
                            </children>
@@ -131,14 +125,17 @@
             </VBox>
             <Pane id="_background" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
                <children>
-                  <HBox id="_background" alignment="TOP_RIGHT" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="20.0">
+                  <HBox id="_background" alignment="CENTER_RIGHT" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="15.0">
                       <children>
-                        <Label id="_label" fx:id="_pointsLabel" prefHeight="43.0" prefWidth="329.0" text="Label" />
-                        <ImageView fitHeight="40.0" fitWidth="46.0">
+                        <ImageView fitHeight="44.0" fitWidth="46.0">
                            <image>
                               <Image url="@../images/Yellow_Star.png" />
                            </image>
                         </ImageView>
+                        <Label id="_label" fx:id="_pointsLabel" contentDisplay="RIGHT" prefHeight="43.0" prefWidth="43.0" text="999" textAlignment="CENTER">
+                           <font>
+                              <Font name="Droid Sans Bold" size="23.0" />
+                           </font></Label>
                      </children>
                      <opaqueInsets>
                         <Insets right="20.0" top="20.0" />
@@ -155,28 +152,28 @@
                               <Font size="18.0" />
                            </font>
                            <tooltip>
-                              <Tooltip text="Upload list via text file" />
+                              <Tooltip text="Upload a list from text file" />
                            </tooltip>
                         </JFXButton>
                         <JFXButton id="_button" buttonType="RAISED" onAction="#AddToDatabaseClicked" prefHeight="38.0" prefWidth="137.0" text="Add To Database">
                            <tooltip>
-                              <Tooltip text="Add seached name to list" />
+                              <Tooltip text="Add name to the database" />
                            </tooltip></JFXButton>
-                        <JFXButton id="_button" fx:id="_saveButton" buttonType="RAISED" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session">
+                        <JFXButton id="_button" buttonType="RAISED" onAction="#saveSessionClicked" prefHeight="36.0" prefWidth="112.0" text="Save Session">
                            <tooltip>
-                              <Tooltip text="Save current theme and points" />
+                              <Tooltip text="Save the current session" />
                            </tooltip></JFXButton>
                      </children>
                   </HBox>
                </children>
             </Pane>
             <Label id="_label" fx:id="_databaseFileCount" text="Database File:  " AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" />
-            <ImageView id="_image" fx:id="_shopButton" fitHeight="54.0" fitWidth="53.0" layoutX="27.0" layoutY="25.0" onMouseClicked="#shopClicked">
+            <ImageView id="_image" fx:id="_shopButton" fitHeight="84.0" fitWidth="88.0" layoutX="20.0" layoutY="10.0" onMouseClicked="#shopClicked">
                <image>
                   <Image url="@../images/Trolley.png" />
                </image>
             </ImageView>
-            <ImageView id="_image" fx:id="_invertedShopButton" fitHeight="54.0" fitWidth="53.0" layoutX="27.0" layoutY="25.0" onMouseClicked="#shopClicked" visible="false">
+            <ImageView fx:id="_invertedShopButton" fitHeight="97.0" fitWidth="97.0" layoutX="16.0" layoutY="4.0" onMouseClicked="#shopClicked" visible="false">
                <image>
                   <Image url="@../images/InvertedTrolley.png" />
                </image>
