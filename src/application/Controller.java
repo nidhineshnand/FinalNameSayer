@@ -19,7 +19,6 @@ public abstract class Controller implements Initializable {
 	
 	// Fields
 	ArrayList<PractiseFile> _listOfNames;
-	ControllerConnecter _spine;
 	protected ArrayList<String> _notFound;
 	ArrayList<UserRecordingFile> _recordingList;
 	protected ErrorSceneController _errorController;
@@ -29,7 +28,6 @@ public abstract class Controller implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		_listOfNames = new ArrayList<PractiseFile>();
-		_spine = new ControllerConnecter();
 		_notFound = new ArrayList<String>();
 		_recordingList = new ArrayList<UserRecordingFile>();
 	}
@@ -55,9 +53,6 @@ public abstract class Controller implements Initializable {
 	/**
 	 * getters
 	 */
-	public ControllerConnecter controllerConnecter() {
-		return _spine;
-	}
 	
 	public ArrayList<PractiseFile> listOfNames() {
 		return _listOfNames;

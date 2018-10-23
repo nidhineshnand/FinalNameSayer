@@ -3,17 +3,22 @@
 }
 
 #_button {
-	-fx-background-color: rgb(50, 50, 50, 0.9);
-	-fx-text-fill: red;
+	-fx-background-color: #3C373D;
+	-fx-text-fill: #F92F08;
 }
 
 #_label {
-	-fx-background-color: black;
-	-fx-text-fill: red;
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-text-fill: #F92F08;
 }
 
 #_themePane {
+	-fx-background-color: rgb(50, 50, 50);
+}
+
+#_pointLabel {
 	-fx-background-color: black;
+	-fx-text-fill: #F92F08;
 }
 
 

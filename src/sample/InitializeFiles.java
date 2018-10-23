@@ -104,14 +104,16 @@ public class InitializeFiles {
     //Saves the string as a CSS file
     public void saveCSS(String name){
         File file = new File(_savedCSSFilePath);
-
-        //Writing to file
-        try {
-            FileWriter f2 = new FileWriter(file, false);
-            f2.write(name);
-            f2.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        //Nothing is saved to file when string is empty
+        if (name != null && !name.isEmpty()) {
+            //Writing to file
+            try {
+                FileWriter f2 = new FileWriter(file, false);
+                f2.write(name);
+                f2.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

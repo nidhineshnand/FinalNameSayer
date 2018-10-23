@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import sample.ControllerConnecter;
@@ -22,19 +24,32 @@ public class ShopSceneController extends Controller {
 	public Label _pointLabel;
 	
 	private SelectionSceneController _parent;
+	private ControllerConnecter _spine;
+	private Parent _selectionSceneParent;
+	private Parent _marketSceneParent;
+	private SelectionSceneController _selectionController;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		super.initialize(location, resources);
 	}
-	
+
+	public void setup(ControllerConnecter spine, Parent practiseSceneParent, Parent marketSceneParent, SelectionSceneController selectionController){
+		_spine = spine;
+		_selectionSceneParent = practiseSceneParent;
+        _pointLabel.setText(_spine.getPoints() + "");
+        _marketSceneParent = marketSceneParent;
+        _selectionController = selectionController;
+	}
 	
 	/**
 	 * When _dafaultThemeButton is clicked
 	 */
 	@FXML
 	void defaultThemeClicked() {
-		_parent.setCssName("");
+		changeThemeTo(null);
+		_selectionController._shopButton.setVisible(true);
+		_selectionController._invertedShopButton.setVisible(false);
 	}
 	
 	/**
@@ -58,7 +73,9 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
-		_parent.setCssName("Sunset");
+		changeThemeTo("Sunset");
+		_selectionController._shopButton.setVisible(false);
+		_selectionController._invertedShopButton.setVisible(true);
 	}
 	
 	/**
@@ -82,7 +99,9 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
-		_parent.setCssName("Dark");
+		changeThemeTo("Dark");
+		_selectionController._shopButton.setVisible(false);
+		_selectionController._invertedShopButton.setVisible(true);
 	}
 	
 	/**
@@ -105,16 +124,19 @@ public class ShopSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}*/
-		_parent.setCssName("Choco");
+        changeThemeTo("Choco");
+        _selectionController._shopButton.setVisible(false);
+		_selectionController._invertedShopButton.setVisible(true);
+
 	}
-	
-	/**
-	 * When this window is made this is called to set up the spine and the points
-	 * @param spine
-	 */
-	void setup(SelectionSceneController parent) {
-		_parent = parent;
-		_spine = _parent._spine;
-		_pointLabel.setText(_spine.getPoints() + "");
+
+	/**This method changes the theme of the marketplace and selection scene during runtime*/
+	private void changeThemeTo(String theme){
+		_spine.setCurrentTheme(theme);
+		_selectionSceneParent.getStylesheets().clear();
+		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		_marketSceneParent.getStylesheets().clear();
+		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"ShopSceneStyleSheet.css");
 	}
+
 }

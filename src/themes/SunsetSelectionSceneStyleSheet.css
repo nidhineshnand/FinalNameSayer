@@ -1,6 +1,6 @@
 #_button {
 	
-	-fx-background-color: #765285;
+	-fx-background-color: #AB537C;
 	-fx-text-fill: #F5AB99;
 }
 
@@ -25,6 +25,11 @@
 
 #_label {
 	-fx-background-color: #351C4D;
+	-fx-text-fill: #F5AB99;
+}
+
+#_qualityLabel {
+	-fx-background-color: #765285;
 	-fx-text-fill: #F5AB99;
 }
 
