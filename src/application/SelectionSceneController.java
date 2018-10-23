@@ -153,25 +153,10 @@ public class SelectionSceneController extends Controller {
 			String name = _nameTextField.getText();
 			_notFound.clear();
 			_pFile = _spine.searchButtonPressed(name, _notFound);
-			if (!_notFound.isEmpty()) {
-				try {
-					openErrorScene(_notFound, "NamesNotFound");
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
 			if (_pFile != null) {
 				_listOfNames.add(_pFile);
 				openPracticeScene();
-			} else {
-				try {
-					openErrorScene(_notFound, "NamesNotFound");
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			
+			} 
 		}
 		_notFound.clear();
 	}
@@ -211,6 +196,13 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setResizable(false);
         secondaryStage.show();
         _spine.setUserRecordingFileListCheckBox(false);
+        if (!_notFound.isEmpty()) {
+			try {
+				openErrorScene(_notFound, "NamesNotFound");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
         secondaryStage.setOnHiding(arg0 -> {
 			populatePanes();
 			_pointsLabel.setText(_spine.getPoints() + "");
@@ -274,15 +266,7 @@ public class SelectionSceneController extends Controller {
 		for (PractiseFile pFile: _spine.getSelectedPractiseFiles()) {
 			_listOfNames.add(pFile);
 		}
-		if (_listOfNames.isEmpty()) {
-			try {
-				openErrorScene(null, "EmptyPracticeList");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else {
-			System.out.println(_listOfNames.size());
+		if (!_listOfNames.isEmpty()) {
 			openPracticeScene();
 		}
 	}
