@@ -14,12 +14,12 @@
    <top>
       <Pane id="_background" prefHeight="194.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <Label id="_label" alignment="CENTER" layoutX="261.0" layoutY="30.0" prefHeight="135.0" prefWidth="378.0" text="Shop" textAlignment="CENTER">
+            <Label id="_backLabel" alignment="CENTER" layoutX="261.0" layoutY="30.0" prefHeight="135.0" prefWidth="378.0" text="Shop" textAlignment="CENTER">
                <font>
                   <Font size="74.0" />
                </font>
             </Label>
-            <Label id="_pointLabel" fx:id="_pointLabel" layoutX="742.0" layoutY="82.0" prefHeight="48.0" prefWidth="82.0" text="Points">
+            <Label id="_backLabel" fx:id="_pointLabel" layoutX="742.0" layoutY="82.0" prefHeight="48.0" prefWidth="82.0" text="Points">
                <font>
                   <Font size="24.0" />
                </font>

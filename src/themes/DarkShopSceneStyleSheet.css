@@ -16,7 +16,7 @@
 	-fx-background-color: rgb(50, 50, 50);
 }
 
-#_pointLabel {
+#_backLabel {
 	-fx-background-color: black;
 	-fx-text-fill: #F92F08;
 }
