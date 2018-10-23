@@ -187,4 +187,9 @@ public class ControllerConnecter {
     public int getDatabaseFilesCount(){
         return initializeFiles.getDatabaseFileCount();
     }
+
+    /**Method that resets the user score to 0*/
+    public void clearScore(){
+        pointsSystem.clearScore();
+    }
 }
