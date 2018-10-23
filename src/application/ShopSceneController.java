@@ -25,8 +25,8 @@ public class ShopSceneController extends Controller {
 	
 	private SelectionSceneController _parent;
 	private ControllerConnecter _spine;
-	private Parent _practiseScene;
-	private Parent _marketScene;
+	private Parent _selectionSceneParent;
+	private Parent _marketSceneParent;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -35,9 +35,9 @@ public class ShopSceneController extends Controller {
 
 	public void setup(ControllerConnecter spine, Parent practiseSceneParent, Parent marketSceneParent){
 		_spine = spine;
-		_practiseScene = practiseSceneParent;
+		_selectionSceneParent = practiseSceneParent;
         _pointLabel.setText(_spine.getPoints() + "");
-        _marketScene = marketSceneParent;
+        _marketSceneParent = marketSceneParent;
 	}
 	
 	/**
@@ -70,6 +70,10 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
 		_spine.setCurrentTheme("Sunset");
+		_selectionSceneParent.getStylesheets().clear();
+		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		_marketSceneParent.getStylesheets().clear();
+		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 	}
 	
 	/**
@@ -94,6 +98,10 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
         _spine.setCurrentTheme("Dark");
+		_selectionSceneParent.getStylesheets().clear();
+		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		_marketSceneParent.getStylesheets().clear();
+		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 	}
 	
 	/**
@@ -117,6 +125,10 @@ public class ShopSceneController extends Controller {
 			}
 		}*/
         _spine.setCurrentTheme("Choco");
+		_selectionSceneParent.getStylesheets().clear();
+		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		_marketSceneParent.getStylesheets().clear();
+		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 	}
 
 }

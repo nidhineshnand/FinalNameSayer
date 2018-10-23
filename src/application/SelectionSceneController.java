@@ -318,7 +318,7 @@ public class SelectionSceneController extends Controller {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			root.getStylesheets().clear();
-			if (_spine.getCurrentTheme() == null) {
+			if (_spine.getCurrentTheme().isEmpty()) {
 				root.getStylesheets().add("themes/ShopSceneStyleSheet.css");
 			} else {
 				root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"ShopSceneStyleSheet.css");
