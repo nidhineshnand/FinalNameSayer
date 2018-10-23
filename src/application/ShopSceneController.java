@@ -126,7 +126,7 @@ public class ShopSceneController extends Controller {
 		_selectionSceneParent.getStylesheets().clear();
 		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 		_marketSceneParent.getStylesheets().clear();
-		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"ShopSceneStyleSheet.css");
 	}
 
 }
