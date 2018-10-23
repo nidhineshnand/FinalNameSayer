@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -188,5 +189,6 @@
             <Insets right="20.0" top="20.0" />
          </opaqueInsets>
       </HBox>
+      <JFXSpinner layoutX="408.0" layoutY="300.0" prefHeight="78.0" prefWidth="85.0" />
    </children>
 </AnchorPane>
