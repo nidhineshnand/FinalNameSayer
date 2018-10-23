@@ -205,7 +205,7 @@ public class SelectionSceneController extends Controller {
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
-		secondaryStage.initOwner(NameSayerStarter.primaryStage);
+		secondaryStage.initOwner(Main.primaryStage);
         secondaryStage.setTitle("NameSayer");
         secondaryStage.setScene(new Scene(root, 900, 600));
         secondaryStage.setResizable(false);
@@ -329,7 +329,7 @@ public class SelectionSceneController extends Controller {
 			_shopController.setup(_spine, _selectionSceneParent, root, this);
 			Stage secondaryStage = new Stage();
 			secondaryStage.initModality(Modality.WINDOW_MODAL);
-			secondaryStage.initOwner(NameSayerStarter.primaryStage);
+			secondaryStage.initOwner(Main.primaryStage);
 	        secondaryStage.setTitle("Shop");
 	        secondaryStage.setScene(new Scene(root, 900, 600));
 	        secondaryStage.setResizable(false);
