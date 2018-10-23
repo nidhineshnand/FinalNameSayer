@@ -17,7 +17,7 @@
    <children>
       <Label id="_label" fx:id="_currentName" alignment="CENTER" layoutX="37.0" layoutY="53.0" prefHeight="68.0" prefWidth="397.0" text="Name">
          <font>
-            <Font size="48.0" />
+            <Font size="35.0" />
          </font>
          <tooltip>
             <Tooltip text="The current name.">
