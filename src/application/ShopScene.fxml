@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
+<BorderPane id="_background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/ShopSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShopSceneController">
    <top>
       <Pane id="_background" prefHeight="194.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -19,16 +19,21 @@
                   <Font size="74.0" />
                </font>
             </Label>
-            <Label id="_backLabel" fx:id="_pointLabel" layoutX="742.0" layoutY="82.0" prefHeight="48.0" prefWidth="82.0" text="Points">
+            <Label id="_backLabel" fx:id="_pointLabel" layoutX="741.0" layoutY="79.0" prefHeight="48.0" prefWidth="93.0" text="Points">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="54.0" fitWidth="50.0" layoutX="681.0" layoutY="79.0">
+            <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="681.0" layoutY="79.0">
                <image>
                   <Image url="@../images/Yellow_Star.png" />
                </image>
             </ImageView>
+            <JFXButton id="_button" layoutX="788.0" layoutY="90.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="51.0" text="Reset">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
    </top>
