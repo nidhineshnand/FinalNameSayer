@@ -5,6 +5,19 @@
 
 #_pane, #_checkBoxToggle, #_selectAllToggle {
 	-fx-background-color: rgb(230, 230, 230);
+	-fx-color: rgb(230, 230, 230);
+	color: rgb(230, 230, 230);
+	-fx-background: rgb(230, 230, 230);
+	-fx-text-fill: black;
 }
 
+.jfx-tab-pane .tab-header-background {
+	-fx-background-color: #96DDFF;
+	-fx-text-fill: black;
+	-fx-skin: black;
+}
 
+.tab .tab-label {
+	-fx-background-color: #96DDFF;
+	-fx-text-fill: black;
+}
