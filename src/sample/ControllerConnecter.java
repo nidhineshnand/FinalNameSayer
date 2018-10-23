@@ -14,6 +14,7 @@ public class ControllerConnecter {
     private PractiseFileList practiseFileList = new PractiseFileList(initializeFiles.get_practiseDirPath());
     private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
     private PointsSystem pointsSystem = new PointsSystem(initializeFiles.get_savedScore());
+    private String currentTheme;
 
     public ControllerConnecter(){
         loadPreviousState();
@@ -148,19 +149,25 @@ public class ControllerConnecter {
     private void loadPreviousState(){
         practiseFileList.loadPractiseFilesFromText(initializeFiles.get_practiseDirPath(), databaseFileList);
         pointsSystem.loadPoints();
+        currentTheme = initializeFiles.getCSSName();
     }
 
     /**This method saves the practise file list, points and theme of the program so that the user can resume whenever they want to*/
-    public void saveProgramState(String css){
+    public void saveProgramState(){
         practiseFileList.savePractiseFileList();
         pointsSystem.savePoints();
-        initializeFiles.saveCSS(css);
+        initializeFiles.saveCSS(currentTheme);
     }
 
     /**This method gets the saved CSS file if there exists one from a previous session*/
-     public String getSavedCSS(){
-         return initializeFiles.getCSSName();
+     public String getCurrentTheme(){
+         return currentTheme;
      }
+
+    /**This method saves the current theme*/
+    public void setCurrentTheme(String cssTheme){
+        currentTheme = cssTheme;
+    }
 
     /**This method adds the .wav files that are present in the path to the folder provided that meet the specific pattern
      * of a database file
