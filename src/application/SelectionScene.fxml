@@ -175,6 +175,7 @@
                   <Image url="@../images/InvertedTrolley.png" />
                </image>
             </ImageView>
+            <JFXButton layoutX="22.0" layoutY="12.0" mnemonicParsing="false" onAction="#shopClicked" opacity="0.0" prefHeight="84.0" prefWidth="90.0" ripplerFill="#000000ba" />
          </children>
       </AnchorPane>
    </center>
