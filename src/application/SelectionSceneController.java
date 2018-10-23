@@ -32,6 +32,7 @@ import javafx.stage.*;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import sample.CollectionsFile;
+import sample.ControllerConnecter;
 import sample.PractiseFile;
 
 import javax.swing.*;
@@ -69,8 +70,6 @@ public class SelectionSceneController extends Controller {
 	public Pane _mainContainer;
 	public Label _databaseFileCount;
 	public ScrollPane _practiceListPane;
-
-	private VBox _practiseList = new VBox();
 	private VBox _userRecordingList;
 	private PracticeSceneController _practiceController;
 	private ShopSceneController _shopController;
@@ -79,14 +78,23 @@ public class SelectionSceneController extends Controller {
 	private PractiseFile _pFile;
 	private MediaPlayer _player;
 	private String _cssName;
+	private Scene _selectionScene;
+	private ControllerConnecter _spine;
 
 	// Methods
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
 		super.initialize(location, resources);
+
+	}
+
+	//This method supplements the initialize class by setting fields required by selection scene
+	public void setup(Scene scene, ControllerConnecter controllerConnecter){
+		_selectionScene = scene;
+		_spine = controllerConnecter;
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
 		populatePanes();
@@ -100,7 +108,7 @@ public class SelectionSceneController extends Controller {
 		});
 		//Setting the number of database file counts
 		_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
-		
+
 		if (_spine.getSavedCSS() != null ) {
 			_shopButton.setVisible(false);
 			_invertedShopButton.setVisible(true);
