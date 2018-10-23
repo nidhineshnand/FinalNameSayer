@@ -177,7 +177,7 @@
             </ImageView>
             <Label id="_label" fx:id="_pointsLabel" contentDisplay="RIGHT" prefHeight="43.0" prefWidth="47.0" text="999" textAlignment="CENTER">
                <font>
-                  <Font name="Droid Sans Bold" size="23.0" />
+                  <Font size="21.0" />
                </font>
                <HBox.margin>
                   <Insets />

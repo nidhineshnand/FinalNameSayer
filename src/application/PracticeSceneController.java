@@ -103,7 +103,6 @@ public class PracticeSceneController extends Controller {
 		_recordButton.setText("Record");
 		_loop.setMnemonicParsing(true);
 		_loop.setText("Loop");
-        _pointsLabel.setText(_spine.getPoints() + "");
 	}
 
 
@@ -121,6 +120,7 @@ public class PracticeSceneController extends Controller {
 			volumeSliderDragged();
 		});
 
+		_pointsLabel.setText(_spine.getPoints() + "");
 	}
 
 	//Sets the input value that the spinner will take
