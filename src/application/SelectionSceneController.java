@@ -80,6 +80,7 @@ public class SelectionSceneController extends Controller {
 	private String _cssName;
 	private Scene _selectionScene;
 	private ControllerConnecter _spine;
+	private String _cssFileName;
 
 	// Methods
 
@@ -92,9 +93,11 @@ public class SelectionSceneController extends Controller {
 	}
 
 	//This method supplements the initialize class by setting fields required by selection scene
-	public void setup(Scene scene, ControllerConnecter controllerConnecter){
+	public void setup(Scene scene, ControllerConnecter controllerConnecter, String cssFileName){
 		_selectionScene = scene;
 		_spine = controllerConnecter;
+		_cssFileName = cssFileName;
+		setTheme();
 		autoCompleteListBinding();
 		//Populates the User Recording files tab
 		populatePanes();
@@ -121,6 +124,11 @@ public class SelectionSceneController extends Controller {
 		_uploadButton.setText("_Upload");
 		_saveButton.setMnemonicParsing(true);
 		_saveButton.setText("_Save Session");
+	}
+
+	/**This method sets the theme for the selection scene*/
+	public void setTheme(){
+
 	}
 
 	/**

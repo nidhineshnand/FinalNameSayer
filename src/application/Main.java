@@ -17,12 +17,6 @@ public class Main extends Application {
     	this.primaryStage = primaryStage;
     	ControllerConnecter _spine = new ControllerConnecter();
         Parent root = FXMLLoader.load(getClass().getResource("SelectionScene.fxml"));
-        root.getStylesheets().clear();
-        if (_spine.getSavedCSS() == null) {
-        	root.getStylesheets().add("themes/SelectionSceneStyleSheet.css");
-        } else {
-        	root.getStylesheets().add("themes/"+_spine.getSavedCSS()+"SelectionSceneStyleSheet.css");
-        }
         primaryStage.setTitle("NameSayer");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.setResizable(true);
