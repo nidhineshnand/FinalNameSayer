@@ -62,7 +62,7 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void sunsetThemeClicked() {
-		/**
+
 		if (_spine.getPoints() < 5) { // opens error scene for lack of points
 			try {
 				openErrorScene(null, "NotEnoughPoints");
@@ -74,10 +74,7 @@ public class ShopSceneController extends Controller {
 			_selectionController._shopButton.setVisible(false);
 			_selectionController._invertedShopButton.setVisible(true);
 		}
-		*/
-		changeThemeTo("Sunset");
-		_selectionController._shopButton.setVisible(false);
-		_selectionController._invertedShopButton.setVisible(true);
+
 	}
 	
 	/**
@@ -85,7 +82,7 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void darkThemeClicked() {
-		/**
+
 		if (_spine.getPoints() < 15) { // opens error scene for lack of points
 			try {
 				openErrorScene(null, "NotEnoughPoints");
@@ -97,10 +94,7 @@ public class ShopSceneController extends Controller {
 			_selectionController._shopButton.setVisible(false);
 			_selectionController._invertedShopButton.setVisible(true);
 		}
-		*/
-		changeThemeTo("Dark");
-		_selectionController._shopButton.setVisible(false);
-		_selectionController._invertedShopButton.setVisible(true);
+
 	}
 	
 	/**
@@ -108,7 +102,7 @@ public class ShopSceneController extends Controller {
 	 */
 	@FXML
 	void chocoThemeClicked() {
-		/**
+
 		if (_spine.getPoints() < 10) { // opens error scene for lack of points
 			try {
 				openErrorScene(null, "NotEnoughPoints");
@@ -120,10 +114,7 @@ public class ShopSceneController extends Controller {
 	        _selectionController._shopButton.setVisible(false);
 			_selectionController._invertedShopButton.setVisible(true);
 		}
-		*/
-		changeThemeTo("Choco");
-        _selectionController._shopButton.setVisible(false);
-		_selectionController._invertedShopButton.setVisible(true);
+
 	}
 
 	/**This method changes the theme of the marketplace and selection scene during runtime*/
@@ -133,13 +124,5 @@ public class ShopSceneController extends Controller {
 		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
 		_marketSceneParent.getStylesheets().clear();
 		_marketSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"ShopSceneStyleSheet.css");
-	}
-
-	/**This method resets the score to 0*/
-	public void resetButtonClicked() {
-		//Launching warning scene
-		//	openErrorScene(null, "Are you sure ");
-		_spine.clearScore();
-		_pointLabel.setText(_spine.getPoints() + "");
 	}
 }
