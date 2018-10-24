@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ControllerConnecter {
 
-    private InitializeFiles initializeFiles = new InitializeFiles("./names");
+    private InitializeFiles initializeFiles = new InitializeFiles("./names1");
     private DatabaseFileList databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
     private PractiseFileList practiseFileList = new PractiseFileList(initializeFiles.get_practiseDirPath());
     private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
@@ -180,6 +180,7 @@ public class ControllerConnecter {
      */
     public void addFilesToDatabase(String path){
         initializeFiles.copyDatabaseFiles(path);
+        databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
     }
 
 

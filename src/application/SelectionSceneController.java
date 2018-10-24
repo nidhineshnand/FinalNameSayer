@@ -458,7 +458,7 @@ public class SelectionSceneController extends Controller {
     }
 
 	/**This method lets the user pick if they was to add more names to the database*/
-	public void AddToDatabaseClicked(ActionEvent actionEvent) {
+	public void AddToDatabaseClicked() {
 		//Opening up Directory chooser
 		DirectoryChooser chooser = new DirectoryChooser();
 		chooser.setTitle("Add To Database");
@@ -467,8 +467,8 @@ public class SelectionSceneController extends Controller {
 		if (_selectedFile != null) {
 		    //Transferring files in a different thread
 		    ExtendDatabase extendDatabase = new ExtendDatabase();
-		    new Thread(extendDatabase);
-		    extendDatabase.setOnSucceeded(e -> {
+		    new Thread(extendDatabase).start();
+		   extendDatabase.setOnSucceeded(e -> {
 				//Setting the number of database file counts
 				_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 			});
@@ -483,7 +483,7 @@ public class SelectionSceneController extends Controller {
         @Override
         protected Void call() throws Exception {
             //Passing the directory location for it to be added
-            _spine.addFilesToDatabase(_selectedFile.getPath());
+            _spine.addFilesToDatabase(_selectedFile.getAbsolutePath());
             return null;
 
         }
