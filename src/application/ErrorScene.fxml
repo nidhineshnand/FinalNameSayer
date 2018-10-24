@@ -26,7 +26,7 @@
             <Image url="@../images/Warning_Sign.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="399.0" layoutY="201.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="84.0" text="Okay">
+      <JFXButton layoutX="383.0" layoutY="201.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="84.0" text="Okay">
          <font>
             <Font size="15.0" />
          </font>

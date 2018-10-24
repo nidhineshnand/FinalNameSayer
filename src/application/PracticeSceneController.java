@@ -118,11 +118,11 @@ public class PracticeSceneController extends Controller {
 		_listOfNames = list;
 		_spine = spine;
 		_userRecordingList = _spine.populateUserRecordingsForPractiseScene(_listOfNames.get(_counter));
-		
+
 		// populate tables on the left hand side
 		populateTable();
 		updateRecordingPane();
-		
+
 		// setting spinner and volume dragger and points system
 		setSpinner();
 		_volumeSlider.valueProperty().addListener(e -> {
@@ -137,7 +137,7 @@ public class PracticeSceneController extends Controller {
 	private void setSpinner() {
 		_loopCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
 	}
-	
+
 	/**
 	 * populates the TableView _recordingList
 	 */
@@ -313,7 +313,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	/**
-	 * updating _currentName, so that it displays the name currently 
+	 * updating _currentName, so that it displays the name currently
 	 */
 	private void updateCurrentName() {
 		_currentName.setText(_listOfNames.get(_counter).get_displayName());
@@ -321,7 +321,7 @@ public class PracticeSceneController extends Controller {
 	}
 
 	/**
-	 * update the recording pane on the right to match that of the current name 
+	 * update the recording pane on the right to match that of the current name
 	 * that is being practiced
 	 */
 	private void updateRecordingPane() {
@@ -357,7 +357,7 @@ public class PracticeSceneController extends Controller {
 			}
 		});
 	}
-	
+
 	/**
 	 * Class responsible for recording voice in a different thread
 	 */

@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -29,10 +30,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.*;
+import javafx.util.Duration;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import sample.CollectionsFile;
 import sample.ControllerConnecter;
+import sample.NameSayerFile;
 import sample.PractiseFile;
 
 import javax.swing.*;
@@ -82,6 +85,8 @@ public class SelectionSceneController extends Controller {
 	private String _cssName;
 	private Parent _selectionSceneParent;
 	private ControllerConnecter _spine;
+    private File _fileToPlay;
+    private NameSayerFile _nameSayerFile;
 
 	// Methods
 
@@ -418,18 +423,36 @@ public class SelectionSceneController extends Controller {
 	/**When the play selected recordings button is clicked it played the chosen recrodings*/
 	public void playSelectedRecordingsClicked() {
 		//Making a collectionsfile object to play the selected recording
-		CollectionsFile collectionsFile = new CollectionsFile(null, _spine.getSelectedLocalRecordingFiles());
-		//Playing the audio
-		File file = _spine.getPlayableFileFor(collectionsFile);
-		try {
-			String source = file.toURI().toURL().toString();
-			Media media = new Media(source);
-			_player = new MediaPlayer(media);
-			_player.play();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
+		 _nameSayerFile = new CollectionsFile(null, _spine.getSelectedLocalRecordingFiles());
+        SelectionSceneController.GeneratePlayableFile generatePlayableFile = new SelectionSceneController.GeneratePlayableFile();
+        new Thread(generatePlayableFile).start();
+        generatePlayableFile.setOnSucceeded(event ->{
+            try {
+                if (_player != null){
+                    _player.stop();
+                    _player.dispose();
+                }
+                String source = _fileToPlay.toURI().toURL().toString();
+                Media media = new Media(source);
+                _player = new MediaPlayer(media);
+                _player.seek(Duration.millis(0));
+                _player.play();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    //Class responsible for generating playable file in a different thread
+    class GeneratePlayableFile extends Task<Void> {
+
+        @Override
+        protected Void call() throws Exception {
+            _fileToPlay = _spine.getPlayableFileFor(_nameSayerFile);
+            return null;
+
+        }
+    }
 
 	/**This method lets the user pick if they was to add more names to the database*/
 	public void AddToDatabaseClicked(ActionEvent actionEvent) {
