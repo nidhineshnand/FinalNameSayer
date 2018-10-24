@@ -473,8 +473,8 @@ public class SelectionSceneController extends Controller {
 		    new Thread(extendDatabase).start();
 		   extendDatabase.setOnSucceeded(e -> {
 				//Setting the number of database file counts
-				_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 			   _databaseUploadSpinner.setVisible(false);
+				_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 			});
 
 		} else {
