@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class ErrorSceneController extends Controller {
 
@@ -18,6 +20,11 @@ public class ErrorSceneController extends Controller {
 	public ScrollPane _nameScrollPane;
 	@FXML
 	public Pane _namePane;
+	@FXML
+	public Button _okButton;
+	
+	// Fields
+	private Stage _thisStage;
 	
 	// fields
 	ArrayList<String> _namesNotFound;
@@ -36,7 +43,8 @@ public class ErrorSceneController extends Controller {
 	 * @param namesNotFound
 	 * @param errorMessage
 	 */
-	void setup(ArrayList<String> namesNotFound, String errorMessage) {
+	void setup(ArrayList<String> namesNotFound, String errorMessage, Stage stage) {
+		_thisStage = stage;
 		// when the user inputs a list but some are not found
 		if (errorMessage.equals("NamesNotFound")) {
 			_warningMessage.setText("The following names were \nnot found in the database.");
@@ -57,4 +65,12 @@ public class ErrorSceneController extends Controller {
 		} 
 	}
 	
+	
+	/**
+	 * When the ok button is clicked, the window will be disposed
+	 */
+	@FXML
+	void okClicked() {
+		_thisStage.close();
+	}
 }
