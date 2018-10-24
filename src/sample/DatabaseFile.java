@@ -31,7 +31,7 @@ public class DatabaseFile implements NameSayerFile {
     }
 
 
-    //Method that extracts the time value from the file
+    /**Method that extracts the time value from the file*/
     private void setDateTimeAndName(File databaseFile) {
 
         _databaseFile = databaseFile;
@@ -47,7 +47,7 @@ public class DatabaseFile implements NameSayerFile {
     }
 
 
-    //Method creates a date object based on the time the file was created
+    /**Method creates a date object based on the time the file was created*/
     private LocalDateTime getDateAndTime(String date, String time) {
 
         //Using dateTimeformat to set the format of the date
@@ -58,13 +58,11 @@ public class DatabaseFile implements NameSayerFile {
     }
 
 
-    //Checks if the file has been given a bad recording
+    /**Method checks if the file has been given a bad recording*/
     private void getRating() {
 
         //Loading file
         File ratingFile = new File(_ratingFilePath);
-        boolean doesFileHaveRating = false;
-        boolean firstLine = true;
 
         //Reading file
         BufferedReader reader = null;
@@ -91,7 +89,7 @@ public class DatabaseFile implements NameSayerFile {
     }
 
 
-    //This method sets the rating for this file as good as a general rating
+    /**This method sets the rating for this file as good as a general rating*/
     public void setRatingBad(){
         //Getting rating to see if it has already not been marked
         getRating();

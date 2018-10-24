@@ -24,7 +24,7 @@ public class InitializeFiles {
     }
 
 
-    //This method is run at the beginning of the program to create files that will be used in the future
+    /**This method is run at the beginning of the program to create files that will be used in the future*/
     public void initialize(){
         //Creating directory if one does not already exist
         try {
@@ -44,7 +44,7 @@ public class InitializeFiles {
         copyDatabaseFiles(_databaseFilePath);
     }
 
-    //This method copies the files from where the user specifies to our internal folder
+    /**This method copies the files from where the user specifies to our internal folder*/
     public void copyDatabaseFiles(String databaseFolderPath) {
         //Reading database files
         File databaseFolder = new File(databaseFolderPath);
@@ -58,12 +58,12 @@ public class InitializeFiles {
         }
     }
 
-    //Gets the database file count
+    /**This method gets the database file count*/
     public int getDatabaseFileCount() {
         return Objects.requireNonNull(new File(_localDatabasePath).listFiles()).length;
     }
 
-    //Equalizes bitrate
+    /**Method equalizes bitrate*/
     private void equalizeBitrate(String input, String output) {
         try {
             ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i " + input + " -ac 1 -ar 44100 " + output);
@@ -77,7 +77,7 @@ public class InitializeFiles {
         }
     }
 
-    //Reads the previous saved CSS file
+    /**Reads the previous saved CSS file*/
     public String getCSSName() {
 
         //Reading file
@@ -100,7 +100,7 @@ public class InitializeFiles {
     }
 
 
-    //Saves the string as a CSS file
+    /**Saves the string as a CSS file*/
     public void saveCSS(String name){
         File file = new File(_savedCSSFilePath);
         //Nothing is saved to file when string is empty

@@ -1,6 +1,5 @@
 package sample;
 
-import application.Controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
@@ -10,6 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+/**This class contains all the functionality for User Recording Files*/
 public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordingFile> {
 
     private String _pathToSave;
@@ -41,7 +41,7 @@ public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordin
         loadView();
     }
 
-    //This method sets display name for UserRecordingFile
+    /**This method sets display name for UserRecordingFile*/
     private String setDisplayName(){
         DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss");
         return  _identity + " " + _creationTime.format(dateAndTimeFormatter);
@@ -49,7 +49,7 @@ public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordin
 
 
 
-    //Setting file name when a new file is created
+    /**Setting file name when a new file is created*/
     private String setFileName(){
         DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
         String timeStamp = _creationTime.format(dateAndTimeFormatter);
@@ -57,13 +57,13 @@ public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordin
 
     }
 
-    //Setting date and time by extrapolating data from the file name
+    /**Setting date and time by extrapolating data from the file name*/
     private LocalDateTime setDateTime(){
         DateTimeFormatter dateAndTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
         return LocalDateTime.parse(_file.getName().substring(5, 24), dateAndTimeFormatter);
     }
 
-    //This method gets the display name of a file when it is instantiated using a file
+    /**This method gets the display name of a file when it is instantiated using a file*/
     private String extrapolateIdentity(){
         String[] splitUserRecordingName = _filename.split("_");
         return splitUserRecordingName[3].substring(0, splitUserRecordingName[3].length() - 4).replace("-", " ");
@@ -85,12 +85,12 @@ public class UserRecordingFile implements NameSayerFile, Comparable<UserRecordin
         _process.destroy();
     }
 
-    //Method deletes the UserRecordingFile from the folder
+    /**Method deletes the UserRecordingFile from the folder*/
     public void deleteFile(){
         _file.delete();
     }
 
-    //Loads a FXML pane that will be used to display the file on the scene
+    /**Loads a FXML pane that will be used to display the file on the scene*/
     private void loadView(){
         try {
             //Loading view

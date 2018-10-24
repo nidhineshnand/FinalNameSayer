@@ -7,14 +7,12 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
-import javax.naming.Name;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
 
-//This abstract class is to share code for handeling the playing of a file
+/**This abstract class is used to share code for handling the playing of a file*/
 public abstract class NameSayerFileList {
 
     /**
@@ -81,7 +79,7 @@ public abstract class NameSayerFileList {
 
 
 
-    //Concatenates the set of files provided
+    /**Concatenates the set of files provided*/
     private void concatenateRecording() {
         try {
             ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -f concat -safe 0 -i myList.txt -c copy ./resources/concatenations/output.wav");
@@ -95,7 +93,7 @@ public abstract class NameSayerFileList {
         }
     }
 
-    //Tries to remove the silence required
+    /**Tries to remove the silence required*/
     private void cleanRecording() {
         try {
             ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -hide_banner -i  ./resources/concatenations/output.wav -af silenceremove=1:0:-55dB:1:5:-55dB:0 ./resources/concatenations/output1.wav");
@@ -109,7 +107,7 @@ public abstract class NameSayerFileList {
         }
     }
 
-    //Normalized audio
+    /**Normalizes audio*/
     private void normalizeAudio(){
         try {
             ProcessBuilder builder = new ProcessBuilder("bash", "-c", "ffmpeg -i ./resources/concatenations/output1.wav -filter:a \"dynaudnorm=f=75:g=11:s=12\" ./resources/concatenations/output2.wav");

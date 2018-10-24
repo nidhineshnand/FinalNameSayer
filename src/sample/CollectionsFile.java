@@ -4,7 +4,6 @@ import javafx.scene.layout.Pane;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class CollectionsFile implements NameSayerFile {
 
@@ -18,13 +17,7 @@ public class CollectionsFile implements NameSayerFile {
         mergeFiles();
     }
 
-    public CollectionsFile(PractiseFile practiseFile, UserRecordingFile userRecordingFile){
-        _fileToPlay.addAll(practiseFile.filesToPlay());
-        _fileToPlay.addAll(userRecordingFile.filesToPlay());
-    }
-
-
-    //This methods gets all the file objects received and puts them together in one variable so that it can be concatenated together
+    /**This methods gets all the file objects received and puts them together in one variable so that it can be concatenated together*/
     public void mergeFiles(){
         //Checking that file is not null
         if(_practiseFiles != null) {

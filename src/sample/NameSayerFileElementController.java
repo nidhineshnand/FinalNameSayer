@@ -2,12 +2,12 @@ package sample;
 
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.collections.ListChangeListener;
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.controlsfx.control.CheckComboBox;
 
 import java.util.ArrayList;
 
+/**Controller that manages how a practise file or user recording file is displayed*/
 public class NameSayerFileElementController {
 
 

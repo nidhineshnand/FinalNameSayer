@@ -21,7 +21,7 @@ public class PointsSystem {
         return _points;
     }
 
-    //Saves the current point to a new class
+    /**Saves the current point to a new class*/
     public void savePoints(){
         File file = new File(_pathToSave);
 
@@ -35,7 +35,7 @@ public class PointsSystem {
         }
     }
 
-    //This method loads the points if they were previously saved
+    /**This method loads the points if they were previously saved*/
     public void loadPoints(){
         //Reading file
         BufferedReader reader;
@@ -55,7 +55,7 @@ public class PointsSystem {
         }
     }
 
-    //This method resets the score to 0
+    /**This method resets the score to 0*/
     public void clearScore(){
         _points = 0;
     }

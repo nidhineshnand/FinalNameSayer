@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
+/**Class that contains the logic for a practise file, that is a set of names a user tries to practise*/
 public class PractiseFile implements NameSayerFile {
 
     private ArrayList<DatabaseFile> _filesToPlay;
@@ -25,7 +26,7 @@ public class PractiseFile implements NameSayerFile {
     }
 
 
-    //Gets the files that will be used to play audio
+    /**Gets the files that will be used to play audio*/
     @Override
     public ArrayList<File> filesToPlay() {
         ArrayList<File> output = new ArrayList<>();
@@ -36,7 +37,7 @@ public class PractiseFile implements NameSayerFile {
         return output;
     }
 
-    //Writes to file so that it can be accessed when the app is closed
+    /**Writes to file so that it can be accessed when the app is closed*/
     public void writeToFile() {
         //Checking if practise file has already been written to file
         if (!isWrittenToFile()) {
@@ -49,7 +50,7 @@ public class PractiseFile implements NameSayerFile {
         }
     }
 
-    //Method checks if the practisefile has already been written to file
+    /**Method checks if the practisefile has already been written to file*/
     private boolean isWrittenToFile(){
         //Reading file
         BufferedReader reader;
@@ -72,7 +73,7 @@ public class PractiseFile implements NameSayerFile {
         return false;
     }
 
-    //Loads a FXML pane that will be used to display the file on the scene
+    /*Loads a FXML pane that will be used to display the file on the scene*/
     private void loadView(){
         try {
             //Loading view

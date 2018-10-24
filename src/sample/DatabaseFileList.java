@@ -18,7 +18,7 @@ public class DatabaseFileList extends NameSayerFileList{
 
 
 
-    /*This method reads the files from the database and stores it in the  Arraylist databaseFiles. This method is run at
+    /**This method reads the files from the database and stores it in the  Arraylist databaseFiles. This method is run at
     at initialization of the DatabaseFileList object;
      */
     private void readDatabaseFiles() {
@@ -35,8 +35,8 @@ public class DatabaseFileList extends NameSayerFileList{
         }
     }
 
-    //This method takes input a database file name as a string and outputs the best file associated with that string name
-    //If no file is found with that name then a null value is returned
+    /**This method takes input a database file name as a string and outputs the best file associated with that string name
+    if no file is found with that name then a null value is returned*/
     public DatabaseFile getDatabaseFileWithName(String fileName){
         DatabaseFile cachedFile = null;
 
@@ -59,8 +59,8 @@ public class DatabaseFileList extends NameSayerFileList{
         return cachedFile;
     }
 
-    //This method takes input a partial database file name as a string and outputs the best file associated with that string name
-    //If no file is found with that name then a null value is returned
+    /**This method takes input a partial database file name as a string and outputs the best file associated with that string name
+    If no file is found with that name then a null value is returned*/
     public ArrayList<DatabaseFile> getDatabaseFileWithPartName(String fileName){
 
         ArrayList<DatabaseFile> outputFiles = new ArrayList<>();

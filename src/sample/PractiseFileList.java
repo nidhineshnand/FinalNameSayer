@@ -3,7 +3,6 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.BufferedReader;
@@ -18,6 +17,7 @@ public class PractiseFileList extends NameSayerFileList{
     ObservableList<PractiseFile> _practiseFileList = FXCollections.observableArrayList();
     VBox _practiseFileListVbox = new VBox(0);
 
+    /**This class manages the practise files and all its encapsulation*/
     public PractiseFileList(String pathToWrite){
         _pathToWrite = pathToWrite;
     }
@@ -180,7 +180,7 @@ public class PractiseFileList extends NameSayerFileList{
         getFilesForMainScene();
     }
 
-    //This method get files to paint for the scene
+    /**This method get files to paint for the scene*/
     private void getFilesForMainScene(){
         _practiseFileListVbox = getFilesForScene(_practiseFileList);
     }
@@ -199,7 +199,6 @@ public class PractiseFileList extends NameSayerFileList{
             return list;
     }
 
-    //This method gets all the checks all the files in the view
     /**This method returns the list of practiseFiles that are currently selected in the main scene. If no recordings
      * are selected then an empty list is returned*/
     public void setCheckBoxesTo(boolean set){
@@ -210,7 +209,7 @@ public class PractiseFileList extends NameSayerFileList{
         }
     }
 
-
+    /**This method gets a vbox with practise files */
     public VBox get_practiseFileListVbox() {
         getFilesForMainScene();
         //_practiseFileListVbox.setPrefHeight(500);

@@ -1,13 +1,11 @@
 package sample;
 
-import com.sun.javafx.webkit.ThemeClientImpl;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
 import java.util.ArrayList;
-
+/**This class is the main connection between the front end and the backend*/
 public class ControllerConnecter {
 
     private InitializeFiles initializeFiles = new InitializeFiles("./names1");

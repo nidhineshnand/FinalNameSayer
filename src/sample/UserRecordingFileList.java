@@ -6,14 +6,10 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 
-import static java.util.Arrays.asList;
-
+/**This class manages the UserRecordingFiles files and all its encapsulation*/
 public class UserRecordingFileList extends NameSayerFileList {
 
     ObservableList<UserRecordingFile> _userRecordingFilesList = FXCollections.observableArrayList();
@@ -28,7 +24,7 @@ public class UserRecordingFileList extends NameSayerFileList {
     }
 
 
-    //This method reloads files that has been saved by the user prior to this practise session.
+    /**This method reloads files that has been saved by the user prior to this practise session.*/
     private void reloadOldRecordings(){
 
         //Reading past recordings
@@ -48,20 +44,20 @@ public class UserRecordingFileList extends NameSayerFileList {
 
 
 
-    //This method get files to paint for the scene
+    /**This method get files to paint for the scene*/
     private void getFilesForMainScene(){
         FXCollections.reverse(_userRecordingFilesList);
         _userRecordingFileListVBox = getFilesForScene(_userRecordingFilesList);
     }
 
-    //This method get files to paint for the practise scene
+    /**This method get files to paint for the practise scene*/
     public void getFilesForPractiseScene(PractiseFile file){
         setUserRecordingsAssociatedWith(file);
         FXCollections.reverse(_associatedUserRecordingFiles);
         _associatedUserRecordingFileListVbox = getFilesForScene(_associatedUserRecordingFiles);
     }
 
-    //This method deletes the selected recordings on the main page
+    /**This method deletes the selected recordings on the main page*/
     public void deleteSelectedRecordings(){
         //Deleting files from system
         for(UserRecordingFile recordingFile : getSelectedUserRecording()){
@@ -70,18 +66,18 @@ public class UserRecordingFileList extends NameSayerFileList {
         _userRecordingFilesList.removeAll(getSelectedUserRecording());
     }
 
-    //This method creates a UserRecording file and passes it to the front end for recording
+    /**This method creates a UserRecording file and passes it to the front end for recording*/
     public UserRecordingFile createUserRecordingFile(PractiseFile practiseFile){
         ArrayList<String> nameList = new ArrayList<>(Arrays.asList(practiseFile.get_displayName().split(" ")));
         return new UserRecordingFile(_pathToFiles, nameList);
     }
 
-    //Adds a user recording object to the list if a recording is created
+    /**Adds a user recording object to the list if a recording is created*/
     public void addUserRecordingToList(UserRecordingFile file){
         _userRecordingFilesList.add(file);
     }
 
-    //Method finds all the user recording files that are associated with a particular practise file
+    /**Method finds all the user recording files that are associated with a particular practise file*/
     public void setUserRecordingsAssociatedWith(PractiseFile file){
         _associatedUserRecordingFiles.clear();
         //Looping through all local files to find file that is associated with this practise file
@@ -92,7 +88,7 @@ public class UserRecordingFileList extends NameSayerFileList {
         }
     }
 
-    //Method sets all the checkboxes to wither ticked or not
+    /**Method sets all the checkboxes to wither ticked or not*/
     public void setCheckBoxesTo(boolean set){
 
         //Loops through all user recordings to set the checkbox either true or false
@@ -131,6 +127,7 @@ public class UserRecordingFileList extends NameSayerFileList {
         return list;
     }
 
+    /**This method returns a Vbox element that is a user recording file list*/
     public VBox get_userRecordingFileListVBox() {
         getFilesForMainScene();
         //_userRecordingFileListVBox.setPrefHeight(500);
@@ -139,12 +136,13 @@ public class UserRecordingFileList extends NameSayerFileList {
         return _userRecordingFileListVBox;
     }
 
+    /**This method returns a Vbox element that is a user recording file list associated with a particular practise file*/
     public VBox get_associatedUserRecordingFileListVbox(PractiseFile file) {
         getFilesForPractiseScene(file);
         return _associatedUserRecordingFileListVbox;
     }
 
-    //Returns that user recordings that are associated with the current practise file
+    /**Returns that user recordings that are associated with the current practise file*/
     public ObservableList<UserRecordingFile> get_associatedUserRecordingFiles(PractiseFile file) {
         setUserRecordingsAssociatedWith(file);
         return _associatedUserRecordingFiles;
