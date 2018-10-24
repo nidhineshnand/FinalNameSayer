@@ -9,18 +9,13 @@
 	-fx-text-fill: #BAA378;
 }
 
-#_pane, .scrollPane {
+#_pane {
 	-fx-background-color: #382E1C;
 	-fx-background: #BAA378;
 }
 
 #_background {
 	-fx-background-color: #382E1C;
-}
-
-#_label {
-	-fx-background-color: #382E1C;
-	-fx-text-fill: #BAA378;
 }
 
 .jfx-tab-pane .tab-header-background {
@@ -35,4 +30,67 @@
 
 .tab {
 	-fx-background-color: #382E1C;
+}
+
+.jfx-slider > .colored-track, .jfx-slider > .thumb, .jfx-slider > .animated-thumb {
+	-fx-background-color: #BAA378;
+}
+
+#_progressBar > .bar {
+	-fx-background-color: #BAA378;
+}
+
+.spinner {
+	-fx-prompt-text-fill: #BAA378;
+	-fx-text-fill: #BAA378;
+	-fx-background-color: #65350F;
+	-fx-padding: 0 0 3 0;
+}
+
+.spinner .text-field {
+	-fx-background-color: #65350F;
+	-fx-text-fill: #BAA378;
+	-fx-border-width: 0 0 1 0;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+	-fx-background-color: transparent;
+}
+
+.spinner .increment-arrow-button .increment-arrow,
+.spinner .decrement-arrow-button .decrement-arrow {
+	-fx-background-color: #BAA378;
+	-fx-font-size: 30px;
+}
+
+.scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
+	-fx-background-color: #65350F;
+	-fx-background-radius: 0;
+}
+
+.scroll-pane {
+	-fx-background-color: #382E1C;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+	-fx-background-color: #65350F;
+}
+
+.increment-button, .decrement-button {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+	-fx-background-color: #BAA378;
+	-fx-background-radius: 5em;
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ControllerConnecter {
 
-    private InitializeFiles initializeFiles = new InitializeFiles("./names");
+    private InitializeFiles initializeFiles = new InitializeFiles("./names1");
     private DatabaseFileList databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
     private PractiseFileList practiseFileList = new PractiseFileList(initializeFiles.get_practiseDirPath());
     private UserRecordingFileList userRecordingFileList = new UserRecordingFileList(initializeFiles.get_localUserRecordingDirPath());
@@ -163,7 +163,7 @@ public class ControllerConnecter {
 
     /**This method gets the saved CSS file if there exists one from a previous session*/
      public String getCurrentTheme(){
-         if (currentTheme == null){
+         if (currentTheme == null || currentTheme.isEmpty()){
              //Default theme is used
              return DEFAULT_THEME;
          }
@@ -180,11 +180,17 @@ public class ControllerConnecter {
      */
     public void addFilesToDatabase(String path){
         initializeFiles.copyDatabaseFiles(path);
+        databaseFileList = new DatabaseFileList(initializeFiles.get_localDatabasePath(), initializeFiles.get_ratingsFilePath());
     }
 
 
     /**This method gets the count of the database file that is in the system*/
     public int getDatabaseFilesCount(){
         return initializeFiles.getDatabaseFileCount();
+    }
+
+    /**Method that resets the user score to 0*/
+    public void clearScore(){
+        pointsSystem.clearScore();
     }
 }

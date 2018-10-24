@@ -23,10 +23,11 @@ public abstract class Controller implements Initializable {
 	ArrayList<UserRecordingFile> _recordingList;
 	protected ErrorSceneController _errorController;
 
-	
+	/**
+	 * Method for when the controller is first opened
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		_listOfNames = new ArrayList<PractiseFile>();
 		_notFound = new ArrayList<String>();
 		_recordingList = new ArrayList<UserRecordingFile>();
@@ -37,13 +38,16 @@ public abstract class Controller implements Initializable {
 	 * @throws Exception 
 	 */
 	protected void openErrorScene(ArrayList<String> namesNotFound, String message) throws Exception {
+		// loading the new scene
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("ErrorScene.fxml"));
 		Parent root = loader.load();
 		_errorController = loader.getController();
-		_errorController.setup(namesNotFound, message);
+		
+		// setting up the controller
 		Stage secondaryStage = new Stage();
+		_errorController.setup(namesNotFound, message, secondaryStage);
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
-		secondaryStage.initOwner(NameSayerStarter.primaryStage);
+		secondaryStage.initOwner(Main.primaryStage);
 		secondaryStage.setTitle("Warning");
 		secondaryStage.setScene(new Scene(root, 500, 300));
 		secondaryStage.setResizable(false);
@@ -53,7 +57,6 @@ public abstract class Controller implements Initializable {
 	/**
 	 * getters
 	 */
-	
 	public ArrayList<PractiseFile> listOfNames() {
 		return _listOfNames;
 	}

@@ -5,10 +5,10 @@
 }
 
 #_pane {
-	-fx-color: #765285;
-	color: #351C4D;
-	-fx-background-color: #351C4D;
-	-fx-background: #351C4D;
+	-fx-color: #462D5E;
+	color: #462D5E;
+	-fx-background-color: #462D5E;
+	-fx-background: #462D5E;
 	-fx-text-fill: #F5AB99;
 	-fx-font-fill: #F5AB99;
 }
@@ -17,6 +17,20 @@
 	-fx-background-color: #765285;
 	-fx-text-fill: #F5AB99;
 	-fx-font-fill: #F5AB99;
+}
+
+.combo-box-base:hover{
+	-fx-color: #AB537C;
+}
+
+#_checkComboBox > .combo-box {
+	-fx-background-radius: 0;
+	-fx-background-color: #AB537C;
+	-fx-text-fill: #BAA378;
+}
+
+#_vbox {
+	-fx-color: #8D2D56;
 }
 
 #_tabParent {
@@ -29,7 +43,7 @@
 }
 
 #_qualityLabel {
-	-fx-background-color: #765285;
+	-fx-background-color: #AB537C;
 	-fx-text-fill: #F5AB99;
 }
 
@@ -56,6 +70,35 @@
 	-fx-background-color: #765285;
 }
 
+.scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
+	-fx-background-color: #AB537C;
+	-fx-background-radius: 0;
+}
 
+.scroll-pane {
+	-fx-background-color: #351C4D;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+	-fx-background-color: #AB537C;
+}
+
+.increment-button, .decrement-button {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+	-fx-background-color: #F5AB99;
+	-fx-background-radius: 5em;
+}
 
 

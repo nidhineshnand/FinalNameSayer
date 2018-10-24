@@ -3,21 +3,26 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
+<AnchorPane id="_background" prefHeight="600.0" prefWidth="900.0" stylesheets="@../themes/PracticeSceneStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PracticeSceneController">
    <children>
-      <Label id="_label" fx:id="_currentName" alignment="CENTER" layoutX="37.0" layoutY="53.0" prefHeight="68.0" prefWidth="397.0" text="Name">
+      <Label id="_label" fx:id="_currentName" alignment="CENTER" layoutX="29.0" layoutY="55.0" prefHeight="68.0" prefWidth="397.0" text="Name">
          <font>
-            <Font size="48.0" />
+            <Font size="35.0" />
          </font>
          <tooltip>
             <Tooltip text="The current name.">
@@ -86,7 +91,7 @@
             </Tooltip>
          </tooltip>
       </JFXButton>
-      <JFXProgressBar fx:id="_micSensitivityBar" layoutX="139.0" layoutY="426.0" prefHeight="4.0" prefWidth="229.0" />
+      <JFXProgressBar id="_progressBar" fx:id="_micSensitivityBar" layoutX="139.0" layoutY="426.0" prefHeight="4.0" prefWidth="229.0" />
       <JFXButton id="_button" fx:id="_deleteButton" buttonType="RAISED" layoutX="294.0" layoutY="321.0" onAction="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete">
          <font>
             <Font size="14.0" />
@@ -163,6 +168,27 @@
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <Spinner fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="26.0" prefWidth="57.0" />
+      <Spinner id="_spinner" fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="31.0" prefWidth="66.0" />
+      <HBox id="_background" alignment="CENTER_RIGHT" layoutX="727.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="10.0">
+         <children>
+            <ImageView fitHeight="44.0" fitWidth="46.0">
+               <image>
+                  <Image url="@../images/Yellow_Star.png" />
+               </image>
+            </ImageView>
+            <Label id="_label" fx:id="_pointsLabel" contentDisplay="RIGHT" prefHeight="43.0" prefWidth="47.0" text="999" textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets right="20.0" top="20.0" />
+         </opaqueInsets>
+      </HBox>
+      <JFXSpinner fx:id="_jfxSpinner" layoutX="408.0" layoutY="300.0" prefHeight="78.0" prefWidth="85.0" visible="false" />
    </children>
 </AnchorPane>

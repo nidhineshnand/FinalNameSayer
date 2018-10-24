@@ -52,16 +52,15 @@ public class InitializeFiles {
 
         for (File file : listOfFiles) {
             //If file exists or is not a file then it is not copied
-            if (!new File("./resources/database/" + file.getName()).exists() && file.getName().matches("se206_[\\S]+_[\\S]+_[\\S]+\\.wav")) {
+            if ((!new File("./resources/database/" + file.getName()).exists()) && file.getName().matches("se206_[\\S]+_[\\S]+_[\\S]+\\.wav")) {
                 equalizeBitrate(file.getAbsolutePath(), "./resources/database/" + file.getName());
-
             }
         }
     }
 
     //Gets the database file count
     public int getDatabaseFileCount() {
-        return Objects.requireNonNull(new File(_databaseFilePath).listFiles()).length;
+        return Objects.requireNonNull(new File(_localDatabasePath).listFiles()).length;
     }
 
     //Equalizes bitrate
@@ -111,6 +110,14 @@ public class InitializeFiles {
                 FileWriter f2 = new FileWriter(file, false);
                 f2.write(name);
                 f2.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            //File is cleaned which signifies the default theme
+            file.delete();
+            try {
+                file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }

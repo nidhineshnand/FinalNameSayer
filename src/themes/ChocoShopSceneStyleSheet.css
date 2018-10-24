@@ -16,8 +16,38 @@
 	-fx-background-color: #453823;
 }
 
-#_pointLabel {
+#_backLabel {
 	-fx-background-color: #382E1C;
 	-fx-text-fill: #BAA378;
 }
 
+.scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
+	-fx-background-color: #65350F;
+	-fx-background-radius: 0;
+}
+
+.scroll-pane {
+	-fx-background-color: #382E1C;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+	-fx-background-color: #65350F;
+}
+
+.increment-button, .decrement-button {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+	-fx-background-color: #BAA378;
+	-fx-background-radius: 5em;
+}
