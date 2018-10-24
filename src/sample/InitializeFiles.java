@@ -61,7 +61,7 @@ public class InitializeFiles {
 
     //Gets the database file count
     public int getDatabaseFileCount() {
-        return Objects.requireNonNull(new File(_databaseFilePath).listFiles()).length;
+        return Objects.requireNonNull(new File(_localDatabasePath).listFiles()).length;
     }
 
     //Equalizes bitrate
