@@ -5,10 +5,10 @@
 }
 
 #_pane {
-	-fx-color: #382E1C;
-	color: #382E1C;
-	-fx-background-color: #382E1C;
-	-fx-background: #382E1C;
+	-fx-color: #453823;
+	color: #453823;
+	-fx-background-color: #453823;
+	-fx-background: #453823;
 	-fx-text-fill: #BAA378;
 	-fx-font-fill: #BAA378;
 }
@@ -18,9 +18,19 @@
 	-fx-text-fill: #BAA378;
 	-fx-font-fill: #BAA378;
 }
-.combo-box-base:hover
-{
-	-fx-color: #BAA378;
+
+.combo-box-base:hover{
+	-fx-color: #382E1C;
+}
+
+#_checkComboBox > .combo-box {
+	-fx-background-radius: 0;
+	-fx-background-color: #65350F;
+	-fx-text-fill: #BAA378;
+}
+
+#_vbox {
+	-fx-color: #453823;
 }
 
 #_tabParent {
@@ -28,12 +38,12 @@
 }
 
 #_label {
-	-fx-background-color: #382E1C;
+	-fx-background-color: transparent;
 	-fx-text-fill: #BAA378;
 }
 
 #_qualityLabel {
-	-fx-background-color: #453823;
+	-fx-background-color: #65350F;
 	-fx-text-fill: #BAA378;
 }
 
@@ -52,12 +62,12 @@
 }
 
 .tab .tab-label {
-	-fx-background-color: #382E1C;
+	-fx-background-color: #453823;
 	-fx-text-fill: #BAA378;
 }
 
 .tab {
-	-fx-background-color: #382E1C;
+	-fx-background-color: #453823;
 }
 
 .scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
@@ -66,7 +76,7 @@
 }
 
 .scroll-pane {
-	-fx-background-color: #382E1C;
+	-fx-background-color: #453823;
 }
 
 .scroll-bar:horizontal, .scroll-bar:vertical{

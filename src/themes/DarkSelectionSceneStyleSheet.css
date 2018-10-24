@@ -5,16 +5,26 @@
 }
 
 #_pane {
-	-fx-color: rgb(50, 50, 50);
-	color: rgb(50, 50, 50);
-	-fx-background-color: rgb(50, 50,50);
-	-fx-background: rgb(50, 50, 50);
+	-fx-color: #3C373D;
+	color: #3C373D;
+	-fx-background-color: #3C373D;
+	-fx-background: #3C373D;
 	-fx-text-fill: #F92F08;
 }
 
 #_checkBoxToggle, #_selectAllToggle {
 	-fx-background-color: rgb(50, 50, 50);
 	-fx-text-fill: #F92F08;
+}
+
+.combo-box-base:hover{
+	-fx-color: rgb(50, 50, 50);
+}
+
+#_checkComboBox > .combo-box {
+	-fx-background-radius: 0;
+	-fx-background-color: rgb(50, 50, 50);
+	-fx-text-fill: red;
 }
 
 #_tabParent {
