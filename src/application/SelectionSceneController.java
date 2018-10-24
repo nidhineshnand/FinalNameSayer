@@ -37,6 +37,7 @@ import sample.CollectionsFile;
 import sample.ControllerConnecter;
 import sample.NameSayerFile;
 import sample.PractiseFile;
+import sun.awt.windows.ThemeReader;
 
 import javax.swing.*;
 import java.io.File;
@@ -44,6 +45,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
 
 public class SelectionSceneController extends Controller {
 
@@ -87,6 +89,7 @@ public class SelectionSceneController extends Controller {
 	private ControllerConnecter _spine;
     private File _fileToPlay;
     private NameSayerFile _nameSayerFile;
+    private File _selectedFile;
 
 	// Methods
 
@@ -459,16 +462,29 @@ public class SelectionSceneController extends Controller {
 		//Opening up Directory chooser
 		DirectoryChooser chooser = new DirectoryChooser();
 		chooser.setTitle("Add To Database");
-		File selectedDirectory = chooser.showDialog(_practiceListButton.getScene().getWindow());
+		_selectedFile = chooser.showDialog(_practiceListButton.getScene().getWindow());
 
-		if (selectedDirectory != null) {
-			//Passing the directory location for it to be added
-			_spine.addFilesToDatabase(selectedDirectory.getPath());
+		if (_selectedFile != null) {
+		    //Transferring files in a different thread
+		    ExtendDatabase extendDatabase = new ExtendDatabase();
+		    new Thread(extendDatabase);
 			//Setting the number of database file counts
 			_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
 		}
 
 	}
+
+    //Class responsible for generating playable file in a different thread
+    class ExtendDatabase extends Task<Void> {
+
+        @Override
+        protected Void call() throws Exception {
+            //Passing the directory location for it to be added
+            _spine.addFilesToDatabase(_selectedFile.getPath());
+            return null;
+
+        }
+    }
 
 	/**
 	 * When _saveSession is clicked, it saves the theme that was setted
