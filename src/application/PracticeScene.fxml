@@ -167,6 +167,9 @@
          <font>
             <Font size="23.0" />
          </font>
+         <tooltip>
+            <Tooltip text="Play database and your recording repeatedly " />
+         </tooltip>
       </JFXButton>
       <Spinner id="_spinner" fx:id="_loopCount" layoutX="290.0" layoutY="485.0" prefHeight="31.0" prefWidth="66.0" />
       <HBox id="_background" alignment="CENTER_RIGHT" layoutX="727.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="111.0" spacing="10.0">
