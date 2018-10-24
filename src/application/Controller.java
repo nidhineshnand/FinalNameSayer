@@ -44,8 +44,8 @@ public abstract class Controller implements Initializable {
 		_errorController = loader.getController();
 		
 		// setting up the controller
-		_errorController.setup(namesNotFound, message);
 		Stage secondaryStage = new Stage();
+		_errorController.setup(namesNotFound, message, secondaryStage);
 		secondaryStage.initModality(Modality.WINDOW_MODAL);
 		secondaryStage.initOwner(Main.primaryStage);
 		secondaryStage.setTitle("Warning");
