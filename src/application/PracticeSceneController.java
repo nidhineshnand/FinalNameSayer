@@ -340,7 +340,7 @@ public class PracticeSceneController extends Controller {
 		});
 
 	}
-	//Class responsible for recording voice in a different thread
+	//Class responsible for generating playable file in a different thread
 	class GeneratePlayableFile extends Task<Void> {
 
 		@Override
