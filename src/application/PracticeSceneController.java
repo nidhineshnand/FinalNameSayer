@@ -103,11 +103,11 @@ public class PracticeSceneController extends Controller {
 		
 		//Setting mnemonics for major keys
 		_playAllButton.setMnemonicParsing(true);
-		_playAllButton.setText("_Play");
+		_playAllButton.setText("Play");
 		_recordButton.setMnemonicParsing(true);
-		_recordButton.setText("_Record");
+		_recordButton.setText("Record");
 		_loop.setMnemonicParsing(true);
-		_loop.setText("_Loop");
+		_loop.setText("Loop");
 	}
 
 
