@@ -47,7 +47,7 @@ import java.util.ResourceBundle;
 
 public class SelectionSceneController extends Controller {
 
-	// Fields
+	// GUI fields
 	@FXML
 	public Button _practiceListButton;
 	@FXML
@@ -74,6 +74,8 @@ public class SelectionSceneController extends Controller {
 	public Label _databaseFileCount;
 	public ScrollPane _practiceListPane;
 	private VBox _userRecordingList;
+	
+	// Fields
 	private PracticeSceneController _practiceController;
 	private ShopSceneController _shopController;
 	private String _name;
@@ -88,10 +90,11 @@ public class SelectionSceneController extends Controller {
 
 	// Methods
 
+	/**
+	 * Method that is ran on startup
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		//_practiceFileList = super.controllerConnecter().populatePractiseFileForMainScene();
 		super.initialize(location, resources);
 
 	}
@@ -124,33 +127,33 @@ public class SelectionSceneController extends Controller {
 		_saveButton.setText("_Save Session");
 	}
 
-	/**This method sets the theme for the selection scene*/
+	/**
+	 * This method sets the theme for the selection scene
+	 */
 	public void setTheme(){
-
 		_selectionSceneParent.getStylesheets().clear();
-			_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
-			if(_spine.getCurrentTheme().isEmpty()) {
-				_shopButton.setVisible(true);
-				_invertedShopButton.setVisible(false);
-			} else {
-				_shopButton.setVisible(false);
-				_invertedShopButton.setVisible(true);
-
-			}
+		_selectionSceneParent.getStylesheets().add("themes/"+_spine.getCurrentTheme() +"SelectionSceneStyleSheet.css");
+		// setting correct shop icon to match theme
+		if(_spine.getCurrentTheme().isEmpty()) {
+			_shopButton.setVisible(true);
+			_invertedShopButton.setVisible(false);
+		} else {
+			_shopButton.setVisible(false);
+			_invertedShopButton.setVisible(true);
+		}
 	}
 
 	/**
 	 * gets the current name inserted into 
 	 */
 	private void getName() {
-		if (_nameTextField.getText().equals("")) {
+		if (_nameTextField.getText().equals("")) { // when name is mission 
 			try {
 				openErrorScene(null, "NoNameSelected");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else {
+		} else { // when name is present
 			String name = _nameTextField.getText();
 			_notFound.clear();
 			_pFile = _spine.searchButtonPressed(name, _notFound);
@@ -159,6 +162,7 @@ public class SelectionSceneController extends Controller {
 				openPracticeScene();
 			} 
 		}
+		// reset _notFound for future use
 		_notFound.clear();
 	}
 	
@@ -179,14 +183,16 @@ public class SelectionSceneController extends Controller {
 	 * @throws Exception
 	 */
 	public void startPractiseScene() throws Exception {
+		// setting up practice scene
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PracticeScene.fxml"));
 		Parent root = loader.load();
 		root.getStylesheets().clear();
-		if (_spine.getCurrentTheme() == null) {
+		if (_spine.getCurrentTheme() == null) { // getting the correct theme for practice scene
 			root.getStylesheets().add("themes/PracticeSceneStyleSheet.css");
 		} else {
 			root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"PracticeSceneStyleSheet.css");
 		}
+		// setting up the controller for the practice scene
 		_practiceController = loader.getController();
 		_practiceController.setNameList(_listOfNames, _spine);
 		Stage secondaryStage = new Stage();
@@ -197,6 +203,7 @@ public class SelectionSceneController extends Controller {
         secondaryStage.setResizable(false);
         secondaryStage.show();
         _spine.setUserRecordingFileListCheckBox(false);
+        // opening error scene if there are names that are not found
         if (!_notFound.isEmpty()) {
 			try {
 				openErrorScene(_notFound, "NamesNotFound");
@@ -204,6 +211,7 @@ public class SelectionSceneController extends Controller {
 				e.printStackTrace();
 			}
 		}
+        // making the scene resizable dynamically
         secondaryStage.setOnHiding(arg0 -> {
 			populatePanes();
 			_pointsLabel.setText(_spine.getPoints() + "");
@@ -215,8 +223,9 @@ public class SelectionSceneController extends Controller {
 	}
 
 
-	//Method that is responsible for selecting all user recordings
-
+	/**
+	 * Method that is responsible for selecting all user recordings
+	 */
 	public void selectAllUserRecordings(){
 		//If check box is selected then the label is changed to deselect all and all files are selected
 		if(_userRecordingCheckBox.isSelected()){
@@ -255,6 +264,7 @@ public class SelectionSceneController extends Controller {
 	}
 
 	// Action listeners 
+	
 	/**
 	 * When _practiceAllButton is clicked
 	 */
@@ -269,7 +279,9 @@ public class SelectionSceneController extends Controller {
 		}
 	}
 
-	//This method delete selected user recordings
+	/**
+	 * This method delete selected user recordings
+	 */
 	public void deleteSelectedUserRecordings(){
 		_spine.deleteSelectedUserRecordingFiles();
 		populatePanes();
@@ -299,14 +311,16 @@ public class SelectionSceneController extends Controller {
 	@FXML
 	void shopClicked() {
 		try {
+			// opens the shop scene
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("ShopScene.fxml"));
 			Parent root = loader.load();
 			root.getStylesheets().clear();
-			if (_spine.getCurrentTheme().isEmpty()) {
+			if (_spine.getCurrentTheme().isEmpty()) { // getting correct theme for the shop scene
 				root.getStylesheets().add("themes/ShopSceneStyleSheet.css");
 			} else {
 				root.getStylesheets().add("themes/"+_spine.getCurrentTheme()+"ShopSceneStyleSheet.css");
 			}
+			// setting up the shop scene
 			_shopController = loader.getController();
 			_shopController.setup(_spine, _selectionSceneParent, root, this);
 			Stage secondaryStage = new Stage();
@@ -359,6 +373,9 @@ public class SelectionSceneController extends Controller {
 		staticSearch();
 	}
 	
+	/**
+	 * When _removeButton is clicked, the database name is removed from the practice list
+	 */
 	@FXML
 	void removeClicked() {
 		_spine.deleteSelectedPractiseFiles();
@@ -453,10 +470,18 @@ public class SelectionSceneController extends Controller {
 
 	}
 
+	/**
+	 * When _saveSession is clicked, it saves the theme that was setted
+	 * @param actionEvent
+	 */
 	public void saveSessionClicked(ActionEvent actionEvent) {
 		_spine.saveProgramState();
 	}
 	
+	/**
+	 * setter to get the current prefix name of the css file for dynamic scene changing
+	 * @param name
+	 */
 	public void setCssName(String name) {
 		_cssName = name;
 	}

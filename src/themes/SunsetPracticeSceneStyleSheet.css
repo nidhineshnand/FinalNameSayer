@@ -42,3 +42,58 @@
 #_progressBar > .bar {
 	-fx-background-color: #F5AB99;
 }
+
+.spinner {
+	-fx-prompt-text-fill: #F5AB99;
+	-fx-text-fill: #F5AB99;
+	-fx-background-color: #AB537C;
+	-fx-padding: 0 0 3 0;
+}
+
+.spinner .text-field {
+	-fx-background-color: #AB537C;
+	-fx-text-fill: #F5AB99;
+	-fx-border-width: 0 0 1 0;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+	-fx-background-color: transparent;
+}
+
+.spinner .increment-arrow-button .increment-arrow,
+.spinner .decrement-arrow-button .decrement-arrow {
+	-fx-background-color: #F5AB99;
+	-fx-font-size: 30px;
+}
+
+.scroll-pane .scroll-bar:horizontal, .scroll-pane .scroll-bar:horizontal .track {
+	-fx-background-color: #AB537C;
+	-fx-background-radius: 0;
+}
+
+.scroll-pane {
+	-fx-background-color: #351C4D;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+	-fx-background-color: #AB537C;
+}
+
+.increment-button, .decrement-button {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+	-fx-background-color: #F5AB99;
+	-fx-background-radius: 5em;
+}

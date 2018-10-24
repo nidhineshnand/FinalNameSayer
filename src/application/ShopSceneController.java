@@ -14,6 +14,7 @@ import sample.ControllerConnecter;
 
 public class ShopSceneController extends Controller {
 	
+	// FXML fields
 	@FXML
 	public Button _defaultThemeButton;
 	@FXML
@@ -25,17 +26,19 @@ public class ShopSceneController extends Controller {
 	@FXML
 	public Label _pointLabel;
 
-	private SelectionSceneController _parent;
+	// Fields
 	private ControllerConnecter _spine;
 	private Parent _selectionSceneParent;
 	private Parent _marketSceneParent;
 	private SelectionSceneController _selectionController;
 	
+	// Method that is ran on startup
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		super.initialize(location, resources);
 	}
 
+	// called when the controller is to be setup immediately after startup, instantiates the necessary private fields
 	public void setup(ControllerConnecter spine, Parent practiseSceneParent, Parent marketSceneParent, SelectionSceneController selectionController){
 		_spine = spine;
 		_selectionSceneParent = practiseSceneParent;
@@ -60,21 +63,18 @@ public class ShopSceneController extends Controller {
 	@FXML
 	void sunsetThemeClicked() {
 		/**
-		if (_spine.getPoints() < 5) {
+		if (_spine.getPoints() < 5) { // opens error scene for lack of points
 			try {
 				openErrorScene(null, "NotEnoughPoints");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else {
-			_parent.setCssName("Sunset");
-			try {
-				openErrorScene(null, "SaveAndRestart");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}*/
+		} else { // changes theme to sunset
+			changeThemeTo("Sunset");
+			_selectionController._shopButton.setVisible(false);
+			_selectionController._invertedShopButton.setVisible(true);
+		}
+		*/
 		changeThemeTo("Sunset");
 		_selectionController._shopButton.setVisible(false);
 		_selectionController._invertedShopButton.setVisible(true);
@@ -86,21 +86,18 @@ public class ShopSceneController extends Controller {
 	@FXML
 	void darkThemeClicked() {
 		/**
-		if (_spine.getPoints() < 15) {
+		if (_spine.getPoints() < 15) { // opens error scene for lack of points
 			try {
 				openErrorScene(null, "NotEnoughPoints");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else {
-			_parent.setCssName("Dark");
-			try {
-				openErrorScene(null, "SaveAndRestart");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}*/
+		} else { // changes theme to dark
+			changeThemeTo("Dark");
+			_selectionController._shopButton.setVisible(false);
+			_selectionController._invertedShopButton.setVisible(true);
+		}
+		*/
 		changeThemeTo("Dark");
 		_selectionController._shopButton.setVisible(false);
 		_selectionController._invertedShopButton.setVisible(true);
@@ -112,24 +109,21 @@ public class ShopSceneController extends Controller {
 	@FXML
 	void chocoThemeClicked() {
 		/**
-		if (_spine.getPoints() < 10) {
+		if (_spine.getPoints() < 10) { // opens error scene for lack of points
 			try {
 				openErrorScene(null, "NotEnoughPoints");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else {
-			_parent.setCssName("Choco");
-			try {
-				openErrorScene(null, "SaveAndRestart");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}*/
-        changeThemeTo("Choco");
+		} else { // changes theme to choco
+			changeThemeTo("Choco");
+	        _selectionController._shopButton.setVisible(false);
+			_selectionController._invertedShopButton.setVisible(true);
+		}
+		*/
+		changeThemeTo("Choco");
         _selectionController._shopButton.setVisible(false);
 		_selectionController._invertedShopButton.setVisible(true);
-
 	}
 
 	/**This method changes the theme of the marketplace and selection scene during runtime*/

@@ -11,7 +11,7 @@ import javafx.scene.layout.Pane;
 
 public class ErrorSceneController extends Controller {
 
-	
+	// FXML fields
 	@FXML
 	public Label _warningMessage;
 	@FXML
@@ -19,6 +19,7 @@ public class ErrorSceneController extends Controller {
 	@FXML
 	public Pane _namePane;
 	
+	// fields
 	ArrayList<String> _namesNotFound;
 	
 	/**
@@ -49,13 +50,11 @@ public class ErrorSceneController extends Controller {
 			_warningMessage.setText("Please select a name.");
 		} else if (errorMessage.equals("EmptyPracticeList")) { // when the user doesn't have a practice list
 			_warningMessage.setText("Please upload a list to \npractice or select \nnames from your list \nto practice.");
-		} else if (errorMessage.equals("MultipleSelected")) {
+		} else if (errorMessage.equals("MultipleSelected")) { // when the user selects more audio file to play
 			_warningMessage.setText("Please select only one \nto play.");
-		} else if (errorMessage.equals("NotEnoughPoints")) {
+		} else if (errorMessage.equals("NotEnoughPoints")) { // when the user chooses a theme but lack points
 			_warningMessage.setText("You do not have enough \npoints.");
-		} else if (errorMessage.equals("SaveAndRestart")) {
-			_warningMessage.setText("Now save and restart app \nto use your new \ntheme.");
-		}
+		} 
 	}
 	
 }
