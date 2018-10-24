@@ -54,8 +54,6 @@ public class InitializeFiles {
             //If file exists or is not a file then it is not copied
             if ((!new File("./resources/database/" + file.getName()).exists()) && file.getName().matches("se206_[\\S]+_[\\S]+_[\\S]+\\.wav")) {
                 equalizeBitrate(file.getAbsolutePath(), "./resources/database/" + file.getName());
-                System.out.println(file.getName());
-
             }
         }
     }
