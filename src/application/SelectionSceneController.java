@@ -468,8 +468,11 @@ public class SelectionSceneController extends Controller {
 		    //Transferring files in a different thread
 		    ExtendDatabase extendDatabase = new ExtendDatabase();
 		    new Thread(extendDatabase);
-			//Setting the number of database file counts
-			_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
+		    extendDatabase.setOnSucceeded(e -> {
+				//Setting the number of database file counts
+				_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
+			});
+
 		}
 
 	}
