@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXSpinner;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -75,6 +76,7 @@ public class SelectionSceneController extends Controller {
 	public Pane _mainContainer;
 	public Label _databaseFileCount;
 	public ScrollPane _practiceListPane;
+	public JFXSpinner _databaseUploadSpinner;
 	private VBox _userRecordingList;
 	
 	// Fields
@@ -458,8 +460,9 @@ public class SelectionSceneController extends Controller {
     }
 
 	/**This method lets the user pick if they was to add more names to the database*/
-	public void AddToDatabaseClicked() {
+	public void AddToDatabaseClicked(){
 		//Opening up Directory chooser
+		_databaseUploadSpinner.setVisible(true);
 		DirectoryChooser chooser = new DirectoryChooser();
 		chooser.setTitle("Add To Database");
 		_selectedFile = chooser.showDialog(_practiceListButton.getScene().getWindow());
@@ -471,8 +474,11 @@ public class SelectionSceneController extends Controller {
 		   extendDatabase.setOnSucceeded(e -> {
 				//Setting the number of database file counts
 				_databaseFileCount.setText("Database Files: " + _spine.getDatabaseFilesCount());
+			   _databaseUploadSpinner.setVisible(false);
 			});
 
+		} else {
+			_databaseUploadSpinner.setVisible(false);
 		}
 
 	}
